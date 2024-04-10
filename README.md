@@ -1,5 +1,11 @@
-# Red Hat OpenShift Data Science Quick Course
+# Introduction to Red Hat OpenStack Services on OpenShift Quick Course
 
+These links are Red Hat internal only:
+
+* https://github.com/RedHatQuickCourses/rhoso-intro.git[Initial course design]
+* https://docs.google.com/presentation/d/1Zlyj21ZOp0wtMPqdS3P9auhDndaQ6_qs014q_0yPbo4/edit#slide=id.g29c770ffa7c_0_414[OpenStack 18 Learning Journey]
+
+## Standard Quick Courses README
 This is the starter template for creating a new quick course in the **RedHatQuickCourses** GitHub organization. 
 
 After you create a new repository based on this template, you need to edit and change several files and replace placeholder text and links in them.
