@@ -226,6 +226,9 @@
 </ol>
 </div>
 <div class="paragraph">
+<p>[ Figure of OSP control plane on OCP + OSP data plane on RHEL as a simplified version of the previous figure. ]</p>
+</div>
+<div class="paragraph">
 <p>You add compute power to an OpenStack cluster by adding phisical servers, running RHEL, as compute nodes to the data plane. The more compute nodes, more application VMs your cluster can support.</p>
 </div>
 <div class="paragraph">
@@ -233,9 +236,6 @@
 </div>
 <div class="paragraph">
 <p>With previous releases of Red Hat OpenStack, you could use different approaches to deploy and scale the the control plane, such as clustered RHEL servers with pacemaker, a Red Hat Enterprise Virtualization hypervisor cluster, or an OpenStack cluster known as the <em>undercloud</em>, using what was known as the OpenStack on OpenStack architecture or TripleO. None of these options is available with the current Red Hat OpenStack Services on OpenShift: you must run an OpenStack the control plane as containers on an Red Hat OpenShift cluster.</p>
-</div>
-<div class="paragraph">
-<p>[ Figure of OSP control plane on OCP + OSP data plane on RHEL as a simplified version of the previous figure. ]</p>
 </div>
 <div class="paragraph">
 <p>Microservices developers realized a while ago that containers and Kubernetes are the best way to manage applications composed of multiple services. Even developers targeting public clouds, such as AWS and Azure, nowadays prefer running Kubernetes on those clouds. OpenStack is such a kind of application, and it just makes sense to use Red Hat OpenShift, which is an enterprise application platform based on Kubernetes, to manage all services of an OpenStack control plane.</p>
