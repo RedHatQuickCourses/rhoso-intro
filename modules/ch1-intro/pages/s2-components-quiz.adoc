@@ -1,0 +1,5 @@
+= Components of Red Hat OpenStack
+
+*Objective:* 
+Classify software components as included in Red Hat OpenStack, required by Red Hat OpenStack, not necessary for running Red Hat OpenStack, not included with Red Hat OpenStack, or not compatible with Red Hat OpenStack.
+

@@ -1,6 +1,31 @@
-= An Example Quick Course
+= About This Course
 :navtitle: Home
 
 == Introduction
 
-This is the *RHOSO-Intro* Quick Course.
+This is the first course for *IT professionals* who are new to Red Hat OpenStack Services on OpenShift. It requires no previous experience with OpenStack, but it requires some familiarity with Linux system administration and virtual machine management.
+
+This course is also useful for learners with previous experience with OpenStack, providing them with a high-level understanding of what's included in the Red Hat product and how it might be different than other OpenStack distributions; and to get a quick overview of how Red Hat OpenStack Services on OpenShift differs from previous incarnations of the Red Hat OpenStack platform.
+
+== Course Objective
+
+This course explains the purpose, functionality, and inter-dependencies of the user-facing services provided by Red Hat OpenStack Services on OpenShift and how they meet the requirements of application workloads running as VMs. This course also explain how multi-tenancy features of Red Hat OpenStack Services on OpenShift enable separation of concerns between the teams that manage the workloads and administer the OpenStack cluster that hosts the workloads.
+
+This course includes a quick introduction to the following OpenStack services: Horizon, Keystone, Nova, Neutron, Cinder, Manila, Glance, Swift, Ceilometer, Octavia, Designate, Heat, Placement, Barbican, and Ironic.
+
+== Audience
+
+Platform Engineers, Cloud Administrators, and System Administrators interested in supporting workloads running as virtual machines on OpenStack.
+
+== Pre-requisites
+
+* Fundamentals of RHEL System Administration: https://www.redhat.com/en/services/training/rh124-red-hat-system-administration-i[RH124].
+
+* Basic data center storage concepts: storage protocols, NAS, and SAN.
+
+* Data center networking concepts: ISO model, VLANs, firewalls, and Internet protocols, including but not limited to ICMP, IP, and HTTP.
+
+* Basic concepts of virtual machines (VMs).
+
+* Basic object storage concepts, such as experience with AWS S3, are useful but not required.
+
