@@ -5,7 +5,7 @@
 
 This is the first course for *IT professionals* who are new to Red Hat OpenStack Services on OpenShift. It requires no previous experience with OpenStack, but it requires some familiarity with Linux system administration and virtual machine management.
 
-This course is also useful for learners with previous experience with OpenStack, providing them with a high-level understanding of what's included in the Red Hat product and how it might be different than other OpenStack distributions; and to get a quick overview of how Red Hat OpenStack Services on OpenShift differs from previous incarnations of the Red Hat OpenStack platform.
+This course is also useful for learners with previous experience with OpenStack, providing  a high-level understanding of what's included in the Red Hat product and how it might be different than other OpenStack distributions; and a quick overview of how Red Hat OpenStack Services on OpenShift differs from previous incarnations of the Red Hat OpenStack platform.
 
 == Course Objective
 

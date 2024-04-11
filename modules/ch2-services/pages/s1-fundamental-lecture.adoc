@@ -1,0 +1,5 @@
+= Fundamental Services of Red Hat OpenStack
+
+*Objective:*
+
+Describe the OpenStack services required by typical applications and their virtual machines.

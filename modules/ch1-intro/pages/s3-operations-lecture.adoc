@@ -1,6 +1,7 @@
 =  OpenStack Operations and Administration Roles
 
 *Objective:*
+
 Describe the role and typical tasks performed by Red Hat OpenStack Operations personnel, and how they interact with other IT Operations roles.
 
 == OpenStack Users

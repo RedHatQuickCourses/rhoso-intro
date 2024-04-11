@@ -1,19 +1,42 @@
-= Components of Red Hat OpenStack
+= Quiz: Components of Red Hat OpenStack on OpenShift
 
 *Objective:* 
-Classify software components as included in Red Hat OpenStack, required by Red Hat OpenStack, not necessary for running Red Hat OpenStack, not included with Red Hat OpenStack, or not compatible with Red Hat OpenStack.
 
-1. Which of the following components are either included or required by Red Hat OpenStack Services on OpenStack?
+Identify components of the Red Hat OpenStack on OpenShift product and how a Red Hat OpenStack cluster runs application VMs.
 
-  a. KVM
-  b. RHEL
-  c. OpenShift
-  d. RVH
+== Questions
 
-2. Where does an OpenStack on OpenShift cluster runs application workloads?
+// This quiz uses things a learner might know from his previous experience with RHEL or OpenStack as *distractors*, but does NOT rely on any previous knowledge. Learners new to OpenStack and OpenShift should be able to answer all questions from only the contents on the previouis lecture.
 
-  a. On any node of the OpenStack cluster.
-  b. On any node of either the OpenStack cluster or its OpenShift cluster.
-  c. On RHEL compute servers managed by the OpenStack cluster.
-  d. On containers managed by its OpenShift cluster.
-  
+1. Which of the following components are either included or required by Red Hat OpenStack Services on OpenShift?
+
+* [ ] Kernel-based Virtual Machine (KVM)
+* [ ] Red Hat Enterprise Linux (RHEL)
+* [ ] Red Hat OpenShift
+* [ ] Red Hat Virtualization (RHV)
+* [ ] Red Hat Ceph Storage
+
+2. Which of the following is the software-defined networking (SDN) layer included with Red Hat OpenStack Services on OpenShift?
+
+* [ ] Open Virtual Network (OVN)
+* [ ] Open vSwitch
+* [ ] Linux iptables + nftables
+* [ ] Extended Berkeley Packet Filter (eBPF)
+* [ ] A third-party vendor SDN is required by Red Hat OpenStack.
+
+3. Where does an OpenStack on OpenShift cluster runs application workloads?
+
+* [ ] On any node of the OpenStack cluster.
+* [ ] On any node of either the OpenStack cluster or its OpenShift cluster.
+* [ ] On any node of the OpenStack cluster data plane.
+* [ ] On external RHEL servers managed by the OpenStack cluster.
+* [ ] On containers managed by its OpenShift cluster.
+
+4. How does Red Hat OpenStack Services on OpenShift ensures that OpenStack control planes are reliable and scalable?
+
+* [ ] By runnig control plane servers as VMs using a standalone hyperviusor such as RHV.
+* [ ] By running control plane servers as systemd services managed by RHEL pacemaker.
+* [ ] By running control plane servers as podman containers managed by RHEL pacemaker.
+* [ ] By running control plane servers as VMs using a minimal OpenStack cluster known as undercloud.
+* [ ] By running control plane servers as VMs on OpenShift Virtualization.
+* [ ] By running control plane servers as containers on OpenShift.
