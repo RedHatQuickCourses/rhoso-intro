@@ -1,7 +1,7 @@
 = About This Course
 :navtitle: Home
 
-== Introduction
+== Introduction to OpenStack Services on OpenShift
 
 This is the first course for *IT professionals* who are new to Red Hat OpenStack Services on OpenShift. It requires no previous experience with OpenStack, but it requires some familiarity with Linux system administration and virtual machine management.
 
