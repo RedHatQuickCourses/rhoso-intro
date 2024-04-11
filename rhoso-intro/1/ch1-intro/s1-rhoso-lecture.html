@@ -54,13 +54,29 @@
     <a class="nav-link" href="s1-rhoso-lecture.html">What is Red Hat OpenStack Services on OpenShift</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="s2-components-quiz.html">Components of Red Hat OpenStack</a>
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="s2-components-quiz.html">Quiz: Components of Red Hat OpenStack on OpenShift</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="s2-components-quiz-answers.html">Answers to the Quiz</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="s2-components-quiz-answers.html">Answers to: Components of Red Hat OpenStack</a>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="s3-operations-lecture.html">OpenStack Operations and Administration Roles</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch2-services/index.html">Red Hat OpenStack Services</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch2-services/s1-fundamental-lecture.html">Fundamental Services of Red Hat OpenStack</a>
   </li>
 </ul>
   </li>
@@ -109,7 +125,10 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Objective:</strong> Describe the Red Hat OpenStack product and how it relates to the OpenStack open source project.</p>
+<p><strong>Objective:</strong></p>
+</div>
+<div class="paragraph">
+<p>Describe the Red Hat OpenStack product and how it relates to the OpenStack open source project.</p>
 </div>
 </div>
 </div>
@@ -127,7 +146,7 @@
 </blockquote>
 </div>
 <div class="paragraph">
-<p>The core of OpenStack is managing a cluster of compute servers which run applications packaged as virtual machines. Beyond traditional hypervisors, OpenStack provides virtual storage and virtual networking features comparable to a physical data center infrastructure</p>
+<p>The core of OpenStack is managing a cluster of compute servers which run applications packaged as virtual machines. Beyond traditional hypervisors, OpenStack provides standard APIs to manage virtual storage and virtual networking with features comparable to a physical data center infrastructure</p>
 </div>
 <div class="paragraph">
 <p>The OpenStack community provides a number of user-facing services. Some of them provide the essential infrastructucture-as-a-service (IaaS) functionality for managing applications as virtual machines (VMs) and also higher-level abstractions such as load balancer and autoscalers. It also provides a number of infrastructure services, such as different ways of installing, managing, and scaling the OpenStack user-facing services.</p>
@@ -143,16 +162,22 @@
 </blockquote>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s be honest: not all components availabe in the upstream OpenStack project are available with Red Hat OpenStack Services on OpenShift. Not all services and deployment methods from the community are supported by Red Hat as part of its OpenStack product. But "less is more" because Red Hat provides a stable, pre-integrated, secure, and certified set of components, and works with a large ecosystem of partners that provide software and hardware certified for Red Hat OpenStack. Red Hat is also commited to fixing bugs and addressing security vulnerabilities, while keeping backward compatibility within a product release stream.</p>
+<p>That is, Red Hat OpenStack Services on OpenShift is a platform for building and managing private clouds which run applicaiton workloads running as VMs.</p>
 </div>
 <div class="paragraph">
-<p>On the other side, OpenStack alone is not sufficient to create a private cloud: you need a reliable hypervisor, a host operating system for your compute nodes, and something to manage the deployment and high-availability of OpenStack services themselves.</p>
+<p>Let&#8217;s be honest: not all components availabe in the upstream OpenStack project are available with Red Hat OpenStack Services on OpenShift. Not all services and deployment methods from the community are supported by Red Hat as part of its OpenStack product. But "less is more" because Red Hat provides a stable, pre-integrated, secure, and certified set of components. Red Hat also works with a large ecosystem of partners that provide software and hardware certified for Red Hat OpenStack.</p>
+</div>
+<div class="paragraph">
+<p>Beyond that, Red Hat commited to fixing bugs and addressing security vulnerabilities, while keeping backward compatibility within a product release stream, which you cannot expect from upstream OpenStack.</p>
+</div>
+<div class="paragraph">
+<p>On the other side, OpenStack alone is not sufficient to create a private cloud: you include and integrate add additional components such as an hypervisor, a host operating system, and something to manage the deployment and high-availability of OpenStack services themselves.</p>
 </div>
 <div class="paragraph">
 <p>[ Figure of a generic OSP cluster + host os + hypervisor + vms + sdn ]</p>
 </div>
 <div class="paragraph">
-<p>To meet these needs Red Hat OpenStack on OpenShift includes, as fully supported components:</p>
+<p>To provide a complete provate clouid platform, Red Hat OpenStack on OpenShift includes, as fully supported components:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -177,12 +202,15 @@
 <p>You could install community OpenStack on any Linux operating system distribution and use different hypervisors. You could use operating-system tools such as pacemaker and podman to manage OpenStack services themselves, and choose different software-defiend networking layers. But you would be responsible for integrating, patching, and adressing any compatibility issues between those components and OpenStack services. By using Red Hat OpenStack Services on OpenShift, you offload all that work to Red Hat.</p>
 </div>
 <div class="paragraph">
-<p>The final component of an OpenStack private cloud is storage. There are a number of certified storage products for OpenStack and Red Hat offers <a href="https://www.redhat.com/en/technologies/storage/ceph"><strong>Red Hat Ceph Storage</strong></a> as a performant, scalable, and high-performance software-defined storage product which can replace or augument the storage available at your data center.</p>
+<p>The final component of an OpenStack private cloud is storage. There are a number of certified storage products for OpenStack and Red Hat offers <a href="https://www.redhat.com/en/technologies/storage/ceph"><strong>Red Hat Ceph Storage</strong></a> as a reliable, scalable, and high-performance software-defined storage product.</p>
+</div>
+<div class="paragraph">
+<p>Red Hat Ceph can provide storage services using standard hardware or it can augument the capabilities of existing storage arrays. A single Red Hat Ceph cluster can provide file, block, and object storage services for multiple OpenStack and OpenShift clusters.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_an_openstack_cluster"><a class="anchor" href="#_an_openstack_cluster"></a>An OpenStack Cluster</h2>
+<h2 id="_what_is_inside_an_openstack_cluster"><a class="anchor" href="#_what_is_inside_an_openstack_cluster"></a>What is inside an OpenStack Cluster</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>An OpenStack cluster is composed of two parts:</p>
@@ -198,16 +226,19 @@
 </ol>
 </div>
 <div class="paragraph">
-<p>You add compute power to an OpenStack cluster by adding phisical servers as compute nodes to the data plane. The more compute nodes, more application VMs your cluster can support. But, to ensure the performance and reliability of the control plane, and by extension the performance and reliability of the cluster itself, you reserve three or more physical servers to running only OpenStack services. A large OpenStack cluster may require more servers dedicated to the control plane and really large clusters can partition the control plane into multiple cells, each dedicated to manage a subset of the data plane.</p>
+<p>You add compute power to an OpenStack cluster by adding phisical servers, running RHEL, as compute nodes to the data plane. The more compute nodes, more application VMs your cluster can support.</p>
 </div>
 <div class="paragraph">
-<p>With previous releases of Red Hat OpenStack you could use different approaches to deploy and scale the the control plane, such as clustered RHEL servers with pacemaker, a Red Hat Enterprise Virtualization hypervisor cluster, or an OpenStack cluster known as the <em>undercloud</em>, using what was known as the OpenStack on OpenStack architecture. None of these options is available with the current Red Hat OpenStack Services on OpenShift: you must run an OpenStack the control plane as containers on an Red Hat OpenShift cluster.</p>
+<p>To ensure the performance and reliability of the control plane, and by extension the performance and reliability of the whole cluster, you reserve three or more physical servers to running only OpenStack services. A large OpenStack cluster may require more servers dedicated to the control plane and really large clusters can partition the control plane into multiple cells, each dedicated to manage a subset of the data plane.</p>
+</div>
+<div class="paragraph">
+<p>With previous releases of Red Hat OpenStack, you could use different approaches to deploy and scale the the control plane, such as clustered RHEL servers with pacemaker, a Red Hat Enterprise Virtualization hypervisor cluster, or an OpenStack cluster known as the <em>undercloud</em>, using what was known as the OpenStack on OpenStack architecture or TripleO. None of these options is available with the current Red Hat OpenStack Services on OpenShift: you must run an OpenStack the control plane as containers on an Red Hat OpenShift cluster.</p>
 </div>
 <div class="paragraph">
 <p>[ Figure of OSP control plane on OCP + OSP data plane on RHEL as a simplified version of the previous figure. ]</p>
 </div>
 <div class="paragraph">
-<p>Microservices developers already realized containers and Kubernetes are the best way to manage applications composed of multiple services. Even developers targeting public clouds, such as AWS and Azure, nowadays prefer running Kubernetes on those clouds. OpenStack is such a kind of application, and it just makes sense to use Red Hat OpenShift, which is an enterprise application platform based on containers and Kubernetes, to manage all OpenStack services of an OpenStack control plane.</p>
+<p>Microservices developers realized a while ago that containers and Kubernetes are the best way to manage applications composed of multiple services. Even developers targeting public clouds, such as AWS and Azure, nowadays prefer running Kubernetes on those clouds. OpenStack is such a kind of application, and it just makes sense to use Red Hat OpenShift, which is an enterprise application platform based on Kubernetes, to manage all services of an OpenStack control plane.</p>
 </div>
 </div>
 </div>
@@ -215,7 +246,7 @@
 <h2 id="_other_ways_of_running_vms_with_openshift"><a class="anchor" href="#_other_ways_of_running_vms_with_openshift"></a>Other Ways of Running VMs with OpenShift</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If OpenStack is essentially a way of running and managing application workloads as VMs, and Red Hat OpenStack runs on OpenShift, why not running and managing application workloads as VMs directly on OpenShift, using <a href="https://www.redhat.com/en/technologies/cloud-computing/openshift/virtualization"><strong>OpenShift Virtualization</strong></a> or <a href="https://www.redhat.com/en/blog/learn-openshift-sandboxed-containers"><strong>OpenShift Sandboxed Containers</strong></a>? The following table provides a quick comparision between the three technologies currently available for running and managing applications as VMs on OpenShift:</p>
+<p>If OpenStack is essentially a way of running and managing application workloads as VMs, and Red Hat OpenStack runs on OpenShift, why not running and managing application workloads as VMs directly on OpenShift, using <a href="https://www.redhat.com/en/technologies/cloud-computing/openshift/virtualization"><strong>OpenShift Virtualization</strong></a> or <a href="https://www.redhat.com/en/blog/learn-openshift-sandboxed-containers"><strong>OpenShift Sandboxed Containers</strong></a>? The following table provides a quick comparision between the three technologies currently available for managing application VMs using OpenShift:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -244,8 +275,8 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">VM image (qcow2)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Application management APIs</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Kubervirt APIs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Application VM management APIs</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kubervirt APIs + Kubernetes APIs</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Kubernetes APIs</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">OpenStack APIs</p></td>
 </tr>
@@ -259,7 +290,7 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>Block and File Storage</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Kubernetes PVCs</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Kubernetes PVCs</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OpenStack Cinder, Manila</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OpenStack Cinder and Manila</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>Virtual Networking</em></p></td>
@@ -276,16 +307,16 @@
 <p>If you have existing development and operational processes based on OpenStack APIs, switching that to Kubernetes APIs is a major change but it would be a requirement for using either OpenShift Virtualizaiton or OpenShift Sandboxed Containers.</p>
 </div>
 <div class="paragraph">
-<p>On the other side, organizations which already have containerized applications want to adopt GitOps practices and use other features enabled by Kubernetes. Red Hat OpenStack Services on OpenShift enables these capabilities for managing applications in OpenStack too: the same OpenShift cluster which runs an OpenStack control plane (or a different cluster if you prefer) can run OpenShift Pipelines, OpenShift GitOps, and other OpenShift operators and they can manage OpenStack applications by invoking OpenStack APis. It&#8217;s the best of both the OpenStack and the Kubernetes worlds.</p>
+<p>On the other side, organizations which already have containerized applications want to adopt GitOps practices and use other capabilities enabled by Kubernetes. Red Hat OpenStack Services on OpenShift enables these capabilities for managing applications in OpenStack too: the same OpenShift cluster which runs an OpenStack control plane (or a different OpenShift cluster if you prefer) can run OpenShift Pipelines, OpenShift GitOps, and other OpenShift applications which can manage OpenStack applications by invoking OpenStack APis. It&#8217;s the best of both the OpenStack and the Kubernetes worlds.</p>
 </div>
 <div class="paragraph">
-<p>The same way OpenShift improves the management of OpenStack clusters, it can improve the management of other infrastructure to support your operations and development teams. For example, you can use OpenShift to run Ansible Automation Platform to manage the applications inside your OpenStack VMs and also your physical data center infrastructure which runs OpenShift, OpenStack and other platforms. All your IT infrastructure can be managed by OpenShift, while retaining compatibility with applicaiton workloads and processes that are designed around OpenStack APIs and which requires the richer OpenStack compute, storage, and network management.</p>
+<p>The same way OpenShift improves the management of OpenStack clusters, it can improve the management of other infrastructure to support your operations and development teams. For example, you can use OpenShift to run Ansible Automation Platform to manage the applications inside your OpenStack VMs and also your physical data center infrastructure which runs OpenShift, OpenStack and other platforms. All your IT infrastructure services can be managed by OpenShift, while retaining compatibility with applicaiton workloads and processes that are designed around OpenStack APIs and which requires the richer OpenStack compute, storage, and network management APIs.</p>
 </div>
 </div>
 </div>
 <nav class="pagination">
   <span class="prev"><a href="index.html">Introduction to Red Hat OpenStack</a></span>
-  <span class="next"><a href="s2-components-quiz.html">Components of Red Hat OpenStack</a></span>
+  <span class="next"><a href="s2-components-quiz.html">Quiz: Components of Red Hat OpenStack on OpenShift</a></span>
 </nav>
 </article>
   </div>
