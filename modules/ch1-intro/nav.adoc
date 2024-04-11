@@ -1,4 +1,6 @@
 * xref:index.adoc[]
 ** xref:s1-rhoso-lecture.adoc[]
 ** xref:s2-components-quiz.adoc[]
+** xref:s2-components-quiz-answers.adoc[]
+** xref:s3-operations-lecture.adoc[]
 #** xref:section3.adoc[]

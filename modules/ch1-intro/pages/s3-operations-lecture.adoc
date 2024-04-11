@@ -1,0 +1,8 @@
+=  OpenStack Operations and Administration Roles
+
+*Objective:*
+Describe the role and typical tasks performed by Red Hat OpenStack Operations personnel, and how they interact with other IT Operations roles.
+
+== OpenStack Users
+
+The users of an OpenStack cluser are not end-users, they are IT professionals, usually with an operations job role.

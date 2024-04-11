@@ -1,19 +1,26 @@
-= Components of Red Hat OpenStack
+= Answers to: Components of Red Hat OpenStack
 
 *Objective:* 
 Classify software components as included in Red Hat OpenStack, required by Red Hat OpenStack, not necessary for running Red Hat OpenStack, not included with Red Hat OpenStack, or not compatible with Red Hat OpenStack.
 
 1. Which of the following components are either included or required by Red Hat OpenStack Services on OpenStack?
 
-  a. KVM
-  b. RHEL
-  c. OpenShift
+  a. *KVM*
+  _Correct_
+  b. *RHEL*
+  _Correct_
+  c. *OpenShift*
+  _Correct_
   d. RVH
+  _Wrong_
 
 2. Where does an OpenStack on OpenShift cluster runs application workloads?
 
   a. On any node of the OpenStack cluster.
+  _Wrong: only compute nodes on the data plane run application VMs._
   b. On any node of either the OpenStack cluster or its OpenShift cluster.
-  c. On RHEL compute servers managed by the OpenStack cluster.
+  _Wrong: applicaiton VMs run outside of the OpenShift cluster._
+  c. *On RHEL compute servers managed by the OpenStack cluster.*
+  _Correct: The OpenStack control plane on OpenShift manages VMs executing on RHEL servers on the OpenStack data plane._
   d. On containers managed by its OpenShift cluster.
-  
+  _Wrong: only control plane services run on the OPenShift cluster._
