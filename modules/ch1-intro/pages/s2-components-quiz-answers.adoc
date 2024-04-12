@@ -14,7 +14,7 @@ _Correct_
 _Correct_
 
 * [ ] Red Hat Virtualization (RHV) +
-_Wrong: Red Hat Open Serices on OpenShift does not include and does not support running a control plane on RHV._
+_Incorrect: Red Hat Open Serices on OpenShift does not include and does not support running a control plane on RHV._
 
 * [*] *Red Hat Ceph Storage* +
 _Correct: Ceph is NOT required but it is optionaly bundled and supported for customers that need a software-defined storage solution._
@@ -25,50 +25,50 @@ _Correct: Ceph is NOT required but it is optionaly bundled and supported for cus
 _Correct_
 
 * [ ] Open vSwitch +
-_Wrong: vSwitch was used directly in older releases of Red Hat OpenStack plaform but is only used internally by OVN in Red Hat OpenStack Services on OpenShift._
+_Incorrect: vSwitch was used directly in older releases of Red Hat OpenStack plaform but is only used internally by OVN in Red Hat OpenStack Services on OpenShift._
 
 * [ ] Linux iptables + nftables +
-_Wrong: Linux packet-filtering capabilities are used internally by Red Hat OpenStack but they are not sufficient to provide SDN capabilities._
+_Incorrect: Linux packet-filtering capabilities are used internally by Red Hat OpenStack but they are not sufficient to provide SDN capabilities._
 
 * [ ] Extended Berkeley Packet Filter (eBPF) +
-_Wrong: Linux packet-filtering capabilities are used internally by Red Hat OpenStack but they are not sufficient to provide SDN capabilities._
+_Incorrect: Linux packet-filtering capabilities are used internally by Red Hat OpenStack but they are not sufficient to provide SDN capabilities._
 
 * [ ] A third-party vendor SDN is required by Red Hat OpenStack. +
-_Wrong: Red Hat OpenStack can integrate with a number of certified networking products but does not require any of them. OVN provides all SDN capabilities that OpenStack requires._
+_Incorrect: Red Hat OpenStack can integrate with a number of certified networking products but does not require any of them. OVN provides all SDN capabilities that OpenStack requires._
 
 3. Where does an OpenStack on OpenShift cluster runs application workloads?
 
 * [ ] On any node of the OpenStack cluster. +
-_Wrong: Only compute nodes on the data plane run application VMs._
+_Incorrect: Only compute nodes on the data plane run application VMs._
 
 * [ ] On any node of either the OpenStack cluster or its OpenShift cluster. +
-_Wrong: Application VMs always run outside of the OpenShift cluster._
+_Incorrect: Application VMs always run outside of the OpenShift cluster._
 
 * [x] *On any node of the OpenStack cluster data plane.* +
 _Correct: The OpenStack control plane on OpenShift manages VMs executing on RHEL compute nodes on the OpenStack data plane._
 
 * [ ] On external RHEL servers managed by the OpenStack cluster. +
-_Wrong: RHEL servers must be part of an OpenStack cluster, as compute nodes on its data plane, to run VMs managed by an OpenStack control plane._
+_Incorrect: RHEL servers must be part of an OpenStack cluster, as compute nodes on its data plane, to run VMs managed by an OpenStack control plane._
 
 * [ ] On containers managed by its OpenShift cluster. +
-_Wrong: Only OpenStack services run on the OpenShift cluster._
+_Incorrect: Only OpenStack services run on the OpenShift cluster._
 
 4. How does Red Hat OpenStack Services on OpenShift ensures that OpenStack control planes are reliable and scalable?
 
 * [ ] By runnig control plane servers as VMs using a standalone hyperviusor such as RHV. +
-_Wrong: This was an option with older releases of Red Hat OpenStack platform, but not anymore with Red Hat OpenStack Services on OpenShift._
+_Incorrect: This was an option with older releases of Red Hat OpenStack platform, but not anymore with Red Hat OpenStack Services on OpenShift._
 
 * [ ] By running control plane servers as systemd services managed by RHEL pacemaker. +
-_Wrong: This was an option with older releases of Red Hat OpenStack platform, but not anymore with Red Hat OpenStack Services on OpenShift._
+_Incorrect: This was an option with older releases of Red Hat OpenStack platform, but not anymore with Red Hat OpenStack Services on OpenShift._
 
 * [ ] By running control plane servers as podman containers managed by RHEL pacemaker. +
-_Wrong: This was an option with older releases of Red Hat OpenStack platform, but not anymore with Red Hat OpenStack Services on OpenShift._
+_Incorrect: This was an option with older releases of Red Hat OpenStack platform, but not anymore with Red Hat OpenStack Services on OpenShift._
 
 * [ ] By running control plane servers as VMs using a minimal OpenStack cluster known as undercloud. +
-_Wrong: This was an option with older releases of Red Hat OpenStack platform, but not anymore with Red Hat OpenStack Services on OpenShift._
+_Incorrect: This was an option with older releases of Red Hat OpenStack platform, but not anymore with Red Hat OpenStack Services on OpenShift._
 
 * [ ] By running control plane servers as VMs on OpenShift Virtualization. +
-_Wrong: This was an option with older releases of Red Hat OpenStack platform, but not anymore with Red Hat OpenStack Services on OpenShift._
+_Incorrect: This was an option with older releases of Red Hat OpenStack platform, but not anymore with Red Hat OpenStack Services on OpenShift._
 
 * [x] *By running control plane servers as containers on OpenShift.* +
 _Correct: This is the only way of running OpenStack services with Red Hat OpenStack Services on OpenShift._

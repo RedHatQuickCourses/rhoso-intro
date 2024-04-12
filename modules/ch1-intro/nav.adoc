@@ -3,4 +3,6 @@
 ** xref:s2-components-quiz.adoc[]
 *** xref:s2-components-quiz-answers.adoc[]
 ** xref:s3-operations-lecture.adoc[]
+** xref:s4-tasks-quiz.adoc[]
+*** xref:s4-tasks-quiz-answers.adoc[]
 #** xref:section3.adoc[]
