@@ -1,8 +1,6 @@
 = Introduction to Red Hat OpenStack
 
-== Objectives
+== Objective
 
-* Describe the Red Hat OpenStack products and how they relate to other Red Hat products, partner products, and upstream.
-
-* Describe the role and typical tasks performed by Red Hat OpenStack Operations personnel, and how they interact with other IT roles.
+Describe the Red Hat OpenStack products and how they relate to other Red Hat products, partner products, upstream projects, and IT professional roles.
 

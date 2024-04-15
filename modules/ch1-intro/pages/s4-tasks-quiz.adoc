@@ -2,7 +2,7 @@
 
 *Objective:* 
 
-Assess the learner's understanding of the scope of OpenStack operations with Red Hat OpenStack on OpenShift.
+Relate tasks to OpenStack administrators, operators, and other IT roles.
 
 == Questions
 
