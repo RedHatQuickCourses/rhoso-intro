@@ -1,0 +1,16 @@
+= Summary
+
+In this chapter, you learned:
+
+* OpenStack is a platform for building private clouds and manage applications running as Virtual Machines (VMs), with virtual networks and virtual storage. It is composed of a number of user-facing and internal infrastructure services.
+
+* Red Hat OpenStack Services on OpenShift provides a selection of OpenStack services, pre-integrated and pre-configured with each other and also with Red Hat Enterprise Linux (RHEL), Red Hat OpenShift, and Red Hat Ceph Storage.
+
+* An OpenStack cluster is composed of a control plane, which runs OpenStack services, and a data plane, which runs application workloads. The Red Hat OpenStack control plane runs as containers in Red Hat OpenShift, and the data plane runs RHEL servers.
+
+* OpenStack Operators manage applications running on OpenStack clusters and all its associated virtual resources, while OpenStack administrators manage the OpenStack cluster itself, including its control plane and compute nodes.
+
+* OpenStack Operators manage applications using the OpenStack APIs, by means of the OpenStack client CLI and the OpenStack Horizon web UI. OpenStack Administrators use these same tools, and also manage OpenStack control planes using Kubernetes APIs and OpenShift custom resources, and compute nodes using Ansible.
+
+
+
