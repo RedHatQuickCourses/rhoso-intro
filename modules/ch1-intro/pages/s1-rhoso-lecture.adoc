@@ -51,7 +51,7 @@ To provide a complete private cloud platform, Red Hat OpenStack on OpenShift inc
 
 * The https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux[*Red Hat Enterprise Linux (RHEL)*] operating system.
 * The https://www.redhat.com/en/topics/virtualization/what-is-KVM[*KVM*] hypervisor with the https://www.qemu.org/[*Qemu*] emulation layer and the https://libvirt.org/[*libvirt*] management API, all of them included with RHEL.
-* The https://www.redhat.com/en/technologies/cloud-computing/openshift[*Red Hat OpenShift*] application platform.
+* The https://www.redhat.com/en/technologies/cloud-computing/openshift[*Red Hat OpenShift*] application platform and its container-optimized operating system https://access.redhat.com/documentation/en-us/openshift_container_platform/4.14/html/architecture/architecture-rhcos[Red Hat Enterprise Linux CoreOS (RHCOS)].
 * The https://www.ovn.org/en/[*Open Virtual Network (OVN)*] software-defined network layer.
 
 image::s1-rhoso-lecture-fig-2.png[]
@@ -65,7 +65,7 @@ Red Hat Ceph Storage can provide storage services using standard server hardware
 
 // We may need some link/info about IBM Ceph in the above para
 
-== What is inside an OpenStack Cluster
+== Structure of an OpenStack Cluster
 
 An OpenStack cluster is composed of two parts:
 
