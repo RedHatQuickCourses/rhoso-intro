@@ -14,7 +14,7 @@ _Correct_
 _Correct_
 
 * [ ] Red Hat Virtualization (RHV) +
-_Incorrect: Red Hat Open Serices on OpenShift does not include and does not support running a control plane on RHV._
+_Incorrect: Red Hat Open Serices on OpenShift does not include and does not support running a control plane on RHV. It also does not support running application workloads on VMs managed by RHV._
 
 * [*] *Red Hat Ceph Storage* +
 _Correct: Ceph is NOT required but it is optionaly bundled and supported for customers that need a software-defined storage solution._
