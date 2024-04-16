@@ -9,7 +9,7 @@ This course is also useful for learners with previous experience with OpenStack,
 
 == Course Objective
 
-This course explains the purpose, functionality, and inter-dependencies of the user-facing services provided by Red Hat OpenStack Services on OpenShift and how they meet the requirements of application workloads running as VMs. This course also explain how multi-tenancy features of Red Hat OpenStack Services on OpenShift enable separation of concerns between the teams that manage the workloads and administer the OpenStack cluster that hosts the workloads.
+As a result of taking this course, Operators of Red Hat OpenStack will be able to explain the purpose, functionality, and inter-dependencies of the user-facing services provided by Red Hat OpenStack Services on OpenShift and how they meet the requirements of application workloads running as VMs. They will also be able to explain how multi-tenancy features of Red Hat OpenStack Services on OpenShift enable separation of concerns between the teams that manage the workloads and the teams that administer the OpenStack cluster that hosts the workloads.
 
 This course includes a quick introduction to the following OpenStack services: Horizon, Keystone, Nova, Neutron, Cinder, Manila, Glance, Swift, Ceilometer, Octavia, Designate, Heat, Placement, Barbican, and Ironic.
 

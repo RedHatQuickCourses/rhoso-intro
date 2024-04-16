@@ -89,37 +89,37 @@ If OpenStack is essentially a way of running and managing application workloads 
 
 [cols="1,1,1,1"]  
 |===
-| Product or feature
-| *OpenShift Virtualization*
-| *OpenShift Sandboxed Containers*
-| *OpenStack Services on OpenShift*
+| Product / feature
+h| OpenShift Virtualization
+h| OpenShift Sandboxed Containers
+h| OpenStack Services on OpenShift
 
-| _Hypervisor technology_
+h| Hypervisor technology
 | KVM + Qemu + libvirt
 | KVM + Qemu + libvirt
 | KVM + Qemu + libvirt
 
-| _Application packaging_
+h| Application packaging
 | VM image (qcow2)
 | Container image (OCI)
 | VM image (qcow2)
 
-| _Application VM management APIs_
+h| Application VM management APIs
 | Kubervirt APIs + Kubernetes APIs
 | Kubernetes APIs
 | OpenStack APIs
 
-| _Compute nodes_
+h| Compute nodes
 | RH CoreOS (OpenShift)
 | RH CoreOS (OpenShift)
 | RHEL (OpenStack)
 
-| _Block and File Storage_
+h| Block and File Storage
 | Kubernetes PVCs
 | Kubernetes PVCs
 | OpenStack Cinder and Manila
 
-| _Virtual Networking_
+h| Virtual Networking
 | Kuberentes pod/service network + Multus secondary networks
 | Kuberentes pod/service network + Multus secondary networks
 | OpenStack Neutron tenant and provider networks, routers, etc
