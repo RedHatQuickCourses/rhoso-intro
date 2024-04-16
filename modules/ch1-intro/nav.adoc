@@ -5,4 +5,7 @@
 ** xref:s3-operations-lecture.adoc[]
 ** xref:s4-tasks-quiz.adoc[]
 *** xref:s4-tasks-quiz-answers.adoc[]
-#** xref:section3.adoc[]
+** xref:s5-ui-lecture.adoc[]
+** xref:s6-ui-demo.adoc[]
+** xref:s7-review-quiz.adoc[]
+** xref:s8-summary.adoc[]

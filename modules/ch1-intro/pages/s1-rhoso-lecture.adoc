@@ -24,7 +24,7 @@ _Source: https://www.openstack.org/software/_
 
 The core of OpenStack is managing a cluster of compute servers which run applications packaged as virtual machines. Beyond traditional hypervisors, OpenStack provides standard APIs to manage virtual storage and virtual networking with features comparable to a physical data center infrastructure
 
-The OpenStack community provides a number of user-facing services. Some of them provide the essential infrastructucture-as-a-service (IaaS) functionality for managing applications as virtual machines (VMs) and also higher-level abstractions such as load balancer and autoscalers. It also provides a number of infrastructure services, such as different ways of installing, managing, and scaling the OpenStack user-facing services.
+The OpenStack community provides a number of user-facing services. Some of them provide the essential infrastructucture-as-a-service (IaaS) functionality for managing applications as virtual machines (VMs) and also higher-level abstractions such as load balancer and autoscalers. It also provides a number of internal infrastructure services, such as different ways of installing, managing, and scaling the OpenStack user-facing services.
 
 https://www.redhat.com/en/blog/red-hat-openstack-services-openshift-next-generation-red-hat-openstack-platform[*Red Hat OpenStack Services on OpenShift*] is an oppinionated distribution of OpenStack, built and supported by Red Hat. It is the latest incarnation of the *Red Hat OpenStack Platform* and marks a major shift on the internal architecture of Red Hat OpenStack.
 
@@ -34,13 +34,13 @@ Red Hat® OpenStack® Platform is a cloud computing platform that virtualizes re
 ____
 _Source: https://www.redhat.com/en/technologies/linux-platforms/openstack-platform_
 
-That is, Red Hat OpenStack Services on OpenShift is a platform for building and managing private clouds which run applicaiton workloads running as VMs.
+That is, Red Hat OpenStack Services on OpenShift is a platform for building and managing private clouds which runs application workloads as VMs.
 
 Let's be honest: not all components availabe in the upstream OpenStack project are available with Red Hat OpenStack Services on OpenShift. Not all services and deployment methods from the community are supported by Red Hat as part of its OpenStack product. But "less is more" because Red Hat provides a stable, pre-integrated, secure, and certified set of components. Red Hat also works with a large ecosystem of partners that provide software and hardware certified for Red Hat OpenStack.
 
 Beyond that, Red Hat commited to fixing bugs and addressing security vulnerabilities, while keeping backward compatibility within a product release stream, which you cannot expect from upstream OpenStack.
 
-On the other side, OpenStack alone is not sufficient to create a private cloud: you have include and integrate add additional components such as an hypervisor, a host operating system, and something to manage the deployment and high-availability of OpenStack services themselves, such as a clustering middleware.
+On the other side, OpenStack alone is not sufficient to create a private cloud: you have to include and integrate additional components such as an hypervisor, a host operating system, and infrastructure to manage the deployment and high-availability of OpenStack services themselves, such as a clustering middleware.
 
 image::s1-rhoso-lecture-fig-1.png[]
 // slide #1 from https://docs.google.com/presentation/d/1lPtAxaKH9P2SjgexIwBi5RxHOjIUQV44R5c4nnrug74/edit#slide=id.p
@@ -61,7 +61,7 @@ You could install community OpenStack on any Linux operating system distribution
 
 The final component of an OpenStack private cloud is storage. There are a number of certified storage products for OpenStack and Red Hat offers https://www.redhat.com/en/technologies/storage/ceph[*Red Hat Ceph Storage*] as a reliable, scalable, and high-performance software-defined storage product.
 
-Red Hat Ceph Storage can provide storage services using standard server hardware or it can augument the capabilities of existing storage arrays. A single Ceph cluster can provide file, block, and object storage services for multiple OpenStack and Red OpenShift clusters.
+Red Hat Ceph Storage can provide storage services using standard server hardware or it can augument the capabilities of existing storage arrays. A single Red Hat Ceph cluster can provide file, block, and object storage services for multiple Red Hat OpenStack and Red OpenShift clusters.
 
 // We may need some link/info about IBM Ceph in the above para
 
@@ -69,15 +69,15 @@ Red Hat Ceph Storage can provide storage services using standard server hardware
 
 An OpenStack cluster is composed of two parts:
 
-1. A _control plane_ which runs the user-facing and internal infrastructure of OpenStack services.
+1. A _control plane_ which runs the user-facing and internal infrastructure services of OpenStack.
 2. A _data plane_ which runs the application workloads as VMs.
 
 image::s1-rhoso-lecture-fig-3.png[]
 // slide #3 from https://docs.google.com/presentation/d/1lPtAxaKH9P2SjgexIwBi5RxHOjIUQV44R5c4nnrug74/edit#slide=id.p
 
-You add compute power to an OpenStack cluster by adding phisical servers, running RHEL, as compute nodes to the data plane. The more compute nodes, more application VMs your cluster can support.
+You add compute power to an OpenStack cluster by adding phisical servers, running RHEL, as compute nodes to the data plane. The more compute nodes, more application VMs your cluster can host.
 
-To ensure the performance and reliability of the control plane, and by extension the performance and reliability of the whole cluster, you reserve three or more physical servers to running only OpenStack services. A large OpenStack cluster may require more servers dedicated to the control plane and really large clusters can partition the control plane into multiple cells, each dedicated to manage a subset of the data plane.
+To ensure the performance and reliability of the control plane, and by extension the performance and reliability of the whole cluster, you reserve three or more physical servers to running only OpenStack services. A large OpenStack cluster may require more servers dedicated to the control plane and can partition the control plane into multiple cells, each dedicated to manage a subset of the data plane.
 
 With previous releases of Red Hat OpenStack, you could use different approaches to deploy and scale the the control plane, such as https://www.redhat.com/en/topics/linux/what-is-high-availability[clustered RHEL servers] with https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/configuring_and_managing_high_availability_clusters/index[pacemaker], a https://access.redhat.com/products/red-hat-virtualization/[Red Hat  Virtualization] hypervisor cluster, or an OpenStack cluster known as the _undercloud_, using what was known as the OpenStack on OpenStack architecture or https://www.redhat.com/en/blog/tripleo-director-components-detail[TripleO]. None of these options is available with the current Red Hat OpenStack Services on OpenShift product: you must run an OpenStack the control plane as containers on an Red Hat OpenShift cluster.
 
