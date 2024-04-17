@@ -1,9 +1,7 @@
-= Review: Red Hat OpenStack Operations
-
-This is _Section 3_ of _Chapter 1_ in the *hello* quick course....
+= Review Quiz: Red Hat OpenStack Operations
 
 *Objective:*
 
 Assess the learner's understanding of the scope of OpenStack operations with Red Hat OpenStack on OpenShift.
 
-WARNING: WIP
+WARNING: Work In Progress

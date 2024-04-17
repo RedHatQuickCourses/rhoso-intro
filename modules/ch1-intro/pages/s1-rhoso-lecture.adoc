@@ -4,6 +4,8 @@
 
 Describe the Red Hat OpenStack product and how it relates to the OpenStack open source project.
 
+WARNING: Pending review.
+
 // Figures drawn using Google Slides:
 // https://docs.google.com/presentation/d/1lPtAxaKH9P2SjgexIwBi5RxHOjIUQV44R5c4nnrug74/edit
 // Individual slides exported as SVG or PNG and added to the course repo.

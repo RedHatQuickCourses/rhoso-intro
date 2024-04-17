@@ -4,6 +4,8 @@
 
 Identify components of the Red Hat OpenStack on OpenShift product and how a Red Hat OpenStack cluster runs application VMs.
 
+WARNING: Pending review.
+
 == Questions
 
 // This quiz uses things a learner might know from his previous experience with RHEL or OpenStack as *distractors*, but does NOT rely on any previous knowledge. Learners new to OpenStack and OpenShift should be able to answer all questions from only the contents on the previouis lecture.

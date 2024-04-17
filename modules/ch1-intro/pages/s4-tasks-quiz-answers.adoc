@@ -1,8 +1,8 @@
 = Answers to the Quiz
 
-== Red Hat OpenStack Operations Tasks
+WARNING: Work In Progress
 
-WARNING: WIP
+== Red Hat OpenStack Operations Tasks
 
 1. Which of the following tasks are more likely to be performed by an OpenStack Operator, as opposed to a Linux System Administrator?
 

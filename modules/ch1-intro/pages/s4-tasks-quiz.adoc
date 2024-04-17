@@ -4,7 +4,8 @@
 
 Relate tasks to OpenStack administrators, operators, and other IT roles.
 
-WARNING: WIP
+WARNING: Work In Progress
+
 
 == Questions
 

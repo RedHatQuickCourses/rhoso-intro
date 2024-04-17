@@ -4,5 +4,7 @@
 
 Demonstrate how an OpenStack operator accesses an OpenStack cluster to create and expose a simple VM-based workload.
 
-WARNING: WIP
+WARNING: Work In Progress
+
+== 
 

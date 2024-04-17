@@ -1,5 +1,7 @@
 = Answers to the Quiz
 
+WARNING: Pending review.
+
 == Components of Red Hat OpenStack on OpenShift
 
 1. Which of the following components are either included or required by Red Hat OpenStack Services on OpenShift?
