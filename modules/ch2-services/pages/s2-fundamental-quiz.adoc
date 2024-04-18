@@ -1,0 +1,42 @@
+= Quiz: OpenStack Services and Application Workloads
+
+Objective::
+
+Assess the learner’s understanding of the purpose and utility of the fundamental OpenStack services.
+
+WARNING: Work in Progress
+
+== Questions
+
+1. Which of the following OpenStack services are required by a standalone application, which you will install inside a VM only because it is incompatible with your personal workstation, and you need for only a short period of time?
+
+* [ ] Identity (Keystone)
+* [ ] Compute (Nova)
+* [ ] Block Storage (Cinder)
+* [ ] Networking (Neutron)
+* [ ] Image (Glance)
+
+2. Which of the following OpenStack services are required by a database server whose data is expected to be recoverable after catastrophic events such as hardware failures of a compute server?
+
+* [ ] Identity (Keystone)
+* [ ] Compute (Nova)
+* [ ] Block Storage (Cinder)
+* [ ] Networking (Neutron)
+* [ ] Image (Glance)
+
+3. Which of the following OpenStack services are required by a web application which you require to easily deploy into multiple OpenStack clusters, in different countries your company has data centers?
+
+* [ ] Identity (Keystone)
+* [ ] Compute (Nova)
+* [ ] Block Storage (Cinder)
+* [ ] Networking (Neutron)
+* [ ] Image (Glance)
+
+4. Which of the following OpenStack services are required by a monitoring application which collects performance metrics from OpenStack clusters, services, and compute nodes?
+
+* [ ] Identity (Keystone)
+* [ ] Compute (Nova)
+* [ ] Block Storage (Cinder)
+* [ ] Networking (Neutron)
+* [ ] Image (Glance)
+
