@@ -2,3 +2,6 @@
 ** xref:s1-fundamental-lecture.adoc[]
 ** xref:s2-fundamental-quiz.adoc[]
 *** xref:s2-fundamental-quiz-answers.adoc[]
+** xref:s3-additional-lecture.adoc[]
+** xref:s4-additional-quiz.adoc[]
+*** xref:s4-additional-quiz-answers.adoc[]

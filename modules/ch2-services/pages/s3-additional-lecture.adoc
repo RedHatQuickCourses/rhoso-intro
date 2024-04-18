@@ -1,0 +1,40 @@
+= Additional Services of Red Hat OpenStack
+
+Objective::
+
+Describe additional OpenStack services useful to applications and their virtual machines.
+
+WARNING: Work in Progress
+
+== OpenStack Support for Cloud-Native and Other Kinds of Applications
+
+It is not uncommon to use OpenStack (and other cloud platforms, for that matter) to just replicate, in a virtual infrastructure, the same servers, networks, etc you would manage in a data center with physical servers and no virtualization. For some organizations, just switching from days or weeks to provision physical machines to minutes to provision virtual machines (as long as your cluster has capacity to spare) is already sufficient benefit. These organizations might be happy with just the fundamental OpenStack services.
+
+But many benefits from using private clouds come from designing applications to take advantage of the dynamic, on-demand infrastructure that clouds platforms can provide, and from automating provisioning and management of such applications.
+
+Even if an organization is not yet designing applications and their operational processes to be cloud-native, the fact that provisioning basic server, networking, and storage infrastructure became easier enables IT teams to focus on other non-functional requirements, such as security and horizontal scalability. And OpenStack helps addressing those requirements.
+
+// Each service would require its own figure... will I have time to draw them all?
+
+== Additional OpenStack Services for Storage
+
+* Shared Filesystems: Manila
+* Object Store: Swift
+
+=== Additional OpenStack Services for Networking
+
+* Load Balancer: Octavia
+* DNS Service: Designate
+
+== Additional OpenStack Services for Automation
+
+* Orchestration: Heat
+* Placement service: Placement
+
+== Additional OpenStack Services for Security
+
+* Key Management: Barbican
+
+== Operation and Administration of Additional Services
+
+WIP

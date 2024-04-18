@@ -1,0 +1,19 @@
+= Quiz: OpenStack Services and Cloud-Native Applications
+
+Objective::
+
+Assess the learner’s understanding of the purpose and utility of the additional OpenStack services.
+
+WARNING: Work in Progress
+
+== Questions
+
+1. Question
+
+* [ ] Shared Filesystems (Manila)
+* [ ] Object Store (Swift)
+* [ ] Load Balancer (Octavia)
+* [ ] DNS Service (Designate)
+* [ ] Orchestration (Heat)
+* [ ] Placement service (Placement)
+* [ ] Key Management (Barbican)

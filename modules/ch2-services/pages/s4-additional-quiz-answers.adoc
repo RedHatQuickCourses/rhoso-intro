@@ -1,0 +1,14 @@
+= Answers to the Quiz
+
+WARNING: Work in Progress
+
+== OpenStack Services and Cloud-Native Applications
+
+1. Question
+
+* [ ] Answer 1 +
+_Incorrect: Explain._
+
+* [x] *Answer 2 (Nova)* +
+_Correct: Explain._
+
