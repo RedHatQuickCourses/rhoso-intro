@@ -153,7 +153,7 @@
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-Work In Progress
+Pending review.
 </td>
 </tr>
 </table>
@@ -175,19 +175,19 @@ Work In Progress
 </li>
 <li>
 <p><i class="fa fa-check-square-o"></i> Attaching a VM to a different virtual network.<br>
-<em>Correct: Servers (VMs) and virtual networks are OpenStack API resources.</em></p>
+<em>Correct: Server instances (VMs) and virtual networks are OpenStack API resources.</em></p>
 </li>
 <li>
 <p><i class="fa fa-square-o"></i> Upgrading RHEL to a newer minor release inside a VM.<br>
 <em>Incorrect: Linux System Administrators are more likely to perform tasks inside a VM</em></p>
 </li>
 <li>
-<p><i class="fa fa-square-o"></i> Configuring firewalld rules inside a RHEL VM.<br>
-<em>Incorrect: Linux System Administrators are more likely to perform tasks inside a VM</em></p>
-</li>
-<li>
 <p><i class="fa fa-check-square-o"></i> Configuring IP routing rules for a virtual networks.<br>
 <em>Correct: Virtual networks and everything related to them are OpenStack API resources.</em></p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> Configuring firewalld rules inside a RHEL VM.<br>
+<em>Incorrect: Linux System Administrators are more likely to perform tasks inside a VM</em></p>
 </li>
 </ul>
 </div>
@@ -197,45 +197,74 @@ Work In Progress
 <div class="ulist checklist">
 <ul class="checklist">
 <li>
-<p><i class="fa fa-square-o"></i> Creating new server instances (VMs).</p>
+<p><i class="fa fa-check-square-o"></i> Creating new server instances (VMs).<br>
+<em>Correct: OpenStack Operators manage OpenStack resources which affect individual application workloads.</em></p>
 </li>
 <li>
-<p><i class="fa fa-square-o"></i> Creating new virtual networks.</p>
+<p><i class="fa fa-check-square-o"></i> Creating new virtual networks.<br>
+<em>Correct: OpenStack Operators manage OpenStack resources which affect individual application workloads.</em></p>
 </li>
 <li>
-<p><i class="fa fa-square-o"></i> Creating a new class of virtual server, with access to virtual GPUs.</p>
+<p><i class="fa fa-square-o"></i> Creating a new class of virtual server, wich provides virtual GPUs.<br>
+<em>Incorrect: OpenStack Administrators manage OpenStack resources which potentially affect an entire OpenStack cluster.</em></p>
 </li>
 <li>
-<p><i class="fa fa-square-o"></i> Configuring authentication to an OpenStack cluster using an LDAP server.</p>
+<p><i class="fa fa-square-o"></i> Configuring authentication to an OpenStack cluster using an LDAP server.<br>
+<em>Incorrect: OpenStack Administrators manage OpenStack cluster settings.</em></p>
 </li>
 <li>
-<p><i class="fa fa-square-o"></i> Configuring virtual disk storage on a remote Ceph cluster.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Which of the following tasks are more likely to be performed by an OpenStack Administrator, as opposed to an Storage or Network Administrator?</p>
-<div class="ulist checklist">
-<ul class="checklist">
-<li>
-<p><i class="fa fa-square-o"></i> Adding new RHEL servers as compute nodes to an OpenStack cluster.</p>
-</li>
-<li>
-<p><i class="fa fa-square-o"></i> Configure VLANs at the switch fabric.</p>
+<p><i class="fa fa-square-o"></i> Configuring virtual disk storage on a remote Ceph cluster.<br>
+<em>Incorrect: OpenStack Administrators manage OpenStack settings which connect the cluster to other data center infrastructure.</em></p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Which of the following tasks are likely to NOT be required from a Red Hat OpenStack on OpenShift Administrator, as opposed to an upstream OpenStack Administrator?</p>
+<p>Which of the following tasks are more likely to be performed by an OpenStack Administrator, as opposed to Systems, Storage, or Network Administrators and other IT personnel?</p>
 <div class="ulist checklist">
 <ul class="checklist">
 <li>
-<p><i class="fa fa-square-o"></i> Creating operating system images to boot new server instances VMs.</p>
+<p><i class="fa fa-check-square-o"></i> Adding new physical RHEL servers as compute nodes to an OpenStack cluster.<br>
+<em>Correct: The OpenStack Administrator manages the cluster, including its compute nodes.</em></p>
 </li>
 <li>
-<p><i class="fa fa-square-o"></i> Configuring active-passive instances of OpenStack</p>
+<p><i class="fa fa-square-o"></i> Configuring VLANs at the switch fabric to enable compute nodes to connect to those VLANs.<br>
+<em>Incorrect: This task usually belongs to Network Administrators.</em></p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> Configuring storage pools and logical disk units (LUNs) at the storage array to store data from OpenStack services.<br>
+<em>Incorrect: This task usually belongs to Storage Administrators.</em></p>
+</li>
+<li>
+<p><i class="fa fa-check-square-o"></i> Installing RPM packages and configure physical RHEL servers to be managed by OpenStack control planes.<br>
+<em>Correct: OpenStack Administrators could delegate this task to the Server Administration team, but they should be able to perform themselves, and will frequently demand to.</em></p>
+</li>
+<li>
+<p><i class="fa fa-check-square-o"></i> Installing OpenStack services on OpenShift clusters.<br>
+<em>Correct: OpenStack Administrators could delegate this task to the OpenShift Administration team, but they should be able to perform themselves, and will frequently demand to.</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Which of the following tasks are likely to NOT be required from Red Hat OpenStack on OpenShift Operators and Administrators, as opposed to from users of an OpenStack cluster built using upstream binaries or source code?</p>
+<div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p><i class="fa fa-square-o"></i> Configuring operating system images to boot new server instance VMs.<br>
+<em>Incorrect: typical tasks related to managing application workloads belong to OpenStack Operators, no matter they use the Red Hat product or not.</em></p>
+</li>
+<li>
+<p><i class="fa fa-check-square-o"></i> Configuring multiple instances of OpenStack services, one active and another passive, using pacemaker or another clustering middleware.<br>
+<em>Correct: Red Hat OpenStack users rely on the high-availability (HA) configurations embedded the product, in the case of Red Hat OpenStack Services on OpenShift, leveraging HA features from Kubernetes.</em></p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> Installing an operating system on compute nodes, such as RHEL.<br>
+<em>Incorrect: Red Hat OpenStack users are still required to provision and configure their compute nodes, but they are required to use RHEL and cannot use any other Linux distribution.</em></p>
+</li>
+<li>
+<p><i class="fa fa-check-square-o"></i> Selecting an installation method for OpenStack services on control plane servers, such as from precompiled binaries, operating system packages, or container images.<br>
+<em>Correct: Red Hat OpenStack users rely on the installation methods embedded the product, in the case of Red Hat OpenStack Services on OpenShift, as add-on operators for OpenShift.</em></p>
 </li>
 </ul>
 </div>
