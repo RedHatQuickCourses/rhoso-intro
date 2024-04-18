@@ -1,6 +1,6 @@
 = Review Quiz: Red Hat OpenStack Operations
 
-*Objective:*
+Objective::
 
 Assess the learner's understanding of the scope of OpenStack operations with Red Hat OpenStack on OpenShift.
 

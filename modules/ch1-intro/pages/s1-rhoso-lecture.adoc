@@ -1,6 +1,6 @@
 = What is Red Hat OpenStack Services on OpenShift
 
-*Objective:*
+Objective::
 
 Describe the Red Hat OpenStack product and how it relates to the OpenStack open source project.
 

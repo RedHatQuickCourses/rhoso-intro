@@ -1,6 +1,6 @@
 = Quiz: Red Hat OpenStack Operations Tasks
 
-*Objective:* 
+Objective::
 
 Relate tasks to OpenStack administrators, operators, and other IT roles.
 

@@ -1,6 +1,6 @@
 = Introduction to Red Hat OpenStack
 
-== Objective
+Goal::
 
 Describe the Red Hat OpenStack products and how they relate to other Red Hat products, partner products, upstream projects, and IT professional roles.
 

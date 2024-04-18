@@ -1,6 +1,6 @@
 = Red Hat OpenStack Services
 
-== Objective
+Goal::
 
 Describe the user-facing services of Red Hat OpenStack Services on OpenShift.
 
