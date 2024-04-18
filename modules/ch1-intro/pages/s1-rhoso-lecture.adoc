@@ -52,7 +52,7 @@ image::s1-rhoso-lecture-fig-1.png[]
 To provide a complete private cloud platform, Red Hat OpenStack on OpenShift includes, as fully supported components:
 
 * The https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux[*Red Hat Enterprise Linux (RHEL)*] operating system.
-* The https://www.redhat.com/en/topics/virtualization/what-is-KVM[*KVM*] hypervisor with the https://www.qemu.org/[*Qemu*] emulation layer and the https://libvirt.org/[*libvirt*] management API, all of them included with RHEL.
+* The https://www.redhat.com/en/topics/virtualization/what-is-KVM[*KVM*] hypervisor with the https://www.QEMU.org/[*QEMU*] emulation layer and the https://libvirt.org/[*libvirt*] management API, all of them included with RHEL.
 * The https://www.redhat.com/en/technologies/cloud-computing/openshift[*Red Hat OpenShift*] application platform and its container-optimized operating system https://access.redhat.com/documentation/en-us/openshift_container_platform/4.14/html/architecture/architecture-rhcos[Red Hat Enterprise Linux CoreOS (RHCOS)].
 * The https://www.ovn.org/en/[*Open Virtual Network (OVN)*] software-defined network layer.
 
@@ -89,17 +89,17 @@ Microservices developers realized a while ago that containers and Kubernetes are
 
 If OpenStack is essentially a way of running and managing application workloads as VMs, and Red Hat OpenStack runs on OpenShift, why not running and managing application workloads as VMs directly on OpenShift, using https://www.redhat.com/en/technologies/cloud-computing/openshift/virtualization[*OpenShift Virtualization*] or https://www.redhat.com/en/blog/learn-openshift-sandboxed-containers[*OpenShift Sandboxed Containers*]? The following table provides a quick comparision between the three technologies currently available for managing application VMs using OpenShift: 
 
-[cols="1,1,1,1"]  
+[options="header",cols="1,1,1,1"]  
 |===
-| Product / feature
-h| OpenShift Virtualization
-h| OpenShift Sandboxed Containers
-h| OpenStack Services on OpenShift
+| Product / Feature
+| OpenShift Virtualization
+| OpenShift Sandboxed Containers
+| OpenStack Services on OpenShift
 
 h| Hypervisor technology
-| KVM + Qemu + libvirt
-| KVM + Qemu + libvirt
-| KVM + Qemu + libvirt
+| KVM + QEMU + libvirt
+| KVM + QEMU + libvirt
+| KVM + QEMU + libvirt
 
 h| Application packaging
 | VM image (qcow2)
@@ -127,10 +127,14 @@ h| Virtual Networking
 | OpenStack Neutron tenant and provider networks, routers, etc
 |===
 
-The main difference between these three technologies is where your VMs run: inside OpenShift, using compute nodes from the OpenShift cluster, or outside of OpenShift, using RHEL servers as compute nodes. And the consequence of running VMs inside OpenShift is requiring those VMs to use Kubernetes storage and networking capabilities, which are currently not as rich as OpenStack.
+The main difference between these three technologies is where your VMs run: inside OpenShift, using compute nodes from the OpenShift cluster; or outside of OpenShift, using RHEL servers as compute nodes. And the consequence of running VMs inside OpenShift is requiring those VMs to use Kubernetes storage and networking capabilities, which are currently not as rich as OpenStack.
 
 If you have existing development and operational processes based on OpenStack APIs, switching that to Kubernetes APIs is a major change but it would be a requirement for using either OpenShift Virtualizaiton or OpenShift Sandboxed Containers.
 
-On the other side, organizations which already have containerized applications want to adopt GitOps practices and use other capabilities enabled by Kubernetes. Red Hat OpenStack Services on OpenShift enables these capabilities for managing applications in OpenStack too: the same OpenShift cluster which runs an OpenStack control plane (or a different OpenShift cluster if you prefer) can run OpenShift Pipelines, OpenShift GitOps, and other OpenShift applications which can manage OpenStack applications by invoking OpenStack APis. It's the best of both the OpenStack and the Kubernetes worlds.
+On the other side, organizations which already have containerized applications want to adopt GitOps practices and use other capabilities enabled by Kubernetes. Red Hat OpenStack Services on OpenShift enables using these capabilities for managing applications in OpenStack too: the same OpenShift cluster which runs an OpenStack control plane (or a different OpenShift cluster, if you prefer) can run OpenShift Pipelines, OpenShift GitOps, and other OpenShift applications which can manage OpenStack applications by invoking OpenStack APis. It's the best of both the OpenStack and the Kubernetes worlds.
 
-The same way OpenShift improves the management of OpenStack clusters, it can improve the management of other infrastructure to support your operations and development teams. For example, you can use OpenShift to run Ansible Automation Platform to manage the applications inside your OpenStack VMs and also your physical data center infrastructure which runs OpenShift, OpenStack and other platforms. All your IT infrastructure services can be managed by OpenShift, while retaining compatibility with applicaiton workloads and processes that are designed around OpenStack APIs and which requires the richer OpenStack compute, storage, and network management APIs.
+The same way OpenShift improves the management of OpenStack clusters, it can improve the management of other infrastructure to support your operations and development teams. For example, you can use OpenShift to run Ansible Automation Platform to manage the applications inside your OpenStack VMs and also your physical data center infrastructure which runs OpenShift, OpenStack and other platforms. All your IT infrastructure services could be managed by OpenShift, while retaining compatibility with applicaiton workloads and processes that are designed around OpenStack APIs and which requires the richer OpenStack compute, storage, and network management APIs.
+
+Of courses, for organizations which prefer running Ansible, Jenkins, and other tools as VMs on OpenStack, it is indeed a good idea. Those organizations can also consider running OpenShift itself on OpenStack VMs for their containerized applications. This was supported with earlier incarnations of Red Hat OpenStack Platform, and it is still supported with Red Hat OpenStack Services on OpenShift, as an alternative to OpenShift Virtualization for running OpenShift clusters on VMs. The reasons for running OpenShift clusters on VMs or on physical machines is beyond the scope of this OpenStack course.
+
+// ShiftOnStack vs OpenShiftOnOpenShift got complicated. Maybe we need a couple figures?
