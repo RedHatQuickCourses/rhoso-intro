@@ -4,7 +4,7 @@ Objective::
 
 Describe the tools that enable OpenStack Operators to access OpenStack clusters to deploy and manage applications.
 
-WARNING: Work In Progress
+WARNING: Pending review.
 
 == Tools for OpenStack Administrators
 

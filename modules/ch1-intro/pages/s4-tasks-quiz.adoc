@@ -4,48 +4,53 @@ Objective::
 
 Relate tasks to OpenStack administrators, operators, and other IT roles.
 
-WARNING: Work In Progress
+WARNING: Pending review.
 
 
 == Questions
 
 // This quiz could include a matching or drag-and-drop portion but we cannot do that on Antora. :-(
 
-// Crap, Antora breaks questin numbering if there are comments >:-(
+// Crap, Antora (or adoc?) breaks question numbering if there are comments between questions >:-(
 
 // Q1: Even if a learner is not well versed in Linux system administration (which is a prerequisite for this course!) they should be able to get the clues from "inside a VM".
 
 // Q2: Taking care to not include OpenStack jargon that might be unknown from learners, such as "provider networks".
-// Learners should be able to figure out the right answers from scope of entire cluster and external to a cluster vs internal to a cluster (virtual servers and networks)
+// Learners should be able to figure out the right answers from scope of one workload vs an entire cluster.
 
-// Q3: I'm having a hard time figuring out appropriate answers to this question.
+//Q3 Learners should be able to figure out the right answers from external to a cluster vs internal to a cluster.
 
 // Q4: Guess the next question fits the OpenStack-Admin-1 better than this course.
 // But I want something that ties back to the previous section and the product vs upstream.
-// This may also need knowledge of openstack services, which we didn't introduce yet.
+// Questions about installation and provisioning are tricky for newbies, but they should be able to answer by referring to the previous section and this is a good reminder that the skills and knowedge of each piece of this course are not self-contained, but related to other pieces.
 
 1. Which of the following tasks are more likely to be performed by an OpenStack Operator, as opposed to a Linux System Administrator?
 
 * [ ] Installing RPM packages inside a RHEL VM.
 * [ ] Attaching a VM to a different virtual network.
 * [ ] Upgrading RHEL to a newer minor release inside a VM.
-* [ ] Configuring firewalld rules inside a RHEL VM.
 * [ ] Configuring IP routing rules for a virtual networks.
+* [ ] Configuring firewalld rules inside a RHEL VM.
 
 2. Which of the following tasks are more likely to be performed by an OpenStack Operator, as opposed to an OpenStack Administrator?
 
 * [ ] Creating new server instances (VMs).
 * [ ] Creating new virtual networks.
-* [ ] Creating a new class of virtual server, with access to virtual GPUs.
+* [ ] Creating a new class of virtual server, with provides virtual GPUs.
 * [ ] Configuring authentication to an OpenStack cluster using an LDAP server.
 * [ ] Configuring virtual disk storage on a remote Ceph cluster.
 
-3. Which of the following tasks are more likely to be performed by an OpenStack Administrator, as opposed to an Storage or Network Administrator?
+3. Which of the following tasks are more likely to be performed by an OpenStack Administrator, as opposed to Systems, Storage, or Network Administrators and other IT personnel?
 
 * [ ] Adding new RHEL servers as compute nodes to an OpenStack cluster.
-* [ ] Configure VLANs at the switch fabric.
+* [ ] Configuring VLANs at the switch fabric.
+* [ ] Configuring VLANs at the switch fabric to enable compute nodes to connect to those VLANs.
+* [ ] Installing RPM packages and configure physical RHEL servers to be managed by OpenStack control planes.
+* [ ] Installing OpenStack services on OpenShift clusters.
 
-4. Which of the following tasks are likely to NOT be required from a Red Hat OpenStack on OpenShift Administrator, as opposed to an upstream OpenStack Administrator?
+4. Which of the following tasks are likely to NOT be required from a Red Hat OpenStack on OpenShift Administrator, as opposed to the administrator of an OpenStack cluster built from upstream binaries or source code?
 
-* [ ] Creating operating system images to boot new server instances VMs.
-* [ ] Configuring active-passive instances of OpenStack
+* [ ] Configuring operating system images to boot new server instance VMs.
+* [ ] Configuring multiple instances of OpenStack services, one active and another passive, using pacemaker or another clustering middleware.
+* [ ] Installing an operating system on compute nodes, such as RHEL.
+* [ ] Selecting an installation method for OpenStack services on control plane servers, such as from precompiled binaries, operating system packages, or container images.
