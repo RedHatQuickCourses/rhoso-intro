@@ -8,4 +8,5 @@
 ** xref:s5-ui-lecture.adoc[]
 ** xref:s6-ui-demo.adoc[]
 ** xref:s7-review-quiz.adoc[]
+*** xref:s7-review-quiz-answers.adoc[]
 ** xref:s8-summary.adoc[]

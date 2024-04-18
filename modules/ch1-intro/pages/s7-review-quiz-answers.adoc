@@ -1,0 +1,53 @@
+= Answers to the Review Quiz
+
+WARNING: Pending review.
+
+== Red Hat OpenStack Operations
+
+1. True or false: Red Hat OpenStack Services on OpenShift enables management of applications running on OpenShift Virtualization VMs using OpenStack APIs.
+
+* [ ] True +
+_Incorrect: Red Hat OpenStack Services on OpenShift does not need nor integrates with OpenShift Virtualization._
+
+* [x] False +
+_Correct: Red Hat OpenStack Services on OpenShift manages application VMs directly, without using OpenShift Virtualization. It uses the VM manager included with RHEL (libvirt)._
+
+2. True or False: An OpenStack Operator needs access to the OpenShift web console to manage application workloads running as VMs on their OpenStack clusters.
+
+* [ ] True +
+_Incorrect: OpenStack Operators do not require access to any OpenShift tool to perform their daily work._
+
+* [x] False +
+_Correct: OpenStack Operators only need access to OpenStack APIs, which they get from the OpenStack client and the OpenStack Horizon dashboard._
+
+3. True of False: An OpenStack Operator needs access to RHEL compute nodes to manage application VMs running on those nodes.
+
+* [ ] True +
+_Incorrect: OpenStack Operators should not perform any tasks directly on compute nodes._
+
+* [x] False +
+_Correct: OpenStack Operators manage application VMs using OpenStack APIs._
+
+4. True or False: An OpenStack Administrator needs direct access to the OpenShift clusters running the OpenStack control planes of their OpenStack clusters.
+
+* [x] True +
+_Correct: OpenStack Administrators are required to manage OpenStack services using Kubernetes APIs and custom resources, and that requires access to OpenShift clusters._
+
+* [ ] False +
+_Incorrect: OpenStack Administrators cannot manage OpenStack services without access and visibility of their contrainers running on OpenShift._
+
+5. True or False: An OpenStack Operator uses the Horizon dashboard for all daily tasks.
+
+* [ ] True +
+_Incorrect: OpenStack Operators can perform most, but not all, of their tasks using the Horizon web UI._
+
+* [x] False +
+_Correct: Sometimes an OpenStack operator needs to use the OpenStack client or some other tool which provides access to OpenStack APIs not availabe through Horizon._
+
+6. An OpenStack Operator focuses on OpenStack API resources that affect individual application workloads, as opposed to OpenStack API resources which affect an entire cluster.
+
+* [x] True +
+_Correct: OpenStack Operators role focus on applications and their associated VMs, virtual networks, and virtual storage._
+
+* [ ] False +
+_Incorrect: Dealing with OpenStack API resources which potentially affect an entire cluster is the job of OpenStack Administrators._
