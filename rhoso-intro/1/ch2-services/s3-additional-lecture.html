@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Red Hat OpenStack Services :: Introduction to Red Hat OpenStack Services on OpenShift</title>
-    <link rel="prev" href="../ch1-intro/s8-summary.html">
-    <link rel="next" href="s1-fundamental-lecture.html">
+    <title>Additional Services of Red Hat OpenStack :: Introduction to Red Hat OpenStack Services on OpenShift</title>
+    <link rel="prev" href="s2-fundamental-quiz-answers.html">
+    <link rel="next" href="s4-additional-quiz.html">
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
@@ -98,7 +98,7 @@
   </li>
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="index.html">Red Hat OpenStack Services</a>
 <ul class="nav-list">
@@ -114,7 +114,7 @@
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="s3-additional-lecture.html">Additional Services of Red Hat OpenStack</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -160,6 +160,7 @@
   <ul>
     <li><a href="../index.html">Introduction to Red Hat OpenStack Services on OpenShift</a></li>
     <li><a href="index.html">Red Hat OpenStack Services</a></li>
+    <li><a href="s3-additional-lecture.html">Additional Services of Red Hat OpenStack</a></li>
   </ul>
 </nav>
 </div>
@@ -168,14 +169,14 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Red Hat OpenStack Services</h1>
+<h1 class="page">Additional Services of Red Hat OpenStack</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1">Goal</dt>
+<dt class="hdlist1">Objective</dt>
 <dd>
-<p>Describe the user-facing services of Red Hat OpenStack Services on OpenShift.</p>
+<p>Describe additional OpenStack services useful to applications and their virtual machines.</p>
 </dd>
 </dl>
 </div>
@@ -194,19 +195,85 @@ Work in Progress
 </div>
 </div>
 <div class="sect1">
-<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h2>
+<h2 id="_openstack_support_for_cloud_native_and_other_kinds_of_applications"><a class="anchor" href="#_openstack_support_for_cloud_native_and_other_kinds_of_applications"></a>OpenStack Support for Cloud-Native and Other Kinds of Applications</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This chapter introduces the OpenStack services that are included and supported with Red Hat OpenStack Services on OpenShift. It focuses on the services that OpenStack Operators interacts with to perform their daily jobs and how those services work to together enable different kinds of application workloads.</p>
+<p>It is not uncommon to use OpenStack (and other cloud platforms, for that matter) to just replicate, in a virtual infrastructure, the same servers, networks, etc you would manage in a data center with physical servers and no virtualization. For some organizations, just switching from days or weeks to provision physical machines to minutes to provision virtual machines (as long as your cluster has capacity to spare) is already sufficient benefit. These organizations might be happy with just the fundamental OpenStack services.</p>
 </div>
 <div class="paragraph">
-<p>This chapter starts with the fundamental services that OpenStack operators use to manage application workloads; it continues with additional services which enable scalabity, resilience, and automation of cloud-native workloads; and finishes with services intended to support managing OpenStack clusters themselves.</p>
+<p>But many benefits from using private clouds come from designing applications to take advantage of the dynamic, on-demand infrastructure that clouds platforms can provide, and from automating provisioning and management of such applications.</p>
+</div>
+<div class="paragraph">
+<p>Even if an organization is not yet designing applications and their operational processes to be cloud-native, the fact that provisioning basic server, networking, and storage infrastructure became easier enables IT teams to focus on other non-functional requirements, such as security and horizontal scalability. And OpenStack helps addressing those requirements.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_additional_openstack_services_for_storage"><a class="anchor" href="#_additional_openstack_services_for_storage"></a>Additional OpenStack Services for Storage</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Shared Filesystems: Manila</p>
+</li>
+<li>
+<p>Object Store: Swift</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_additional_openstack_services_for_networking"><a class="anchor" href="#_additional_openstack_services_for_networking"></a>Additional OpenStack Services for Networking</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Load Balancer: Octavia</p>
+</li>
+<li>
+<p>DNS Service: Designate</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_additional_openstack_services_for_automation"><a class="anchor" href="#_additional_openstack_services_for_automation"></a>Additional OpenStack Services for Automation</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Orchestration: Heat</p>
+</li>
+<li>
+<p>Placement service: Placement</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_additional_openstack_services_for_security"><a class="anchor" href="#_additional_openstack_services_for_security"></a>Additional OpenStack Services for Security</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Key Management: Barbican</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_operation_and_administration_of_additional_services"><a class="anchor" href="#_operation_and_administration_of_additional_services"></a>Operation and Administration of Additional Services</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>WIP</p>
 </div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../ch1-intro/s8-summary.html">Summary</a></span>
-  <span class="next"><a href="s1-fundamental-lecture.html">Fundamental Services of Red Hat OpenStack</a></span>
+  <span class="prev"><a href="s2-fundamental-quiz-answers.html">Answers to the Quiz</a></span>
+  <span class="next"><a href="s4-additional-quiz.html">Quiz: OpenStack Services and Cloud-Native Applications</a></span>
 </nav>
 </article>
   </div>
