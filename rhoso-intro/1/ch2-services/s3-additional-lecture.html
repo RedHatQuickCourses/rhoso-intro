@@ -357,22 +357,22 @@ Work in Progress
 <div class="sect2">
 <h3 id="_openstack_server_scheduling_placement"><a class="anchor" href="#_openstack_server_scheduling_placement"></a>OpenStack Server Scheduling: Placement</h3>
 <div class="paragraph">
-<p>The OpenStack Placement service is differnet than other services introduced so far because OpenStack Operators do not interact directly with it, but indirectly throuhg resources of other services such as Nova.</p>
+<p>The OpenStack Placement service is different than other services introduced so far because OpenStack Operator users and external applications do not interact directly with it, but indirectly through resources of other services, especially Nova.</p>
 </div>
 <div class="paragraph">
-<p>The Placement service tracks compute resource availability and consuption throgout an OpenStack cluster, and enables other OpenStack services to define and track different kinds of resources. For example, Nova defines number of CPU cores and memory of compute nodes, and server instances consume those resources. Neutron defines number of IP address of internal virtual networks and of floating IP address available for connectivity with external networks. Cinder defines the total disk space and number of logical units (LUNs) of each storage backend.</p>
+<p>The Placement service tracks compute resource availability and consuption throgout an OpenStack cluster, and enables other OpenStack services to define and track different classes of resources. For example, Nova defines number of CPU cores and memory of compute nodes, and server instances consume those resources. Neutron defines number of IP address of internal virtual networks and of floating IP address available for connectivity with external networks. Cinder defines the total disk space and number of logical units (LUNs) of each storage backend.</p>
 </div>
 <div class="paragraph">
 <p>OpenStack API resources can consume compute resources from different OpenStack services. For example, server instances consume CPU and memory from compute nodes, IP addresses from virtual networks, and disk space from a storage backend. If there are no sufficient compute resources available in the cluster, you cannot create the API resource.</p>
 </div>
 <div class="paragraph">
-<p>Thanks to Placement, Nova can run each server instance in a compute node with sufficient available compute reources for that instance.</p>
+<p>Thanks to Placement, Nova can schedule each server instance to a compute node with sufficient available compute reources for that instance.</p>
 </div>
 <div class="paragraph">
 <p>Placement also enables the definition of new classes of compute resources, for example: the availability of GPUs in compute nodes. Then server instances can request a number of GPUs, and an OpenStack Operator can be sure that instance either gets the GPUs it needs, or fails to start.</p>
 </div>
 <div class="paragraph">
-<p>Defining classse of compute resources is usually an OpenStack Admninistrator task, while configuring workloads to consume compute resources from those classes is an OpenStack Operator task.</p>
+<p>Defining new classes of compute resources is usually an OpenStack Admninistrator task, while configuring workloads to consume compute resources from those classes is an OpenStack Operator task.</p>
 </div>
 </div>
 </div>
@@ -380,12 +380,20 @@ Work in Progress
 <div class="sect1">
 <h2 id="_additional_openstack_services_for_security"><a class="anchor" href="#_additional_openstack_services_for_security"></a>Additional OpenStack Services for Security</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Key Management: Barbican</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>We already know that security in OpenStack starts with Keystone, as the authentication entry point for all OpenStack services. While most end-user applications do not need to invoke OpenStack APIs, thus would have no need for direct interactions withg Keystone, most applications do interact with a wide range of services, from external APIs of a software vendor to middleware running on other servers inside and outside of their OpenStack cluster, such as database servers and messaging middleware.</p>
+</div>
+<div class="paragraph">
+<p>Management of credentials to access those services and APIs is a potential source of security issues. They should not be hardoced in either application source code nor on its configuration files. Ideally they would live outside of application VMs. Security conscious organizations require that applications use Key Management Services (KMS) to store such credentials, and OpenStack offers the Key Management service (Barbican).</p>
+</div>
+<div class="sect2">
+<h3 id="_openstack_secrets_management_barbican"><a class="anchor" href="#_openstack_secrets_management_barbican"></a>OpenStack Secrets Management: Barbican</h3>
+<div class="paragraph">
+<p>OpenStack Barbican enables secure storage of many types of keys, including symetric and assimetric keys, and including both passwords and certificate files. Applications authenticate to Barbican using Keystone to retrieve keys, and OpenStack Operators manage those keys independent of applications.</p>
+</div>
+<div class="paragraph">
+<p>Multiple OpenStack services offer integration with Barbican, for example to encrypt data stored in Cinder volumes or Swift objects.</p>
+</div>
 </div>
 </div>
 </div>
@@ -393,7 +401,7 @@ Work in Progress
 <h2 id="_operation_and_administration_of_additional_services"><a class="anchor" href="#_operation_and_administration_of_additional_services"></a>Operation and Administration of Additional Services</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>WIP</p>
+<p>It is expected and recommended that most Red Hat OpenStack Services on OpenShift clusters do enable all of the additional services introduced here, and that OpenStack Operators encourage application developers and application administrators to take advantage of them.</p>
 </div>
 </div>
 </div>
