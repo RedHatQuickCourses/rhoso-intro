@@ -1,0 +1,14 @@
+= Quiz: OpenStack Services and IT Infrastructure
+
+Objective::
+
+Assess the learner’s understanding of the purpose and utility of the OpenStack administration services.
+
+WARNING: Work in Progress
+
+== Questions
+
+1. Question
+
+* [ ] Answer 1
+* [ ] Answer 2

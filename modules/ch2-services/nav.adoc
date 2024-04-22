@@ -5,3 +5,6 @@
 ** xref:s3-additional-lecture.adoc[]
 ** xref:s4-additional-quiz.adoc[]
 *** xref:s4-additional-quiz-answers.adoc[]
+** xref:s5-administration-lecture.adoc[]
+** xref:s6-administration-quiz.adoc[]
+*** xref:s6-administration-quiz-answers.adoc[]

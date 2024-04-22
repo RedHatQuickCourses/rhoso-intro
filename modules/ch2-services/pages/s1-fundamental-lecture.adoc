@@ -10,13 +10,15 @@ WARNING: Work in Progress
 
 OpenStack is composed of multiple independent services which can work (and usually do) together. Having services which are independent of each other enables faster delivery of new features and more reliable fixes for bugs and security issues, and is widely recognized as a development best practice.
 
-But OpenStack services are rarely run standalone, except by developers working on the services themselves. Most OpenStack clusters run a standard set of services and, even when some of those servers could be disabled, with no loss of functionality for a certain application workloads, the standard set is usually left enabled. Which means most clusters running Red Hat OpenStack Services on OpenShift run all services included with the product.
+image::s1-fundamental-lecture-fig1.png[]
+
+But OpenStack services are rarely run standalone, except by developers working on the services themselves. Most OpenStack clusters run a standard set of services and, even when some of those servers could be disabled, with no loss of functionality for a certain application workload, the standard set is usually left enabled. Which means most clusters running Red Hat OpenStack Services on OpenShift run all services included with the product.
 
 An OpenStack Operator focuses on user-facing OpenStack services, meaning services which provide an API for users outside of the cluster. Some OpenStack services exist to provide internal infrastructure for an OpenStack cluster and their APIs are available only from inside a cluster, for use by other OpenStack services and compute nodes. The OpenStack Administration learning journey provides more details about these internal services, and this course focuses on the user-facing services.
 
 == OpenStack Services to Manage Applications
 
-The first set of OpenStack services are the minimum required by pratically any funcional OpenStack cluster. It would be hard to support even the simplest applications without including all services in this category, so we call them fundamental services.
+The first set of OpenStack services are the minimal services required by pratically any funcional OpenStack cluster. It would be hard to support even the simplest applications without including all services in this category, so we call them fundamental services.
 
 It is common for the OpenStack community to refer to individual services by either their code names or their purposes. Follows a list of the fundamental OpenStack services covered in this section:
 
@@ -26,7 +28,7 @@ It is common for the OpenStack community to refer to individual services by eith
 * Neutron: Networking service
 * Glance: Image service
 
-[ illustrative figure of the services and the resources they manage. ]
+image::s1-fundamental-lecture-fig2.png[]
 
 === OpenStack Authentication and Service Discovery: Keystone
 

@@ -1,0 +1,40 @@
+= Administration Services of Red Hat OpenStack
+
+Objective::
+
+Describe OpenStack services which support operations and administrations personnel.
+
+WARNING: Work in Progress
+
+== OpenStack Cluster Management
+
+The final set of Red Hat OpenStack on OpenShift user-facing services focuses on the operations and administration of an OpenStack cluster itself. They support OpenStack Operators and Administrators on their daily tasks.
+
+Follows a list of the OpenStack services covered in this section:
+
+* Keystone: Identity service
+* Horizon: Dashboard service
+* Ironic: Bare Metal Provisioning service
+* Ceilometer: Metering service
+
+image::s5-administration-lecture-fig1.png[]
+
+== OpenStack Authentication and Service Discovery: Keystone
+
+WIP
+
+== Web UI for OpenStack Operators and Administrators: Horizon
+
+WIP
+
+== Physical Manchine Management: Ironic
+
+WIP
+
+== Metrics Data Collection: Ceilometer
+
+WIP
+
+== Next Steps
+
+WIP

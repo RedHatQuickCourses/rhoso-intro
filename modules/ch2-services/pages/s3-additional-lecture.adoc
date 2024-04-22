@@ -14,16 +14,14 @@ But many benefits from using private clouds come from designing applications to 
 
 Even if an organization is not yet designing applications and their operational processes to be cloud-native, the fact that provisioning basic server, networking, and storage infrastructure became faster enables IT teams to focus on other non-functional requirements, such as security and horizontal scalability. OpenStack helps addressing those requirements.
 
-// Each service, or group of services, would require its own figure... will I have time to draw them all?
-
-[ Ilustrative figure of the additional services, maybe of all services, with the non-additional grayed out ]
+image::s3-additional-lecture-fig1.png[]
 
 == Additional OpenStack Services for Storage
 
 Besides Cinder, Red Hat OpenStack Services on OpenShift offers two other services to store data:
 
-* Shared Filesystems: Manila
-* Object Store: Swift
+* Manila: Shared Filesystems service
+* Swift: Object Store service
 
 Almost all workloads use Block storage from Cinder because server instances need virtual disks, but those virtual disks are not sufficient for all kinds of workloads. Some workloads require shared file systems, and the use of networked file sharing services, such as like NFS, is very common for scaling applications to multiple servers or integrating different applications by sharing data files.
 
@@ -51,8 +49,8 @@ Swift has its own application API, but it never got close to the popularity of A
 
 Besides Nova, two services of Red Hat OpenStack Services on OpenShift offer networking capabilities:
 
-* Load Balancer: Octavia
-* DNS Service: Designate
+* Octavia: Load Balancer service
+* Designate: DNS service
 
 These services enable dynamic and scalable applications, not tied to manually configured IP address and DNS names: New applications can be immediately accessible using a human-readable name, and multiple servers accessed using a single IP address. If used together, the human-readable name, or vanity name, can point to the single IP address.
 
@@ -72,8 +70,8 @@ In the traditional data center world, each server is unique. Once you install al
 
 To support automation of workloads, Red Hat OpenStack Services on OpenShift adds to Nova and Glance the following services:
 
-* Orchestration: Heat
-* Placement service: Placement
+* Heat: Orchestration service
+* Placement: Placement service
 
 The first service (Heat) automates the creation and management of many OpenStack API resources, such as servers, networks, volumes, and load balancers, required to deploy complex application workloads. The second (Placement) address the distribution of those resources, especially servers, over different compute nodes to address performance and reliability requirements.
 
@@ -84,9 +82,9 @@ OpenStack Glance provides a first step towards reproducibility, by enabling stor
 
 But application workloads are rarely contained in a single server instance. Most real-world applications are composed of multiple VMs, for example the traditional three-tier architecture of persentation, business, and persistence, which could be realised as:
 
-* Presentation: Web server with static HTML pages and JavaScript code.
-* Business: Java application server, or web server running REST API endpoints using Java, Node.js, Ruby, or whatever you programming language runtime of choice.
-* Persistence: A relation or noSQL database server.
+1. Presentation: Web server with static HTML pages and JavaScript code.
+2. Business: Java application server, or web server running REST API endpoints using Java, Node.js, Ruby, or whatever you programming language runtime of choice.
+3. Persistence: A relation or noSQL database server.
 
 It is also very common that each of those tiers consists of multiple servers, for example a web server farm or replicated primary (read-write) and secondary (read-only) database instances.
 
@@ -114,7 +112,7 @@ Defining new classes of compute resources is usually an OpenStack Admninistrator
 
 We already know that security in OpenStack starts with Keystone, as the authentication entry point for all OpenStack services. While most end-user applications do not need to invoke OpenStack APIs, thus would have no need for direct interactions withg Keystone, most applications do interact with a wide range of services, from external APIs of a software vendor to middleware running on other servers inside and outside of their OpenStack cluster, such as database servers and messaging middleware.
 
-Management of credentials to access those services and APIs is a potential source of security issues. They should not be hardoced in either application source code nor on its configuration files. Ideally they would live outside of application VMs. Security conscious organizations require that applications use Key Management Services (KMS) to store such credentials, and OpenStack offers the Key Management service (Barbican).
+Management of credentials to access those services and APIs is a potential source of security issues. They should not be hardoced in either application source code nor on its configuration files. Ideally they would live outside of application VMs. Security conscious organizations require that applications use Key Management Services (KMS) to store such credentials, and OpenStack offers Barbican: the Key Management service.
 
 === OpenStack Secrets Management: Barbican
 
