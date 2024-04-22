@@ -6,36 +6,66 @@ Assess the learner’s understanding of the purpose and utility of each Red Hat 
 
 WARNING: Pending review.
 
-// This review quiz is easier/lightier than previous quizzes on purpose, as a refresher for learners.
+// This review quiz takes the opportunity to relate and contrast services presented in different lecture sections. This may surprise students looking for an "easy" quiz.
 
 == Questions
 
-1. True or false: Red Hat OpenStack Services on OpenShift enables management of applications running on OpenShift Virtualization VMs using OpenStack APIs.
+1. True or false: Usage of Cinder and Neutron is optional, though most real-world applications will require both.
 
 * [ ] True
 * [ ] False
 
-2. True or False: An OpenStack Operator needs access to the OpenShift web console to manage application workloads running as VMs on their OpenStack clusters.
+2. True or False: Glance is an alternative image service for OpenStack clusters which do not run Swift or any other form of object storage.
 
 * [ ] True
 * [ ] False
 
-3. True of False: An OpenStack Operator needs access to RHEL compute nodes to manage application VMs running on those nodes.
+3. True or False: Neutron provides network connectivity for server instances inside an OpenStack cluster. To provide network connectivity with external servers, including instances in other clusters, you require additional networking services such as Octavia and Designate.
 
 * [ ] True
 * [ ] False
 
-4. True or False: OpenStack Administrators need access to OpenShift clusters running OpenStack services.
+4. True or False: Octavia can only provide simple IP load balancers (layer 3). More sophisticated load balancer needs (layer 7) require a specialized application such as HAproxy or Squid.
 
 * [ ] True
 * [ ] False
 
-5. True or False: An OpenStack Operator uses the Horizon dashboard for all daily tasks.
+5. True or False: Though it is common exposing Swift objects to outside an OpenStack cluster, to clients on the Internet, it is *not* common to expose Manila file shares for the same clients.
 
 * [ ] True
 * [ ] False
 
-6. An OpenStack Operator focuses on OpenStack API resources that affect individual application workloads, as opposd to OpenStack API resources which affect an entire cluster.
+6. True or False: For most applications, object storage using the S3 API is a drop-in replacement for operating system file access systemcalls.
+
+* [ ] True
+* [ ] False
+
+7. True or False: Barbican provides a solution for the common issue of leaking access credentials hardcoded in source code stored in GitHub repositories.
+
+* [ ] True
+* [ ] False
+
+8. True or False: Heat orchestrates running multiple instances of the same application, running in multiple, independent OpenStack clusters, for geolocation and disaster recovery.
+
+* [ ] True
+* [ ] False
+
+9. True or False: Designate enables automated workflows where new applications are deployed and immediately get assigned human-readable URLs.
+
+* [ ] True
+* [ ] False
+
+10. True or False: Plamement and Ceilomer may seem to be related, because both track the usage of compute capacity by applications on OpenStack clusters, they are actually unrelated and provide different data: Placement is about static usage of resources, like how many virtual CPUs are available for creating more server instances, while Ceilometer is about dynamic usage of resources, like how much CPU is in use right now with multiple simultaneous end-users accessing applications.
+
+* [ ] True
+* [ ] False
+
+11. True or False: The Horizon dashboard provides long-term performance metrics and capacity planning estimation based on data from Ceilometer.
+
+* [ ] True
+* [ ] False
+
+12. True or False: The Ironic service enables automated management of compute nodes in an OpenStack cluster.
 
 * [ ] True
 * [ ] False
