@@ -47,6 +47,8 @@ Swift offers object storage capabilities similar to Amazon S3. S3 is a de-facto 
 
 Swift has its own application API, but it never got close to the popularity of Amazon S3. Most strage backends certified for Red Hat OpenStack offer both the Swift and S3 APIs, and an OpenStack Operator can manage object storage using Swift while applications access that storage using S3. Which is already good because most storage vendors do a good job of emulating the S3 API from the perspective of applications but require their own proprietary administration interfaces, so Swift can abstract these interfaces for an OpenStack Operator.
 
+Swift is one of the few services in an OpenStack cluster that is accessed directly by end-user applications running outside its cluster. Unlike traditional networked file systems, which need special configurations at the end-user operating system and require application protocols not designed for remote networks and the internet, object storage uses the HTTP protocol which mobile and web applications commonly use to interact with other cloud services.
+
 == Additional OpenStack Services for Networking
 
 Besides Nova, two services of Red Hat OpenStack Services on OpenShift offer networking capabilities:
