@@ -242,15 +242,39 @@ Work in Progress
 <h2 id="_openstack_authentication_and_service_discovery_keystone"><a class="anchor" href="#_openstack_authentication_and_service_discovery_keystone"></a>OpenStack Authentication and Service Discovery: Keystone</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>WIP</p>
+<p>We were already introduced to Keysone because of its role when any client interacts with OpenStack APIs: It is the authentication entry point and it provides the API entry points for all other user-facing services.</p>
+</div>
+<div class="paragraph">
+<p>OpenStack KeyStone also manages resources which enable organizing the work of Operations and Administration teams, such as projects and domains:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">OpenStack projects</dt>
+<dd>
+<p>All OpenStack API resources belong to a <strong>project</strong>, and users with access to that project man use or manage the included API resources. OpenStack API resources can be shared, meaning they are visible outside of their projects and can relate to API resouces in other projects.</p>
+</dd>
+<dt class="hdlist1">OpenStack domains</dt>
+<dd>
+<p>All OpenStack API resources and users also belong to a <strong>domain</strong>. OpenStack API resources belong to a domain indirectly, because their project belong to a domain. A domain holds the connection to a external identity management system, and users from one domain can be given access to API resources in another domain.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Cluster-level API resources live in special domain named <strong>default</strong> and a special project inside that domain, named <strong>system</strong>.</p>
+</div>
+<div class="paragraph">
+<p>OpenStack Keystone also has a role in authorization relate to OpenStack APIs, by providing many attributes which individual services use to make authorization decisions, such as <strong>groups</strong> and <strong>roles</strong>, but Keystone itself does not make any authorization decision: services make those decisions, by themselves, which can occasionaly create inconsistencies.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_web_ui_for_openstack_operators_and_administrators_horizon"><a class="anchor" href="#_web_ui_for_openstack_operators_and_administrators_horizon"></a>Web UI for OpenStack Operators and Administrators: Horizon</h2>
+<h2 id="_web_ui_for_openstack_cluster_operation_and_administration_horizon"><a class="anchor" href="#_web_ui_for_openstack_cluster_operation_and_administration_horizon"></a>Web UI for OpenStack Cluster Operation and Administration: Horizon</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>WIP</p>
+<p>We were already introduced, in chapter 1, to the OpenStack Dashboard: Horizon. It is a web application which provides easier graphic workflows for managing workloads running in OpenStack clusters and perform selected administration tasks on those clusters.</p>
+</div>
+<div class="paragraph">
+<p>Horizon discovers OpenStack APIs using Keystone and authenticates using it, like any other tool which access and manages OpenStack clusters and applications hosted on them. It just runs as part of the control plane of an OpenStack cluster, but has no special nor low-level access to OpenStack.</p>
 </div>
 </div>
 </div>
@@ -258,7 +282,16 @@ Work in Progress
 <h2 id="_physical_manchine_management_ironic"><a class="anchor" href="#_physical_manchine_management_ironic"></a>Physical Manchine Management: Ironic</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>WIP</p>
+<p>OpenStack Ironic enables managing physical machines as if they were virtual machies, as long as those machines have management hardware which is compliant to standards, such as <a href="https://en.wikipedia.org/wiki/Intelligent_Platform_Management_Interface">IPMI</a> or <a href="https://redfish.dmtf.org/">Redfish</a>, or from a vendor which provider an OpenStack driver for its proprietary hardware management interface.</p>
+</div>
+<div class="paragraph">
+<p>Through Ironic, you can perform operations such as powering on and off a physical machine, or booting it from virtual, local, or remote media to install an operating system. These enable automating provisioning, tearing-down, and even recovery of machines from software errors. Of course, all that depends on the physical machines being already wired to the correct server hack, power supply, and network switches.</p>
+</div>
+<div class="paragraph">
+<p>Previous releases of Red Hat Openstack platform could use Ironic to provision compute nodes for the OpenStack cluster itself, but Red Hat OpenStack Services on OpenShift uses Ironic only for provisiong machines to be used as server instances by an OpenStack Operator to run application workloads.</p>
+</div>
+<div class="paragraph">
+<p>OpenStack Operators can use physical machines managed by Ironic as just another class of server instance (or *flavor), intended for applications which require lots of compute capacity or hardware speeds. Remember that OpenStack provides mechanisms to deal with special hardware, such as GPUs and SR-IOV network acellerator cards, and you do not need to deploy applications on physical machines to get access to different kinds of special hardware.</p>
 </div>
 </div>
 </div>
@@ -266,7 +299,10 @@ Work in Progress
 <h2 id="_metrics_data_collection_ceilometer"><a class="anchor" href="#_metrics_data_collection_ceilometer"></a>Metrics Data Collection: Ceilometer</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>WIP</p>
+<p>OpenStack Cleilometer collects, transforms, and normalizes performance data from other OpenStack services. The data from Ceilometer enables other features such as autoscaling of server groups but it is not intended to be a complete nor standalone monitoring and observability solution. OpenStack Administrator require third-party products or open source projects to visualize, query, and analyse data from Ceilometer,</p>
+</div>
+<div class="paragraph">
+<p>Red Hat OpenStack Services on OpenShift feeds the data from Ceilometer to OpenShift Monitoring, and OpenStack Administrators use OpenShift Monitoring dashoards and PromQL queries from Prometheus to visualize, query, and generate alerts.</p>
 </div>
 </div>
 </div>
@@ -274,7 +310,7 @@ Work in Progress
 <h2 id="_next_steps"><a class="anchor" href="#_next_steps"></a>Next Steps</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>WIP</p>
+<p>OpenStack Operators interact more frequently with API resources from the fundamental and additional services which were introduced in previous sections of this chapter as they relate more directly with managing application workloads. OpenStack Operators usually work with domains and projects that were previously setup by OpenStack Administrators, and they get performance data about their applications from whatever tooling was configured by Administrators to store the data from Ceilometer. Finally OpentStack Operators will use bare metal machine pools that were previously configured by OpenStack Administrators, as well as a number of API resources from other OpenStack services which require administrator-level access or are usually configured bdy administrators on day-2 before onboarding operators and applications.</p>
 </div>
 </div>
 </div>
