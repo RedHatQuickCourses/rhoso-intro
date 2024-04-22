@@ -204,16 +204,70 @@ Work in Progress
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Question</p>
+<p>Which of the following OpenStack services addresses the need an OpenStack Administrator has for grouping API resources so they can be managed by different teams of OpenStack Operators?</p>
 <div class="ulist checklist">
 <ul class="checklist">
 <li>
-<p><i class="fa fa-square-o"></i> Answer 1<br>
-<em>Correct: Explain</em></p>
+<p><i class="fa fa-check-square-o"></i> <strong>Identity (Keystone)</strong><br>
+<em>Correct: Keystone groups API resources into projects and domains for separation of concerns.</em></p>
 </li>
 <li>
-<p><i class="fa fa-square-o"></i> Answer 2<br>
-<em>Incorrect: Explain</em></p>
+<p><i class="fa fa-square-o"></i> Dashboard (Horizon)<br>
+<em>Incorrect: Horizon whould just display resources from the groups (projects and domains) mnanaged by Keystone.</em></p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> Bare Metal Provisioning (Ironic)<br>
+<em>Incorrect: There are no requirements for running applications on physical machines.</em></p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> Metering (Ceilometer)<br>
+<em>Incorrect: The requirements are not about performance metrics and other runtime metric from OpenStack services.</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Which of the following OpenStack services addresses the need an OpenStack Administrator has for instantaneous data on usage of CPU and memory from compute nodes, to assess if they are idle or overutilized by application workloads?</p>
+<div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p><i class="fa fa-square-o"></i> Identity (Keystone)<br>
+<em>Incorrect: The requirements are not about authentication nor service discovery.</em></p>
+</li>
+<li>
+<p><i class="fa fa-check-square-o"></i> <strong>Dashboard (Horizon)</strong><br>
+<em>Correct: Horizon displays data at the moment, but cannot display historical data from Ceilometer.</em></p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> Bare Metal Provisioning (Ironic)<br>
+<em>Incorrect: There are no requirements for running applications on physical machines.</em></p>
+</li>
+<li>
+<p><i class="fa fa-check-square-o"></i> <strong>Metering (Ceilometer)</strong><br>
+<em>Correct: Ceilometer is the source for instantaneous performance data.</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Which of the following OpenStack services addresses the need an OpenStack Administrator has for providing phisical machines for an application which requires direct access to hardware devices and for which it is not possible to provide pass-through devices for a virtual machine?</p>
+<div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p><i class="fa fa-square-o"></i> Identity (Keystone)<br>
+<em>Incorrect: The requirements are not about authentication nor service discovery.</em></p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> Dashboard (Horizon)<br>
+<em>Incorrect: The requirements are not about web or graphical user interfaces.</em></p>
+</li>
+<li>
+<p><i class="fa fa-check-square-o"></i> <strong>Bare Metal Provisioning (Ironic)</strong><br>
+<em>Correct: Ironic enables using physical machines as server instances for applications running on OpenStack.</em></p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> Metering (Ceilometer)<br>
+<em>Incorrect: The requirements are not about performance metrics and other runtime metric from OpenStack services.</em></p>
 </li>
 </ul>
 </div>

@@ -299,10 +299,13 @@ Work in Progress
 <h2 id="_metrics_data_collection_ceilometer"><a class="anchor" href="#_metrics_data_collection_ceilometer"></a>Metrics Data Collection: Ceilometer</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>OpenStack Cleilometer collects, transforms, and normalizes performance data from other OpenStack services. The data from Ceilometer enables other features such as autoscaling of server groups but it is not intended to be a complete nor standalone monitoring and observability solution. OpenStack Administrator require third-party products or open source projects to visualize, query, and analyse data from Ceilometer,</p>
+<p>OpenStack Cleilometer collects, transforms, and normalizes performance data from other OpenStack services. The data from Ceilometer enables other features such as autoscaling of server groups and includes not only per-service data but also per resource, such as server instances, volumes, and computes.</p>
 </div>
 <div class="paragraph">
-<p>Red Hat OpenStack Services on OpenShift feeds the data from Ceilometer to OpenShift Monitoring, and OpenStack Administrators use OpenShift Monitoring dashoards and PromQL queries from Prometheus to visualize, query, and generate alerts.</p>
+<p>Some of the data from Ceilometer feed nice graphics and dashboards in Horizon, but Ceilometer it is not intended to be a complete nor standalone monitoring and observability solution. OpenStack Administrator require third-party products or open source projects to visualize, query, and analyse data from Ceilometer, besides long-term storage of those data for capacity planing, assessing sazonability patterns, and other uses.</p>
+</div>
+<div class="paragraph">
+<p>Red Hat OpenStack Services on OpenShift feeds the data from Ceilometer to OpenShift Monitoring for storage, and OpenStack Administrators can use OpenShift Monitoring dashoards and PromQL queries from Prometheus to visualize, query, and generate alerts.</p>
 </div>
 </div>
 </div>
