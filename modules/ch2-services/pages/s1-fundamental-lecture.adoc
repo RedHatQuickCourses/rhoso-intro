@@ -10,6 +10,8 @@ WARNING: Work in Progress
 
 OpenStack is composed of multiple independent services which can work (and usually do) together. Having services which are independent of each other enables faster delivery of new features and more reliable fixes for bugs and security issues, and is widely recognized as a development best practice.
 
+// figures are exported from https://docs.google.com/presentation/d/1DGxnxpZoHlpaSZwS_Y8WQoNvfFSm3KDEz-hJTJ8dRSU/edit#slide=id.g2ce8a67ea30_0_84
+
 image::s1-fundamental-lecture-fig1.png[]
 
 But OpenStack services are rarely run standalone, except by developers working on the services themselves. Most OpenStack clusters run a standard set of services and, even when some of those servers could be disabled, with no loss of functionality for a certain application workload, the standard set is usually left enabled. Which means most clusters running Red Hat OpenStack Services on OpenShift run all services included with the product.

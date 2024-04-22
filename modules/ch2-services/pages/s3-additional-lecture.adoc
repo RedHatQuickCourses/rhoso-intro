@@ -14,6 +14,8 @@ But many benefits from using private clouds come from designing applications to 
 
 Even if an organization is not yet designing applications and their operational processes to be cloud-native, the fact that provisioning basic server, networking, and storage infrastructure became faster enables IT teams to focus on other non-functional requirements, such as security and horizontal scalability. OpenStack helps addressing those requirements.
 
+// figures are exported from https://docs.google.com/presentation/d/1DGxnxpZoHlpaSZwS_Y8WQoNvfFSm3KDEz-hJTJ8dRSU/edit#slide=id.g2ce8a67ea30_0_84
+
 image::s3-additional-lecture-fig1.png[]
 
 == Additional OpenStack Services for Storage
