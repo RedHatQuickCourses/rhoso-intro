@@ -5,5 +5,4 @@ nav:
 - modules/ROOT/nav.adoc
 - modules/ch1-intro/nav.adoc
 - modules/ch2-services/nav.adoc
-#- modules/chapter3/nav.adoc
-#- modules/appendix/nav.adoc
+- modules/ch3-multitenancy/nav.adoc

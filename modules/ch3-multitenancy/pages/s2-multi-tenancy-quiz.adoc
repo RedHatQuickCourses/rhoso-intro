@@ -1,0 +1,13 @@
+= Quiz: Red Hat OpenStack Multi-Tenancy
+
+Objective::
+
+
+WARNING: Work in Progress
+
+== Questions
+
+1. Question
+
+* [ ] Answer 1
+* [ ] Answer 2

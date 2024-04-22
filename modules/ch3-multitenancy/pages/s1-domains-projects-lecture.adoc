@@ -1,0 +1,10 @@
+= Resources, Projects, and Domains
+
+Objective::
+
+Describe how to organize OpenStack resources in projects and domains for access control and quota management.
+
+WARNING: Work in Progress
+
+== Multitenancy with OpenStack
+
