@@ -126,6 +126,18 @@
   </li>
 </ul>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="s5-administration-lecture.html">Administration Services of Red Hat OpenStack</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="s6-administration-quiz.html">Quiz: OpenStack Services and IT Infrastructure</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="s6-administration-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
 </ul>
   </li>
 </ul>
@@ -200,8 +212,13 @@ Work in Progress
 <div class="paragraph">
 <p>OpenStack is composed of multiple independent services which can work (and usually do) together. Having services which are independent of each other enables faster delivery of new features and more reliable fixes for bugs and security issues, and is widely recognized as a development best practice.</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/s1-fundamental-lecture-fig1.png" alt="s1 fundamental lecture fig1">
+</div>
+</div>
 <div class="paragraph">
-<p>But OpenStack services are rarely run standalone, except by developers working on the services themselves. Most OpenStack clusters run a standard set of services and, even when some of those servers could be disabled, with no loss of functionality for a certain application workloads, the standard set is usually left enabled. Which means most clusters running Red Hat OpenStack Services on OpenShift run all services included with the product.</p>
+<p>But OpenStack services are rarely run standalone, except by developers working on the services themselves. Most OpenStack clusters run a standard set of services and, even when some of those servers could be disabled, with no loss of functionality for a certain application workload, the standard set is usually left enabled. Which means most clusters running Red Hat OpenStack Services on OpenShift run all services included with the product.</p>
 </div>
 <div class="paragraph">
 <p>An OpenStack Operator focuses on user-facing OpenStack services, meaning services which provide an API for users outside of the cluster. Some OpenStack services exist to provide internal infrastructure for an OpenStack cluster and their APIs are available only from inside a cluster, for use by other OpenStack services and compute nodes. The OpenStack Administration learning journey provides more details about these internal services, and this course focuses on the user-facing services.</p>
@@ -212,7 +229,7 @@ Work in Progress
 <h2 id="_openstack_services_to_manage_applications"><a class="anchor" href="#_openstack_services_to_manage_applications"></a>OpenStack Services to Manage Applications</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The first set of OpenStack services are the minimum required by pratically any funcional OpenStack cluster. It would be hard to support even the simplest applications without including all services in this category, so we call them fundamental services.</p>
+<p>The first set of OpenStack services are the minimal services required by pratically any funcional OpenStack cluster. It would be hard to support even the simplest applications without including all services in this category, so we call them fundamental services.</p>
 </div>
 <div class="paragraph">
 <p>It is common for the OpenStack community to refer to individual services by either their code names or their purposes. Follows a list of the fundamental OpenStack services covered in this section:</p>
@@ -236,8 +253,10 @@ Work in Progress
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>[ illustrative figure of the services and the resources they manage. ]</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/s1-fundamental-lecture-fig2.png" alt="s1 fundamental lecture fig2">
+</div>
 </div>
 <div class="sect2">
 <h3 id="_openstack_authentication_and_service_discovery_keystone"><a class="anchor" href="#_openstack_authentication_and_service_discovery_keystone"></a>OpenStack Authentication and Service Discovery: Keystone</h3>

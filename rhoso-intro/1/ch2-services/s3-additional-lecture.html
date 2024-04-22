@@ -126,6 +126,18 @@
   </li>
 </ul>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="s5-administration-lecture.html">Administration Services of Red Hat OpenStack</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="s6-administration-quiz.html">Quiz: OpenStack Services and IT Infrastructure</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="s6-administration-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
 </ul>
   </li>
 </ul>
@@ -206,8 +218,10 @@ Work in Progress
 <div class="paragraph">
 <p>Even if an organization is not yet designing applications and their operational processes to be cloud-native, the fact that provisioning basic server, networking, and storage infrastructure became faster enables IT teams to focus on other non-functional requirements, such as security and horizontal scalability. OpenStack helps addressing those requirements.</p>
 </div>
-<div class="paragraph">
-<p>[ Ilustrative figure of the additional services, maybe of all services, with the non-additional grayed out ]</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/s3-additional-lecture-fig1.png" alt="s3 additional lecture fig1">
+</div>
 </div>
 </div>
 </div>
@@ -220,10 +234,10 @@ Work in Progress
 <div class="ulist">
 <ul>
 <li>
-<p>Shared Filesystems: Manila</p>
+<p>Manila: Shared Filesystems service</p>
 </li>
 <li>
-<p>Object Store: Swift</p>
+<p>Swift: Object Store service</p>
 </li>
 </ul>
 </div>
@@ -271,10 +285,10 @@ Work in Progress
 <div class="ulist">
 <ul>
 <li>
-<p>Load Balancer: Octavia</p>
+<p>Octavia: Load Balancer service</p>
 </li>
 <li>
-<p>DNS Service: Designate</p>
+<p>Designate: DNS service</p>
 </li>
 </ul>
 </div>
@@ -310,10 +324,10 @@ Work in Progress
 <div class="ulist">
 <ul>
 <li>
-<p>Orchestration: Heat</p>
+<p>Heat: Orchestration service</p>
 </li>
 <li>
-<p>Placement service: Placement</p>
+<p>Placement: Placement service</p>
 </li>
 </ul>
 </div>
@@ -328,8 +342,8 @@ Work in Progress
 <div class="paragraph">
 <p>But application workloads are rarely contained in a single server instance. Most real-world applications are composed of multiple VMs, for example the traditional three-tier architecture of persentation, business, and persistence, which could be realised as:</p>
 </div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>Presentation: Web server with static HTML pages and JavaScript code.</p>
 </li>
@@ -339,7 +353,7 @@ Work in Progress
 <li>
 <p>Persistence: A relation or noSQL database server.</p>
 </li>
-</ul>
+</ol>
 </div>
 <div class="paragraph">
 <p>It is also very common that each of those tiers consists of multiple servers, for example a web server farm or replicated primary (read-write) and secondary (read-only) database instances.</p>
@@ -384,7 +398,7 @@ Work in Progress
 <p>We already know that security in OpenStack starts with Keystone, as the authentication entry point for all OpenStack services. While most end-user applications do not need to invoke OpenStack APIs, thus would have no need for direct interactions withg Keystone, most applications do interact with a wide range of services, from external APIs of a software vendor to middleware running on other servers inside and outside of their OpenStack cluster, such as database servers and messaging middleware.</p>
 </div>
 <div class="paragraph">
-<p>Management of credentials to access those services and APIs is a potential source of security issues. They should not be hardoced in either application source code nor on its configuration files. Ideally they would live outside of application VMs. Security conscious organizations require that applications use Key Management Services (KMS) to store such credentials, and OpenStack offers the Key Management service (Barbican).</p>
+<p>Management of credentials to access those services and APIs is a potential source of security issues. They should not be hardoced in either application source code nor on its configuration files. Ideally they would live outside of application VMs. Security conscious organizations require that applications use Key Management Services (KMS) to store such credentials, and OpenStack offers Barbican: the Key Management service.</p>
 </div>
 <div class="sect2">
 <h3 id="_openstack_secrets_management_barbican"><a class="anchor" href="#_openstack_secrets_management_barbican"></a>OpenStack Secrets Management: Barbican</h3>
