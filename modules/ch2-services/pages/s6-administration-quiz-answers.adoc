@@ -4,10 +4,44 @@ WARNING: Work in Progress
 
 == OpenStack Services and IT Infrastructure
 
-1. Question
+1. Which of the following OpenStack services addresses the need an OpenStack Administrator has for grouping API resources so they can be managed by different teams of OpenStack Operators?
 
-* [ ] Answer 1 +
-_Correct: Explain_
+* [x] *Identity (Keystone)* +
+_Correct: Keystone groups API resources into projects and domains for separation of concerns._
 
-* [ ] Answer 2 +
-_Incorrect: Explain_
+* [ ] Dashboard (Horizon) +
+_Incorrect: Horizon whould just display resources from the groups (projects and domains) mnanaged by Keystone._
+
+* [ ] Bare Metal Provisioning (Ironic) +
+_Incorrect: There are no requirements for running applications on physical machines._
+
+* [ ] Metering (Ceilometer) +
+_Incorrect: The requirements are not about performance metrics and other runtime metric from OpenStack services._
+
+2. Which of the following OpenStack services addresses the need an OpenStack Administrator has for instantaneous data on usage of CPU and memory from compute nodes, to assess if they are idle or overutilized by application workloads?
+
+* [ ] Identity (Keystone) +
+_Incorrect: The requirements are not about authentication nor service discovery._
+
+* [x] *Dashboard (Horizon)* +
+_Correct: Horizon displays data at the moment, but cannot display historical data from Ceilometer._
+
+* [ ] Bare Metal Provisioning (Ironic) +
+_Incorrect: There are no requirements for running applications on physical machines._
+
+* [x] *Metering (Ceilometer)* +
+_Correct: Ceilometer is the source for instantaneous performance data._
+
+3. Which of the following OpenStack services addresses the need an OpenStack Administrator has for providing phisical machines for an application which requires direct access to hardware devices and for which it is not possible to provide pass-through devices for a virtual machine?
+
+* [ ] Identity (Keystone) +
+_Incorrect: The requirements are not about authentication nor service discovery._
+
+* [ ] Dashboard (Horizon) +
+_Incorrect: The requirements are not about web or graphical user interfaces._
+
+* [x] *Bare Metal Provisioning (Ironic)* +
+_Correct: Ironic enables using physical machines as server instances for applications running on OpenStack._
+
+* [ ] Metering (Ceilometer) +
+_Incorrect: The requirements are not about performance metrics and other runtime metric from OpenStack services._
