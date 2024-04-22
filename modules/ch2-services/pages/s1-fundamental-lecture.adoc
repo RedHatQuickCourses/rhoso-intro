@@ -4,7 +4,7 @@ Objective::
 
 Describe the OpenStack services required by typical applications and their virtual machines.
 
-WARNING: Work in Progress
+WARNING: Pending Review
 
 == The OpenStack Services Architecture
 

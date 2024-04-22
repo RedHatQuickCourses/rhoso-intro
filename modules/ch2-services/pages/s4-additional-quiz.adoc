@@ -4,7 +4,7 @@ Objective::
 
 Assess the learner’s understanding of the purpose and utility of the additional OpenStack services.
 
-WARNING: Work in Progress
+WARNING: Pending Review
 
 == Questions
 

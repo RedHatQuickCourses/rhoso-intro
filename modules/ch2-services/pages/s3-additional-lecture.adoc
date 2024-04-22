@@ -4,7 +4,7 @@ Objective::
 
 Describe additional OpenStack services useful to applications and their virtual machines.
 
-WARNING: Work in Progress
+WARNING: Pending Review
 
 == OpenStack Support for Cloud-Native and Other Kinds of Applications
 

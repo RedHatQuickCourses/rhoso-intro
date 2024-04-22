@@ -1,6 +1,6 @@
 = Answers to the Review Quiz
 
-WARNING: Pending review.
+WARNING: Pending Review
 
 == Red Hat OpenStack Services
 
