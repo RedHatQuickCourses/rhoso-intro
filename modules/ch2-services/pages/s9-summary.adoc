@@ -1,0 +1,13 @@
+= Summary
+
+In this chapter, you learned:
+
+* OpenStack is composed of multiple user-facing services, that provide API resources OpenStack Operators use to manage application workloads.
+
+* All interactions with an OpenStack cluster start with Keystone, which provides authentication and service discovery for all other services. Keystone also organizes API resources in domains and projects for separation of concerns.
+
+* Almost all applications require the fundamental services: Nova (Compute), Cinder (Block Storage), Glance (Images), and Newtron (Networking).
+
+* Applications usually require one of more of the additional services, especially as development teams adopt cloud-native architectures or address non-functional requirements of performance and reliability: Swift (Object Storage), Manila (Shared Filesystems), Octavia (Load Balancer), Designate (Dynamic DNS), Heat (Orchestration), Placement, and Barbican (Key Management).
+
+* OpenStack Administrators and Operators also take advantage of Horizon (Dashboard), Ironic (Bare Metal Provisioning) and Ceilometer (Metering).

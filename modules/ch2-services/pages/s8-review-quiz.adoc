@@ -1,0 +1,41 @@
+= Review Quiz: Red Hat OpenStack Services
+
+Objective::
+
+Assess the learner’s understanding of the purpose and utility of each Red Hat OpenStack service.
+
+WARNING: Pending review.
+
+// This review quiz is easier/lightier than previous quizzes on purpose, as a refresher for learners.
+
+== Questions
+
+1. True or false: Red Hat OpenStack Services on OpenShift enables management of applications running on OpenShift Virtualization VMs using OpenStack APIs.
+
+* [ ] True
+* [ ] False
+
+2. True or False: An OpenStack Operator needs access to the OpenShift web console to manage application workloads running as VMs on their OpenStack clusters.
+
+* [ ] True
+* [ ] False
+
+3. True of False: An OpenStack Operator needs access to RHEL compute nodes to manage application VMs running on those nodes.
+
+* [ ] True
+* [ ] False
+
+4. True or False: OpenStack Administrators need access to OpenShift clusters running OpenStack services.
+
+* [ ] True
+* [ ] False
+
+5. True or False: An OpenStack Operator uses the Horizon dashboard for all daily tasks.
+
+* [ ] True
+* [ ] False
+
+6. An OpenStack Operator focuses on OpenStack API resources that affect individual application workloads, as opposd to OpenStack API resources which affect an entire cluster.
+
+* [ ] True
+* [ ] False
