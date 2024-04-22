@@ -8,3 +8,7 @@
 ** xref:s5-administration-lecture.adoc[]
 ** xref:s6-administration-quiz.adoc[]
 *** xref:s6-administration-quiz-answers.adoc[]
+** xref:s7-heat-demo.adoc[]
+** xref:s8-review-quiz.adoc[]
+*** xref:s8-review-quiz-answers.adoc[]
+** xref:s9-summary.adoc[]

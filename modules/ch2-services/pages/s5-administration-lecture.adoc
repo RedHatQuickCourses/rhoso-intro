@@ -57,6 +57,8 @@ Previous releases of Red Hat Openstack platform could use Ironic to provision co
 
 OpenStack Operators can use physical machines managed by Ironic as just another class of server instance (or *flavor), intended for applications which require lots of compute capacity or hardware speeds. Remember that OpenStack provides mechanisms to deal with special hardware, such as GPUs and SR-IOV network acellerator cards, and you do not need to deploy applications on physical machines to get access to different kinds of special hardware.
 
+Because of its specific usage, Ironic is the only service of Red Hat OpenStack Services on OpenShift that could be typically disabled.
+
 == Metrics Data Collection: Ceilometer
 
 OpenStack Cleilometer collects, transforms, and normalizes performance data from other OpenStack services. The data from Ceilometer enables other features such as autoscaling of server groups and includes not only per-service data but also per resource, such as server instances, volumes, and computes.
