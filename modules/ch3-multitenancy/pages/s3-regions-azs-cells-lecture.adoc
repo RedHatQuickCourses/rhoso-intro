@@ -18,19 +18,21 @@ To address those requirements, OpenStack offer many ways of grouping compute cap
 
 Regions::
 
-Explain
+A region is a mostly stand-alone OpenStack cluster which manages its own compute resources. Multiple clusters, in different regions, share a single pair of Keystone and Horizon services, giving them an unified view as a single private cloud.
 
-Availabiulity Zones (AZs)::
+Availability Zones (AZs)::
 
-Explain
+An availability zone is a large failure domain inside an OpenStack cluster. It can be defined by a server rack, an uninterruptive power supply, a network switch, a data center building, or any other physical constraint that creates the possibility of all compute resources in the AZ becoming unavailable at the same time.
 
 Host Aggregates::
 
-Explain
+A host aggregate is a group of compute nodes which share common characteristics that make them more desirable to certain workloads compared to other groups of nodes. For example, because of the availability of fast local storage, GPUs, or network accelerators.
 
 Compute Cells::
 
-Explain
+A compute cell is a partition internal to an OpenStack control plane. It deals with the scalability and availability of OpenStack services themselves instead of compute nodes. OpenStack services in the same cell share common back-end services, such as databases and message queues, which can be scaled and managed in cells independent of AZs.
+
+OpenStack Operators usually have visibility of only regions and AZs but not of host aggregates and cells. They are impacted by host aggregates and cells indirectly, from the definition of server flavors and other API resources which impact the scheduling of serer instances on cluster nodes. 
 
 == Regions and AZs
 

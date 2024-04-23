@@ -10,6 +10,9 @@ WARNING: Work in Progress
 
 OpenStack clusters typically run many applications and are managed by many Operators. OpenStack does not prescribe a way of grouping applications and Operators, but provides a general mechanism for enforcing many possible organizational structures, based on domains and projects.
 
+
+// https://docs.google.com/presentation/d/1aslemfY925gyjNHYyenIGSC8RAdogWgL5WSJhtLtn8Q/edit#slide=id.p
+
 [ Figure of projects, domains, users, groups, and API resources ]
 
 On the structure of domains and projects, OpenStack services enforce authorization checks, which may allow or deny a user to manage API respources, enabling separation of concerns, for example: an Operator may manage applications from some projects but not from others.
