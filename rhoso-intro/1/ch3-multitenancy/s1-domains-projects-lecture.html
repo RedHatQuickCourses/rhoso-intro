@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Resources, Projects, and Domains :: Introduction to Red Hat OpenStack Services on OpenShift</title>
     <link rel="prev" href="index.html">
-    <link rel="next" href="s2-multi-tenancy-quiz.html">
+    <link rel="next" href="s2-multitenancy-quiz.html">
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
@@ -168,12 +168,27 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="s2-multi-tenancy-quiz.html">Quiz: Red Hat OpenStack Multi-Tenancy</a>
+    <a class="nav-link" href="s2-multitenancy-quiz.html">Quiz: Red Hat OpenStack Multi-Tenancy</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="s2-multi-tenancy-quiz-answers.html">Answers to the Quiz</a>
+    <a class="nav-link" href="s2-multitenancy-quiz-answers.html">Answers to the Quiz</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="s3-regions-azs-cells-lecture.html">Regions, AZs, and Cells.</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="s4-topology-quiz.html">Quiz: Large OpenStack Clusters</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="s4-topology-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="s5-cluster-demo.html">Demo: OpenStack Heat Orchestrator</a>
   </li>
 </ul>
   </li>
@@ -247,13 +262,16 @@ Work in Progress
 <h2 id="_multitenancy_with_openstack"><a class="anchor" href="#_multitenancy_with_openstack"></a>Multitenancy with OpenStack</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>OpenStack clusters typically run many applications and are managed by many Operators. OpenStack does not prescribe a way of grouping applications and Operators, but provides a general mechanism for enforcing whatever organizational you need, based on domains and projects.</p>
+<p>OpenStack clusters typically run many applications and are managed by many Operators. OpenStack does not prescribe a way of grouping applications and Operators, but provides a general mechanism for enforcing many possible organizational structures, based on domains and projects.</p>
+</div>
+<div class="paragraph">
+<p>[ Figure of projects, domains, users, groups, and API resources ]</p>
 </div>
 <div class="paragraph">
 <p>On the structure of domains and projects, OpenStack services enforce authorization checks, which may allow or deny a user to manage API respources, enabling separation of concerns, for example: an Operator may manage applications from some projects but not from others.</p>
 </div>
 <div class="paragraph">
-<p>The structure of domains and projects also enable OpenStack services to enforce resource quotas, which prevents a single application to take up all compute capacity of a cluster or even of a compute node.</p>
+<p>The structure of domains and projects also enable OpenStack services to enforce API resource and compute resource quotas, which prevents a single application to take up all compute capacity of a cluster or of a compute node.</p>
 </div>
 <div class="paragraph">
 <p>Notice that, unlike operating system file quotas, which assign capacity to users and groups, OpenStack quotas assign capacity to applications, by means of their projects. If a user has access to multiple project, they can create resources which consume all aggregate compute capacity from all those projects.</p>
@@ -303,7 +321,7 @@ Work in Progress
 <p>Most OpenStack client commands will happy take the name of a resource and do the best to find the resource at the specified current project and domain scopes, but if they cannot you are expected to retry the command providing an UUID.</p>
 </div>
 <div class="paragraph">
-<p>Some OpenStack API resources also accept zero or more tag, which you use for arbitrary grouping of resources. OpenStack services do not give any meaning to tags, but they help Operators manage clusters with a large number of resources.</p>
+<p>Some OpenStack API resources also accept zero or more tags, which you use for arbitrary grouping of resources. OpenStack services do not give any meaning to tags, but they help Operators manage clusters with a large number of resources.</p>
 </div>
 </div>
 <div class="sect2">
@@ -317,7 +335,7 @@ Work in Progress
 <div class="ulist">
 <ul>
 <li>
-<p>Users defined at a scope (project or domain) or which got permissions because of groups and roles defined at a scope, can only access resources from the same scope or from lower scopes.</p>
+<p>Users defined at a scope (system, project, or domain) or which got permissions because of groups and roles defined at a scope, can only access resources from the same scope or from lower scopes.</p>
 </li>
 <li>
 <p>Users with the <strong>admin</strong> role can perform any operation with any resource, respecting scope restrictions.</p>
@@ -340,7 +358,7 @@ Work in Progress
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Remember no user or group owns any OpenStack API resource. Servers, networks, volumes, and other resources belong to projects and domains only.
+Remember no user or group owns OpenStack API resources. Servers, networks, volumes, and other API resources belong to projects and domains only.
 </td>
 </tr>
 </table>
@@ -382,19 +400,64 @@ Remember no user or group owns any OpenStack API resource. Servers, networks, vo
 </div>
 </div>
 <div class="sect1">
-<h2 id="_openstack_compute_resource_quotas"><a class="anchor" href="#_openstack_compute_resource_quotas"></a>OpenStack Compute Resource Quotas</h2>
+<h2 id="_openstack_resource_quotas"><a class="anchor" href="#_openstack_resource_quotas"></a>OpenStack Resource Quotas</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Like access control, compute resource quotas are set and enforced by each individual OpenStack service. There is no unified API for setting quotas and each service makes its own quota decisions, usually relying on data from Placement for tracking compute resource usage.</p>
+<p>Like access control, compute resource quotas are set and enforced by each individual OpenStack service. Like access control, it depends on data managed by Keystone, but each service makes its own quota decisions.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+OpenStack Nova used to provide per-user quotas but they are deprecated and are not available aymore from the OpenStack client and other up-to-date OpenStack management tools.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>Note: Here "compute" means anything required to run application, and includes storage and network resources. It&#8217;s not API resources from Nova.</p>
+<p>[ Figure of API resource and compute resource quota types ]</p>
 </div>
 <div class="paragraph">
 <p>Compute resource quotas can only prevent the creation or changes to API resource instances. They are not designed to enforce dynamic usage quotas, but to ensure applications get some guaranteed capacity and that compute nodes are not overloaded with more server instances they can handle.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Here "compute" means anything required to run application, and includes storage and network resources. It&#8217;s not API resources from Nova.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>To understand that, assume that a project has a quota of only 10 vCPUs. If that project already has three server instances, which add up to 8 vCPUs, it is only possible to create two new server instances, each one using one vCPU, or one instance using two vCPUs. It doesn&#8217;t matter if the existing instances are mostly iddle and the cluster has plenty if capacity for running more virtual machines.</p>
+</div>
+<div class="sect2">
+<h3 id="_api_resource_quotas_and_compute_resource_quotas"><a class="anchor" href="#_api_resource_quotas_and_compute_resource_quotas"></a>API Resource Quotas and Compute Resource Quotas</h3>
+<div class="paragraph">
+<p>Some quotas affect the number of instances you can create, of a given API resource type, inside a project. That class of quota limts the number of server instances, floating ips, virtual networks, volumes, and so on.</p>
+</div>
+<div class="paragraph">
+<p>Other quotas affect the quantity, or capacity, of a compute resource that a project can consume, aggregating the consuption from all server instances in the project. That class of quota limits the number of vCPUs, total memory, total storage space space, and so on.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_object_storage_quotas"><a class="anchor" href="#_object_storage_quotas"></a>Object Storage Quotas</h3>
+<div class="paragraph">
+<p>Remember that quotas are defined and enforced by each OpenStack service themselves, and this allows for some inconsistencies and also for purposeful exceptions. One such exception is Swift, which provides both API resource and compute resource storage quotas on accounts.</p>
+</div>
+<div class="paragraph">
+<p>Object storage accounts enable external applications to save and retrieve objects without directly authenticating to Keystone. They can represent individual users of Swift object storage instead of individual applications.</p>
+</div>
+<div class="paragraph">
+<p>Object storage quotas limit the number of containers or buckets, tne number of objects, and the total space occupied by aggregating all objects owned by the account.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_compute_resource_overcommit"><a class="anchor" href="#_compute_resource_overcommit"></a>Compute Resource Overcommit</h3>
@@ -402,17 +465,17 @@ Remember no user or group owns any OpenStack API resource. Servers, networks, vo
 <p>Because most applications are bursty, meaning their actual usage of compute resource vary over time, and most times it happens during short periods of time, alternating with other short periods of iddleness, OpenStack enables overcommit of compute resources by default.</p>
 </div>
 <div class="paragraph">
-<p>An OpenStack Administrator can configure different overcommit levels for different compute nodes, but the idea is that, if a compute node has an overcommit factor of 2.0 and 16 cores, it can run server instances adding up to 32 vCPUs.</p>
+<p>An OpenStack Administrator can configure different overcommit levels for different classes of compute nodes, but the idea is that, if a compute node has an overcommit factor of 2.0 and 16 cores, it can run server instances adding up to 32 vCPUs.</p>
 </div>
 <div class="paragraph">
-<p>It is not frequent to configure overcommit of other classes of compute resources, such as memory and GPUs.</p>
+<p>It is not frequent to configure overcommit of other classes of compute resources, such as memory and GPUs because they tend to be used with a more consistent, non-bursty pattern.</p>
 </div>
 </div>
 </div>
 </div>
 <nav class="pagination">
   <span class="prev"><a href="index.html">Multi-Tenancy in Red Hat OpenStack</a></span>
-  <span class="next"><a href="s2-multi-tenancy-quiz.html">Quiz: Red Hat OpenStack Multi-Tenancy</a></span>
+  <span class="next"><a href="s2-multitenancy-quiz.html">Quiz: Red Hat OpenStack Multi-Tenancy</a></span>
 </nav>
 </article>
   </div>
