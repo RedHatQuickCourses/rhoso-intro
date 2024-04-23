@@ -1,0 +1,45 @@
+= Regions, AZs, and Cells.
+
+Objective::
+
+Describe how to structure a large OpenStack cluster to address performance and reliability requirements of applications and how operators configure workloads for the topology of a cluster.
+
+WARNING: Work in Progress
+
+== Logical and Physical Organization of OpenStack Clusters
+
+In the previous section, we introduced how OpenStack enables users to organize their teams and applications using domains and projects. They provide logical groups that addresses the organizational structure of your teams and applications. At the end of the section, we introduced quotas, which links that logical structure with physical characteristics of your cluster, such as compute capacity.
+
+OpenStack Operators need some understanding of the physcal topology of their OpenStack clusters to ensure their applications run matches their performance and reliability requirements. Sometimes applications need special classes of hardware, such as GPUS; sometimes it is about high-availability, ensuring applications stay operational and their end-users do not notice when a compute server fails.
+
+[ Figure of Regions, AZs, Host Aggregates, and Cells ]
+
+To address those requirements, OpenStack offer many ways of grouping compute capacity. Most  of them focus on the compute nodes, and some focus on control plane services:
+
+Regions::
+
+Explain
+
+Availabiulity Zones (AZs)::
+
+Explain
+
+Host Aggregates::
+
+Explain
+
+Compute Cells::
+
+Explain
+
+== Regions and AZs
+
+WIP
+
+== Host Aggregates
+
+WIP
+
+== Control Plane Cells
+
+WIP

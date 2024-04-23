@@ -1,0 +1,14 @@
+= Quiz: Large OpenStack Clusters
+
+Objective::
+
+Assess the learner understanding of OpenStack cluster topology mechanisms.
+
+WARNING: Work in Progress
+
+== Questions
+
+1. Question
+
+* [ ] Answer 1
+* [ ] Answer 2

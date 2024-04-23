@@ -8,13 +8,18 @@ WARNING: Work in Progress
 
 == Multitenancy with OpenStack
 
-OpenStack clusters typically run many applications and are managed by many Operators. OpenStack does not prescribe a way of grouping applications and Operators, but provides a general mechanism for enforcing whatever organizational you need, based on domains and projects.
+OpenStack clusters typically run many applications and are managed by many Operators. OpenStack does not prescribe a way of grouping applications and Operators, but provides a general mechanism for enforcing many possible organizational structures, based on domains and projects.
+
+[ Figure of projects, domains, users, groups, and API resources ]
 
 On the structure of domains and projects, OpenStack services enforce authorization checks, which may allow or deny a user to manage API respources, enabling separation of concerns, for example: an Operator may manage applications from some projects but not from others.
 
-The structure of domains and projects also enable OpenStack services to enforce resource quotas, which prevents a single application to take up all compute capacity of a cluster or even of a compute node.
+The structure of domains and projects also enable OpenStack services to enforce API resource and compute resource quotas, which prevents a single application to take up all compute capacity of a cluster or of a compute node.
 
 Notice that, unlike operating system file quotas, which assign capacity to users and groups, OpenStack quotas assign capacity to applications, by means of their projects. If a user has access to multiple project, they can create resources which consume all aggregate compute capacity from all those projects.
+
+// The above might not be entirely true because of unified limits in keystone
+// Review openstack limit show vs openstack quota show
 
 == OpenStack Domains and Projects
 
@@ -41,7 +46,7 @@ OpenStack API resources are uniquely identified by an UUID assigned by its servi
 
 Most OpenStack client commands will happy take the name of a resource and do the best to find the resource at the specified current project and domain scopes, but if they cannot you are expected to retry the command providing an UUID.
 
-Some OpenStack API resources also accept zero or more tag, which you use for arbitrary grouping of resources. OpenStack services do not give any meaning to tags, but they help Operators manage clusters with a large number of resources.
+Some OpenStack API resources also accept zero or more tags, which you use for arbitrary grouping of resources. OpenStack services do not give any meaning to tags, but they help Operators manage clusters with a large number of resources.
 
 === OpenStack Authorization and Roles
 
@@ -49,7 +54,7 @@ In the previous chapter, we learned that Keystone authenticates the identity of 
 
 Keystone does populate access token with data, such as originating domain and project of a user, and the list of groups and roles a user is member of. OpenStack services can use any of that information to make authentication decisions, and they are expected to follow a few conventions, among them:
 
-* Users defined at a scope (project or domain) or which got permissions because of groups and roles defined at a scope, can only access resources from the same scope or from lower scopes.
+* Users defined at a scope (system, project, or domain) or which got permissions because of groups and roles defined at a scope, can only access resources from the same scope or from lower scopes.
 
 * Users with the *admin* role can perform any operation with any resource, respecting scope restrictions.
 
@@ -59,7 +64,7 @@ Keystone does populate access token with data, such as originating domain and pr
 
 To understand the difference between admin and member roles, consider the conflicting needs of granting some authonomy to OpenStack Operators, while denying them the ability to perform dangerous operations. For example, a user might have permission to create server instances and networks inside a project, but the same user cannot change resource quotas on that project, no grant access to resources to other users.
 
-TIP: Remember no user or group owns any OpenStack API resource. Servers, networks, volumes, and other resources belong to projects and domains only.
+TIP: Remember no user or group owns OpenStack API resources. Servers, networks, volumes, and other API resources belong to projects and domains only.
 
 The admin, member, and reader roles exist by convention: it is up to individual OpenStack services to assign specifc meaning to each of those roles, that is: which APIs they can invoke and using which parameters. For some services, the distinction between admin and member might make no sense and those roles would be equivalent. For other services, the reader role might not view some attributes of a resource instance.
 
@@ -85,22 +90,43 @@ For some services there may be a special project and/or a special domain, repopu
 
 // Is it always special project/domain or is there a scope and API resources with no attachment to any project and any domain?
 
-== OpenStack Compute Resource Quotas
+== OpenStack Resource Quotas
 
-Like access control, compute resource quotas are set and enforced by each individual OpenStack service. There is no unified API for setting quotas and each service makes its own quota decisions, usually relying on data from Placement for tracking compute resource usage.
+Like access control, compute resource quotas are set and enforced by each individual OpenStack service. Like access control, it depends on data managed by Keystone, but each service makes its own quota decisions.
 
-Note: Here "compute" means anything required to run application, and includes storage and network resources. It's not API resources from Nova.
+//VERIFY: ", usually relying on data from Placement for tracking compute resource usage."
+
+TIP: OpenStack Nova used to provide per-user quotas but they are deprecated and are not available aymore from the OpenStack client and other up-to-date OpenStack management tools.
+
+// If unified limits are really supported by RHOSO and implemented consistently by all OpenStack services, the explanation here will change: quotas may be attachd to users (but what about groups?) https://docs.openstack.org/keystone/latest//admin/unified-limits.html
+
+[ Figure of API resource and compute resource quota types ]
 
 Compute resource quotas can only prevent the creation or changes to API resource instances. They are not designed to enforce dynamic usage quotas, but to ensure applications get some guaranteed capacity and that compute nodes are not overloaded with more server instances they can handle.
 
+NOTE: Here "compute" means anything required to run application, and includes storage and network resources. It's not API resources from Nova.
+
 To understand that, assume that a project has a quota of only 10 vCPUs. If that project already has three server instances, which add up to 8 vCPUs, it is only possible to create two new server instances, each one using one vCPU, or one instance using two vCPUs. It doesn't matter if the existing instances are mostly iddle and the cluster has plenty if capacity for running more virtual machines.
+
+=== API Resource Quotas and Compute Resource Quotas
+
+Some quotas affect the number of instances you can create, of a given API resource type, inside a project. That class of quota limts the number of server instances, floating ips, virtual networks, volumes, and so on.
+
+Other quotas affect the quantity, or capacity, of a compute resource that a project can consume, aggregating the consuption from all server instances in the project. That class of quota limits the number of vCPUs, total memory, total storage space space, and so on.
+
+=== Object Storage Quotas
+
+Remember that quotas are defined and enforced by each OpenStack service themselves, and this allows for some inconsistencies and also for purposeful exceptions. One such exception is Swift, which provides both API resource and compute resource storage quotas on accounts. 
+
+Object storage accounts enable external applications to save and retrieve objects without directly authenticating to Keystone. They can represent individual users of Swift object storage instead of individual applications.
+
+Object storage quotas limit the number of containers or buckets, tne number of objects, and the total space occupied by aggregating all objects owned by the account.
 
 === Compute Resource Overcommit
 
 Because most applications are bursty, meaning their actual usage of compute resource vary over time, and most times it happens during short periods of time, alternating with other short periods of iddleness, OpenStack enables overcommit of compute resources by default.
 
-An OpenStack Administrator can configure different overcommit levels for different compute nodes, but the idea is that, if a compute node has an overcommit factor of 2.0 and 16 cores, it can run server instances adding up to 32 vCPUs.
+An OpenStack Administrator can configure different overcommit levels for different classes of compute nodes, but the idea is that, if a compute node has an overcommit factor of 2.0 and 16 cores, it can run server instances adding up to 32 vCPUs.
 
-It is not frequent to configure overcommit of other classes of compute resources, such as memory and GPUs.
+It is not frequent to configure overcommit of other classes of compute resources, such as memory and GPUs because they tend to be used with a more consistent, non-bursty pattern.
 
-// The piece of quotas seems very light. Is it good enough? 

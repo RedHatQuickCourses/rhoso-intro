@@ -1,0 +1,29 @@
+= Demo: OpenStack Heat Orchestrator
+
+Objective::
+
+Demonstrate how a larger cluster looks from the perspectives of Operators and Administrators.
+
+WARNING: Work In Progress
+
+== Recording
+
+This demonstration will be recorded and the video linked from here, so learners can watch the video and optionally try to replicate it by themselves.
+
+== Environment
+
+There is no demo environment for now. Presenters must be able to provide their own environment, which should be a minimally configured OpenStack cluster with domains, projects, server flavors, floating ips, tenant networks, etc. It should be configured in a way that it is ready for an OpenStack operator, that is, an OpenStack user with member role in a few projects. Domains and projects need to have different quotas set.
+
+Ideally the cluster would be preconfigured a few AZs and host aggregates to enable listing them on Horizon and the CLI, but getting a multi-region cluster will be hard and not that important.
+
+The demo environment must also provide a user workstation preconfigured with the OpenStack client, a web browser to access the Horizon dashboard, and a load generator tool such as `ab` to trigger autoscaling of the application.
+
+// Add a link/note to the devpreview2 demo where you have to deploy openstack, so you can show the actual RHOSO 18 UI instead of the UI of a previous release of RHOSP?
+
+== Demonstration
+
+1. Step 1
+
+2. Step 2
+
+This ends the demonstration.
