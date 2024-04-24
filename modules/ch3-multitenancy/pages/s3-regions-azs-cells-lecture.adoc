@@ -12,7 +12,9 @@ In the previous section, we introduced how OpenStack enables users to organize t
 
 OpenStack Operators need some understanding of the physcal topology of their OpenStack clusters to ensure their applications run matches their performance and reliability requirements. Sometimes applications need special classes of hardware, such as GPUS; sometimes it is about high-availability, ensuring applications stay operational and their end-users do not notice when a compute server fails.
 
-[ Figure of Regions, AZs, Host Aggregates, and Cells ]
+// https://docs.google.com/presentation/d/1aslemfY925gyjNHYyenIGSC8RAdogWgL5WSJhtLtn8Q/edit#slide=id.p
+
+image::s3-regions-azs-cells-lecture-fig1.png[]
 
 To address those requirements, OpenStack offer many ways of grouping compute capacity. Most  of them focus on the compute nodes, and some focus on control plane services:
 
