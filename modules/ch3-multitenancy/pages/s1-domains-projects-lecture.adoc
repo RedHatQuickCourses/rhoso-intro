@@ -10,10 +10,9 @@ WARNING: Work in Progress
 
 OpenStack clusters typically run many applications and are managed by many Operators. OpenStack does not prescribe a way of grouping applications and Operators, but provides a general mechanism for enforcing many possible organizational structures, based on domains and projects.
 
-
 // https://docs.google.com/presentation/d/1aslemfY925gyjNHYyenIGSC8RAdogWgL5WSJhtLtn8Q/edit#slide=id.p
 
-[ Figure of projects, domains, users, groups, and API resources ]
+image::s1-domains-projects-lecture-fig1.png[]
 
 On the structure of domains and projects, OpenStack services enforce authorization checks, which may allow or deny a user to manage API respources, enabling separation of concerns, for example: an Operator may manage applications from some projects but not from others.
 
@@ -31,9 +30,7 @@ An OpenStack domain is the top-level container for projects, users, groups, and 
 OpenStack allows users and groups from one domain to access resources from projects in other domains, which enables an approach of creating two parallel sets of domains:
 
 1. Resource domains, that include projects with application resources such as servers and networks;
-2. User domains, which include users and groups and usually no projects.
-
-[ Figure of domains vs projets vs external identity vs API resources ]
+2. Authentication domains, which include users and groups and usually no projects.
 
 This approach enables you to manage your organizational chart independently of your applications. It also enables managing scenarios such as bringing together two originally independent organizations, like two companies that merged. Each organization can be a distinct domain, and each domain can have its own authentication settings, possibly using different external identity services.
 
@@ -45,9 +42,9 @@ OpenStack projects can be hierarchical: a project can have subprojects. Access p
 
 OpenStack API resources do not have unique names. For some resource types, names have to be unique at the project or domain level, but resources of the same type from different domains or projects can use the same name. For some resource types, the name is not expected to be unique at all, and multiple instances of the same resource, on the same project, could use the same name.
 
-OpenStack API resources are uniquely identified by an UUID assigned by its service. All OpenStack API calls which create new resource instances retuirn the UUID of the new resource, and this is the only guaranteed way of referencing the resource later on. While you can change the name of a resource, you cannot change its UUID.
+OpenStack API resources are uniquely identified by an UUID assigned by its service. All OpenStack API calls which create new resource instances return the UUID of the new resource, and this is the only guaranteed way of referencing the resource later on. While you can change the name of a resource, you cannot change its UUID.
 
-Most OpenStack client commands will happy take the name of a resource and do the best to find the resource at the specified current project and domain scopes, but if they cannot you are expected to retry the command providing an UUID.
+Most OpenStack client commands will accept names of resources and retrieve their UUIDs at the specified current project and domain scopes, but if they cannot you are expected to retry the command providing the UUIDs of API resources you need. When one API resoruce references other API resources, it is always by UUID, never by name. This means API resource names could change at any time.
 
 Some OpenStack API resources also accept zero or more tags, which you use for arbitrary grouping of resources. OpenStack services do not give any meaning to tags, but they help Operators manage clusters with a large number of resources.
 
@@ -55,7 +52,7 @@ Some OpenStack API resources also accept zero or more tags, which you use for ar
 
 In the previous chapter, we learned that Keystone authenticates the identity of a user, but Keystone itself makes no authorization decisions: these belong to individual OpenStack services.
 
-Keystone does populate access token with data, such as originating domain and project of a user, and the list of groups and roles a user is member of. OpenStack services can use any of that information to make authentication decisions, and they are expected to follow a few conventions, among them:
+Keystone does populate access tokens with data, such as originating domain and project of a user, and the list of groups and roles a user is member of. OpenStack services can use any of that information to make authentication decisions, and they are expected to follow a few conventions, among them:
 
 * Users defined at a scope (system, project, or domain) or which got permissions because of groups and roles defined at a scope, can only access resources from the same scope or from lower scopes.
 
@@ -77,13 +74,13 @@ As a best practice, avoid assigning roles directly to users, but assign them to 
 
 === OpenStack Users and Groups
 
-It is possible to create and manage users and groups as Keystone API resources, but it is not recommended. Those users and groups are nice for small scenarios, like test clusters and proofs-of-concept, but the recommended approach is deleting user and group management to external identity systems based on the LDAP or OIDC standards.
+It is possible to create and manage users and groups as Keystone API resources, but it is not recommended. Those local users and groups are nice for small scenarios, like test clusters and proofs-of-concept, but the recommended approach is delegating user and group management to external enterprise identity systems based on the LDAP or OIDC standards.
 
-One Keystone domain can refer to only one authentication backend. If the authentication backend is an external identity system, that domain cannot set its own users and groups using Keystone APIs. This is a reason some organizations create user domains and resource domains: so they can create multiple user domains, each referring to a different identity system. 
+One Keystone domain can refer to only one authentication backend. This is a reason some organizations create user domains and resource domains: so they can create multiple user domains, each referring to a different identity system. 
 
-Traditional datacenters may be used to the LDAP technology, popular with identity management systems like Microsoft Active Directory (MSAD) and Red Hat Enterprise Linux Identity Management (RHEL IdM) but this technology is losing ground for identity management systems compatible with OpenID Connect (OIDC), which are based on the OAuth standard and the core of most cloud services.
+Traditional datacenters may be used to the LDAP technology, popular with identity management systems like Microsoft Active Directory (MSAD) and Red Hat Enterprise Linux Identity Management (RHEL IdM) but this technology is losing ground for identity management systems compatible with OpenID Connect (OIDC), which are based on the OAuth standard.
 
-Nowadays, it is advisable to prefer OIDC identity systems over LDAP systems, especially for sharing authentication backends with modern cloud-native and containerized IT infrastructure applications, such as CI/CD systems. Some organizations stick with LDAP systems because most operating systems cannot authenticate local users using OIDC, but most of the times there are not reason to make OpenStack compute nodes members of your MSAD or RHEL IdM authetication domain.
+It is advisable to prefer OIDC identity systems over LDAP systems, especially for sharing authentication backends with modern cloud-native and containerized IT infrastructure applications, such as CI/CD systems. Some organizations stick with LDAP systems because populst operating systems cannot authenticate users using OIDC, but most of the times there are not reason to make OpenStack compute nodes themselves members of an MSAD or RHEL IdM authetication domain.
 
 === The System Scope
 
@@ -95,7 +92,7 @@ For some services there may be a special project and/or a special domain, repopu
 
 == OpenStack Resource Quotas
 
-Like access control, compute resource quotas are set and enforced by each individual OpenStack service. Like access control, it depends on data managed by Keystone, but each service makes its own quota decisions.
+Like access control, compute resource quotas are set and enforced by each individual OpenStack service. Like access control, it depends on data managed by Keystone, but each service makes its own quota enforcement decisions.
 
 //VERIFY: ", usually relying on data from Placement for tracking compute resource usage."
 
@@ -103,11 +100,13 @@ TIP: OpenStack Nova used to provide per-user quotas but they are deprecated and 
 
 // If unified limits are really supported by RHOSO and implemented consistently by all OpenStack services, the explanation here will change: quotas may be attachd to users (but what about groups?) https://docs.openstack.org/keystone/latest//admin/unified-limits.html
 
-[ Figure of API resource and compute resource quota types ]
+// https://docs.google.com/presentation/d/1aslemfY925gyjNHYyenIGSC8RAdogWgL5WSJhtLtn8Q/edit#slide=id.p
+
+image::s1-domains-projects-lecture-fig2.png[]
 
 Compute resource quotas can only prevent the creation or changes to API resource instances. They are not designed to enforce dynamic usage quotas, but to ensure applications get some guaranteed capacity and that compute nodes are not overloaded with more server instances they can handle.
 
-NOTE: Here "compute" means anything required to run application, and includes storage and network resources. It's not API resources from Nova.
+NOTE: Here "compute" means anything required to run application, and could includes storage and network capacity. It does not reffer to API resources from Nova.
 
 To understand that, assume that a project has a quota of only 10 vCPUs. If that project already has three server instances, which add up to 8 vCPUs, it is only possible to create two new server instances, each one using one vCPU, or one instance using two vCPUs. It doesn't matter if the existing instances are mostly iddle and the cluster has plenty if capacity for running more virtual machines.
 
@@ -115,11 +114,11 @@ To understand that, assume that a project has a quota of only 10 vCPUs. If that 
 
 Some quotas affect the number of instances you can create, of a given API resource type, inside a project. That class of quota limts the number of server instances, floating ips, virtual networks, volumes, and so on.
 
-Other quotas affect the quantity, or capacity, of a compute resource that a project can consume, aggregating the consuption from all server instances in the project. That class of quota limits the number of vCPUs, total memory, total storage space space, and so on.
+Other quotas affect the quantity, or capacity, of a compute resource that a project can consume, aggregating the consuption from all server instances in the project. That class of quota limits total quantity of vCPUs, total memory aggregated from all server instances, total disk space from all volumes, and so on.
 
 === Object Storage Quotas
 
-Remember that quotas are defined and enforced by each OpenStack service themselves, and this allows for some inconsistencies and also for purposeful exceptions. One such exception is Swift, which provides both API resource and compute resource storage quotas on accounts. 
+Remember that quotas are defined and enforced by each OpenStack service themselves, and this allows for some inconsistencies and also for purposeful exceptions. One such exception is Swift, which provides both API resource and compute resource storage quotas per storage account. 
 
 Object storage accounts enable external applications to save and retrieve objects without directly authenticating to Keystone. They can represent individual users of Swift object storage instead of individual applications.
 
