@@ -2,12 +2,41 @@
 
 Objective::
 
+Assess the learner understanding of OpenStack multi-tenancy mechanisms.
 
 WARNING: Work in Progress
 
 == Questions
 
-1. Question
+1. An OpenStack Administator needs to give a junior OpenStack Operator access to manage API resources from a single application. That operator will work closely with the application's development team and should not use too much compute capacity to avoid impact on other application teams sharing the cluster. Which of the following is the minimum access level the administrator should grant to that operator?
 
-* [ ] Answer 1
-* [ ] Answer 2
+* [ ] Admin role in the project
+* [ ] Member role in the project
+* [ ] View role in the project
+* [ ] Admin role in the project's domain
+* [ ] Member role in the project's domain
+* [ ] View role in the project's domain
+
+2. An OpenStack Administator wants to delegate administration of a group of applications, that belong to the same business unit, to a senior OpenStack Operator. That senior operator will be responsible for a team of junior OpenStack operators dedicated to supporting that business unit and should have autonomy to manage his operators team. Which of the following is the minimum access level the administrator should grant to that operator?
+
+* [ ] Admin role in all projects from that business unit
+* [ ] Member role all projects from that business unit
+* [ ] View role in all projects from that business unit
+* [ ] Admin role in the domain which represents that business unit
+* [ ] Member role in the domain which represents that business unit
+* [ ] View role in the domain which represents that business unit
+
+3. An OpenStack Administrator needs to support, on the same cluster, two business units which used to have authonomy on technology decisions and ended up implementing each their own enterprise authentication system. OpenStack Operators from each of those business units need to manage their own applications and use authentication credentials managed by their respective enterprise authentication systems. How can OpenStack support this requirement?
+
+* [ ] Each business unit belongs to a different domain, and each domain connects to the business unit's enterprise authentication system.
+* [ ] Each business unit has their own projects, and each project connects to the business unit's enterprise authentication system.
+* [ ] Each business unit belongs to a different project, and each project grants access to users based on their validating, or origin, enterprise authentication systems.
+* [ ] Each business unit requires their own OpenStack cluster because it is not possible to configure multiple authentication backends for the same cluster.
+
+4. An OpenStack Administrator team is concerned about a development team whose members have direct access to an OpenStack cluster and occasionally use all of the cluster compute capacity, preventing other application teams from creating new server instances and other API resources on their projects. All teams need the ability of creating a few server instances for testing purposes, and some do that from automated CI/CD pipelines. Which of the following actions should prevent that team from impacting other developer teams sharing the cluster?
+
+* [ ] Create an API resoure quota that limits the number of projects a team can create in the cluster.
+* [ ] Create an API resource quota that limits the number of server instances a team can create in each project.
+* [ ] Create a compute resource quota that limits the number of vCPUs a team can consume in the cluster.
+* [ ] Create a compute resource quota that limits the number of vCPUs from all server instances in each project.
+
