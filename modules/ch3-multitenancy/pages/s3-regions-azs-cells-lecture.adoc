@@ -10,40 +10,94 @@ WARNING: Work in Progress
 
 In the previous section, we introduced how OpenStack enables users to organize their teams and applications using domains and projects. They provide logical groups that addresses the organizational structure of your teams and applications. At the end of the section, we introduced quotas, which links that logical structure with physical characteristics of your cluster, such as compute capacity.
 
-OpenStack Operators need some understanding of the physcal topology of their OpenStack clusters to ensure their applications run matches their performance and reliability requirements. Sometimes applications need special classes of hardware, such as GPUS; sometimes it is about high-availability, ensuring applications stay operational and their end-users do not notice when a compute server fails.
+OpenStack Operators need some understanding of the physcal topology of their OpenStack clusters to ensure their applications run matches their performance and reliability requirements. Sometimes applications need special classes of hardware, such as GPUs; sometimes it is about high-availability, ensuring applications stay operational and their end-users do not notice when a compute server fails.
 
 // https://docs.google.com/presentation/d/1aslemfY925gyjNHYyenIGSC8RAdogWgL5WSJhtLtn8Q/edit#slide=id.p
 
 image::s3-regions-azs-cells-lecture-fig1.png[]
 
+NOTE: The figures in this chapter do not list all user-facing OpenStack services just for simplicity.
+
 To address those requirements, OpenStack offer many ways of grouping compute capacity. Most  of them focus on the compute nodes, and some focus on control plane services:
 
 Regions::
 
-A region is a mostly stand-alone OpenStack cluster which manages its own compute resources. Multiple clusters, in different regions, share a single pair of Keystone and Horizon services, giving them an unified view as a single private cloud.
+A region is a mostly stand-alone OpenStack cluster which manages its own compute resources. Multiple clusters, in different regions, share a single pair of Keystone and Horizon services, giving Operators a unified view of those clusters as a single private cloud.
 
 Availability Zones (AZs)::
 
-An availability zone is a large failure domain inside an OpenStack cluster. It can be defined by a server rack, an uninterruptive power supply, a network switch, a data center building, or any other physical constraint that creates the possibility of all compute resources in the AZ becoming unavailable at the same time.
+An availability zone is a failure domain inside an OpenStack cluster. It can be defined by a server rack, an uninterruptive power supply, a network switch, a data center building, or any other physical constraint that creates the possibility of all compute resources in the AZ becoming unavailable at the same time.
 
 Host Aggregates::
 
-A host aggregate is a group of compute nodes which share common characteristics that make them more desirable to certain workloads compared to other groups of nodes. For example, because of the availability of fast local storage, GPUs, or network accelerators.
+A host aggregate is a group of compute nodes which share common characteristics that make them more desirable to certain workloads when compared to other groups of nodes of the same cluster. For example, because of the availability of fast local storage, GPUs, or network accelerators.
 
 Compute Cells::
 
-A compute cell is a partition internal to an OpenStack control plane. It deals with the scalability and availability of OpenStack services themselves instead of compute nodes. OpenStack services in the same cell share common back-end services, such as databases and message queues, which can be scaled and managed in cells independent of AZs.
+A compute cell is a partition internal to an OpenStack control plane. It deals with the scalability and availability of OpenStack services themselves more than with compute nodes and application workloads. OpenStack services in the same cell share common back-end services, such as databases and message queues, which can be scaled and managed in cells independent of AZs.
 
-OpenStack Operators usually have visibility of only regions and AZs but not of host aggregates and cells. They are impacted by host aggregates and cells indirectly, from the definition of server flavors and other API resources which impact the scheduling of serer instances on cluster nodes. 
+OpenStack Operators usually have direct visibility of only regions and AZs but not of host aggregates and cells. They can choose, for certain resource types, their region and AZ. 
+
+OpenStack Operators are impacted by host aggregates and cells indirectly, from the definition of server flavors and other API resources which impact the automatic scheduling of server instances on cluster nodes. 
 
 == Regions and AZs
 
-WIP
+Regions and Availability Zones (AZs) may be familiar to users of public cloud services, and you could map these concepts in a similar way to OpenStack clusters. Not everyone is running a global private cloud and the concepts of regions and AZs are useful for smaller (But still large) OpenStack deployments.
+
+A Region is basically one OpenStack cluster. Latency and bandwidth constrains, especially when related to end-users, or the availability of storage and high-speed LANs, may dictate the paritioning of a private cloud into multiple regions where either workloads run in a single region, or those workloads are architected as distributed applications which rely on external routing and replication services to run into multiple regions. Such workloads are effectively multiple instancies, or copies, of the same applications in each region. 
+
+Your region does not need to be a country, it could be a city or even a data center building. It depends on your networking and storage infrastructure, and your need to retain the ability to operate a region independently of other regions, in case of disasters such as earthquakes and floods.
+
+One region will run shared services that enable authenticating and discovering OpenStack services in all regions, so it effectively looks like a single private cloud. Of course, there needs to be a special disaster recovery proccess or that region and its shared services.
+
+Availability Zones are partitions of an OpenStack cluster which include a subset of compute nodes from a region. That is, it is a partition of the data plane of an OpenStack cluster. All AZs share the same OpenStack services: Nova, Cinder, etc. 
+
+Availability Zones represent a failure domain of a cluster/region: something like a power supply, horizontal switch fabric, or even the cooling of a datacenter building, whose failufe effectively means the loss or unavailability of all compute nodes in the AZ.
+
+OpenStack Operators usually take AZs into account when planning production workloads: you do not want to run all server instances of the same application (or the same component of a service-oriented application) in the same AZ. You want to spread those server instances into different AZs, so the loss of a single AZ does not impact availability of the application for its end-users. OpenStack is able to automate the scaling and placement of server instances spread in that way.
+
+In the end, many OpenStack API resources include attributes to set the region and AZ they belong to and Operators want to control those attributes.
 
 == Host Aggregates
 
-WIP
+A Host Aggregate is a way to group compute nodes based on attributes, so OpenStack Administrators can create sets of compute nodes based on hardware characteristics and other criteria that impacts the cost and performance of running different classes of workloads on those physical servers.
 
-== Control Plane Cells
+Physical machines are not born equal: some are designed to highly multithreaded applications, while others are designed for I/O intensive applications. Physical machines come not only with different kinds of CPUs, main memory, and caches, but also with different hardware accelerators and possibly multiple I/O buses. Running any application in whatever compute node is available may be inefficient and expensive.
 
-WIP
+Most organizations have complex workloads with multiple components that require different classes of physical servers for optimum performance or lower cost. It may be that the simplicity of managing an undifferentiated pool of compute resources is good enough, but it may be that you need to manage the fit of applications to hardware, and host aggregates enable OpenStack Administrators and Operators to do that.
+
+Because a host aggregate is tied to a class of physical machines, the same host aggregate can span regions and AZs. You don't need to, but it would be unusual to put all machines of a special kind in a single AZ and lose all of them in case a power supply fails. It is more likely that those machines are spread into different server racks or buildings, thus into multiple AZs.
+
+OpenStack Administrators manage host aggregates and their relationship to API resources and OpenStack Operators use host aggregates, indirectly, to ensure applications get the class of compute node they need or that is best for them. Unlike regions and AZs, to which an OpenStack Operator has direct control, in the sense of "create this server instance in region-A and AZ-1", you cannot declare "create this server instance in host-aggregate-A". You must specify an indirect link:
+
+1. An Administrator configures a host aggregate, for example "gpu", and sets attributes to hosts which do include GPU hardware to match that host aggregate;
+
+2. An Administrator configures a server flavor, for example "ml", and sets attributes to link the server flavor to the "gpu" host aggregate;
+
+3. An Operator creates a server instance and specifies the "ml" server flavor for the instance.
+
+== Cells
+
+OpenStack cluster Cells are even less visible to OpenStack Operators than Host Aggregates. They relate to the reliability and scalability of an OpenStack control plane itself, instead of to workloads, but compute nodes must belong to one and only one cell, which makes this concept sometimes close to AZs.
+
+The following figures show two typical ways of configuring cells in an OpenStack cluster: first, configuring an 1:1 equivalente of AZs and cells:
+
+image::s3-regions-azs-cells-lecture-fig2.png[]
+
+And second, creating multiple cells inside the same AZ. A cell cannot span compute nodes of multiple AZs.
+
+image::s3-regions-azs-cells-lecture-fig3.png[]
+
+The Administration learning journey will provide more information about cells and the internal services which run in an OpenStack control plane. Just as a curiosity, every cluster has at least two cells:
+
+Cell0::
+
+It stores global information for the region, and it is needed because API resources may not relate to a compute node at all, so it is not possible to determine in which cell database to store them. For example, if a server instance was not scheduled to any compute node, because no one had capacity for it. You still need the API resource for that server instance, to get its failed status and a cause.
+
+Cell1::
+
+Includes all compute nodes in the initial cluster, until an Administrator decides to configure more cells and add compute nodes to them. Its database includes all API resources which relate to the compute nodes in the cell, for example all server instances running on those nodes.
+
+OpenStack compute nodes connect to the cell services (the database and message queue) directly, as well as many other componentes of an OpenStack control plane. In this course we do not explode the internal structure of individual OpenStack services, but for now it is sufficient to know that those internal componentes of each service interact with each user using the cell database and cell message queues.
+
+As you can see, OpenStack enables managing large pools of compute resources, but this requires planning and effort from Administrators.
