@@ -104,13 +104,19 @@ OpenStack Administrators manage host aggregates and their relationship to API re
 
 OpenStack cluster Cells are even less visible to OpenStack Operators than Host Aggregates. They relate to the reliability and scalability of an OpenStack control plane itself, instead of to workloads, but compute nodes must belong to one and only one cell, which makes this concept somewhat close to AZs.
 
-The following figures show two typical ways of configuring cells in an OpenStack cluster: first, configuring an 1:1 equivalence of AZs and cells:
+The following figures show three typical ways of configuring cells in an OpenStack cluster: first, configuring an 1:1 equivalence of AZs and cells:
 
 image::s3-regions-azs-cells-lecture-fig2.png[]
 
-And second, creating multiple cells inside the same AZ. There could be more AZs, each with multiple cells but a single cell cannot span multiple AZs because OpenStack Nova can schedule individual server instances only inside a single AZ.
+Second, creating multiple cells inside the same AZ. There could be more AZs beyond the one displayed in the figure.
 
 image::s3-regions-azs-cells-lecture-fig3.png[]
+
+Third, creating AZs inside the same cell. There could be more cells beyond the one displayed in the figure.
+
+image::s3-regions-azs-cells-lecture-fig4.png[]
+
+The point is, cells and AZs are independent concepts. They relate to different aspects of partitioning and scaling OpenStack clusters. For your peace of mind, it is best to avoid designs where the mapping between cells and AZs is not 1:1 nor hierarchical. Anyway, one compute host must belong to a single AZ and to a single cell.
 
 The Administration learning journey will provide more information about cells and the internal services which run in an OpenStack control plane. Just as a curiosity, every OpenStack cluster has at least two cells:
 
