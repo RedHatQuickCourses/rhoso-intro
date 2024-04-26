@@ -4,7 +4,7 @@ Objective::
 
 Assess the learner understanding of OpenStack multi-tenancy and topology mechanisms.
 
-WARNING: Work in Progress
+WARNING: Pending Review.
 
 // Deviating from the True/False questions from previous chapters on purpose.
 

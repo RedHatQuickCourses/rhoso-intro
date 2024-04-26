@@ -8,3 +8,4 @@
 ** xref:s5-cluster-demo.adoc[]
 ** xref:s6-review-quiz.adoc[]
 *** xref:s6-review-quiz-answers.adoc[]
+** xref:s7-summary.adoc[]

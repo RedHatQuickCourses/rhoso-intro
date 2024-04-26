@@ -4,7 +4,7 @@ Objective::
 
 Describe how to organize OpenStack resources in projects and domains for access control and quota management.
 
-WARNING: Work in Progress
+WARNING: Pending Review.
 
 == Multitenancy with OpenStack
 

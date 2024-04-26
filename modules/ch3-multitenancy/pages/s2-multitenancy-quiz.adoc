@@ -4,7 +4,7 @@ Objective::
 
 Assess the learner understanding of OpenStack multi-tenancy mechanisms.
 
-WARNING: Work in Progress
+WARNING: Pending Review.
 
 == Questions
 

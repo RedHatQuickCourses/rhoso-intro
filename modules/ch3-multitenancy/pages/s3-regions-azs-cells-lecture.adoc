@@ -4,7 +4,7 @@ Objective::
 
 Describe how to structure a large OpenStack cluster to address performance and reliability requirements of applications and how operators configure workloads for the topology of a cluster.
 
-WARNING: Work in Progress
+WARNING: Pending Review.
 
 == Logical and Physical Organization of OpenStack Clusters
 
