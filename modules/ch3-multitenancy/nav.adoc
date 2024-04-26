@@ -6,3 +6,5 @@
 ** xref:s4-topology-quiz.adoc[]
 *** xref:s4-topology-quiz-answers.adoc[]
 ** xref:s5-cluster-demo.adoc[]
+** xref:s6-review-quiz.adoc[]
+*** xref:s6-review-quiz-answers.adoc[]
