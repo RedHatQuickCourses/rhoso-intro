@@ -32,6 +32,8 @@ The demo environment must also provide a user workstation preconfigured with the
 
 6. Switch to an operator user (member) and show it cannot list host aggregates and compute nodes but can list regions and azs.
 
-7. Switch back to an administrator and show the special domain and projects for cluster-wide shared API resources.
+7. Show the operator can see attributes of server instances which refer to regions, and azs. Show also the operator can see attributes of server flavors.
+
+8. Switch back to an administrator and show the special domain and projects for cluster-wide shared API resources.
 
 This ends the demonstration.
