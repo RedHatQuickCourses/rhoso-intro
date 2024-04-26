@@ -8,13 +8,13 @@ WARNING: Work in Progress
 
 == Multitenancy with OpenStack
 
-OpenStack clusters typically run many applications and are managed by many Operators. OpenStack does not prescribe a way of grouping applications and Operators, but provides a general mechanism for enforcing whatever organizational you need, based on domains and projects.
+OpenStack clusters typically run many applications and are managed by many Operators. OpenStack does not prescribe a way of grouping applications and Operators, but provides a general mechanism for enforcing whatever is your organizational need, based on domains and projects.
 
 On the structure of domains and projects, OpenStack services enforce authorization checks, which may allow or deny a user to manage API respources, enabling separation of concerns, for example: an Operator may manage applications from some projects but not from others.
 
 The structure of domains and projects also enable OpenStack services to enforce resource quotas, which prevents a single application to take up all compute capacity of a cluster or even of a compute node.
 
-Notice that, unlike operating system file quotas, which assign capacity to users and groups, OpenStack quotas assign capacity to applications, by means of their projects. If a user has access to multiple project, they can create resources which consume all aggregate compute capacity from all those projects.
+Notice that, unlike operating system file quotas, which assign capacity to users and groups, OpenStack quotas assign capacity to applications, by means of their projects. If a user has access to multiple projects, they can create resources which consume all aggregate compute capacity from all those projects.
 
 == OpenStack Domains and Projects
 
@@ -26,6 +26,7 @@ OpenStack allows users and groups from one domain to access resources from proje
 2. User domains, which include users and groups and usually no projects.
 
 [ Figure of domains vs projets vs external identity vs API resources ]
+// Figure missing
 
 This approach enables you to manage your organizational chart independently of your applications. It also enables managing scenarios such as bringing together two originally independent organizations, like two companies that merged. Each organization can be a distinct domain, and each domain can have its own authentication settings, possibly using different external identity services.
 
@@ -37,9 +38,9 @@ OpenStack projects can be hierarchical: a project can have subprojects. Access p
 
 OpenStack API resources do not have unique names. For some resource types, names have to be unique at the project or domain level, but resources of the same type from different domains or projects can use the same name. For some resource types, the name is not expected to be unique at all, and multiple instances of the same resource, on the same project, could use the same name.
 
-OpenStack API resources are uniquely identified by an UUID assigned by its service. All OpenStack API calls which create new resource instances retuirn the UUID of the new resource, and this is the only guaranteed way of referencing the resource later on. While you can change the name of a resource, you cannot change its UUID.
+OpenStack API resources are uniquely identified by an UUID assigned by its service. All OpenStack API calls which create new resource instances return the UUID of the new resource, and this is the only guaranteed way of referencing the resource later on. While you can change the name of a resource, you cannot change its UUID.
 
-Most OpenStack client commands will happy take the name of a resource and do the best to find the resource at the specified current project and domain scopes, but if they cannot you are expected to retry the command providing an UUID.
+Most OpenStack client commands will happily take the name of a resource and do the best to find the resource at the specified current project and domain scopes, but if they cannot you are expected to retry the command providing an UUID.
 
 Some OpenStack API resources also accept zero or more tag, which you use for arbitrary grouping of resources. OpenStack services do not give any meaning to tags, but they help Operators manage clusters with a large number of resources.
 
@@ -57,7 +58,7 @@ Keystone does populate access token with data, such as originating domain and pr
 
 * Users with the *reader* role can only list resources and query attributes of those resources, but cannot make any change nor delete resources.
 
-To understand the difference between admin and member roles, consider the conflicting needs of granting some authonomy to OpenStack Operators, while denying them the ability to perform dangerous operations. For example, a user might have permission to create server instances and networks inside a project, but the same user cannot change resource quotas on that project, no grant access to resources to other users.
+To understand the difference between admin and member roles, consider the conflicting needs of granting some autonomy to OpenStack Operators, while denying them the ability to perform dangerous operations. For example, a user might have permission to create server instances and networks inside a project, but the same user cannot change resource quotas on that project, nor grant access to resources to other users.
 
 TIP: Remember no user or group owns any OpenStack API resource. Servers, networks, volumes, and other resources belong to projects and domains only.
 
@@ -75,7 +76,7 @@ One Keystone domain can refer to only one authentication backend. If the authent
 
 Traditional datacenters may be used to the LDAP technology, popular with identity management systems like Microsoft Active Directory (MSAD) and Red Hat Enterprise Linux Identity Management (RHEL IdM) but this technology is losing ground for identity management systems compatible with OpenID Connect (OIDC), which are based on the OAuth standard and the core of most cloud services.
 
-Nowadays, it is advisable to prefer OIDC identity systems over LDAP systems, especially for sharing authentication backends with modern cloud-native and containerized IT infrastructure applications, such as CI/CD systems. Some organizations stick with LDAP systems because most operating systems cannot authenticate local users using OIDC, but most of the times there are not reason to make OpenStack compute nodes members of your MSAD or RHEL IdM authetication domain.
+Nowadays, it is advisable to prefer OIDC identity systems over LDAP systems, especially for sharing authentication backends with modern cloud-native and containerized IT infrastructure applications, such as CI/CD systems. Some organizations stick with LDAP systems because most operating systems cannot authenticate local users using OIDC, but most of the times there is no reason to make OpenStack compute nodes members of your MSAD or RHEL IdM authetication domain.
 
 === The System Scope
 

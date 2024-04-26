@@ -8,6 +8,6 @@ WARNING: Work in Progress
 
 == Introduction
 
-This chapter presents the OpenStack open source project and the *Red Hat OpenStack Services on OpenShift* product, so you understand now the current Red Hat OpenStack product is different from community OpenStack and from previous releases of Red Hat OpenStack plaform.
+This chapter presents the OpenStack open source project and the *Red Hat OpenStack Services on OpenShift* product, so you now understand that the current Red Hat OpenStack product is different from community OpenStack and from previous releases of Red Hat OpenStack plaform.
 
 This chapter also introduces two OpenStack user personas: the *OpenStack Operator*, which is the focus of this course, and the OpenStack Administrator, so you understand the scope of work, tooks, and skills required from OpenStack Operators to perform their daily jobs.

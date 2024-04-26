@@ -18,7 +18,7 @@ The Horizon Dashboard::
 
 It is a web application provided by an OpenStack service, so it runs in the control plane. It provides easier workflows for Operators and Administrators but may not include all OpenStack services, or may not support all APIs of the included services.
 
-Despite the rich features of the Hozizon web UI, it is expected than an OpenStack Operator is confortable using an operating system prompt, most likely a Bash shell from Linux. There are tasks which absolutely require using the OpenStack client and Horizon is not designed to be a full-service tool for Operations and Administrators, but focus on most frequent  tasks and on workflows where graphical user interfaces can provide significant advantages over CLI workflows.
+Despite the rich features of the Hozizon web UI, it is expected than an OpenStack Operator is comfortable using an operating system prompt, most likely a Bash shell from Linux. There are tasks which absolutely require using the OpenStack client and Horizon is not designed to be a full-service tool for Operations and Administrators, but focus on most frequent  tasks and on workflows where graphical user interfaces can provide significant advantages over CLI workflows.
 
 == Using The OpenStack Client
 
@@ -39,7 +39,7 @@ $ *openstack* [_global options_] _resource_ _action_ [_arguments_]
 
 A _resource_, sometimes called an _object_ by OpenStack upstream documentation, is anything that can be managed by OpenStack services. It is not the name nor the identifier of an individual resource instance, but the name of a resource type.
 
-IMPORTANT: in this learning journey, we prefer the term "resource" over "object" to avoid confusion with the OpenStack resource type called `object`.
+IMPORTANT: In this learning journey, we prefer the term "resource" over "object" to avoid confusion with the OpenStack resource type called `object`.
 
 Most OpenStack services manage multiple types of resources and the name of a resource type can be composed by multiple words, separated by spaces, which is something a Linux sysadministrator is not used to.
 
@@ -53,7 +53,7 @@ The following are some of the resource types recognized by the OpenStack client.
 * `server`
 * `security group`
 
-An _action_ corresponds to an OpenStack API performed on the _resource_ and it can take many opional or required _arguments_.
+An _action_ corresponds to an OpenStack API performed on the _resource_ and it can take many optional or required _arguments_.
 
 The OpenStack client defines the meaning of some standard actions to enforce consistency among multiple services and their resources. The following are some of the standard actions, but not all resource types will accept all standard actions. Later during this learning journey you will learn what each action means:
 
@@ -85,9 +85,9 @@ $ *openstack floating ip list*
 $ *openstack versions show*
 --
 
-NOTE: do not try these commands on your OpenStack cluster, unless you know which resource names to use and appropriate values for other arguments.
+NOTE: Do not try these commands on your OpenStack cluster, unless you know which resource names to use and appropriate values for other arguments.
 
-The following are examples of commands which require other arguments that are the name of other resources. These names are formatted in italics to indicate they should be changed to match the resources defined on your cluster:
+The following are examples of commands which require other arguments that are the name of other resources. These names are formatted in italics to indicate they should be changed to match the resources defined in your cluster:
 
 [source,subs="verbatim,quotes"]
 --
@@ -119,7 +119,7 @@ $ *openstack volume set --readonly --bootable _appdisk_*
 
 === Online Help From the OpenStack Client
 
-To list all commands availabe in your OpenStacl client, use the `--help` global option:
+To list all commands availabe in your OpenStack client, use the `--help` global option:
 
 [source,subs="verbatim,quotes"]
 --
@@ -155,6 +155,7 @@ The following figure shows an example of the Horizon dashboard for an OpenStack 
 // Screen capture from a CL110-16.1 classrom
 
 image::s5-ui-lecture-fig1.png[]
+//Can we add a title to this image?
 
 Most menu items in the second row relate groups of resource types managed by OpenStack services: *Compute*, *Volumes* (storage), *Network*, and so on; and most items in the third row are individual resource types from those groups, for example: from *Network*, you see *Networks*, *Routers*, and *Load balancers*, among other items.
 
@@ -163,6 +164,7 @@ In the topmost row, to the right, you can select either *Project* or *Identity* 
 // Screen capture from a CL110-16.1 classrom
 
 image::s5-ui-lecture-fig2.png[]
+// Can we add a title to this image?
 
 OpenStack operators spend most of their time on the *Project* topmost menu. They only select *Identity* when they need to manage access to OpenStack resources and applications to other operators and application administrators.
 
@@ -171,6 +173,7 @@ To the right, there's another menu item named *Project*, also in the topmost row
 // Screen capture from a CL110-16.1 classrom
 
 image::s5-ui-lecture-fig3.png[]
+// Can we add a title to this image?
 
 The item *Help* to the topmost right opens another browser window on the OpenStack community docs -- not the Red Hat OpenStack product documentation!
 
@@ -188,21 +191,22 @@ If you switch to an OpenStack Administrator user, the topmost menu includes a ne
 
 image::s5-ui-lecture-fig5.png[]
 
-Those new tabs and pages enable managing OpenStack API resources with require elevated privileges, to which OpenStack Operators usually have no access, and that can impact the entire cluster, as opposed to resources which belong to one application or workload.
+Those new tabs and pages enable managing OpenStack API resources which require elevated privileges, to which OpenStack Operators usually have no access, and that can impact the entire cluster, as opposed to resources which belong to one application or workload.
 
 === Comparing Horizon with the OpenStack Client
 
-You already know that the Horizon dashboard do not provide access to all OpenStack resources and their APIs. There are tasks, for both Operators and Administrators, which may require using the OpenStack client or may me easier to perform using it.
+You already know that the Horizon dashboard does not provide access to all OpenStack resources and their APIs. There are tasks, for both Operators and Administrators, which may require using the OpenStack client or may be easier to perform using it.
 
-Becoming proefficient in the OpenStack client also enables usage of automation tools, such as CI/CD pipelines and issue tracking systems. The OpenStack client can also access OpenStack's own automation tool, the Heat service, which we will be introduced to in the next chapter of this course.
+Becoming proefficient in the OpenStack client also enables usage of automation tools, such as CI/CD pipelines and issue tracking systems. The OpenStack client can also access OpenStack's own automation tool, the Heat service, which we will be introduced to you in the next chapter of this course.
 
-Horizon is easier for begginer Operators because they can see all arguments to an API call in the same page, or in related pages of a multiple-form workflow.  Horizon may provide defaults, or show the available alternatives, which would require addtional commands using the CLI.
+Horizon is easier for beginner Operators because they can see all arguments to an API call in the same page, or in related pages of a multiple-form workflow.  Horizon may provide defaults, or show the available alternatives, which would require addtional commands using the CLI.
 
-Horizon can also group multiple resources, sometimes from different services, in the same page, providing workflows that tend to require less steps and be easier to understand than equivalent workflows using the OpenStack client.
+Horizon can also group multiple resources, sometimes from different services, in the same page, providing workflows that tend to require less steps and can be easier to understand than equivalent workflows using the OpenStack client.
 
-Some Horizon pages provide a summary view of information from multiple resources that would be very hard to collect and display using CLI tools, for example the *Project / Compute / Overview* page fromt he first figure, or the *Project / Network / Topology* page of the following figure. Those pages make Horizon more than just a web interface to OpenStack API resources, but a true dashboard of information for OpenStack Operators.
+Some Horizon pages provide a summary view of information from multiple resources that would be very hard to collect and display using CLI tools, for example the *Project / Compute / Overview* page from the first figure, or the *Project / Network / Topology* page of the following figure. Those pages make Horizon more than just a web interface to OpenStack API resources, but a true dashboard of information for OpenStack Operators.
 
 // Screen capture from a CL110-16.1 classrom
 
 image::s5-ui-lecture-fig6.png[]
+// Can we add a title for this image?
 

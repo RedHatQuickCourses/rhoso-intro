@@ -7,11 +7,12 @@ WARNING: Work in Progress
 
 This is the first course for *IT professionals* who are new to Red Hat OpenStack Services on OpenShift. It requires no previous experience with OpenStack, but it requires some familiarity with Linux system administration and virtual machine management.
 
-This course is also useful for learners with previous experience with OpenStack, providing  a high-level understanding of what's included in the Red Hat product and how it might be different than other OpenStack distributions; and a quick overview of how Red Hat OpenStack Services on OpenShift differs from previous incarnations of the Red Hat OpenStack platform.
+This course is also useful for learners with previous experience with OpenStack, providing  a high-level understanding of what's included in the Red Hat product and how it might be different than other OpenStack distributions. It also provides a quick overview of how Red Hat OpenStack Services on OpenShift differs from previous incarnations of the Red Hat OpenStack platform.
+// According to Red Hat Technical Writing Style Guide (Edition 6.2) - In technical documentation, try not to exceed 40 words in a sentence. The above sentence has 56 words in it. To avoid complexity, I suggest breaking this paragraph into 2 distinct sentences.
 
 == Course Objective
 
-As a result of taking this course, Operators of Red Hat OpenStack will be able to explain the purpose, functionality, and inter-dependencies of the user-facing services provided by Red Hat OpenStack Services on OpenShift and how they meet the requirements of application workloads running as VMs. They will also be able to explain how multi-tenancy features of Red Hat OpenStack Services on OpenShift enable separation of concerns between the teams that manage the workloads and the teams that administer the OpenStack cluster that hosts the workloads.
+As a result of taking this course, Operators of Red Hat OpenStack will be able to explain the purpose, functionality, and inter-dependencies of the user-facing services provided by Red Hat OpenStack Services on OpenShift, and how they meet the requirements of application workloads running as VMs. They will also be able to explain how multi-tenancy features of Red Hat OpenStack Services on OpenShift enable separation of concerns between the teams that manage the workloads and the teams that administer the OpenStack cluster that hosts the workloads.
 
 This course includes a quick introduction to the following OpenStack services: Horizon, Keystone, Nova, Neutron, Cinder, Manila, Glance, Swift, Ceilometer, Octavia, Designate, Heat, Placement, Barbican, and Ironic.
 
