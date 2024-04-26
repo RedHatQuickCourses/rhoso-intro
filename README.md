@@ -4,7 +4,7 @@ This is the first course of the Red Hat OpenStack Operations learning journey.
 
 The course design docs are available to Red Hat employees only:
 
-* [Initial course design](https://github.com/RedHatQuickCourses/rhoso-intro.git)
+* [Initial course design](https://docs.google.com/document/d/1WN1RA-ln9D2alP_9oAvPwBuEa8CsV8CT2Nnv9LmEVAc/edit#)
 * [OpenStack 18 Learning Journey](https://docs.google.com/presentation/d/1Zlyj21ZOp0wtMPqdS3P9auhDndaQ6_qs014q_0yPbo4/edit#slide=id.g29c770ffa7c_0_414)
 
 Figures on this course were designed using Google Slides, and are also avialble  to Red Hat employees only. Individual slides are exported to PNG files and those files are in the git repository.
