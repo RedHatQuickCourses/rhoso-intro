@@ -264,14 +264,67 @@ Work in Progress
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Question</p>
+<p>An OpenStack Administrator needs to plan for a cluster which encompasses two different floors of a data center building. Each floor has its own power supply and core network switches. Which of the following is the best way of structuring the cluster for the scenario?</p>
 <div class="ulist checklist">
 <ul class="checklist">
 <li>
-<p><i class="fa fa-square-o"></i> Answer 1</p>
+<p><i class="fa fa-square-o"></i> Each building maps to a cluster.</p>
 </li>
 <li>
-<p><i class="fa fa-square-o"></i> Answer 2</p>
+<p><i class="fa fa-square-o"></i> Each building maps to a region.</p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> Each building maps to an AZ.</p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> Each building maps to a host aggregate.</p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> Each building maps to a cell.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>An OpenStack Administrator needs to plan for applications that require special network accelerator cards, which are <strong>not</strong> available in all compute nodes of a cluster. Which of the following is the best way of structuring the cluster for the scenario?</p>
+<div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p><i class="fa fa-square-o"></i> Compute nodes with the accelerator card belong to a region.</p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> Compute nodes with the accelerator card belong to an AZ.</p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> Compute nodes with the accelerator card belong to a host aggregate.</p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> Compute nodes with the accelerator card belong to a cell.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>An OpenStack Administrator configured an cluster with four kinds of physical machines: machines with GPUs, machines with high CPU core count, machines with both GPUs and high core count, and finaly machines which neither a CPU nor a high core count. What an OpenStack Operator should do to ensure that a workload which requires both GPUs and many CPU cores runs in a physical machine of the matching kind?</p>
+<div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p><i class="fa fa-square-o"></i> Use a server flavor which maps to an AZ of compute nodes with both GPUs and high core count.</p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> Use a server flavor which maps to an AZ of compute nodes with GPUs and also to another AZ of compute nodes with high core count.</p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> Use a server flavor which maps to a host aggregate of compute nodes with GPUs and also to another host aggregate of compute nodes with high core count.</p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> Use a server flavor which maps to a host aggregate of compute nodes with both GPUs and high core count.</p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> Use a server flavor which maps to a cell of compute nodes with GPUs and also to another AZ of compute nodes with high core count.</p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> Use a server flavor which maps to a cell of compute nodes with both GPUs and high core count.</p>
 </li>
 </ul>
 </div>

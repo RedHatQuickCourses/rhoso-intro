@@ -257,16 +257,82 @@ Work in Progress
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Question</p>
+<p>An OpenStack Administrator needs to plan for a cluster which encompasses two different floors of a data center building. Each floor has its own power supply and core network switches. Which of the following is the best way of structuring the cluster for the scenario?</p>
 <div class="ulist checklist">
 <ul class="checklist">
 <li>
-<p><i class="fa fa-check-square-o"></i> <strong>Answer 1</strong><br>
-<em>Correct: Explain</em></p>
+<p><i class="fa fa-square-o"></i> Each building maps to a cluster.<br>
+<em>Incorrect: there is no requirement for a multiple cluster design.</em></p>
 </li>
 <li>
-<p><i class="fa fa-square-o"></i> Answer 2<br>
-<em>Incorrect: Explain</em></p>
+<p><i class="fa fa-square-o"></i> Each building maps to a region.<br>
+<em>Incorrect: There is no requirement for a multiple cluster design, and each region is a mostly standalone cluster.</em></p>
+</li>
+<li>
+<p><i class="fa fa-check-square-o"></i> <strong>Each building maps to an AZ.</strong><br>
+<em>Correct: power supplies and network switches define failure domains in a cluster, which leads to different availability zones for each.</em></p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> Each building maps to a host aggregate.<br>
+<em>Incorrect: host aggregates which are not AZs are intended to represent different classes of physical machines instead of different locations of those machines.</em></p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> Each building maps to a cell.<br>
+<em>Incorrect: cells are not intended to represent failure domains.</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>An OpenStack Administrator needs to plan for applications that require special network accelerator cards, which are <strong>not</strong> available in all compute nodes of a cluster. The same applications also include server instances which run mobile application backends and do not require the accelerator cards. Which of the following is the best way of structuring the cluster for the scenario?</p>
+<div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p><i class="fa fa-square-o"></i> Compute nodes with the accelerator card belong to a region.<br>
+<em>Incorrect: Seggregating those compute nodes to their own OpenStack clusters complicates communication between different kinds of server instances of the applications.</em></p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> Compute nodes with the accelerator card belong to an AZ.<br>
+<em>Incorrect: hardware capabilities of compute node to not configure a failure domain.</em></p>
+</li>
+<li>
+<p><i class="fa fa-check-square-o"></i> <strong>Compute nodes with the accelerator card belong to a host aggregate.</strong><br>
+<em>Correct: Host aggregates enable administrators and operators to collaborate to run server instances on compute nodes with or without accelerator cards, according to the needs of each server instance.</em></p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> Compute nodes with the accelerator card belong to a cell.
+<em>Incorrect: hardware capabilities of compute node to not configure a compute cell.</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>An OpenStack Administrator configured an cluster with four kinds of physical machines: machines with GPUs, machines with high CPU core count, machines with both GPUs and high core count, and finaly machines which neither a CPU nor a high core count. What an OpenStack Operator should do to ensure that a workload which requires both GPUs and many CPU cores runs in a physical machine of the matching kind?</p>
+<div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p><i class="fa fa-square-o"></i> Use a server flavor which maps to an AZ of compute nodes with both GPUs and high core count.<br>
+<em>Incorrect: AZs do not map to kinds of server hardware.</em></p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> Use a server flavor which maps to an AZ of compute nodes with GPUs and also to another AZ of compute nodes with high core count.<br>
+<em>Incorrect: AZs do not map to kinds of server hardware.</em></p>
+</li>
+<li>
+<p><i class="fa fa-check-square-o"></i> <strong>Use a server flavor which maps to a host aggregate of compute nodes with GPUs and also to another host aggregate of compute nodes with high core count.</strong><br>
+<em>Correct: a compute node can belong to multiple host aggregates.</em></p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> Use a server flavor which maps to a host aggregate of compute nodes with both GPUs and high core count.<br>
+<em>Incorrect: There is no need to create a host aggregate for the intersection of different hardware capabilies because a compute node can belong to multiple host aggregates.</em></p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> Use a server flavor which maps to a cell of compute nodes with GPUs and also to another cell of compute nodes with high core count.<br>
+<em>Incorrect: compute cells do not map to kinds of server hardware.</em></p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> Use a server flavor which maps to a cell of compute nodes with both GPUs and high core count.
+<em>Incorrect: compute cells do not map to kinds of server hardware.</em></p>
 </li>
 </ul>
 </div>
