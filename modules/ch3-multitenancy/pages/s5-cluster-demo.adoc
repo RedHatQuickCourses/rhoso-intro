@@ -1,4 +1,4 @@
-= Demo: OpenStack Heat Orchestrator
+= Demo: Exploring an OpenStack Cluster
 
 Objective::
 
@@ -12,18 +12,26 @@ This demonstration will be recorded and the video linked from here, so learners 
 
 == Environment
 
-There is no demo environment for now. Presenters must be able to provide their own environment, which should be a minimally configured OpenStack cluster with domains, projects, server flavors, floating ips, tenant networks, etc. It should be configured in a way that it is ready for an OpenStack operator, that is, an OpenStack user with member role in a few projects. Domains and projects need to have different quotas set.
+There is no demo environment for now. Presenters must be able to provide their own environment, which would ideally be a larger OpenStack cluster than previous demos. Besides domains, projects, server flavors, floating ips, tenant networks, and predeployed worloads, it requires multiple AZs and host aggregates, thus a larger number of compute nodes. No need to provide multiple regions and additional cells beyond cell0 and cell1, but if such an environment is available for recording the video, it would be even beter.
 
-Ideally the cluster would be preconfigured a few AZs and host aggregates to enable listing them on Horizon and the CLI, but getting a multi-region cluster will be hard and not that important.
-
-The demo environment must also provide a user workstation preconfigured with the OpenStack client, a web browser to access the Horizon dashboard, and a load generator tool such as `ab` to trigger autoscaling of the application.
-
-// Add a link/note to the devpreview2 demo where you have to deploy openstack, so you can show the actual RHOSO 18 UI instead of the UI of a previous release of RHOSP?
+The demo environment must also provide a user workstation preconfigured with the OpenStack client and a web browser to access the Horizon dashboard.
 
 == Demonstration
 
-1. Step 1
+// Not sure how/if to include cells in the demonstration, but if there's an easy way of showing them without showing OpenShift custom resources and pods, please do it.
 
-2. Step 2
+1. Using the OpenStack client, as an administrator, list the regions, azs, and host aggregates of the cluster.
+
+2. Using Horizon, as an administrator, list the regions, azs, and host aggregates of the cluster. Also show API endpoints from Keysone and highlight each endpoint belongs to region.
+
+3. Still in Horizon, enter a domain/project and show a workload. Select its server instances and show that those instances refer to AZ and region. Ideally, have a workload with multiple servers behind a load balancer, and those servers are on different AZs.
+
+4. Show the attributes of a couple host aggregates and of a couple server flavors, and show the attributes which match each other.
+
+5. Show workloads using different server flavors, which map to different host aggregates. Show they run on compute nodes which match the host aggregate.
+
+6. Switch to an operator user (member) and show it cannot list host aggregates and compute nodes but can list regions and azs.
+
+7. Switch back to an administrator and show the special domain and projects for cluster-wide shared API resources.
 
 This ends the demonstration.
