@@ -1,8 +1,8 @@
 = Summary
 
-In this chapter, you learned:
+In this chapter, you learn:
 
-* OpenStack is a platform for building private clouds and manage applications running as Virtual Machines (VMs), with virtual networks and virtual storage. It is composed of a number of user-facing and internal infrastructure services.
+* OpenStack is a platform for building private clouds and managing applications running as Virtual Machines (VMs), with virtual networks and virtual storage. It is composed of a number of user-facing and internal infrastructure services.
 
 * Red Hat OpenStack Services on OpenShift provides a selection of OpenStack services, pre-integrated and pre-configured with each other and also with Red Hat Enterprise Linux (RHEL), Red Hat OpenShift, and Red Hat Ceph Storage.
 

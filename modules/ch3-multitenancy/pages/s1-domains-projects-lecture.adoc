@@ -8,7 +8,7 @@ WARNING: Pending Review.
 
 == Multitenancy with OpenStack
 
-OpenStack clusters typically run many applications and are managed by many Operators. OpenStack does not prescribe a way of grouping applications and Operators, but provides a general mechanism for enforcing many possible organizational structures, based on domains and projects.
+OpenStack clusters typically run many applications and are managed by many Operators. OpenStack does not prescribe a way of grouping applications and Operators, but provides a general mechanism for enforcing whatever is your organizational need, based on domains and projects.
 
 // https://docs.google.com/presentation/d/1aslemfY925gyjNHYyenIGSC8RAdogWgL5WSJhtLtn8Q/edit#slide=id.p
 
@@ -64,7 +64,7 @@ Keystone does populate access tokens with data, such as originating domain and p
 
 * Users with the *reader* role can only list resources and query attributes of those resources, but cannot make any change nor delete resources.
 
-To understand the difference between admin and member roles, consider the conflicting needs of granting some authonomy to OpenStack Operators, while denying them the ability to perform dangerous operations. For example, a user might have permission to create server instances and networks inside a project, but the same user cannot change resource quotas on that project, nor grant access to resources to other users.
+To understand the difference between admin and member roles, consider the conflicting needs of granting some autonomy to OpenStack Operators, while denying them the ability to perform dangerous operations. For example, a user might have permission to create server instances and networks inside a project, but the same user cannot change resource quotas on that project, nor grant access to resources to other users.
 
 TIP: Remember that users do *not* own OpenStack API resources. Servers, networks, volumes, and other API resources belong to projects and domains only.
 
@@ -82,7 +82,7 @@ One Keystone domain can refer to only one authentication backend. This is a reas
 
 Traditional data centers may be used to the LDAP technology, used by identity management systems like Microsoft Active Directory (MSAD) and Red Hat Enterprise Linux Identity Management (RHEL IdM) but this technology is losing ground for identity management systems compatible with OpenID Connect (OIDC), which are based on the OAuth standard.
 
-It is advisable to prefer OIDC identity systems over LDAP systems, especially for sharing authentication backends with modern cloud-native and containerized IT infrastructure applications, such as CI/CD systems. Some organizations stick with LDAP systems because popular server and workstation operating systems cannot authenticate users directly using OIDC, but most of the times there is not reason to make OpenStack compute nodes themselves members of an MSAD or RHEL IdM authetication domain.
+Nowadays, it is advisable to prefer OIDC identity systems over LDAP systems, especially for sharing authentication backends with modern cloud-native and containerized IT infrastructure applications, such as CI/CD systems. Some organizations stick with LDAP systems because most operating systems cannot authenticate local users using OIDC, but most of the times there is no reason to make OpenStack compute nodes members of your MSAD or RHEL IdM authetication domain.
 
 === The System Scope
 

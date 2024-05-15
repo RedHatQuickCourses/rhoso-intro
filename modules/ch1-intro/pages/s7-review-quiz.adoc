@@ -35,7 +35,7 @@ WARNING: Pending review.
 * [ ] True
 * [ ] False
 
-6. An OpenStack Operator focuses on OpenStack API resources that affect individual application workloads, as opposd to OpenStack API resources which affect an entire cluster.
+6. An OpenStack Operator focuses on OpenStack API resources that affect individual application workloads, as opposed to OpenStack API resources which affect an entire cluster.
 
 * [ ] True
 * [ ] False

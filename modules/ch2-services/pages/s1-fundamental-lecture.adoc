@@ -8,19 +8,19 @@ WARNING: Pending Review
 
 == The OpenStack Services Architecture
 
-OpenStack is composed of multiple independent services which can work (and usually do) together. Having services which are independent of each other enables faster delivery of new features and more reliable fixes for bugs and security issues, and is widely recognized as a development best practice.
+OpenStack is composed of multiple independent services which can work (and usually do) together. Having services which are independent of each other enables faster delivery of new features and more reliable fixes for bugs and security issues, and is widely recognized as a best practice for software development.
 
 // figures are exported from https://docs.google.com/presentation/d/1DGxnxpZoHlpaSZwS_Y8WQoNvfFSm3KDEz-hJTJ8dRSU/edit#slide=id.g2ce8a67ea30_0_84
 
 image::s1-fundamental-lecture-fig1.png[]
 
-But OpenStack services are rarely run standalone, except by developers working on the services themselves. Most OpenStack clusters run a standard set of services and, even when some of those servers could be disabled, with no loss of functionality for a certain application workload, the standard set is usually left enabled. Which means most clusters running Red Hat OpenStack Services on OpenShift run all services included with the product.
+But OpenStack services rarely run standalone, except by developers working on the services themselves. Most OpenStack clusters run a standard set of services and, even when some of those servers could be disabled, with no loss of functionality for a certain application workload, the standard set is usually left enabled. Which means most clusters running Red Hat OpenStack Services on OpenShift run all services included with the product.
 
 An OpenStack Operator focuses on user-facing OpenStack services, meaning services which provide an API for users outside of the cluster. Some OpenStack services exist to provide internal infrastructure for an OpenStack cluster and their APIs are available only from inside a cluster, for use by other OpenStack services and compute nodes. The OpenStack Administration learning journey provides more details about these internal services, and this course focuses on the user-facing services.
 
 == OpenStack Services to Manage Applications
 
-The first set of OpenStack services are the minimal services required by pratically any funcional OpenStack cluster. It would be hard to support even the simplest applications without including all services in this category, so we call them fundamental services.
+The first set of OpenStack services are the minimal services required by pratically any functional OpenStack cluster. It would be hard to support even the simplest applications without including all services in this category, so we call them fundamental services.
 
 It is common for the OpenStack community to refer to individual services by either their code names or their purposes. Follows a list of the fundamental OpenStack services covered in this section:
 
@@ -48,7 +48,7 @@ Fortunately, both the OpenStack client and Horizon offer quick commands and work
 
 === OpenStack Virtual Disks: Cinder
 
-Application workloads need to store multiple kinds of data, from their boot disk and its operating system, potentially customized with many changes configuration files, added packages, and so on; to possibly multiple data disks to store application data, logs, and other information as operating system files.
+Application workloads need to store multiple kinds of data, from their boot disk and its operating system, potentially customized with many changes configuration files, added packages, and so on. They may also require multiple data disks to store application data, logs, and other information as operating system files.
 
 The Block Storage service, Cinder, provides virtual disks, called *volumes*, which can be attached to VMs as you need. Once the volume is attached to a VM, you need to use operating system commands inside that VM to format the volume with a file system and configure directories, file ownership, and file permissions before applications are able to store data on the volume. Just like you would do with a physical disk on a physical server.
 
@@ -58,7 +58,7 @@ NOTE: Cinder does *not* provide shared filesystems, which some worloads require.
 
 Cinder also provides advanced features such as clones and snapshots of volumes, which you use for backup and disaster recovery procedures, or for quick cloning of VMs. The root or boot disk of a VM is usually a Cinder volume because this enables VMs to survive the loss of the compute node running the VM.
 
-There might be reasons to NOT use Cincer volumes for VM disks, for example to support very fast local NVMe flash storage, but them the application itself needs to provide resiliency and fault tolerance for that data. Most times, applications rely on the infrastructure to do it for them, which means Cinder does the job.
+There might be reasons to NOT use Cincer volumes for VM disks, for example to support very fast local NVMe flash storage, but then the application itself needs to provide resiliency and fault tolerance for that data. Most times, applications rely on the infrastructure to do it for them, which means Cinder does the job.
 
 === OpenStack Virtual Networks: Neutron
 
@@ -88,4 +88,4 @@ As we saw during the presentation of Nova and Glance, there are resources in eac
 
 We already saw, as examples Administrator-only resources, Neutron provider networks: you do not want to let Operators connect their applications to everything and anything outside your cluster: there are secuirity policies and boundaries to enforce. Besides, Operators are not supposed to need knowledge of the physical topology and resources of your data center. They are supposed to be concerned with only virtual resources inside an OpenStack cluster.
 
-As a counter example, we already saw Glance images: if all Operators need at least one boot image, why not creating a shared pool of standard images, instead of letting each Operator manage their own copies of the same images, which boot the same operating system version? But it is fine allowing Operators to create their own customized images for the application teams they support.
+As a counter example, we already saw Glance images: if all Operators need at least one boot image, why not create a shared pool of standard images, instead of letting each Operator manage their own copies of the same images, which boot the same operating system version? But it is fine allowing Operators to create their own customized images for the application teams they support.

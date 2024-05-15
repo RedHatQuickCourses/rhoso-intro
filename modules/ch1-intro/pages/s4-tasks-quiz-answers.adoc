@@ -18,7 +18,7 @@ _Incorrect: Linux System Administrators are more likely to perform tasks inside 
 * [x] Configuring IP routing rules for a virtual networks. +
 _Correct: Virtual networks and everything related to them are OpenStack API resources._
 
-* [ ] Configuring firewalld rules inside a RHEL VM. +
+* [ ] Configuring firewall rules inside a RHEL VM. +
 _Incorrect: Linux System Administrators are more likely to perform tasks inside a VM_
 
 2. Which of the following tasks are more likely to be performed by an OpenStack Operator, as opposed to an OpenStack Administrator?
@@ -29,7 +29,7 @@ _Correct: OpenStack Operators manage OpenStack resources which affect individual
 * [x] Creating new virtual networks. +
 _Correct: OpenStack Operators manage OpenStack resources which affect individual application workloads._
 
-* [ ] Creating a new class of virtual server, wich provides virtual GPUs. +
+* [ ] Creating a new class of virtual server, which provides virtual GPUs. +
 _Incorrect: OpenStack Administrators manage OpenStack resources which potentially affect an entire OpenStack cluster._
 
 * [ ] Configuring authentication to an OpenStack cluster using an LDAP server. +

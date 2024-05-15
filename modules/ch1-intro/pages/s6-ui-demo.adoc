@@ -8,11 +8,11 @@ WARNING: Work In Progress
 
 == Recording
 
-This demonstration will be recorded and the video linked from here, so learners can watch the video and optionally try to replicate it by themselves.
+This demonstration will be recorded and the video will be linked here, so learners can watch the video and optionally try to replicate it by themselves.
 
 == Environment
 
-There is no demo environment for now. Presenters must be able to provide their own environment, which should be a minimally configured OpenStack cluster with domains, projects, server flavors, floating ips, tenant networks, etc. It should be configured in a way that it is ready for an OpenStack operator, that is, an OpenStack user with member role in a few projects, to create a server instance and connect to that instance.
+There is no demo environment for now. Presenters must be able to provide their own environment, which should be a minimally configured OpenStack cluster with domains, projects, server flavors, floating IPs, tenant networks, etc. It should be configured in a way that it is ready for an OpenStack operator, that is, an OpenStack user with member role in a few projects, to create a server instance and connect to that instance.
 
 The demo environment should also include some workloads that are visible to the operator user, that is, it's *not* an empty cluster, so there are resources to list using the CLI or Horizon.
 
@@ -26,17 +26,17 @@ The demo environment must also provide a user workstation preconfigured with the
 
 2. Show that the user can switch between different projects and see different server instances on each project.
 
-3. Create a basic server running RHEL and connect to that server's console. Login to the server and run a couple local sysadmin commands.
+3. Create a basic server running RHEL and connect to that server's console. Login to the server and run a couple of local sysadmin commands.
 
 4. Open a terminal and log in to the same OpenStack cluster. Show something in Horizon and the CLI to prove it's connecting to the same OpenStack cluster.
 
 5. From the CLI, list the same projects and server instances you saw previously from Horizon.
 
-6. Use the online help from the CLI to build a minimal command to create another server instance, and run the command. Show both instances, the one created from Horizon, and the other created from the CLI, are running.
+6. Use the online help from the CLI to build a minimal command to create another server instance, and run the command. Show that both instances, the one created from Horizon, and the other created from the CLI, are running.
 
-7. Back to horizon, open the console of the second instance, and show it can connect to the first instance, because they're connected to the same virtual network.
+7. Go back to horizon, open the console of the second instance, and show that it can connect to the first instance, because they're connected to the same virtual network.
 
-8. Expose one of the instances to external access, using an availabe floating IP. Prove you can access it from the user's workstation with SSH. Show that you cannot SSH to the other instance, because it's IP address is internal to the OpenStack cluster.
+8. Expose one of the instances to external access, using an availabe floating IP. Demonstrate that you can access it from the user's workstation with SSH. Show that you cannot SSH to the other instance, because it's IP address is internal to the OpenStack cluster.
 
 9. From Horizon, delete the instance you created with the CLI. And from the CLI, delete the instance you created from Horizon, to show that resources are not tied to the UI they were created.
 
@@ -44,9 +44,9 @@ The demo environment must also provide a user workstation preconfigured with the
 
 11. On Horizon, switch to an administrator user. Show that it can list more projects that were hidden from the operator user.
 
-12. Still on Horizon, show networks and mention that the provider network connects the virtual network to the outside world, enabling SSH access. The operator can see only tenant networks from his projects, but the administrator can see the tenant network and configure routers which allows traffic between the tenant/internal and provider/external networks. 
+12. Still on Horizon, show networks and mention that the provider network connects the virtual network to the outside world, enabling SSH access. The operator can see only tenant networks from his projects, but the administrator can see the tenant network and configure routers which allow traffic between the tenant/internal and provider/external networks. 
 
-13. Back to the terminal, log in as the administrator user. Show it can list the same projects as from Horizon (more than as an operator). Also list networks.
+13. Go back to the terminal, and log in as the administrator user. Show that it can list the same projects as from Horizon (more than as an operator). Also list networks.
 
 14. List hypervisor hosts in the cluster. Now the user has the required access privileges for that API.
 

@@ -8,6 +8,6 @@ WARNING: Work in Progress
 
 == Introduction
 
-This chapter introduces the OpenStack services that are included and supported with Red Hat OpenStack Services on OpenShift. It focuses on the services that OpenStack Operators interacts with to perform their daily jobs and how those services work to together enable different kinds of application workloads.
+This chapter introduces the OpenStack services that are included and supported with Red Hat OpenStack Services on OpenShift. It focuses on the services that OpenStack Operators interacts with to perform their daily jobs and how those services work together to enable different kinds of application workloads.
 
 This chapter starts with the fundamental services that OpenStack operators use to manage application workloads; it continues with additional services which enable scalabity, resilience, and automation of cloud-native workloads; and finishes with services intended to support managing OpenStack clusters themselves.

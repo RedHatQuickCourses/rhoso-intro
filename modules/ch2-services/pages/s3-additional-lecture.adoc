@@ -39,13 +39,13 @@ Manila offers access to remote file *shares* using a variety of network protocol
 
 The role of Manila is providing a uniform interface for making file shares avaibale to application VMs, so an OpenStack Operator does not need direct acces to the storage backends themselves and their proprietary administration interfaces. Depending on the backend, Manila may also abstract networking and authentication details, making it look like the file share exists inside the virtual tenant network.
 
-Manila does not abstract the file sharing protocol itself: if an application VM expects a remote NFS share, Manila must be configured to provide NFS services. Besides, it is outside the scope of Manila to abnstract file system security, such as uid, gid, and permission masks of POSIX files.
+Manila does not abstract the file sharing protocol itself: if an application VM expects a remote NFS share, Manila must be configured to provide NFS services. Besides, it is outside the scope of Manila to abstract file system security, such as uid, gid, and permission masks of POSIX files.
 
 === OpenStack Objects: Swift
 
-Swift offers object storage capabilities similar to Amazon S3. S3 is a de-facto standard, supported by a large number of storage vendors and applications, but there is no formal specification nor interoperability test suite to show objectively if two S3 products from different vendors are similar or different in capabilities. Unfortunately, there is no way any vendor can tell, except by extensive testing, if one application works fine with the S3 API implementation of specific a storage vendor.
+Swift offers object storage capabilities similar to Amazon S3. S3 is a de-facto standard, supported by a large number of storage vendors and applications, but there is no formal specification nor interoperability test suite to show objectively if two S3 products from different vendors are similar or different in capabilities. Unfortunately, there is no way any vendor can tell, except by extensive testing, if one application works fine with the S3 API implementation of a specific storage vendor.
 
-Swift has its own application API, but it never got close to the popularity of Amazon S3. Most strage backends certified for Red Hat OpenStack offer both the Swift and S3 APIs, and an OpenStack Operator can manage object storage using Swift while applications access that storage using S3. Which is already good because most storage vendors do a good job of emulating the S3 API from the perspective of applications but require their own proprietary administration interfaces, so Swift can abstract these interfaces for an OpenStack Operator.
+Swift has its own application API, but it never got close to the popularity of Amazon S3. Most storage backends certified for Red Hat OpenStack offer both the Swift and S3 APIs, and an OpenStack Operator can manage object storage using Swift while applications access that storage using S3. Which is already good because most storage vendors do a good job of emulating the S3 API from the perspective of applications but require their own proprietary administration interfaces, so Swift can abstract these interfaces for an OpenStack Operator.
 
 Swift is one of the few services in an OpenStack cluster that is accessed directly by end-user applications running outside its cluster. Unlike traditional networked file systems, which need special configurations at the end-user operating system and require application protocols not designed for remote networks and the internet, object storage uses the HTTP protocol which mobile and web applications commonly use to interact with other cloud services.
 
@@ -62,7 +62,7 @@ These services enable dynamic and scalable applications, not tied to manually co
 
 Octavia enables fronting a *server group* or server *pool* with a single IP address, and forwarding network requests to any server of the group. This enables scalable and high-available applications, because more servers can handle more load, and servers can run in different compute nodes, insulating application users from failures of those compute nodes and of individual server instances.
 
-Octavia also works with Nova to enable autoscaling of server groups, so the number of servers grows and shrinks according to demand. Octavia can work on both Layer 3, as a pure IP load balancer, or at Layer 7, as an HTTP and TLS load balancer. In either case, Octavia can detect failures internal to server instances, such as when an applications becomes unresponsive, and stop sending sending traffic to those instances.
+Octavia also works with Nova to enable autoscaling of server groups, so the number of servers grows and shrinks according to demand. Octavia can work on both Layer 3, as a pure IP load balancer, or at Layer 7, as an HTTP and TLS load balancer. In either case, Octavia can detect failures internal to server instances, such as when an application becomes unresponsive, and stops sending sending traffic to those instances.
 
 === OpenStack Dynamic DNS: Designate
 
@@ -70,7 +70,7 @@ The DNS protocol is one of the oldest standards of the Internet, but management 
 
 == Additional OpenStack Services for Automation
 
-In the traditional data center world, each server is unique. Once you install all software and perform all configuration changes on that server, it's time-consuming and error-prone to replicate the same state in another server. In the cloud native world, IT personal strives to automate those configurations so it's easy and fast to reproduce the state of a server to the point it is ready for its end-users.
+In the traditional data center world, each server is unique. Once you install all softwares and perform all configuration changes on that server, it's time-consuming and error-prone to replicate the same state in another server. In the cloud native world, IT personal strives to automate those configurations so it's easy and fast to reproduce the state of a server to the point that it is ready for its end-users.
 
 To support automation of workloads, Red Hat OpenStack Services on OpenShift adds to Nova and Glance the following services:
 
@@ -84,15 +84,15 @@ The first service (Heat) automates the creation and management of many OpenStack
 
 OpenStack Glance provides a first step towards reproducibility, by enabling storage and reuse of server images to create multiple clones of the same server. Nova's support for cloud-init provides another piece, by enabling each of those servers to get unique configurations, such as different static IP addresses and SSH keys.
 
-But application workloads are rarely contained in a single server instance. Most real-world applications are composed of multiple VMs, for example the traditional three-tier architecture of persentation, business, and persistence, which could be realised as:
+But application workloads are rarely contained in a single server instance. Most real-world applications are composed of multiple VMs, for example the traditional three-tier architecture of presentation, business, and persistence, which could be realised as:
 
 1. Presentation: Web server with static HTML pages and JavaScript code.
-2. Business: Java application server, or web server running REST API endpoints using Java, Node.js, Ruby, or whatever you programming language runtime of choice.
+2. Business: Java application server, or web server running REST API endpoints using Java, Node.js, Ruby, or whatever is your programming language runtime of choice.
 3. Persistence: A relation or noSQL database server.
 
 It is also very common that each of those tiers consists of multiple servers, for example a web server farm or replicated primary (read-write) and secondary (read-only) database instances.
 
-And those server instances need network connectivity, firewall rules, load balancers, and human-readable names for their end-user web pages and REST API entry points. Manually creating and configuring all OpenStack API resources required by such applications can be a daunting tasks!
+And those server instances need network connectivity, firewall rules, load balancers, and human-readable names for their end-user web pages and REST API entry points. Manually creating and configuring all OpenStack API resources required by such applications can be a daunting task!
 
 OpenStack Heat enables defining all those resources using a Heat *template* with YAML syntax. Heat also maintains the relationship between templates and the resources created from them, so these resources can be changed and deleted from the templates instead of manually using the OpenStack APIs for each resource type.
 
@@ -102,11 +102,11 @@ Heat templates can be parametrized, enabling reuse of the same template in diffe
 
 The OpenStack Placement service is different than other services introduced so far because OpenStack Operator users and external applications do not interact directly with it, but indirectly through resources of other services, especially Nova.
 
-The Placement service tracks compute resource availability and consuption throgout an OpenStack cluster, and enables other OpenStack services to define and track different classes of resources. For example, Nova defines number of CPU cores and memory of compute nodes, and server instances consume those resources. Neutron defines number of IP address of internal virtual networks and of floating IP address available for connectivity with external networks. Cinder defines the total disk space and number of logical units (LUNs) of each storage backend.
+The Placement service tracks compute resource availability and consumption throughout an OpenStack cluster, and enables other OpenStack services to define and track different classes of resources. For example, Nova defines number of CPU cores and memory of compute nodes, and server instances consume those resources. Neutron defines number of IP address of internal virtual networks and of floating IP address available for connectivity with external networks. Cinder defines the total disk space and number of logical units (LUNs) of each storage backend.
 
 OpenStack API resources can consume compute resources from different OpenStack services. For example, server instances consume CPU and memory from compute nodes, IP addresses from virtual networks, and disk space from a storage backend. If there are no sufficient compute resources available in the cluster, you cannot create the API resource.
 
-Thanks to Placement, Nova can schedule each server instance to a compute node with sufficient available compute reources for that instance.
+Thanks to Placement, Nova can schedule each server instance to a compute node with sufficient available compute resources for that instance.
 
 Placement also enables the definition of new classes of compute resources, for example: the availability of GPUs in compute nodes. Then server instances can request a number of GPUs, and an OpenStack Operator can be sure that instance either gets the GPUs it needs, or fails to start.
 
@@ -114,13 +114,13 @@ Defining new classes of compute resources is usually an OpenStack Admninistrator
 
 == Additional OpenStack Services for Security
 
-We already know that security in OpenStack starts with Keystone, as the authentication entry point for all OpenStack services. While most end-user applications do not need to invoke OpenStack APIs, thus would have no need for direct interactions withg Keystone, most applications do interact with a wide range of services, from external APIs of a software vendor to middleware running on other servers inside and outside of their OpenStack cluster, such as database servers and messaging middleware.
+We already know that security in OpenStack starts with Keystone, as the authentication entry point for all OpenStack services. While most end-user applications do not need to invoke OpenStack APIs, thus would have no need for direct interactions with Keystone, most applications do interact with a wide range of services. These services range from external APIs of a software vendor to middleware running on other servers inside and outside of their OpenStack cluster, such as database servers and messaging middleware.
 
 Management of credentials to access those services and APIs is a potential source of security issues. They should not be hardoced in either application source code nor on its configuration files. Ideally they would live outside of application VMs. Security conscious organizations require that applications use Key Management Services (KMS) to store such credentials, and OpenStack offers Barbican: the Key Management service.
 
 === OpenStack Secrets Management: Barbican
 
-OpenStack Barbican enables secure storage of many types of keys, including symetric and assimetric keys, and including both passwords and certificate files. Applications authenticate to Barbican using Keystone to retrieve keys, and OpenStack Operators manage those keys independent of applications.
+OpenStack Barbican enables secure storage of many types of keys, including symetric and assymetric keys, and including both passwords and certificate files. Applications authenticate to Barbican using Keystone to retrieve keys, and OpenStack Operators manage those keys independent of applications.
 
 Multiple OpenStack services offer integration with Barbican, for example to encrypt data stored in Cinder volumes or Swift objects. 
 
