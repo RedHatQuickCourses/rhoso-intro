@@ -38,7 +38,7 @@ Similarly, an OpenStack Administrator may also be an OpenShift Administrator. An
 
 == OpenStack Users in Large Organizations
 
-In smaller organizations, the same team performs both OpenStack Operator and Administrator roles. In larger organizations, multiple teams of OpenStack Operators might be responsible for different groups workloads running on the same cluster. Conversely, a larger OpenStack Administration team migh split into subteams who manage different Az or cells of a single cluster. 
+In smaller organizations, the same team performs both OpenStack Operator and Administrator roles. In larger organizations, multiple teams of OpenStack Operators might be responsible for different groups workloads running on the same cluster. Conversely, a larger OpenStack Administration team migh split into subteams who manage different availability zones or compute cells of a single cluster. 
 // Is the last statement correct? For example - Az
 
 The scope of work of an OpenStack Operator or Administrator usually includes multiple clusters. It's unlikely that an organization will run all their workloads and put all their physical servers in a single OpenStack cluster. More frequently, there will be multiple clusters which run instances (or copies) of the same workloads, to be closer to their end users or for high availability purposes.
@@ -65,7 +65,13 @@ OpenStack Administrators have a split focus among OpenStack APIs, Kubernetes API
 image::s3-operations-lecture-fig-3.png[]
 // Exported from https://docs.google.com/presentation/d/1lPtAxaKH9P2SjgexIwBi5RxHOjIUQV44R5c4nnrug74/edit#slide=id.p
 
-For simplicity, the previous figure ommits the tools OpenStack Administrators use to interact with Kubernetes APIs and OpenShift clusters, such as the OpenShift CLI and the OpenShift web console for managing containers (including the containers from OpenStack) and the Operator Lifecycle Manager (OLM), for installing packaged applications and optional features of Red Hat OpenShift. In fact, OpenStack itself is packaged as an add-on operator for ease of installation on OpenShift.
+For simplicity, the previous figure ommits the tools OpenStack Administrators use to interact with Kubernetes APIs and OpenShift clusters, such as:
+
+* The OpenShift CLI and the OpenShift web console for managing containers (including the containers from OpenStack).
+
+* The Operator Lifecycle Manager (OLM), for installing applications and optional features of Red Hat OpenShift, packaged as add-on operators.
+
+In fact, OpenStack itself is packaged as an add-on operator for ease of installation on OpenShift.
 
 IMPORTANT: In OpenShift, the term "operator" sometimes refers to a software component, instead of a human IT professional.
 

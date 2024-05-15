@@ -51,7 +51,7 @@ image::s1-rhoso-lecture-fig-1.png[]
 
 // Can we make the name of the diagram visible to the learners?
 
-To provide a complete private cloud platform, Red Hat OpenStack on OpenShift includes, the following fully supported components:
+To provide a complete private cloud platform, Red Hat OpenStack on OpenShift includes the following fully supported components:
 
 * The https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux[*Red Hat Enterprise Linux (RHEL)*] operating system.
 * The https://www.redhat.com/en/topics/virtualization/what-is-KVM[*KVM*] hypervisor with the https://www.QEMU.org/[*QEMU*] emulation layer and the https://libvirt.org/[*libvirt*] management API, all of them included with RHEL.
