@@ -274,10 +274,10 @@ Pending review.
 <h2 id="_kinds_of_openstack_users"><a class="anchor" href="#_kinds_of_openstack_users"></a>Kinds of OpenStack Users</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The users of an OpenStack cluser are not end-users, they are IT professionals, usually with an operations-focused job role. It is true that application developers sometimes have access to OpenStack clusters and manage their own VMs, but them they are acting as OpenStack Operators.</p>
+<p>The users of an OpenStack cluser are not end-users, they are IT professionals, usually with an operations-focused job role. It is true that application developers sometimes have access to OpenStack clusters and manage their own VMs, but there they are acting as OpenStack Operators.</p>
 </div>
 <div class="paragraph">
-<p>For the purposes of the Red Hat OpenStack training courses, we distinguish between two kinds of OpenStack users:</p>
+<p>For the purpose of the Red Hat OpenStack training courses, we distinguish between two kinds of OpenStack users:</p>
 </div>
 <div class="dlist">
 <dl>
@@ -287,7 +287,7 @@ Pending review.
 </dd>
 <dt class="hdlist1">OpenStack Administrators</dt>
 <dd>
-<p>They manage OpenStack clusters, including its control and data planes. They manage OpenStack services and compute nodes, using OpenStack API resources and also using Kubernetes API resources, OpenStack operator custom resources, and Ansible playbooks. This user role is the focus of a different set of courses, which comprises the OpenStack Administration learning journey.</p>
+<p>They manage OpenStack clusters, including its control and data planes. They manage OpenStack services and compute nodes, using OpenStack API resources and also using Kubernetes API resources, OpenStack operator custom resources, and Ansible playbooks. This user role is the focus of a different set of courses, which comprises of the OpenStack Administration learning journey.</p>
 </dd>
 </dl>
 </div>
@@ -319,10 +319,10 @@ Pending review.
 <h2 id="_openstack_users_in_large_organizations"><a class="anchor" href="#_openstack_users_in_large_organizations"></a>OpenStack Users in Large Organizations</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>On smaller organizations, the same team performs both OpenStack Operator and Administrator roles. On larger organizations, multiple teams of OpenStack Operators might be responsible for different groups workloads running on the same cluster. Conversely, a larger OpenStack Administration team migh split into subteams who manage different Az or cells of a single cluster.</p>
+<p>In smaller organizations, the same team performs both OpenStack Operator and Administrator roles. In larger organizations, multiple teams of OpenStack Operators might be responsible for different groups workloads running on the same cluster. Conversely, a larger OpenStack Administration team migh split into subteams who manage different availability zones or compute cells of a single cluster.</p>
 </div>
 <div class="paragraph">
-<p>The scope of work of an OpenStack Operator or Administrator usually includes multiple clusters. It&#8217;s unlikely that an organization will run all their workloads and put all their physical servers in a single OpenStack cluster. More frequently, thre' will be multiple clusters which run instances (or copies) of the same workloads, to be closer to their end users or for high availability purposes.</p>
+<p>The scope of work of an OpenStack Operator or Administrator usually includes multiple clusters. It&#8217;s unlikely that an organization will run all their workloads and put all their physical servers in a single OpenStack cluster. More frequently, there will be multiple clusters which run instances (or copies) of the same workloads, to be closer to their end users or for high availability purposes.</p>
 </div>
 </div>
 </div>
@@ -330,7 +330,7 @@ Pending review.
 <h2 id="_tools_and_skills_of_openstack_operators"><a class="anchor" href="#_tools_and_skills_of_openstack_operators"></a>Tools and Skills of OpenStack Operators</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>OpenStack Operators focus on OpenStack API resources and typically use the <strong>OpenStack client</strong>, which is a command-line (CLI) tool, and the web interface from <strong>OpenStack Horizon</strong>. The next section of this course provides an introduction to these tools, for now stay focused on the OpenStack user job roles.</p>
+<p>OpenStack Operators focus on OpenStack API resources and typically use the <strong>OpenStack client</strong>, which is a command-line (CLI) tool, and the web interface from <strong>OpenStack Horizon</strong>. The next section of this course provides an introduction to these tools. For now stay focused on the OpenStack user job roles.</p>
 </div>
 <div class="paragraph">
 <p>The OpenStack client, Horizon, and any other tools available from the open source community or IT vendor to manage OpenStack clusters and workloads rely on the same OpenStack APIs. There are no "backdoors", no "native" nor "low-level" ways of managing OpenStack clusters.</p>
@@ -353,7 +353,7 @@ The OpenStack cluster diagrams, from now on, will ommit the OpenShift cluster no
 </table>
 </div>
 <div class="paragraph">
-<p>Notice that OpenStack Operators are shielded from the fact that an OpenStack cluster runs its control plane on OpenShift. They do not require direct access to OpenShift. They are able to work around application performance and availability issues using OpenStack APIs, for example by migrating a server instance to a different compute node, or by connecting a server instance to a different virtual network. All the information they need to perform their daily job is available from OpenStack APIs, and all actions they must perform are also. They are concerned only with the user-facing services of OpenStack.</p>
+<p>Notice that OpenStack Operators are shielded from the fact that an OpenStack cluster runs its control plane on OpenShift. They do not require direct access to OpenShift. They are able to work around application performance and availability issues using OpenStack APIs, for example by migrating a server instance to a different compute node, or by connecting a server instance to a different virtual network. All the information they need to perform their daily job is available from OpenStack APIs, along with all the actions they must perform. They are concerned only with the user-facing services of OpenStack.</p>
 </div>
 <div class="paragraph">
 <p>OpenStack Operators gradually grow into OpenStack Administrators because they can perform, using OpenStack APIs, tasks that impact multiple workloads and even entire clusters. Then they start requiring direct access to configure and manage OpenStack control planes, that is, to the OpenStack containers running on OpenShift, and to configure and manage compute nodes running RHEL.</p>
@@ -372,7 +372,20 @@ The OpenStack cluster diagrams, from now on, will ommit the OpenShift cluster no
 </div>
 </div>
 <div class="paragraph">
-<p>For simplicity, the previous figure ommits the tools OpenStack Administrators use to interact with Kubernetes APIs and OpenShift clusters, such as the OpenShift CLI and the OpenShift web console for managing containers (including the containers from OpenStack) and the Operator Licefycle Manager (OLM), for installing packaged applications and optional features of Red Hat OpenShift. In fact, OpenStack itself is packaged as an add-on operator for ease of installation on OpenShift.</p>
+<p>For simplicity, the previous figure ommits the tools OpenStack Administrators use to interact with Kubernetes APIs and OpenShift clusters, such as:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The OpenShift CLI and the OpenShift web console for managing containers (including the containers from OpenStack).</p>
+</li>
+<li>
+<p>The Operator Lifecycle Manager (OLM), for installing applications and optional features of Red Hat OpenShift, packaged as add-on operators.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In fact, OpenStack itself is packaged as an add-on operator for ease of installation on OpenShift.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -381,7 +394,7 @@ The OpenStack cluster diagrams, from now on, will ommit the OpenShift cluster no
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-In OpenShift, the term "operator" sometimes refers to a software component, instead of to a human IT professional.
+In OpenShift, the term "operator" sometimes refers to a software component, instead of a human IT professional.
 </td>
 </tr>
 </table>

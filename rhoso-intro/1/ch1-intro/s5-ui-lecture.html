@@ -289,7 +289,7 @@ Pending review.
 </dl>
 </div>
 <div class="paragraph">
-<p>Despite the rich features of the Hozizon web UI, it is expected than an OpenStack Operator is confortable using an operating system prompt, most likely a Bash shell from Linux. There are tasks which absolutely require using the OpenStack client and Horizon is not designed to be a full-service tool for Operations and Administrators, but focus on most frequent  tasks and on workflows where graphical user interfaces can provide significant advantages over CLI workflows.</p>
+<p>Despite the rich features of the Hozizon web UI, it is expected than an OpenStack Operator is comfortable using an operating system prompt, most likely a Bash shell from Linux. There are tasks which absolutely require using the OpenStack client and Horizon is not designed to be a full-service tool for Operations and Administrators, but focus on most frequent  tasks and on workflows where graphical user interfaces can provide significant advantages over CLI workflows.</p>
 </div>
 </div>
 </div>
@@ -325,7 +325,7 @@ Pending review.
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-in this learning journey, we prefer the term "resource" over "object" to avoid confusion with the OpenStack resource type called <code>object</code>.
+In this learning journey, we prefer the term "resource" over "object" to avoid confusion with the OpenStack resource type called <code>object</code>.
 </td>
 </tr>
 </table>
@@ -362,7 +362,7 @@ in this learning journey, we prefer the term "resource" over "object" to avoid c
 </ul>
 </div>
 <div class="paragraph">
-<p>An <em>action</em> corresponds to an OpenStack API performed on the <em>resource</em> and it can take many opional or required <em>arguments</em>.</p>
+<p>An <em>action</em> corresponds to an OpenStack API performed on the <em>resource</em> and it can take many optional or required <em>arguments</em>.</p>
 </div>
 <div class="paragraph">
 <p>The OpenStack client defines the meaning of some standard actions to enforce consistency among multiple services and their resources. The following are some of the standard actions, but not all resource types will accept all standard actions. Later during this learning journey you will learn what each action means:</p>
@@ -430,13 +430,13 @@ $ <strong>openstack versions show</strong></code></pre>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-do not try these commands on your OpenStack cluster, unless you know which resource names to use and appropriate values for other arguments.
+Do not try these commands on your OpenStack cluster, unless you know which resource names to use and appropriate values for other arguments.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The following are examples of commands which require other arguments that are the name of other resources. These names are formatted in italics to indicate they should be changed to match the resources defined on your cluster:</p>
+<p>The following are examples of commands which require other arguments that are the name of other resources. These names are formatted in italics to indicate they should be changed to match the resources defined in your cluster:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -474,7 +474,7 @@ $ <strong>openstack volume set --readonly --bootable <em>appdisk</em></strong></
 <div class="sect2">
 <h3 id="_online_help_from_the_openstack_client"><a class="anchor" href="#_online_help_from_the_openstack_client"></a>Online Help From the OpenStack Client</h3>
 <div class="paragraph">
-<p>To list all commands availabe in your OpenStacl client, use the <code>--help</code> global option:</p>
+<p>To list all commands availabe in your OpenStack client, use the <code>--help</code> global option:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -574,25 +574,25 @@ This section may need extensive rewrite and new screen shots because of changes 
 </div>
 </div>
 <div class="paragraph">
-<p>Those new tabs and pages enable managing OpenStack API resources with require elevated privileges, to which OpenStack Operators usually have no access, and that can impact the entire cluster, as opposed to resources which belong to one application or workload.</p>
+<p>Those new tabs and pages enable managing OpenStack API resources which require elevated privileges, to which OpenStack Operators usually have no access, and that can impact the entire cluster, as opposed to resources which belong to one application or workload.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_comparing_horizon_with_the_openstack_client"><a class="anchor" href="#_comparing_horizon_with_the_openstack_client"></a>Comparing Horizon with the OpenStack Client</h3>
 <div class="paragraph">
-<p>You already know that the Horizon dashboard do not provide access to all OpenStack resources and their APIs. There are tasks, for both Operators and Administrators, which may require using the OpenStack client or may me easier to perform using it.</p>
+<p>You already know that the Horizon dashboard does not provide access to all OpenStack resources and their APIs. There are tasks, for both Operators and Administrators, which may require using the OpenStack client or may be easier to perform using it.</p>
 </div>
 <div class="paragraph">
-<p>Becoming proefficient in the OpenStack client also enables usage of automation tools, such as CI/CD pipelines and issue tracking systems. The OpenStack client can also access OpenStack&#8217;s own automation tool, the Heat service, which we will be introduced to in the next chapter of this course.</p>
+<p>Becoming proefficient in the OpenStack client also enables usage of automation tools, such as CI/CD pipelines and issue tracking systems. The OpenStack client can also access OpenStack&#8217;s own automation tool, the Heat service, which we will be introduced to you in the next chapter of this course.</p>
 </div>
 <div class="paragraph">
-<p>Horizon is easier for begginer Operators because they can see all arguments to an API call in the same page, or in related pages of a multiple-form workflow.  Horizon may provide defaults, or show the available alternatives, which would require addtional commands using the CLI.</p>
+<p>Horizon is easier for beginner Operators because they can see all arguments to an API call in the same page, or in related pages of a multiple-form workflow.  Horizon may provide defaults, or show the available alternatives, which would require addtional commands using the CLI.</p>
 </div>
 <div class="paragraph">
-<p>Horizon can also group multiple resources, sometimes from different services, in the same page, providing workflows that tend to require less steps and be easier to understand than equivalent workflows using the OpenStack client.</p>
+<p>Horizon can also group multiple resources, sometimes from different services, in the same page, providing workflows that tend to require less steps and can be easier to understand than equivalent workflows using the OpenStack client.</p>
 </div>
 <div class="paragraph">
-<p>Some Horizon pages provide a summary view of information from multiple resources that would be very hard to collect and display using CLI tools, for example the <strong>Project / Compute / Overview</strong> page fromt he first figure, or the <strong>Project / Network / Topology</strong> page of the following figure. Those pages make Horizon more than just a web interface to OpenStack API resources, but a true dashboard of information for OpenStack Operators.</p>
+<p>Some Horizon pages provide a summary view of information from multiple resources that would be very hard to collect and display using CLI tools, for example the <strong>Project / Compute / Overview</strong> page from the first figure, or the <strong>Project / Network / Topology</strong> page of the following figure. Those pages make Horizon more than just a web interface to OpenStack API resources, but a true dashboard of information for OpenStack Operators.</p>
 </div>
 <div class="imageblock">
 <div class="content">
