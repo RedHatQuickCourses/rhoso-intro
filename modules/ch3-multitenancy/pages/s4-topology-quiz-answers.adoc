@@ -1,0 +1,58 @@
+= Answers to the Quiz
+
+WARNING: Pending Review.
+
+== Large OpenStack Clusters
+
+1. An OpenStack Administrator needs to plan for a cluster which encompasses two different floors of a data center building. Each floor has its own power supply and core network switches. Which of the following is the best way of structuring the cluster for the scenario?
+
+* [ ] Each building maps to a cluster. +
+_Incorrect: there is no requirement for a multiple cluster design._
+
+* [ ] Each building maps to a region. +
+_Incorrect: There is no requirement for a multiple cluster design, and each region is a mostly standalone cluster._
+
+* [x] *Each building maps to an AZ.* +
+_Correct: power supplies and network switches define failure domains in a cluster, which leads to different availability zones for each._
+
+* [ ] Each building maps to a host aggregate. +
+_Incorrect: host aggregates which are not AZs are intended to represent different classes of physical machines instead of different locations of those machines._
+
+* [ ] Each building maps to a cell. +
+_Incorrect: cells are not intended to represent failure domains._
+
+2. An OpenStack Administrator needs to plan for applications that require special network accelerator cards, which are *not* available in all compute nodes of a cluster. The same applications also include server instances which run mobile application backends and do not require the accelerator cards. Which of the following is the best way of structuring the cluster for the scenario?
+
+* [ ] Compute nodes with the accelerator card belong to a region. +
+_Incorrect: Seggregating those compute nodes to their own OpenStack clusters complicates communication between different kinds of server instances of the applications._
+
+* [ ] Compute nodes with the accelerator card belong to an AZ. +
+_Incorrect: hardware capabilities of compute node to not configure a failure domain._
+
+* [x] *Compute nodes with the accelerator card belong to a host aggregate.* +
+_Correct: Host aggregates enable administrators and operators to collaborate to run server instances on compute nodes with or without accelerator cards, according to the needs of each server instance._
+
+* [ ] Compute nodes with the accelerator card belong to a cell.
+_Incorrect: hardware capabilities of compute node to not configure a compute cell._
+
+3. An OpenStack Administrator configured an cluster with four kinds of physical machines: machines with GPUs, machines with high CPU core count, machines with both GPUs and high core count, and finaly machines which neither a CPU nor a high core count. What an OpenStack Operator should do to ensure that a workload which requires both GPUs and many CPU cores runs in a physical machine of the matching kind?
+
+* [ ] Use a server flavor which maps to an AZ of compute nodes with both GPUs and high core count. +
+_Incorrect: AZs do not map to kinds of server hardware._
+
+* [ ] Use a server flavor which maps to an AZ of compute nodes with GPUs and also to another AZ of compute nodes with high core count. +
+_Incorrect: AZs do not map to kinds of server hardware._
+
+* [x] *Use a server flavor which maps to a host aggregate of compute nodes with GPUs and also to another host aggregate of compute nodes with high core count.* +
+_Correct: a compute node can belong to multiple host aggregates._
+
+* [ ] Use a server flavor which maps to a host aggregate of compute nodes with both GPUs and high core count. +
+_Incorrect: There is no need to create a host aggregate for the intersection of different hardware capabilies because a compute node can belong to multiple host aggregates._
+
+* [ ] Use a server flavor which maps to a cell of compute nodes with GPUs and also to another cell of compute nodes with high core count. +
+_Incorrect: compute cells do not map to kinds of server hardware._
+
+* [ ] Use a server flavor which maps to a cell of compute nodes with both GPUs and high core count.
+_Incorrect: compute cells do not map to kinds of server hardware._
+
+

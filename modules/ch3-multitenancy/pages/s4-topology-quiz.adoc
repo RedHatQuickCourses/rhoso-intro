@@ -1,0 +1,34 @@
+= Quiz: Large OpenStack Clusters
+
+Objective::
+
+Assess the learner understanding of OpenStack cluster topology mechanisms.
+
+WARNING: Pending Review.
+
+== Questions
+
+1. An OpenStack Administrator needs to plan for a cluster which encompasses two different floors of a data center building. Each floor has its own power supply and core network switches. Which of the following is the best way of structuring the cluster for the scenario?
+
+* [ ] Each building maps to a cluster.
+* [ ] Each building maps to a region.
+* [ ] Each building maps to an AZ.
+* [ ] Each building maps to a host aggregate.
+* [ ] Each building maps to a cell.
+
+2. An OpenStack Administrator needs to plan for applications that require special network accelerator cards, which are *not* available in all compute nodes of a cluster. Which of the following is the best way of structuring the cluster for the scenario?
+
+* [ ] Compute nodes with the accelerator card belong to a region.
+* [ ] Compute nodes with the accelerator card belong to an AZ.
+* [ ] Compute nodes with the accelerator card belong to a host aggregate.
+* [ ] Compute nodes with the accelerator card belong to a cell.
+
+3. An OpenStack Administrator configured an cluster with four kinds of physical machines: machines with GPUs, machines with high CPU core count, machines with both GPUs and high core count, and finaly machines which neither a CPU nor a high core count. What an OpenStack Operator should do to ensure that a workload which requires both GPUs and many CPU cores runs in a physical machine of the matching kind?
+
+* [ ] Use a server flavor which maps to an AZ of compute nodes with both GPUs and high core count.
+* [ ] Use a server flavor which maps to an AZ of compute nodes with GPUs and also to another AZ of compute nodes with high core count.
+* [ ] Use a server flavor which maps to a host aggregate of compute nodes with GPUs and also to another host aggregate of compute nodes with high core count.
+* [ ] Use a server flavor which maps to a host aggregate of compute nodes with both GPUs and high core count.
+* [ ] Use a server flavor which maps to a cell of compute nodes with GPUs and also to another AZ of compute nodes with high core count.
+* [ ] Use a server flavor which maps to a cell of compute nodes with both GPUs and high core count.
+

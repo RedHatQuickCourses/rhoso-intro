@@ -28,7 +28,7 @@ The core of OpenStack is managing a cluster of compute servers which run applica
 
 The OpenStack community provides a number of user-facing services. Some of them provide the essential infrastructucture-as-a-service (IaaS) functionality for managing applications as virtual machines (VMs) and also higher-level abstractions such as load balancer and autoscalers. It also provides a number of internal infrastructure services, such as different ways of installing, managing, and scaling the OpenStack user-facing services.
 
-https://www.redhat.com/en/blog/red-hat-openstack-services-openshift-next-generation-red-hat-openstack-platform[*Red Hat OpenStack Services on OpenShift*] is an oppinionated distribution of OpenStack, built and supported by Red Hat. It is the latest incarnation of the *Red Hat OpenStack Platform* and marks a major shift on the internal architecture of Red Hat OpenStack.
+https://www.redhat.com/en/blog/red-hat-openstack-services-openshift-next-generation-red-hat-openstack-platform[*Red Hat OpenStack Services on OpenShift*] is an opinionated distribution of OpenStack, built and supported by Red Hat. It is the latest incarnation of the *Red Hat OpenStack Platform* and marks a major shift on the internal architecture of Red Hat OpenStack.
 
 [quote: https://www.redhat.com/en/technologies/linux-platforms/openstack-platform]
 ____
@@ -38,7 +38,7 @@ _Source: https://www.redhat.com/en/technologies/linux-platforms/openstack-platfo
 
 That is, Red Hat OpenStack Services on OpenShift is a platform for building and managing private clouds which runs application workloads as VMs.
 
-Let's be honest: not all components availabe in the upstream OpenStack project are available with Red Hat OpenStack Services on OpenShift. Not all services and deployment methods from the community are supported by Red Hat as part of its OpenStack product. But "less is more" because Red Hat provides a stable, pre-integrated, secure, and certified set of components. Red Hat also works with a large ecosystem of partners that provide software and hardware certified for Red Hat OpenStack.
+Let's be honest: not all components available in the upstream OpenStack project are available with Red Hat OpenStack Services on OpenShift. Not all services and deployment methods from the community are supported by Red Hat as part of its OpenStack product. But "less is more" because Red Hat provides a stable, pre-integrated, secure, and certified set of components. Red Hat also works with a large ecosystem of partners that provide software and hardware which are certified for Red Hat OpenStack.
 
 Beyond that, Red Hat is commited to fixing bugs and addressing security vulnerabilities, while keeping backward compatibility within a product release stream, which you cannot expect from upstream OpenStack.
 

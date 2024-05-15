@@ -1,0 +1,20 @@
+= Summary
+
+In this chapter, you learned:
+
+* OpenStack API resources exist in projects, and projects exist in domains.
+
+* Domains can refer to external identity systems, and users from one domain can access projects from other domains.
+
+* OpenStack users and grops are assigned roles which grant them permissions to manage API resources in a project.
+
+* Projects can also be assigned API resource quotas and compute resource quotas, to prevent workloads from one project from using all capacity of their cluster.
+
+* OpenStack clusters can be grouped, each as a region, in a larger private cloud.
+
+* OpenStack clusters can be partitioned into availability zones (AZs) to manage reliability and resilience of workloads from infrastructure issues.
+
+* OpenStack compute nodes can be members of multiple host aggregates to schedule workloads to physical servers having better performance or cost for each workload.
+
+* OpenStack compute nodes can also be partitioned on cells, independent of AZs and host aggregates, to manage scalability and resilience of OpenStack services themselves.
+
