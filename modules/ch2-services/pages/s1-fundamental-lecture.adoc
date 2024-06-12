@@ -12,7 +12,7 @@ OpenStack is composed of multiple independent services which can work (and usual
 
 // figures are exported from https://docs.google.com/presentation/d/1DGxnxpZoHlpaSZwS_Y8WQoNvfFSm3KDEz-hJTJ8dRSU/edit#slide=id.g2ce8a67ea30_0_84
 
-image::s1-fundamental-lecture-fig1.png[]
+image::s1-fundamental-lecture-fig-1.svg[]
 
 But OpenStack services rarely run standalone, except by developers working on the services themselves. Most OpenStack clusters run a standard set of services and, even when some of those servers could be disabled, with no loss of functionality for a certain application workload, the standard set is usually left enabled. Which means most clusters running Red Hat OpenStack Services on OpenShift run all services included with the product.
 
@@ -30,7 +30,7 @@ It is common for the OpenStack community to refer to individual services by eith
 * Neutron: Networking service
 * Glance: Image service
 
-image::s1-fundamental-lecture-fig2.png[]
+image::s1-fundamental-lecture-fig-2.svg[]
 
 === OpenStack Authentication and Service Discovery: Keystone
 

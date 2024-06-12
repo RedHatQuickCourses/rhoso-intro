@@ -14,7 +14,7 @@ OpenStack Operators need some understanding of the physcal topology of their Ope
 
 // https://docs.google.com/presentation/d/1aslemfY925gyjNHYyenIGSC8RAdogWgL5WSJhtLtn8Q/edit#slide=id.p
 
-image::s3-regions-azs-cells-lecture-fig1.png[]
+image::s3-regions-azs-cells-lecture-fig-1.svg[]
 
 NOTE: The figures in this chapter do not list all user-facing OpenStack services just for simplicity.
 
@@ -106,15 +106,15 @@ OpenStack cluster Cells are even less visible to OpenStack Operators than Host A
 
 The following figures show three typical ways of configuring cells in an OpenStack cluster: first, configuring an 1:1 equivalence of AZs and cells:
 
-image::s3-regions-azs-cells-lecture-fig2.png[]
+image::s3-regions-azs-cells-lecture-fig-2.svg[]
 
 Second, creating multiple cells inside the same AZ. There could be more AZs beyond the one displayed in the figure.
 
-image::s3-regions-azs-cells-lecture-fig3.png[]
+image::s3-regions-azs-cells-lecture-fig-3.svg[]
 
 Third, creating AZs inside the same cell. There could be more cells beyond the one displayed in the figure.
 
-image::s3-regions-azs-cells-lecture-fig4.png[]
+image::s3-regions-azs-cells-lecture-fig-4.svg[]
 
 The point is, cells and AZs are independent concepts. They relate to different aspects of partitioning and scaling OpenStack clusters. For your peace of mind, it is best to avoid designs where the mapping between cells and AZs is not 1:1 nor hierarchical. Anyway, one compute host must belong to a single AZ and to a single cell.
 

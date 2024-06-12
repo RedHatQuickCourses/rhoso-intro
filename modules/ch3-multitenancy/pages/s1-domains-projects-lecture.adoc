@@ -12,7 +12,7 @@ OpenStack clusters typically run many applications and are managed by many Opera
 
 // https://docs.google.com/presentation/d/1aslemfY925gyjNHYyenIGSC8RAdogWgL5WSJhtLtn8Q/edit#slide=id.p
 
-image::s1-domains-projects-lecture-fig1.png[]
+image::s1-domains-projects-lecture-fig-1.svg[]
 
 On the structure of domains and projects, OpenStack services enforce authorization checks, which may allow or deny a user to manage API respources, enabling separation of concerns, for example: an Operator may manage applications from some projects but not from others.
 
@@ -104,7 +104,7 @@ TIP: OpenStack Nova used to provide per-user quotas but they are deprecated and 
 
 // https://docs.google.com/presentation/d/1aslemfY925gyjNHYyenIGSC8RAdogWgL5WSJhtLtn8Q/edit#slide=id.p
 
-image::s1-domains-projects-lecture-fig2.png[]
+image::s1-domains-projects-lecture-fig-2.svg[]
 
 Compute resource quotas can only prevent the creation or changes to API resource instances. They are not designed to enforce dynamic usage quotas, but to ensure applications get some guaranteed capacity and that compute nodes are not overloaded with more server instances they can handle.
 
