@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Resources, Projects, and Domains :: Introduction to Red Hat OpenStack Services on OpenShift</title>
+    <link rel="prev" href="index.html">
+    <link rel="next" href="s2-multitenancy-quiz.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">Introduction to Red Hat OpenStack Services on OpenShift</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/rhoso-intro/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rhoso-intro" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Introduction to Red Hat OpenStack Services on OpenShift</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch1-intro/index.html">Introduction to Red Hat OpenStack</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch1-intro/s1-rhoso-lecture.html">What is Red Hat OpenStack Services on OpenShift</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch1-intro/s2-components-quiz.html">Quiz: Components of Red Hat OpenStack on OpenShift</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch1-intro/s2-components-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch1-intro/s3-operations-lecture.html">OpenStack Operations and Administration Roles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch1-intro/s4-tasks-quiz.html">Quiz: Red Hat OpenStack Operations Tasks</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch1-intro/s4-tasks-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch1-intro/s5-ui-lecture.html">OpenStack User Interfaces</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch1-intro/s6-ui-demo.html">Demo: OpenStack Client and Web Console</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch1-intro/s7-review-quiz.html">Review Quiz: Red Hat OpenStack Operations</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch1-intro/s7-review-quiz-answers.html">Answers to the Review Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch1-intro/s8-summary.html">Summary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch2-services/index.html">Red Hat OpenStack Services</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch2-services/s1-fundamental-lecture.html">Fundamental Services of Red Hat OpenStack</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch2-services/s2-fundamental-quiz.html">Quiz: OpenStack Services and Application Workloads</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch2-services/s2-fundamental-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch2-services/s3-additional-lecture.html">Additional Services of Red Hat OpenStack</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch2-services/s4-additional-quiz.html">Quiz: OpenStack Services and Cloud-Native Applications</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch2-services/s4-additional-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch2-services/s5-administration-lecture.html">Administration Services of Red Hat OpenStack</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch2-services/s6-administration-quiz.html">Quiz: OpenStack Services and IT Infrastructure</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch2-services/s6-administration-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch2-services/s7-heat-demo.html">Demo: OpenStack Heat Orchestrator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch2-services/s8-review-quiz.html">Review Quiz: Red Hat OpenStack Services</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch2-services/s8-review-quiz-answers.html">Answers to the Review Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch2-services/s9-summary.html">Summary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Multi-Tenancy in Red Hat OpenStack</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="s1-domains-projects-lecture.html">Resources, Projects, and Domains</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="s2-multitenancy-quiz.html">Quiz: Red Hat OpenStack Multi-Tenancy</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="s2-multitenancy-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="s3-regions-azs-cells-lecture.html">Regions, AZs, and Cells.</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="s4-topology-quiz.html">Quiz: Large OpenStack Clusters</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="s4-topology-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="s5-cluster-demo.html">Demo: Exploring an OpenStack Cluster</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="s6-review-quiz.html">Review Quiz: Multi-Tenancy and Topology in Red Hat OpenStack</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="s6-review-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="s7-summary.html">Summary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Introduction to Red Hat OpenStack Services on OpenShift</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Introduction to Red Hat OpenStack Services on OpenShift</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Introduction to Red Hat OpenStack Services on OpenShift</a></li>
+    <li><a href="index.html">Multi-Tenancy in Red Hat OpenStack</a></li>
+    <li><a href="s1-domains-projects-lecture.html">Resources, Projects, and Domains</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Resources, Projects, and Domains</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Objective</dt>
+<dd>
+<p>Describe how to organize OpenStack resources in projects and domains for access control and quota management.</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Pending Review.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_multitenancy_with_openstack"><a class="anchor" href="#_multitenancy_with_openstack"></a>Multitenancy with OpenStack</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OpenStack clusters typically run many applications and are managed by many Operators. OpenStack does not prescribe a way of grouping applications and Operators, but provides a general mechanism for enforcing whatever is your organizational need, based on domains and projects.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/s1-domains-projects-lecture-fig-1.svg" alt="s1 domains projects lecture fig 1">
+</div>
+</div>
+<div class="paragraph">
+<p>On the structure of domains and projects, OpenStack services enforce authorization checks, which may allow or deny a user to manage API respources, enabling separation of concerns, for example: an Operator may manage applications from some projects but not from others.</p>
+</div>
+<div class="paragraph">
+<p>The structure of domains and projects also enable OpenStack services to enforce API resource and compute resource quotas, which prevents a single application to take up all compute capacity of a cluster or of a compute node.</p>
+</div>
+<div class="paragraph">
+<p>Notice that, unlike operating system file quotas, which assign capacity to users and groups, OpenStack quotas assign capacity to applications, by means of their projects. If a user has access to multiple projects, they can create resources which consume quota from all those projects.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_openstack_domains_and_projects"><a class="anchor" href="#_openstack_domains_and_projects"></a>OpenStack Domains and Projects</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An OpenStack domain is the top-level container for projects, users, groups, and roles. Users, groups, and roles can also exist at the project level, meaning they have only access to the resources of the project, but they usually exist at the domain level so they can access resources from different projects on the same domain.</p>
+</div>
+<div class="paragraph">
+<p>OpenStack allows users and groups from one domain to access resources from projects in other domains, which enables an approach of creating two parallel sets of domains:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Resource domains, that include projects with application resources such as servers and networks;</p>
+</li>
+<li>
+<p>Authentication domains, which include users and groups and usually no projects.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>This approach enables you to manage your organizational chart independently of your applications. It also enables managing scenarios such as bringing together two originally independent organizations, like two companies that merged. Each organization can be a distinct domain, and each domain can have its own authentication settings, possibly using different external identity services.</p>
+</div>
+<div class="paragraph">
+<p>Most OpenStack API resources have to exist inside a project, and some API resource types  can be shared, meaning they could be referenced by resource instances from different projects. This enables some Operators to manage resources for usage by different projects and teams, for example standard server boot images, by creating projects dedicated to host those shared resources.</p>
+</div>
+<div class="paragraph">
+<p>OpenStack projects can be hierarchical: a project can have subprojects. Access permissions and resource quotas can be inherited (or not) from parent to child project, which enables large teams some degree of self-management.</p>
+</div>
+<div class="sect2">
+<h3 id="_openstack_api_resources_names_and_ids"><a class="anchor" href="#_openstack_api_resources_names_and_ids"></a>OpenStack API Resources Names and IDs</h3>
+<div class="paragraph">
+<p>OpenStack API resources do not have unique names. For some resource types, names have to be unique at the project or domain level, but resources of the same type from different domains or projects can use the same name. For some resource types, the name is not expected to be unique at all, and multiple instances of the same resource, on the same project, could use the same name.</p>
+</div>
+<div class="paragraph">
+<p>OpenStack API resources are uniquely identified by an UUID assigned by its service. All OpenStack API calls which create new resource instances return the UUID of the new resource, and this is the only guaranteed way of referencing the resource later on. While you can change the name of a resource, you cannot change its UUID.</p>
+</div>
+<div class="paragraph">
+<p>Most OpenStack client commands will accept names of resources and retrieve their UUIDs from the specified project and domain scopes, but if they cannot, you are expected to retry the command providing the UUIDs of API resources you need.</p>
+</div>
+<div class="paragraph">
+<p>When one API resource references other API resources, it is always by UUID, never by name. This means API resource names could change at any time.</p>
+</div>
+<div class="paragraph">
+<p>Some OpenStack API resources also accept zero or more tags, which you use for arbitrary grouping of resources. OpenStack services do not give any meaning to tags, but they help Operators manage clusters with a large number of resources.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_openstack_authorization_and_roles"><a class="anchor" href="#_openstack_authorization_and_roles"></a>OpenStack Authorization and Roles</h3>
+<div class="paragraph">
+<p>In the previous chapter, we learned that Keystone authenticates the identity of a user, but Keystone itself makes no authorization decisions: these belong to individual OpenStack services.</p>
+</div>
+<div class="paragraph">
+<p>Keystone does populate access tokens with data, such as originating domain and project of a user, and the list of groups and roles a user is member of. OpenStack services can use any of that information to make authentication decisions, and they are expected to follow a few conventions, among them:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Users defined at a scope (system, project, or domain) or which got permissions because of groups and roles defined at a scope, can only access resources from the same scope or from lower scopes.</p>
+</li>
+<li>
+<p>Users with the <strong>admin</strong> role can perform any operation with any resource, respecting scope restrictions.</p>
+</li>
+<li>
+<p>Users with the <strong>member</strong> role can perform a restricted set of operatations which create, change, or delete resources.</p>
+</li>
+<li>
+<p>Users with the <strong>reader</strong> role can only list resources and query attributes of those resources, but cannot make any change nor delete resources.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To understand the difference between admin and member roles, consider the conflicting needs of granting some autonomy to OpenStack Operators, while denying them the ability to perform dangerous operations. For example, a user might have permission to create server instances and networks inside a project, but the same user cannot change resource quotas on that project, nor grant access to resources to other users.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Remember that users do <strong>not</strong> own OpenStack API resources. Servers, networks, volumes, and other API resources belong to projects and domains only.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The admin, member, and reader roles exist by convention. It is up to individual OpenStack services to assign specifc meaning to each of those roles, that is: which APIs they can invoke and using which parameters. For some services, the distinction between admin and member might make no sense and those roles would be equivalent. For other services, the reader role may not be able to view sensitive attributes of a resource instance.</p>
+</div>
+<div class="paragraph">
+<p>It is possible, but uncommon, to create custom roles in OpenStack clusters. The reason being that you cannot define the permissions (or rules) for custom roles using OpenStack APIs. You would have to manage services directly on the control plane to provide them with policy files. Most organizations stay within the three standard roles.</p>
+</div>
+<div class="paragraph">
+<p>As a best practice, avoid assigning roles directly to users, but assign them to groups and let users get roles based on their group membership.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_openstack_users_and_groups"><a class="anchor" href="#_openstack_users_and_groups"></a>OpenStack Users and Groups</h3>
+<div class="paragraph">
+<p>It is possible to create and manage users and groups as Keystone API resources, but it is not recommended. Those local users and groups are nice for small scenarios, like test clusters and proofs-of-concept, but the recommended approach is delegating user and group management to external enterprise identity systems based on the LDAP or OIDC standards.</p>
+</div>
+<div class="paragraph">
+<p>One Keystone domain can refer to only one authentication backend. This is a reason some organizations create user domains and resource domains: so they can create multiple user domains, each referring to a different identity system.</p>
+</div>
+<div class="paragraph">
+<p>Traditional data centers may be used to the LDAP technology, used by identity management systems like Microsoft Active Directory (MSAD) and Red Hat Enterprise Linux Identity Management (RHEL IdM) but this technology is losing ground for identity management systems compatible with OpenID Connect (OIDC), which are based on the OAuth standard.</p>
+</div>
+<div class="paragraph">
+<p>Nowadays, it is advisable to prefer OIDC identity systems over LDAP systems, especially for sharing authentication backends with modern cloud-native and containerized IT infrastructure applications, such as CI/CD systems. Some organizations stick with LDAP systems because most operating systems cannot authenticate local users using OIDC, but most of the times there is no reason to make OpenStack compute nodes members of your MSAD or RHEL IdM authetication domain.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_the_system_scope"><a class="anchor" href="#_the_system_scope"></a>The System Scope</h3>
+<div class="paragraph">
+<p>Keystone and some other OpenStack services recognize the system scope meaning an entire cluster. OpenStack APIs which operate at the system scope, outside of any domain and project, are very rare, but granting a user or group with the admin role at the system scope is an effective way of making them superusers for the totality of a cluster.</p>
+</div>
+<div class="paragraph">
+<p>For some services there may be a special project and/or a special domain, prepopulared with shared resources, and with admin or member restricted to only few users, plus reader assigned by default to all users. This looks like system scope but it is only a domain and project reserved for OpenStack Administrators to share reosurces with other users and projects. Organizations can use a similar approach for avoiding duplicating resources on multiple projects and domains.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_openstack_resource_quotas"><a class="anchor" href="#_openstack_resource_quotas"></a>OpenStack Resource Quotas</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Like access control, compute resource quotas are set and enforced by each individual OpenStack service. Like access control, it depends on data managed by Keystone, but each service makes its own quota enforcement decisions.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+OpenStack Nova used to provide per-user quotas but they are deprecated and are not available aymore from the OpenStack client and other up-to-date OpenStack management tools.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/s1-domains-projects-lecture-fig-2.svg" alt="s1 domains projects lecture fig 2">
+</div>
+</div>
+<div class="paragraph">
+<p>Compute resource quotas can only prevent the creation or changes to API resource instances. They are not designed to enforce dynamic usage quotas, but to ensure applications get some guaranteed capacity and that compute nodes are not overloaded with more server instances they can handle.</p>
+</div>
+<div class="paragraph">
+<p>To understand that, assume that a project has a quota of only 10 vCPUs. If that project already has three server instances, which add up to 8 vCPUs, it is only possible to create two new server instances, each one using one vCPU, or one instance using two vCPUs. It doesn&#8217;t matter if the existing instances are mostly iddle and the cluster has plenty if capacity for running more virtual machines.</p>
+</div>
+<div class="sect2">
+<h3 id="_api_resource_quotas_and_compute_resource_quotas"><a class="anchor" href="#_api_resource_quotas_and_compute_resource_quotas"></a>API Resource Quotas and Compute Resource Quotas</h3>
+<div class="paragraph">
+<p>API resource quotas affect the number of instances you can create, of a given API resource type, inside a project. That class of quota limts the number of server instances, floating ips, virtual networks, volumes, and so on.</p>
+</div>
+<div class="paragraph">
+<p>Compute resource quotas affect the quantity, or capacity, of a compute resource that a project can consume, aggregating the consuption from all server instances in the project. That class of quota limits total quantity of vCPUs, total memory aggregated from all server instances, total disk space from all volumes, and so on.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Here "compute" means anything required to running applications, and could include storage and network capacity. It does not reffer to API resources from Nova, the Compute service.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_object_storage_quotas"><a class="anchor" href="#_object_storage_quotas"></a>Object Storage Quotas</h3>
+<div class="paragraph">
+<p>Remember that quotas are defined and enforced by each OpenStack service themselves, and this allows for some inconsistencies and also for purposeful exceptions. One such exception is Swift, which provides both API resource and compute resource storage quotas per storage account.</p>
+</div>
+<div class="paragraph">
+<p>Object storage accounts enable external applications to save and retrieve objects without directly authenticating to Keystone. They can represent individual users of Swift object storage instead of individual applications.</p>
+</div>
+<div class="paragraph">
+<p>Object storage quotas limit the number of containers or buckets, the number of objects, and the total space occupied by aggregating all objects owned by the account.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_compute_resource_overcommit"><a class="anchor" href="#_compute_resource_overcommit"></a>Compute Resource Overcommit</h3>
+<div class="paragraph">
+<p>Because most applications are bursty, meaning their actual usage of compute resource vary over time, and most times it happens during short periods of time, alternating with other short periods of iddleness, OpenStack enables overcommit of compute resources by default.</p>
+</div>
+<div class="paragraph">
+<p>An OpenStack Administrator can configure different overcommit levels for different classes of compute nodes, but the idea is that, if a compute node has an overcommit factor of 2.0 and 16 cores, it can run server instances adding up to 32 vCPUs.</p>
+</div>
+<div class="paragraph">
+<p>It is not frequent to configure overcommit of other classes of compute resources, such as memory and GPUs because they tend to be used with a more consistent, non-bursty pattern.</p>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="index.html">Multi-Tenancy in Red Hat OpenStack</a></span>
+  <span class="next"><a href="s2-multitenancy-quiz.html">Quiz: Red Hat OpenStack Multi-Tenancy</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
