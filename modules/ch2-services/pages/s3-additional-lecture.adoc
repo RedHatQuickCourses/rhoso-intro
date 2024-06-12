@@ -16,7 +16,7 @@ Even if an organization is not yet designing applications and their operational 
 
 // figures are exported from https://docs.google.com/presentation/d/1DGxnxpZoHlpaSZwS_Y8WQoNvfFSm3KDEz-hJTJ8dRSU/edit#slide=id.g2ce8a67ea30_0_84
 
-image::s3-additional-lecture-fig1.png[]
+image::s3-additional-lecture-fig-1.svg[]
 
 == Additional OpenStack Services for Storage
 

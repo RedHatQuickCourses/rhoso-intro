@@ -19,7 +19,7 @@ Follows a list of the OpenStack services covered in this section:
 
 // figures are exported from https://docs.google.com/presentation/d/1DGxnxpZoHlpaSZwS_Y8WQoNvfFSm3KDEz-hJTJ8dRSU/edit#slide=id.g2ce8a67ea30_0_84
 
-image::s5-administration-lecture-fig1.png[]
+image::s5-administration-lecture-fig-1.svg[]
 
 == OpenStack Authentication and Service Discovery: Keystone
 
