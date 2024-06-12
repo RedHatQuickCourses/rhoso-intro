@@ -76,7 +76,7 @@ _Correct: Designate enables programatic or automatic assignment of DNS names to 
 * [ ] False +
 _Incorrect: Designate is OpenStack's dynamic DNS service and it can work integrated with Nova, Neutron, and Octavia._
 
-10. True or False: Plamement and Ceilomer may seem to be related, because both track the usage of compute capacity by applications on OpenStack clusters, they are actually unrelated and provide different data: Placement is about static usage of resources, like how many virtual CPUs are available for creating more server instances, while Ceilometer is about dynamic usage of resources, like how much CPU is in use right now with multiple simultaneous end-users accessing applications.
+10. True or False: Plamement and Ceilomer may seem to be related, because both track the usage of compute capacity by applications on OpenStack clusters, however, they are actually unrelated and provide different data: Placement is about static usage of resources, like how many virtual CPUs are available for creating more server instances, while Ceilometer is about dynamic usage of resources, like how much CPU is in use right now with multiple simultaneous end-users accessing applications.
 
 * [x] *True* +
 _Correct: While data from Placement affects scheduling of new server instances by Nova, data from Ceilometer is about the existing instances and their load on compute nodes._
