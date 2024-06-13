@@ -27,7 +27,7 @@ _Incorrect: Workloads from any project, and users from any domain, can use compu
 * [ ] Each business unit requires their own cell.
 _Incorrect: Workloads from any project, and users from any domain, can use compute resources from any compute cell._
 
-2. An OpenStack Operator needs to configure a multi-instance workload to be resilient against physical failures of network switches and uninterrupted power supplies (UPS) which are dedicated to a server rack. The data center was designed with multiple server racks, and each rack as its dedicated network switch and UPS devices. Assuming that an Administrator already configured the proper tenancy and topology mechanism, how would the operator configure its workloads?
+2. An OpenStack Operator needs to configure a multi-instance workload to be resilient against physical failures of network switches and uninterrupted power supplies (UPS) which are dedicated to a server rack. The data center was designed with multiple server racks, and each rack has its dedicated network switch and UPS devices. Assuming that an Administrator already configured the proper tenancy and topology mechanism, how would the operator configure its workloads?
 
 * [ ] By spreading server instances over multiple domains. +
 _Incorrect: Domains are not cluster topology mechanisms in OpenStack._
@@ -50,7 +50,7 @@ _Incorrect: Operators cannot directly match workloads to host aggregates, like t
 * [ ] By spreading server instances over multiple cells.
 _Incorrect: Operators cannot directly match workloads to compute cells, like they can do with regions and AZs._
 
-3. An OpenStack Operator has the member role in a project and found the team of developers working on that project is very knowleadgeable about OpenStack and wishes to allow the team more authonomy managing API resources for their application. Can that operator grant those developers permission to manage API resources on their project?
+3. An OpenStack Operator has the member role in a project and found that the team of developers working on that project is very knowleadgeable about OpenStack and wishes to allow the team more authonomy managing API resources for their application. Can that operator grant those developers permission to manage API resources on their project?
 
 * [ ] Yes +
 _Incorrect: The member role does not enable a user to assign roles and grant permissions to other users._

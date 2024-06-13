@@ -35,7 +35,7 @@ _Correct: Host aggregates enable administrators and operators to collaborate to 
 * [ ] Compute nodes with the accelerator card belong to a cell.
 _Incorrect: hardware capabilities of compute node to not configure a compute cell._
 
-3. An OpenStack Administrator configured an cluster with four kinds of physical machines: machines with GPUs, machines with high CPU core count, machines with both GPUs and high core count, and finaly machines which neither a CPU nor a high core count. What an OpenStack Operator should do to ensure that a workload which requires both GPUs and many CPU cores runs in a physical machine of the matching kind?
+3. An OpenStack Administrator configured an cluster with four kinds of physical machines: machines with GPUs, machines with high CPU core count, machines with both GPUs and high core count, and finally machines with neither a CPU nor a high core count. What an OpenStack Operator should do to ensure that a workload which requires both GPUs and many CPU cores runs in a physical machine of the matching kind?
 
 * [ ] Use a server flavor which maps to an AZ of compute nodes with both GPUs and high core count. +
 _Incorrect: AZs do not map to kinds of server hardware._
