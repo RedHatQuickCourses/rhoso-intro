@@ -2,7 +2,7 @@
 
 Objective::
 
-Assess the learner understanding of OpenStack multi-tenancy mechanisms.
+Assess the learner's understanding of OpenStack multi-tenancy mechanisms.
 
 WARNING: Pending Review.
 
@@ -26,7 +26,7 @@ WARNING: Pending Review.
 * [ ] Member role in the domain which represents that business unit
 * [ ] View role in the domain which represents that business unit
 
-3. An OpenStack Administrator needs to support, on the same cluster, two business units which used to have authonomy on technology decisions and ended up implementing each their own enterprise authentication system. OpenStack Operators from each of those business units need to manage their own applications and use authentication credentials managed by their respective enterprise authentication systems. How can OpenStack support this requirement?
+3. An OpenStack Administrator needs to support, on the same cluster, two business units which used to have autonomy on technology decisions and ended up implementing each their own enterprise authentication system. OpenStack Operators from each of those business units need to manage their own applications and use authentication credentials managed by their respective enterprise authentication systems. How can OpenStack support this requirement?
 
 * [ ] Each business unit belongs to a different domain, and each domain connects to the business unit's enterprise authentication system.
 * [ ] Each business unit has their own projects, and each project connects to the business unit's enterprise authentication system.

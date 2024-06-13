@@ -2,7 +2,7 @@
 
 Objective::
 
-Assess the learner understanding of OpenStack cluster topology mechanisms.
+Assess the learner's understanding of OpenStack cluster topology mechanisms.
 
 WARNING: Pending Review.
 
@@ -23,7 +23,7 @@ WARNING: Pending Review.
 * [ ] Compute nodes with the accelerator card belong to a host aggregate.
 * [ ] Compute nodes with the accelerator card belong to a cell.
 
-3. An OpenStack Administrator configured an cluster with four kinds of physical machines: machines with GPUs, machines with high CPU core count, machines with both GPUs and high core count, and finaly machines which neither a CPU nor a high core count. What an OpenStack Operator should do to ensure that a workload which requires both GPUs and many CPU cores runs in a physical machine of the matching kind?
+3. An OpenStack Administrator configured an cluster with four kinds of physical machines: machines with GPUs, machines with high CPU core count, machines with both GPUs and high core count, and finally machines with neither a CPU nor a high core count. What an OpenStack Operator should do to ensure that a workload which requires both GPUs and many CPU cores runs in a physical machine of the matching kind?
 
 * [ ] Use a server flavor which maps to an AZ of compute nodes with both GPUs and high core count.
 * [ ] Use a server flavor which maps to an AZ of compute nodes with GPUs and also to another AZ of compute nodes with high core count.
