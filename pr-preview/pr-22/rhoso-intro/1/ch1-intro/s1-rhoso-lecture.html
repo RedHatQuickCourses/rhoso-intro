@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>What is Red Hat OpenStack Services on OpenShift :: Introduction to Red Hat OpenStack Services on OpenShift</title>
+    <link rel="prev" href="index.html">
+    <link rel="next" href="s2-components-quiz.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">Introduction to Red Hat OpenStack Services on OpenShift</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/rhoso-intro/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rhoso-intro" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Introduction to Red Hat OpenStack Services on OpenShift</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Introduction to Red Hat OpenStack</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="s1-rhoso-lecture.html">What is Red Hat OpenStack Services on OpenShift</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="s2-components-quiz.html">Quiz: Components of Red Hat OpenStack on OpenShift</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="s2-components-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="s3-operations-lecture.html">OpenStack Operations and Administration Roles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="s4-tasks-quiz.html">Quiz: Red Hat OpenStack Operations Tasks</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="s4-tasks-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="s5-ui-lecture.html">OpenStack User Interfaces</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="s6-ui-demo.html">Demo: OpenStack Client and Web Console</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="s7-review-quiz.html">Review Quiz: Red Hat OpenStack Operations</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="s7-review-quiz-answers.html">Answers to the Review Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="s8-summary.html">Summary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch2-services/index.html">Red Hat OpenStack Services</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch2-services/s1-fundamental-lecture.html">Fundamental Services of Red Hat OpenStack</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch2-services/s2-fundamental-quiz.html">Quiz: OpenStack Services and Application Workloads</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch2-services/s2-fundamental-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch2-services/s3-additional-lecture.html">Additional Services of Red Hat OpenStack</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch2-services/s4-additional-quiz.html">Quiz: OpenStack Services and Cloud-Native Applications</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch2-services/s4-additional-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch2-services/s5-administration-lecture.html">Administration Services of Red Hat OpenStack</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch2-services/s6-administration-quiz.html">Quiz: OpenStack Services and IT Infrastructure</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch2-services/s6-administration-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch2-services/s7-heat-demo.html">Demo: OpenStack Heat Orchestrator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch2-services/s8-review-quiz.html">Review Quiz: Red Hat OpenStack Services</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch2-services/s8-review-quiz-answers.html">Answers to the Review Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch2-services/s9-summary.html">Summary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch3-multitenancy/index.html">Multi-Tenancy in Red Hat OpenStack</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch3-multitenancy/s1-domains-projects-lecture.html">Resources, Projects, and Domains</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch3-multitenancy/s2-multitenancy-quiz.html">Quiz: Red Hat OpenStack Multi-Tenancy</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch3-multitenancy/s2-multitenancy-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch3-multitenancy/s3-regions-azs-cells-lecture.html">Regions, AZs, and Cells.</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch3-multitenancy/s4-topology-quiz.html">Quiz: Large OpenStack Clusters</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch3-multitenancy/s4-topology-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch3-multitenancy/s5-cluster-demo.html">Demo: Exploring an OpenStack Cluster</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch3-multitenancy/s6-review-quiz.html">Review Quiz: Multi-Tenancy and Topology in Red Hat OpenStack</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch3-multitenancy/s6-review-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch3-multitenancy/s7-summary.html">Summary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Introduction to Red Hat OpenStack Services on OpenShift</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Introduction to Red Hat OpenStack Services on OpenShift</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Introduction to Red Hat OpenStack Services on OpenShift</a></li>
+    <li><a href="index.html">Introduction to Red Hat OpenStack</a></li>
+    <li><a href="s1-rhoso-lecture.html">What is Red Hat OpenStack Services on OpenShift</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">What is Red Hat OpenStack Services on OpenShift</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Objective</dt>
+<dd>
+<p>Describe the Red Hat OpenStack product and how it relates to the OpenStack open source project.</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Pending review.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_is_openstack"><a class="anchor" href="#_what_is_openstack"></a>What is OpenStack</h2>
+<div class="sectionbody">
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>OpenStack is a cloud operating system that controls large pools of compute, storage, and networking resources throughout a datacenter, all managed and provisioned through APIs with common authentication mechanisms.</p>
+</div>
+<div class="paragraph">
+<p>Beyond standard infrastructure-as-a-service functionality, additional components provide orchestration, fault management and service management amongst other services to ensure high availability of user applications.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p><em>Source: <a href="https://www.openstack.org/software/" class="bare">https://www.openstack.org/software/</a></em></p>
+</div>
+<div class="paragraph">
+<p>The core of OpenStack is managing a cluster of compute servers which run applications packaged as virtual machines. Beyond traditional hypervisors, OpenStack provides standard APIs to manage virtual storage and virtual networking with features comparable to a physical data center infrastructure.</p>
+</div>
+<div class="paragraph">
+<p>The OpenStack community provides a number of user-facing services. Some of them provide the essential infrastructucture-as-a-service (IaaS) functionality for managing applications as virtual machines (VMs) and also higher-level abstractions such as load balancer and autoscalers. It also provides a number of internal infrastructure services, such as different ways of installing, managing, and scaling the OpenStack user-facing services.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.redhat.com/en/blog/red-hat-openstack-services-openshift-next-generation-red-hat-openstack-platform"><strong>Red Hat OpenStack Services on OpenShift</strong></a> is an opinionated distribution of OpenStack, built and supported by Red Hat. It is the latest incarnation of the <strong>Red Hat OpenStack Platform</strong> and marks a major shift on the internal architecture of Red Hat OpenStack.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Red Hat® OpenStack® Platform is a cloud computing platform that virtualizes resources from industry-standard hardware, organizes those resources into clouds, and manages them so that users can access what they need—when they need it.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p><em>Source: <a href="https://www.redhat.com/en/technologies/linux-platforms/openstack-platform" class="bare">https://www.redhat.com/en/technologies/linux-platforms/openstack-platform</a></em></p>
+</div>
+<div class="paragraph">
+<p>That is, Red Hat OpenStack Services on OpenShift is a platform for building and managing private clouds which runs application workloads as VMs.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s be honest: not all components available in the upstream OpenStack project are available with Red Hat OpenStack Services on OpenShift. Not all services and deployment methods from the community are supported by Red Hat as part of its OpenStack product. But "less is more" because Red Hat provides a stable, pre-integrated, secure, and certified set of components. Red Hat also works with a large ecosystem of partners that provide software and hardware which are certified for Red Hat OpenStack.</p>
+</div>
+<div class="paragraph">
+<p>Beyond that, Red Hat is commited to fixing bugs and addressing security vulnerabilities, while keeping backward compatibility within a product release stream, which you cannot expect from upstream OpenStack.</p>
+</div>
+<div class="paragraph">
+<p>On the other side, OpenStack alone is not sufficient to create a private cloud: you have to include and integrate additional components such as an hypervisor, a host operating system, and infrastructure to manage the deployment and high-availability of OpenStack services themselves, such as a clustering middleware.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/s1-rhoso-lecture-fig-1.svg" alt="s1 rhoso lecture fig 1">
+</div>
+</div>
+<div class="paragraph">
+<p>To provide a complete private cloud platform, Red Hat OpenStack on OpenShift includes the following fully supported components:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <a href="https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux"><strong>Red Hat Enterprise Linux (RHEL)</strong></a> operating system.</p>
+</li>
+<li>
+<p>The <a href="https://www.redhat.com/en/topics/virtualization/what-is-KVM"><strong>KVM</strong></a> hypervisor with the <a href="https://www.QEMU.org/"><strong>QEMU</strong></a> emulation layer and the <a href="https://libvirt.org/"><strong>libvirt</strong></a> management API, all of them included with RHEL.</p>
+</li>
+<li>
+<p>The <a href="https://www.redhat.com/en/technologies/cloud-computing/openshift"><strong>Red Hat OpenShift</strong></a> application platform and its container-optimized operating system <a href="https://access.redhat.com/documentation/en-us/openshift_container_platform/4.14/html/architecture/architecture-rhcos">Red Hat Enterprise Linux CoreOS (RHCOS)</a>.</p>
+</li>
+<li>
+<p>The <a href="https://www.ovn.org/en/"><strong>Open Virtual Network (OVN)</strong></a> software-defined network layer.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/s1-rhoso-lecture-fig-2.svg" alt="s1 rhoso lecture fig 2">
+</div>
+</div>
+<div class="paragraph">
+<p>You could install community OpenStack on any Linux operating system distribution and use different hypervisors. You could use operating-system tools such as pacemaker and podman to manage OpenStack services themselves, and choose different software-defiend networking layers. But you would be responsible for integrating, patching, and adressing any compatibility issues between those components and OpenStack services. By using Red Hat OpenStack Services on OpenShift, you offload all that work to Red Hat.</p>
+</div>
+<div class="paragraph">
+<p>The final component of an OpenStack private cloud is storage. There are a number of certified storage products for OpenStack and Red Hat offers <a href="https://www.redhat.com/en/technologies/storage/ceph"><strong>Red Hat Ceph Storage</strong></a> as a reliable, scalable, and high-performance software-defined storage product.</p>
+</div>
+<div class="paragraph">
+<p>Red Hat Ceph Storage can provide storage services using standard server hardware or it can augument the capabilities of existing storage arrays. A single Red Hat Ceph cluster can provide file, block, and object storage services for multiple Red Hat OpenStack and Red Hat OpenShift clusters.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_structure_of_an_openstack_cluster"><a class="anchor" href="#_structure_of_an_openstack_cluster"></a>Structure of an OpenStack Cluster</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An OpenStack cluster is composed of two parts:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>A <em>control plane</em> which runs the user-facing and internal infrastructure services of OpenStack.</p>
+</li>
+<li>
+<p>A <em>data plane</em> which runs the application workloads as VMs.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/s1-rhoso-lecture-fig-3.svg" alt="s1 rhoso lecture fig 3">
+</div>
+</div>
+<div class="paragraph">
+<p>You add compute power to an OpenStack cluster by adding physical servers, running RHEL, as compute nodes to the data plane. The more compute nodes, more application VMs your cluster can host.</p>
+</div>
+<div class="paragraph">
+<p>To ensure the performance and reliability of the control plane, and by extension the performance and reliability of the whole cluster, you reserve three or more physical servers to running only OpenStack services. A large OpenStack cluster may require more servers dedicated to the control plane and can partition the control plane into multiple cells, each dedicated to manage a subset of the data plane.</p>
+</div>
+<div class="paragraph">
+<p>With previous releases of Red Hat OpenStack, you could use different approaches to deploy and scale the the control plane, such as <a href="https://www.redhat.com/en/topics/linux/what-is-high-availability">clustered RHEL servers</a> with <a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/configuring_and_managing_high_availability_clusters/index">pacemaker</a>, a <a href="https://access.redhat.com/products/red-hat-virtualization/">Red Hat  Virtualization</a> hypervisor cluster, or an OpenStack cluster known as the <em>undercloud</em>, using what was known as the OpenStack on OpenStack architecture or <a href="https://www.redhat.com/en/blog/tripleo-director-components-detail">TripleO</a>. None of these options is available with the current Red Hat OpenStack Services on OpenShift product: you must run an OpenStack the control plane as containers on an Red Hat OpenShift cluster.</p>
+</div>
+<div class="paragraph">
+<p>Microservices developers realized a while ago that containers and Kubernetes are the best way to manage applications composed of multiple services. Even developers targeting public clouds, such as AWS and Azure, nowadays prefer running Kubernetes on those clouds. OpenStack is such a kind of application, and it just makes sense to use Red Hat OpenShift, which is an enterprise application platform based on Kubernetes, to manage all services of an OpenStack control plane.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_other_ways_of_running_vms_with_openshift"><a class="anchor" href="#_other_ways_of_running_vms_with_openshift"></a>Other Ways of Running VMs with OpenShift</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If OpenStack is essentially a way of running and managing application workloads as VMs, and Red Hat OpenStack runs on OpenShift, why not run and manage application workloads as VMs directly on OpenShift, using <a href="https://www.redhat.com/en/technologies/cloud-computing/openshift/virtualization"><strong>OpenShift Virtualization</strong></a> or <a href="https://www.redhat.com/en/blog/learn-openshift-sandboxed-containers"><strong>OpenShift Sandboxed Containers</strong></a>? The following table provides a quick comparision between the three technologies currently available for managing application VMs using OpenShift:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Product / Feature</th>
+<th class="tableblock halign-left valign-top">OpenShift Virtualization</th>
+<th class="tableblock halign-left valign-top">OpenShift Sandboxed Containers</th>
+<th class="tableblock halign-left valign-top">OpenStack Services on OpenShift</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Hypervisor technology</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KVM + QEMU + libvirt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KVM + QEMU + libvirt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KVM + QEMU + libvirt</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Application packaging</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VM image (qcow2)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Container image (OCI)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VM image (qcow2)</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Application VM management APIs</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kubervirt APIs + Kubernetes APIs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kubernetes APIs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OpenStack APIs</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Compute nodes</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RH CoreOS (OpenShift)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RH CoreOS (OpenShift)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RHEL (OpenStack)</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Block and File Storage</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kubernetes PVCs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kubernetes PVCs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OpenStack Cinder and Manila</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Virtual Networking</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kuberentes pod/service network + Multus secondary networks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kuberentes pod/service network + Multus secondary networks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OpenStack Neutron tenant and provider networks, routers, etc</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The main difference between these three technologies is where your VMs run: inside OpenShift, using compute nodes from the OpenShift cluster; or outside of OpenShift, using RHEL servers as compute nodes. And the consequence of running VMs inside OpenShift is requiring those VMs to use Kubernetes storage and networking capabilities, which are currently not as rich as OpenStack.</p>
+</div>
+<div class="paragraph">
+<p>If you have existing development and operational processes based on OpenStack APIs, switching that to Kubernetes APIs is a major change. That change would be required to use either OpenShift Virtualizaiton or OpenShift Sandboxed Containers.</p>
+</div>
+<div class="paragraph">
+<p>On the other side, organizations which already have containerized applications want to adopt GitOps practices and use other capabilities enabled by Kubernetes. For them, switching from a traditional hypervisor to OpenShift Virtualization makes sense.</p>
+</div>
+<div class="paragraph">
+<p>Red Hat OpenStack Services on OpenShift enables using Kubernetes-based tools for managing applications in OpenStack too: the same OpenShift cluster which runs an OpenStack control plane (or a different OpenShift cluster, if you prefer) can run OpenShift Pipelines, OpenShift GitOps, and other OpenShift applications which can manage OpenStack applications by invoking OpenStack APis. It&#8217;s the best of both the OpenStack and the Kubernetes worlds.</p>
+</div>
+<div class="paragraph">
+<p>The same way OpenShift improves the management of OpenStack clusters, it can improve the management of other infrastructure to support your operations and development teams. For example, you can use OpenShift to run Ansible Automation Platform to manage the applications inside your OpenStack VMs and also your physical data center infrastructure which runs OpenShift, OpenStack and other platforms. All your IT infrastructure services could be managed by OpenShift, while retaining compatibility with application workloads and processes that are designed around OpenStack APIs and which require the richer OpenStack compute, storage, and network management APIs.</p>
+</div>
+<div class="paragraph">
+<p>Of course, if an organization prefers running Ansible, Jenkins, Bugzilla, Zabbix, and other tools as VMs on OpenStack, it is indeed a good idea. Those organizations can also consider running OpenShift itself on OpenStack VMs for their containerized applications. This was already supported by earlier incarnations of Red Hat OpenStack Platform, and it is still supported with Red Hat OpenStack Services on OpenShift. Running OpenShift clusters as VMs on OpenShift Virtualization is also a valid design choice. A discussion about running OpenShift clusters on VMs or on physical machines is beyond the scope of this OpenStack course. As you see, there are multiple paths to modernize an IT infrastructure to support containers alongside VMs.</p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="index.html">Introduction to Red Hat OpenStack</a></span>
+  <span class="next"><a href="s2-components-quiz.html">Quiz: Components of Red Hat OpenStack on OpenShift</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

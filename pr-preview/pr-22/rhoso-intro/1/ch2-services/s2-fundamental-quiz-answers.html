@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Answers to the Quiz :: Introduction to Red Hat OpenStack Services on OpenShift</title>
+    <link rel="prev" href="s2-fundamental-quiz.html">
+    <link rel="next" href="s3-additional-lecture.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">Introduction to Red Hat OpenStack Services on OpenShift</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/rhoso-intro/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rhoso-intro" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Introduction to Red Hat OpenStack Services on OpenShift</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch1-intro/index.html">Introduction to Red Hat OpenStack</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch1-intro/s1-rhoso-lecture.html">What is Red Hat OpenStack Services on OpenShift</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch1-intro/s2-components-quiz.html">Quiz: Components of Red Hat OpenStack on OpenShift</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch1-intro/s2-components-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch1-intro/s3-operations-lecture.html">OpenStack Operations and Administration Roles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch1-intro/s4-tasks-quiz.html">Quiz: Red Hat OpenStack Operations Tasks</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch1-intro/s4-tasks-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch1-intro/s5-ui-lecture.html">OpenStack User Interfaces</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch1-intro/s6-ui-demo.html">Demo: OpenStack Client and Web Console</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch1-intro/s7-review-quiz.html">Review Quiz: Red Hat OpenStack Operations</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch1-intro/s7-review-quiz-answers.html">Answers to the Review Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch1-intro/s8-summary.html">Summary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Red Hat OpenStack Services</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="s1-fundamental-lecture.html">Fundamental Services of Red Hat OpenStack</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="s2-fundamental-quiz.html">Quiz: OpenStack Services and Application Workloads</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="s2-fundamental-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="s3-additional-lecture.html">Additional Services of Red Hat OpenStack</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="s4-additional-quiz.html">Quiz: OpenStack Services and Cloud-Native Applications</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="s4-additional-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="s5-administration-lecture.html">Administration Services of Red Hat OpenStack</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="s6-administration-quiz.html">Quiz: OpenStack Services and IT Infrastructure</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="s6-administration-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="s7-heat-demo.html">Demo: OpenStack Heat Orchestrator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="s8-review-quiz.html">Review Quiz: Red Hat OpenStack Services</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="s8-review-quiz-answers.html">Answers to the Review Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="s9-summary.html">Summary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch3-multitenancy/index.html">Multi-Tenancy in Red Hat OpenStack</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch3-multitenancy/s1-domains-projects-lecture.html">Resources, Projects, and Domains</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch3-multitenancy/s2-multitenancy-quiz.html">Quiz: Red Hat OpenStack Multi-Tenancy</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch3-multitenancy/s2-multitenancy-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch3-multitenancy/s3-regions-azs-cells-lecture.html">Regions, AZs, and Cells.</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch3-multitenancy/s4-topology-quiz.html">Quiz: Large OpenStack Clusters</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch3-multitenancy/s4-topology-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch3-multitenancy/s5-cluster-demo.html">Demo: Exploring an OpenStack Cluster</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch3-multitenancy/s6-review-quiz.html">Review Quiz: Multi-Tenancy and Topology in Red Hat OpenStack</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch3-multitenancy/s6-review-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch3-multitenancy/s7-summary.html">Summary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Introduction to Red Hat OpenStack Services on OpenShift</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Introduction to Red Hat OpenStack Services on OpenShift</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Introduction to Red Hat OpenStack Services on OpenShift</a></li>
+    <li><a href="index.html">Red Hat OpenStack Services</a></li>
+    <li><a href="s2-fundamental-quiz.html">Quiz: OpenStack Services and Application Workloads</a></li>
+    <li><a href="s2-fundamental-quiz-answers.html">Answers to the Quiz</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Answers to the Quiz</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Pending Review
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_openstack_services_and_application_workloads"><a class="anchor" href="#_openstack_services_and_application_workloads"></a>OpenStack Services and Application Workloads</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Which of the following OpenStack services are required by a standalone application, which you will install inside a VM only because it is incompatible with your personal workstation, and you need it for only a short period of time?</p>
+<div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p><i class="fa fa-square-o"></i> Identity (Keystone)<br>
+<em>Incorrect: The applicaiton and its VM do not need to authenticate to nor discover OpenStack services. Only you (the Operator) user has this need.</em></p>
+</li>
+<li>
+<p><i class="fa fa-check-square-o"></i> <strong>Compute (Nova)</strong><br>
+<em>Correct: Nova manages VMs on OpenStack clusters.</em></p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> Block Storage (Cinder)<br>
+<em>Incorrect: The requirements tell nothing about the need to store data longer than the life of the VM or about the need to preserve data in case of failures.</em></p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> Networking (Neutron)<br>
+<em>Incorrect: The requirements do not state a need for connectivity to other VMs or servers.</em></p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> Image (Glance)<br>
+<em>Incorrect: You (the Operator user) and OpenStack Nova need an operating system to boot your VM before you can install your standalone application. But the application itself does not need Glance to run.</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Which of the following OpenStack services are required by a database server whose data is expected to be recoverable after catastrophic events such as hardware failures of a compute server?</p>
+<div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p><i class="fa fa-square-o"></i> Identity (Keystone)<br>
+<em>Incorrect: The database application does not invoke OpenStack APIs.</em></p>
+</li>
+<li>
+<p><i class="fa fa-check-square-o"></i> <strong>Compute (Nova)</strong><br>
+<em>Correct: To run a server, you need Nova.</em></p>
+</li>
+<li>
+<p><i class="fa fa-check-square-o"></i> <strong>Block Storage (Cinder)</strong><br>
+<em>Correct: Without Nova volumes, data from the database server would be stored only on its compute node.</em></p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> Networking (Neutron)<br>
+<em>Incorrect: The requirements did not state this is a client/server database.</em></p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> Image (Glance)<br>
+<em>Incorrect: The database application does not need Glance to run.</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Which of the following OpenStack services are required by a web application, which you require to easily deploy into multiple OpenStack clusters, in different countries your company has data centers?</p>
+<div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p><i class="fa fa-square-o"></i> Identity (Keystone)<br>
+<em>Incorrect: The web application does not invoke OpenStack APIs.</em></p>
+</li>
+<li>
+<p><i class="fa fa-check-square-o"></i> <strong>Compute (Nova)</strong><br>
+<em>Correct: To run an application, you need Nova.</em></p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> Block Storage (Cinder)<br>
+<em>Incorrect: The requirements do not state where and how the web application stores its data. If all data from the application is stored in a database, running in another VM, then the application VM could be easily recreated from its Glance image. But ask about possible requirements about long-term storage of logs and how the application handles it. You might need Cinder for that.</em></p>
+</li>
+<li>
+<p><i class="fa fa-check-square-o"></i> <strong>Networking (Neutron)</strong><br>
+<em>Correct: It is a web application, it requires network conectivity from web browsers on end-user computers or smartphones.</em></p>
+</li>
+<li>
+<p><i class="fa fa-check-square-o"></i> <strong>Image (Glance)</strong><br>
+<em>Correct: The easiest way of replicating the application VM in multiple data centers is creating a custom Glance image and copying that image to all clusters.</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Which of the following OpenStack services are required by a monitoring application which collects performance metrics from OpenStack clusters, services, and compute nodes? The history of metrics and alerts, stored on the applicaiton VM, must be persistent because it will be input to capacity planning.</p>
+<div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p><i class="fa fa-check-square-o"></i> <strong>Identity (Keystone)</strong><br>
+<em>Correct: The monitoring application invokes OpenStack APIs.</em></p>
+</li>
+<li>
+<p><i class="fa fa-check-square-o"></i> <strong>Compute (Nova)</strong><br>
+<em>Correct: To run an application, you need Nova.</em></p>
+</li>
+<li>
+<p><i class="fa fa-check-square-o"></i> <strong>Block Storage (Cinder)</strong><br>
+<em>Correct: The application stores data on its local disk which must be persistent.</em></p>
+</li>
+<li>
+<p><i class="fa fa-check-square-o"></i> <strong>Networking (Neutron)</strong><br>
+<em>Correct: To invoke OpenStack APIs, the application needs network connectivity.</em></p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> Image (Glance)<br>
+<em>Incorrect: The requirements do not state if the application is a custom, single server, or a set of servers replicated in multiple data centers.</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="s2-fundamental-quiz.html">Quiz: OpenStack Services and Application Workloads</a></span>
+  <span class="next"><a href="s3-additional-lecture.html">Additional Services of Red Hat OpenStack</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
