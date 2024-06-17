@@ -8,7 +8,7 @@ WARNING: Work In Progress
 
 == Recording
 
-This demonstration will be recorded and the video linked from here, so learners can watch the video and optionally try to replicate it by themselves.
+This demonstration will be recorded and the video will be linked here, so learners can watch the video and optionally try to replicate it by themselves.
 
 == Environment
 
@@ -22,9 +22,9 @@ The demo environment must also provide a user workstation preconfigured with the
 
 1. Using the OpenStack client, as an administrator, list the regions, azs, and host aggregates of the cluster.
 
-2. Using Horizon, as an administrator, list the regions, azs, and host aggregates of the cluster. Also show API endpoints from Keysone and highlight each endpoint belongs to region.
+2. Using Horizon, as an administrator, list the regions, azs, and host aggregates of the cluster. Also show API endpoints from Keysone and highlight each endpoint that belongs to the region.
 
-3. Still in Horizon, enter a domain/project and show a workload. Select its server instances and show that those instances refer to AZ and region. Ideally, have a workload with multiple servers behind a load balancer, and those servers are on different AZs.
+3. Still in Horizon, enter a domain/project and show a workload. Select its server instances and show that those instances refer to AZ and a region. Ideally, have a workload with multiple servers behind a load balancer, and those servers are on different AZs.
 
 4. Show the attributes of a couple host aggregates and of a couple server flavors, and show the attributes which match each other.
 
@@ -32,7 +32,7 @@ The demo environment must also provide a user workstation preconfigured with the
 
 6. Switch to an operator user (member) and show it cannot list host aggregates and compute nodes but can list regions and azs.
 
-7. Show the operator can see attributes of server instances which refer to regions, and azs. Show also the operator can see attributes of server flavors.
+7. Show the operator can see attributes of server instances which refer to regions, and azs. Show that the operator can also see attributes of server flavors.
 
 8. Switch back to an administrator and show the special domain and projects for cluster-wide shared API resources.
 
