@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Regions, AZs, and Cells. :: Introduction to Red Hat OpenStack Services on OpenShift</title>
+    <link rel="prev" href="s2-multitenancy-quiz-answers.html">
+    <link rel="next" href="s4-topology-quiz.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">Introduction to Red Hat OpenStack Services on OpenShift</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/rhoso-intro/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rhoso-intro" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Introduction to Red Hat OpenStack Services on OpenShift</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch1-intro/index.html">Introduction to Red Hat OpenStack</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch1-intro/s1-rhoso-lecture.html">What is Red Hat OpenStack Services on OpenShift</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch1-intro/s2-components-quiz.html">Quiz: Components of Red Hat OpenStack on OpenShift</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch1-intro/s2-components-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch1-intro/s3-operations-lecture.html">OpenStack Operations and Administration Roles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch1-intro/s4-tasks-quiz.html">Quiz: Red Hat OpenStack Operations Tasks</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch1-intro/s4-tasks-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch1-intro/s5-ui-lecture.html">OpenStack User Interfaces</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch1-intro/s6-ui-demo.html">Demo: OpenStack Client and Web Console</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch1-intro/s7-review-quiz.html">Review Quiz: Red Hat OpenStack Operations</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch1-intro/s7-review-quiz-answers.html">Answers to the Review Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch1-intro/s8-summary.html">Summary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch2-services/index.html">Red Hat OpenStack Services</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch2-services/s1-fundamental-lecture.html">Fundamental Services of Red Hat OpenStack</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch2-services/s2-fundamental-quiz.html">Quiz: OpenStack Services and Application Workloads</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch2-services/s2-fundamental-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch2-services/s3-additional-lecture.html">Additional Services of Red Hat OpenStack</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch2-services/s4-additional-quiz.html">Quiz: OpenStack Services and Cloud-Native Applications</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch2-services/s4-additional-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch2-services/s5-administration-lecture.html">Administration Services of Red Hat OpenStack</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch2-services/s6-administration-quiz.html">Quiz: OpenStack Services and IT Infrastructure</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch2-services/s6-administration-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch2-services/s7-heat-demo.html">Demo: OpenStack Heat Orchestrator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch2-services/s8-review-quiz.html">Review Quiz: Red Hat OpenStack Services</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch2-services/s8-review-quiz-answers.html">Answers to the Review Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch2-services/s9-summary.html">Summary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Multi-Tenancy in Red Hat OpenStack</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="s1-domains-projects-lecture.html">Resources, Projects, and Domains</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="s2-multitenancy-quiz.html">Quiz: Red Hat OpenStack Multi-Tenancy</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="s2-multitenancy-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="s3-regions-azs-cells-lecture.html">Regions, AZs, and Cells.</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="s4-topology-quiz.html">Quiz: Large OpenStack Clusters</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="s4-topology-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="s5-cluster-demo.html">Demo: Exploring an OpenStack Cluster</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="s6-review-quiz.html">Review Quiz: Multi-Tenancy and Topology in Red Hat OpenStack</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="s6-review-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="s7-summary.html">Summary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Introduction to Red Hat OpenStack Services on OpenShift</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Introduction to Red Hat OpenStack Services on OpenShift</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Introduction to Red Hat OpenStack Services on OpenShift</a></li>
+    <li><a href="index.html">Multi-Tenancy in Red Hat OpenStack</a></li>
+    <li><a href="s3-regions-azs-cells-lecture.html">Regions, AZs, and Cells.</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Regions, AZs, and Cells.</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>Estimated reading time: <strong>13 minutes</strong>.</em></p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Objective</dt>
+<dd>
+<p>Describe how to structure a large OpenStack cluster to address performance and reliability requirements of applications and how operators configure workloads for the topology of a cluster.</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Pending Review.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_logical_and_physical_organization_of_openstack_clusters"><a class="anchor" href="#_logical_and_physical_organization_of_openstack_clusters"></a>Logical and Physical Organization of OpenStack Clusters</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the previous section, we introduced how OpenStack enables users to organize their teams and applications using domains and projects. They provide logical groups that address the organizational structure of your teams and applications. At the end of the section, we introduced quotas, which link that logical structure with physical characteristics of your cluster, such as compute capacity.</p>
+</div>
+<div class="paragraph">
+<p>OpenStack operators need some understanding of the physical topology of their OpenStack clusters to ensure their applications run in accordance with their performance and reliability requirements. Sometimes applications need special classes of hardware, such as GPUs; sometimes it is about high-availability, ensuring applications stay operational and their end-users do not notice when a compute server fails.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/s3-regions-azs-cells-lecture-fig-1.svg" alt="s3 regions azs cells lecture fig 1">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The figures in this chapter do not list all user-facing OpenStack services just for simplicity.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>To address those requirements, OpenStack offer many ways of grouping compute capacity. Most of them focus on the compute nodes, and some focus on control plane services:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Regions</dt>
+<dd>
+<p>A region is a mostly stand-alone OpenStack cluster which manages its own compute resources. Multiple clusters, in different regions, share a single pair of Keystone and Horizon services, giving Operators a unified view of those clusters as a single private cloud.</p>
+</dd>
+<dt class="hdlist1">Availability Zones (AZs)</dt>
+<dd>
+<p>An availability zone typically represents a failure domain inside an OpenStack cluster. It can be defined by a server rack, an uninterruptive power supply, a network switch, a data center building, or any other physical constraint that creates the possibility of all compute resources in the AZ becoming unavailable at the same time.</p>
+</dd>
+<dt class="hdlist1">Host Aggregates</dt>
+<dd>
+<p>A host aggregate is a group of compute nodes which share common characteristics that make them more desirable to certain workloads when compared to other groups of nodes of the same cluster. For example, because of the availability of fast local storage, GPUs, or network accelerators.</p>
+</dd>
+<dt class="hdlist1">Compute Cells</dt>
+<dd>
+<p>A compute cell is a partition internal to an OpenStack control plane. It deals with the scalability and availability of OpenStack services themselves more than with compute nodes and application workloads. OpenStack services in the same cell share common back-end services, such as databases and message queues, which can be scaled and managed in cells independent of AZs.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>OpenStack Operators usually have direct visibility of only regions and AZs but not of host aggregates and cells. They can choose, for certain resource types, their region and AZ.</p>
+</div>
+<div class="paragraph">
+<p>OpenStack Operators are impacted by host aggregates and cells indirectly, from the definition of server flavors which impact the scheduling of server instances on cluster nodes.</p>
+</div>
+<div class="paragraph">
+<p>Regions, AZs, host aggregates, and cells can be used in different ways to structure large private clouds and the usage patterns vary considerably depending on size and number of data centers and other reasons. OpenStack is not very prescriptive of how and when to use those features, and this course shows examples of typical and recommended approaches.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_regions_and_azs"><a class="anchor" href="#_regions_and_azs"></a>Regions and AZs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Regions and Availability Zones (AZs) may be familiar to users of public cloud services, and you could map these concepts in a similar way to OpenStack clusters. Not everyone is running a global private cloud and the concepts of regions and AZs may be useful for smaller  OpenStack deployments.</p>
+</div>
+<div class="sect2">
+<h3 id="_openstack_regions"><a class="anchor" href="#_openstack_regions"></a>OpenStack Regions</h3>
+<div class="paragraph">
+<p>A <a href="https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/region.html">Region</a> is just a set of OpenStack API entry points. You could run as many or as few OpenStack services in each regions as you wish, but the common scenario is just running all services in all regions, except for a few shared services.</p>
+</div>
+<div class="paragraph">
+<p>Your region does not need to represent a country nor a large geographical region, like public cloud providers do. It could be a small geographic region like city or even a data center building inside a large campus. It depends on your networking and storage infrastructure, and your need to retain the ability to keep operating a region, as an OpenStack cluster, independently of other regions, in case of disasters such as earthquakes and floods.</p>
+</div>
+<div class="paragraph">
+<p>It is assumed that OpenStack services in the same region work together, for example Nova can create server instances using volumes from Cinder and networks from Neutron on the same region. But services from different regions would not use each other because of network latency and bandwidth constraints. Other IT infrastructure, such as storage, may not work cross-regions or may work under significant performance and reliability constraints.</p>
+</div>
+<div class="paragraph">
+<p>It is also assumed that OpenStack services in a region are standalone and work without knowledge of services in other regions, except from Keystone. So API resource names inside a region, such as names of server instances and availability zones, can be equal without creating a conflict. But, because all regions are connected to a shared Keystone, they all have the same users, domains, and projects.</p>
+</div>
+<div class="paragraph">
+<p>One of your regions runs a shared Keysone service that enable authenticating and discovering OpenStack services in all regions, so it effectively looks like a single private cloud. If you use Horizon, there&#8217;s no need to run it in multiple regions. Of course, there needs to be a special disaster recovery proccess or that region and its shared services.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_openstack_azs"><a class="anchor" href="#_openstack_azs"></a>OpenStack AZs</h3>
+<div class="paragraph">
+<p><a href="https://docs.openstack.org/nova/latest/admin/availability-zones.html">Availability Zones</a> are partitions of an OpenStack cluster which include a subset of compute nodes from a region. That is, it is a partition of the data plane of an OpenStack cluster. All AZs share the same OpenStack control plane of their regions, and thus the same OpenStack services of their region.</p>
+</div>
+<div class="paragraph">
+<p>Availability Zones typically represent a failure domain of a cluster/region: something like a power supply, horizontal switch fabric, or even the cooling of a datacenter building, whose failure effectively means the loss or unavailability of all compute nodes in the AZ.</p>
+</div>
+<div class="paragraph">
+<p>Internally, OpenStack implements AZs as an exposed host aggregate. A compute node can be a member of only one AZ but it can be a member of multiple other, non-exposed host aggregates.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_adressability_of_regions_and_azs"><a class="anchor" href="#_adressability_of_regions_and_azs"></a>Adressability of Regions and AZs</h3>
+<div class="paragraph">
+<p>Many OpenStack API resources include attributes to set the region and AZ they belong to and Operators want to control those attributes, which makes those two attributes of a cluster and of their compute nodes visible to OpenStack Operators.</p>
+</div>
+<div class="paragraph">
+<p>OpenStack Operators usually take AZs into account when planning production workloads: you do not want to run all server instances of the same application (or the same component of a service-oriented application) in the same AZ. You want to spread those server instances into different AZs, so the loss of a single AZ does not impact availability of the application for its end-users.</p>
+</div>
+<div class="paragraph">
+<p>OpenStack is able to automate the scaling and placement of server instances spread in multiple AZs, but it is up to the application (or its OpenStack Operator) to design such multi-AZ applications, using features from OpenStack such as Octavia load balancers, external IT infrastructure such as storage backends which support volume replication, and application services such as sharded databases.</p>
+</div>
+<div class="paragraph">
+<p>Application workloads typically run inside a single region. Multi-region applications are designed as multiple copies (or instances) of the same application on each region and they rely on routing and replication services, not provided by OpenStack, to copy data between regions and direct users to the application instance in the closest region.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_host_aggregates"><a class="anchor" href="#_host_aggregates"></a>Host Aggregates</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A <a href="https://docs.openstack.org/nova/latest/admin/aggregates.html">Host Aggregate</a> is a way to group compute nodes based on abitrary attributes, so OpenStack Administrators can create sets of compute nodes based on hardware characteristics and other criteria that impacts the cost and performance of running different classes of workloads on those physical servers.</p>
+</div>
+<div class="paragraph">
+<p>Physical machines are not born equal: some are designed to highly multi-threaded applications, while others are designed for I/O intensive applications. Physical machines come not only with different kinds of CPUs, main memory, and caches, but also with different hardware accelerators and possibly multiple I/O buses. Running any application in whatever compute node is available may be inefficient and expensive.</p>
+</div>
+<div class="paragraph">
+<p>Most organizations have complex workloads with components that require different classes of physical servers for optimum performance or lower cost. It may be that the simplicity of managing an undifferentiated pool of compute resources is good enough, but it may be that you need to manage a better fit of applications to hardware, and host aggregates enable OpenStack Administrators and Operators to do that.</p>
+</div>
+<div class="paragraph">
+<p>Compute nodes can belong to multiple host aggregates. It is up to the OpenStack administrator to set the attributes which control membership of nodes to different host aggregates. If host aggregate is as an availability zone, then compute nodes cannot belong to other host aggregates also set as availability zones.</p>
+</div>
+<div class="paragraph">
+<p>Because a host aggregate is tied to a class of physical machines, the same host aggregate can conceptually span multiple regions and AZs. For spanning AZs, remember that an AZ is a host aggregate and compute nodes can belong to multiple aggregates. For spanning regions, you could define the same attributes and assign the same names to aggregates in different regions for a consistent private cloud.</p>
+</div>
+<div class="paragraph">
+<p>You don&#8217;t need to, but it would be unusual to put all machines of a special kind in a single AZ and lose all of them in case a power supply fails. It is more likely that those machines are spread into different server racks or buildings, thus in multiple AZs, and that you have similar machines in multiple data center, thus in multiple regions.</p>
+</div>
+<div class="sect2">
+<h3 id="_addressability_of_host_aggregates"><a class="anchor" href="#_addressability_of_host_aggregates"></a>Addressability of Host Aggregates</h3>
+<div class="paragraph">
+<p>OpenStack Administrators manage host aggregates and their relationship to API resources. OpenStack Operators use host aggregates, indirectly, to ensure applications get the class of compute node they need or that is best for them. Unlike regions and AZs, to which an OpenStack Operator has direct visibility, in the sense of "create this server instance in region-A and AZ-1", you cannot declare "create this server instance in host-aggregate-A". You must specify an indirect link:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An Administrator configures a host aggregate, for example "gpu", and sets attributes to hosts which do include GPU hardware to match that host aggregate;</p>
+</li>
+<li>
+<p>An Administrator configures one or more server flavors, for example "ml.small" and "ml.large", and sets attributes to link these server flavors to the "gpu" host aggregate;</p>
+</li>
+<li>
+<p>An Operator creates a server instance and specifies ether the "ml.small" or "ml.large" server flavor for the instance.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_compute_cells"><a class="anchor" href="#_compute_cells"></a>Compute Cells</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OpenStack cluster cells are even less visible to OpenStack Operators than Host Aggregates. They relate to the reliability and scalability of an OpenStack control plane itself, instead of to workloads, but compute nodes must belong to one and only one cell, which makes this concept somewhat close to AZs.</p>
+</div>
+<div class="paragraph">
+<p>The following figures show three typical ways of configuring cells in an OpenStack cluster: first, configuring an 1:1 equivalence of AZs and cells:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/s3-regions-azs-cells-lecture-fig-2.svg" alt="s3 regions azs cells lecture fig 2">
+</div>
+</div>
+<div class="paragraph">
+<p>Second, creating multiple cells inside the same AZ. There could be more AZs beyond the one displayed in the figure.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/s3-regions-azs-cells-lecture-fig-3.svg" alt="s3 regions azs cells lecture fig 3">
+</div>
+</div>
+<div class="paragraph">
+<p>Third, creating AZs inside the same cell. There could be more cells beyond the one displayed in the figure.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/s3-regions-azs-cells-lecture-fig-4.svg" alt="s3 regions azs cells lecture fig 4">
+</div>
+</div>
+<div class="paragraph">
+<p>The point is, cells and AZs are independent concepts. They relate to different aspects of partitioning and scaling OpenStack clusters. For your peace of mind, it is best to avoid designs where the mapping between cells and AZs is not 1:1 nor hierarchical. Anyway, one compute host must belong to a single AZ and to a single cell.</p>
+</div>
+<div class="paragraph">
+<p>The Administration learning journey will provide more information about cells and the internal services which run in an OpenStack control plane. Just as a curiosity, every OpenStack cluster has at least two cells:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Cell0</dt>
+<dd>
+<p>It stores global information for the region, and it is needed because API resources may not relate to a compute node at all, so it is not possible to determine in which cell database to store them. For example, if a server instance was not scheduled to any compute node, because no one had sufficient capacity for it. You still need the API resource for that server instance, to get its failed status and a cause.</p>
+</dd>
+<dt class="hdlist1">Cell1</dt>
+<dd>
+<p>Includes all compute nodes in the initial cluster, until an Administrator decides to configure more cells and add compute nodes to them. Its database includes all API resources which relate to the compute nodes in the cell, for example all server instances running on those nodes.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>OpenStack compute nodes connect to the cell services (the database and message queue) directly, as well as many other components of an OpenStack control plane. In this course we do not explore the internal structure of individual OpenStack services, but for now it is sufficient to know that the internal components of each service interact with each user using the cell database and cell message queues.</p>
+</div>
+<div class="paragraph">
+<p>As you can see, OpenStack enables managing large pools of compute resources, but this requires planning and effort from Administrators.</p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="s2-multitenancy-quiz-answers.html">Answers to the Quiz</a></span>
+  <span class="next"><a href="s4-topology-quiz.html">Quiz: Large OpenStack Clusters</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
