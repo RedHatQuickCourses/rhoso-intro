@@ -1,4 +1,8 @@
+:time_estimate: 3
+
 = Review Quiz: Red Hat OpenStack Services
+
+:time_estimate: 5
 
 Objective::
 

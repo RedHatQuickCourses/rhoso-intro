@@ -1,4 +1,8 @@
+:time_estimate: 12
+
 = Additional Services of Red Hat OpenStack
+
+_Estimated reading time: *{time_estimate} minutes*._
 
 Objective::
 
