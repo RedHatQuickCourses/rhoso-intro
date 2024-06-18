@@ -1,4 +1,8 @@
+:time_estimate: 1
+
 = Quiz: OpenStack Services and Application Workloads
+
+_Estimated reading time: *{time_estimate} minutes*._
 
 Objective::
 

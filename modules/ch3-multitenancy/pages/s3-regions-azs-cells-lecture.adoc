@@ -1,4 +1,8 @@
+:time_estimate: 13
+
 = Regions, AZs, and Cells.
+
+_Estimated reading time: *{time_estimate} minutes*._
 
 Objective::
 

@@ -1,4 +1,8 @@
+:time_estimate: 3
+
 = Review Quiz: Red Hat OpenStack Services
+
+_Estimated reading time: *{time_estimate} minutes*._
 
 Objective::
 
