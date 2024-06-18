@@ -1,4 +1,8 @@
+:time_estimate: 10
+
 = What is Red Hat OpenStack Services on OpenShift
+
+_Estimated reading time: *{time_estimate} minutes*._
 
 Objective::
 
