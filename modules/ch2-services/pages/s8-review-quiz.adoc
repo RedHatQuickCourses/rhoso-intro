@@ -2,7 +2,7 @@
 
 = Review Quiz: Red Hat OpenStack Services
 
-:time_estimate: 5
+_Estimated reading time: *{time_estimate} minutes*._
 
 Objective::
 

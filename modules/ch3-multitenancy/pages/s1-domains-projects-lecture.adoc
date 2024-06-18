@@ -1,4 +1,8 @@
+:time_estimate: 11
+
 = Resources, Projects, and Domains
+
+_Estimated reading time: *{time_estimate} minutes*._
 
 Objective::
 
