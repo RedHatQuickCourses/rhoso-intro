@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Additional Services of Red Hat OpenStack :: Introduction to Red Hat OpenStack Services on OpenShift</title>
+    <link rel="prev" href="s2-fundamental-quiz-answers.html">
+    <link rel="next" href="s4-additional-quiz.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">Introduction to Red Hat OpenStack Services on OpenShift</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/rhoso-intro/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rhoso-intro" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Introduction to Red Hat OpenStack Services on OpenShift</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch1-intro/index.html">Introduction to Red Hat OpenStack</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch1-intro/s1-rhoso-lecture.html">What is Red Hat OpenStack Services on OpenShift</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch1-intro/s2-components-quiz.html">Quiz: Components of Red Hat OpenStack on OpenShift</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch1-intro/s2-components-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch1-intro/s3-operations-lecture.html">OpenStack Operations and Administration Roles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch1-intro/s4-tasks-quiz.html">Quiz: Red Hat OpenStack Operations Tasks</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch1-intro/s4-tasks-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch1-intro/s5-ui-lecture.html">OpenStack User Interfaces</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch1-intro/s6-ui-demo.html">Demo: OpenStack Client and Web Console</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch1-intro/s7-review-quiz.html">Review Quiz: Red Hat OpenStack Operations</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch1-intro/s7-review-quiz-answers.html">Answers to the Review Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch1-intro/s8-summary.html">Summary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Red Hat OpenStack Services</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="s1-fundamental-lecture.html">Fundamental Services of Red Hat OpenStack</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="s2-fundamental-quiz.html">Quiz: OpenStack Services and Application Workloads</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="s2-fundamental-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="s3-additional-lecture.html">Additional Services of Red Hat OpenStack</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="s4-additional-quiz.html">Quiz: OpenStack Services and Cloud-Native Applications</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="s4-additional-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="s5-administration-lecture.html">Administration Services of Red Hat OpenStack</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="s6-administration-quiz.html">Quiz: OpenStack Services and IT Infrastructure</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="s6-administration-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="s7-heat-demo.html">Demo: OpenStack Heat Orchestrator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="s8-review-quiz.html">Review Quiz: Red Hat OpenStack Services</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="s8-review-quiz-answers.html">Answers to the Review Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="s9-summary.html">Summary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch3-multitenancy/index.html">Multi-Tenancy in Red Hat OpenStack</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch3-multitenancy/s1-domains-projects-lecture.html">Resources, Projects, and Domains</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch3-multitenancy/s2-multitenancy-quiz.html">Quiz: Red Hat OpenStack Multi-Tenancy</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch3-multitenancy/s2-multitenancy-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch3-multitenancy/s3-regions-azs-cells-lecture.html">Regions, AZs, and Cells.</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch3-multitenancy/s4-topology-quiz.html">Quiz: Large OpenStack Clusters</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch3-multitenancy/s4-topology-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch3-multitenancy/s5-cluster-demo.html">Demo: Exploring an OpenStack Cluster</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch3-multitenancy/s6-review-quiz.html">Review Quiz: Multi-Tenancy and Topology in Red Hat OpenStack</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch3-multitenancy/s6-review-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch3-multitenancy/s7-summary.html">Summary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Introduction to Red Hat OpenStack Services on OpenShift</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Introduction to Red Hat OpenStack Services on OpenShift</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Introduction to Red Hat OpenStack Services on OpenShift</a></li>
+    <li><a href="index.html">Red Hat OpenStack Services</a></li>
+    <li><a href="s3-additional-lecture.html">Additional Services of Red Hat OpenStack</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Additional Services of Red Hat OpenStack</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>Estimated reading time: <strong>12 minutes</strong>.</em></p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Objective</dt>
+<dd>
+<p>Describe additional OpenStack services useful to applications and their virtual machines.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_openstack_support_for_cloud_native_and_other_kinds_of_applications"><a class="anchor" href="#_openstack_support_for_cloud_native_and_other_kinds_of_applications"></a>OpenStack Support for Cloud-Native and Other Kinds of Applications</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It is not uncommon to use OpenStack (and public cloud platforms, for that matter) to just replicate, in a virtual infrastructure, the same servers, networks, etc you would manage in a data center with physical servers and no virtualization. For some organizations, just switching from days or weeks of provisioning physical machines to minutes of provisioning virtual machines (as long as your cluster has the capacity to spare) is already enough benefit. These organizations might be happy with just the fundamental OpenStack services.</p>
+</div>
+<div class="paragraph">
+<p>But many benefits from using private clouds come from designing applications to take advantage of the dynamic, on-demand infrastructure that cloud platforms can provide, and from automating provisioning and management of such applications.</p>
+</div>
+<div class="paragraph">
+<p>Even if an organization is not yet designing applications and their operational processes to be cloud-native, the fact that provisioning basic server, networking, and storage infrastructure became faster enables IT teams to focus on other non-functional requirements, such as security and horizontal scalability. OpenStack helps address those requirements.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/s3-additional-lecture-fig-1.svg" alt="s3 additional lecture fig 1">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_additional_openstack_services_for_storage"><a class="anchor" href="#_additional_openstack_services_for_storage"></a>Additional OpenStack Services for Storage</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Besides Cinder, Red Hat OpenStack Services on OpenShift offers two other services to store data:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Manila: Shared Filesystems service</p>
+</li>
+<li>
+<p>Swift: Object Store service</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Almost all workloads use Block storage from Cinder because server instances need virtual disks, but those virtual disks are not sufficient for all kinds of workloads. Some workloads require shared file systems, and the use of networked file-sharing services, such as NFS, is very common for scaling applications to multiple servers or integrating different applications by sharing data files.</p>
+</div>
+<div class="paragraph">
+<p>Public cloud started without file-sharing services, but offered object storage as an alternative, which made it very popular among cloud-native applications and on the business backends of mobile applications. Object storage also enables scaling applications to multiple servers and integrating different applications by sharing object files.</p>
+</div>
+<div class="paragraph">
+<p>For end users, object storage may look just like file storage: <strong>buckets</strong> or <strong>containers</strong> are folders or directories, and <strong>objects</strong> are files. But, from a developer&#8217;s perspective, they are very different. For example, objects support write-once semantics and versioning, but files support append and random access modes.</p>
+</div>
+<div class="paragraph">
+<p>In the end, applications are typically designed to use either of them (file or object storage) and cannot be easily configured to use the other. This course is not intended to provide a comparison of the benefits and capabilities of object versus file storage: from the perspective of OpenStack Operators, the decision was already made, and their job is to provide whatever of these capabilities applications require.</p>
+</div>
+<div class="sect2">
+<h3 id="_openstack_file_shares_manila"><a class="anchor" href="#_openstack_file_shares_manila"></a>OpenStack File Shares: Manila</h3>
+<div class="paragraph">
+<p>Manila offers access to remote file <strong>shares</strong> using a variety of network protocols, according to the capabilities of the storage backends configured on your OpenStack cluster. Typical business requirements, such as high availability of data by replication, depend on the storage backend rather than on OpenStack.</p>
+</div>
+<div class="paragraph">
+<p>The role of Manila is to provide a uniform interface for making file shares available to application VMs, so an OpenStack Operator does not need direct access to the storage backends themselves and their proprietary administration interfaces. Depending on the backend, Manila may also abstract networking and authentication details, making it look like the file share exists inside the virtual tenant network.</p>
+</div>
+<div class="paragraph">
+<p>Manila does not abstract the file-sharing protocol itself: if an application VM expects a remote NFS share, Manila must be configured to provide NFS services. Besides, it is outside the scope of Manila to abstract file system security, such as uid, gid, and permission masks of POSIX files.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_openstack_objects_swift"><a class="anchor" href="#_openstack_objects_swift"></a>OpenStack Objects: Swift</h3>
+<div class="paragraph">
+<p>Swift offers object storage capabilities similar to Amazon S3. S3 is a de-facto standard, supported by a large number of storage vendors and applications, but there is no formal specification nor interoperability test suite to show objectively if two S3 products from different vendors are similar or different in capabilities. Unfortunately, there is no way any vendor can tell, except by extensive testing, if one application works fine with the S3 API implementation of a specific storage vendor.</p>
+</div>
+<div class="paragraph">
+<p>Swift has its own application API, but it never got close to the popularity of Amazon S3. Most storage backends certified for Red Hat OpenStack offer both the Swift and S3 APIs, and an OpenStack Operator can manage object storage using Swift while applications access that storage using S3. Which is already good because most storage vendors do a good job of emulating the S3 API from the perspective of applications but require their own proprietary administration interfaces, so Swift can abstract these interfaces for an OpenStack Operator.</p>
+</div>
+<div class="paragraph">
+<p>Swift is one of the few services in an OpenStack cluster that is accessed directly by end-user applications running outside its cluster. Unlike traditional networked file systems, which need special configurations at the end-user operating system and require application protocols not designed for remote networks and the internet, object storage uses the HTTP protocol which mobile and web applications commonly use to interact with other cloud services.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_additional_openstack_services_for_networking"><a class="anchor" href="#_additional_openstack_services_for_networking"></a>Additional OpenStack Services for Networking</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Besides Nova, two services of Red Hat OpenStack Services on OpenShift offer networking capabilities:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Octavia: Load Balancer service</p>
+</li>
+<li>
+<p>Designate: DNS service</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These services enable dynamic and scalable applications, not tied to manually configured IP addresses and DNS names: New applications can be immediately accessible using a human-readable name, and multiple servers accessed using a single IP address. If used together, the human-readable name, or vanity name, can point to a single IP address.</p>
+</div>
+<div class="sect2">
+<h3 id="_openstack_network_load_balancing_octavia"><a class="anchor" href="#_openstack_network_load_balancing_octavia"></a>OpenStack Network Load Balancing: Octavia</h3>
+<div class="paragraph">
+<p>Octavia enables fronting a <strong>server group</strong> or server <strong>pool</strong> with a single IP address, and forwarding network requests to any server of the group. This enables scalable and high-available applications, because more servers can handle more load, and servers can run in different compute nodes, insulating application users from failures of those compute nodes and of individual server instances.</p>
+</div>
+<div class="paragraph">
+<p>Octavia also works with Nova to enable the autoscaling of server groups, so the number of servers grows and shrinks according to demand. Octavia can work on both Layer 3, as a pure IP load balancer, or at Layer 7, as an HTTP and TLS load balancer. In either case, Octavia can detect failures internal to server instances, such as when an application becomes unresponsive, and stops sending sending traffic to those instances.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_openstack_dynamic_dns_designate"><a class="anchor" href="#_openstack_dynamic_dns_designate"></a>OpenStack Dynamic DNS: Designate</h3>
+<div class="paragraph">
+<p>The DNS protocol is one of the oldest standards of the Internet, but the management of DNS servers is totally proprietary. Octavia offers OpenStack Operators with a standard interface for managing DNS zones and records, and also integration with Nova, Neutron, and Octavia, to automatically assign DNS names to resources such as server instances, floating IP addresses, and load balancers.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_additional_openstack_services_for_automation"><a class="anchor" href="#_additional_openstack_services_for_automation"></a>Additional OpenStack Services for Automation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the traditional data center world, each server is unique. Once you install all software and perform all configuration changes on that server, it&#8217;s time-consuming and error-prone to replicate the same state in another server. In the cloud-native world, IT personnel strives to automate those configurations so it&#8217;s easy and fast to reproduce the state of a server to the point that it is ready for its end-users.</p>
+</div>
+<div class="paragraph">
+<p>To support the automation of workloads, Red Hat OpenStack Services on OpenShift adds to Nova and Glance the following services:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Heat: Orchestration service</p>
+</li>
+<li>
+<p>Placement: Placement service</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The first service (Heat) automates the creation and management of many OpenStack API resources, such as servers, networks, volumes, and load balancers, required to deploy complex application workloads. The second (Placement) addresses the distribution of those resources, especially servers, over different compute nodes to address performance and reliability requirements.</p>
+</div>
+<div class="sect2">
+<h3 id="_openstack_workload_orchestration_heat"><a class="anchor" href="#_openstack_workload_orchestration_heat"></a>OpenStack Workload Orchestration: Heat</h3>
+<div class="paragraph">
+<p>OpenStack Glance provides a first step towards reproducibility, by enabling storage and reuse of server images to create multiple clones of the same server. Nova&#8217;s support for cloud-init provides another piece, by enabling each of those servers to get unique configurations, such as different static IP addresses and SSH keys.</p>
+</div>
+<div class="paragraph">
+<p>However application workloads are rarely contained in a single server instance. Most real-world applications are composed of multiple VMs, for example, the traditional three-tier architecture of presentation, business, and persistence, which could be realized as:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Presentation: Web server with static HTML pages and JavaScript code.</p>
+</li>
+<li>
+<p>Business: Java application server, or web server running REST API endpoints using Java, Node.js, Ruby, or whatever is your programming language runtime of choice.</p>
+</li>
+<li>
+<p>Persistence: A relation or NoSQL database server.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>It is also very common that each of those tiers consists of multiple servers, for example, a web server farm or replicated primary (read-write) and secondary (read-only) database instances.</p>
+</div>
+<div class="paragraph">
+<p>Those server instances need network connectivity, firewall rules, load balancers, and human-readable names for their end-user web pages and REST API entry points. Manually creating and configuring all OpenStack API resources required by such applications can be a daunting task!</p>
+</div>
+<div class="paragraph">
+<p>OpenStack Heat enables defining all those resources using a Heat <strong>template</strong> with YAML syntax. Heat also maintains the relationship between templates and the resources created from them, so these resources can be changed and deleted from the templates instead of manually using the OpenStack APIs for each resource type.</p>
+</div>
+<div class="paragraph">
+<p>Heat templates can be parametrized, enabling reuse of the same template in different scenarios, such as different user-facing application URLs, different IP addresses for external resources, and different sizes of server instances and storage volumes.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_openstack_server_scheduling_placement"><a class="anchor" href="#_openstack_server_scheduling_placement"></a>OpenStack Server Scheduling: Placement</h3>
+<div class="paragraph">
+<p>The OpenStack Placement service is different than other services introduced so far because OpenStack Operator users and external applications do not interact directly with it, but indirectly through resources of other services, especially Nova.</p>
+</div>
+<div class="paragraph">
+<p>The Placement service tracks compute resource availability and consumption throughout an OpenStack cluster, and enables other OpenStack services to define and track different classes of resources. For example, Nova defines a number of CPU cores and memory of compute nodes, and server instances consume those resources. Neutron defines a number of IP addresses of internal virtual networks and of floating IP addresses available for connectivity with external networks. Cinder defines the total disk space and number of logical units (LUNs) of each storage backend.</p>
+</div>
+<div class="paragraph">
+<p>OpenStack API resources can consume compute resources from different OpenStack services. For example, server instances consume CPU and memory from compute nodes, IP addresses from virtual networks, and disk space from a storage backend. If there are no sufficient compute resources available in the cluster, you cannot create the API resource.</p>
+</div>
+<div class="paragraph">
+<p>Thanks to Placement, Nova can schedule each server instance to a compute node with sufficient available compute resources for that instance.</p>
+</div>
+<div class="paragraph">
+<p>Placement also enables the definition of new classes of compute resources, for example: the availability of GPUs in compute nodes. The server instances can request a number of GPUs, and an OpenStack Operator can be sure that instance either gets the GPUs it needs, or fails to start.</p>
+</div>
+<div class="paragraph">
+<p>Defining new classes of compute resources is usually an OpenStack Administrator task, while configuring workloads to consume compute resources from those classes is an OpenStack Operator task.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_additional_openstack_services_for_security"><a class="anchor" href="#_additional_openstack_services_for_security"></a>Additional OpenStack Services for Security</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We already know that security in OpenStack starts with Keystone, as the authentication entry point for all OpenStack services. While most end-user applications do not need to invoke OpenStack APIs, and thus would have no need for direct interactions with Keystone, most applications do interact with a wide range of services. These services range from external APIs of a software vendor to middleware running on other servers inside and outside of their OpenStack cluster, such as database servers and messaging middleware.</p>
+</div>
+<div class="paragraph">
+<p>Management of credentials to access those services and APIs is a potential source of security issues. They should not be hardcoded in either the application source code or on its configuration files. Ideally, they would live outside of application VMs. Security-conscious organizations require that applications use Key Management Services (KMS) to store such credentials, and OpenStack offers Barbican: the Key Management service.</p>
+</div>
+<div class="sect2">
+<h3 id="_openstack_secrets_management_barbican"><a class="anchor" href="#_openstack_secrets_management_barbican"></a>OpenStack Secrets Management: Barbican</h3>
+<div class="paragraph">
+<p>OpenStack Barbican enables secure storage of many types of keys, including symmetric and asymmetric keys, and including both passwords and certificate files. Applications authenticate to Barbican using Keystone to retrieve keys, and OpenStack Operators manage those keys independently of applications.</p>
+</div>
+<div class="paragraph">
+<p>Multiple OpenStack services offer integration with Barbican, for example, to encrypt data stored in Cinder volumes or Swift objects.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_operation_and_administration_of_additional_services"><a class="anchor" href="#_operation_and_administration_of_additional_services"></a>Operation and Administration of Additional Services</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It is expected and recommended that most Red Hat OpenStack Services on OpenShift clusters do enable all of the additional services introduced here, and that OpenStack Operators encourage application developers and application administrators to take advantage of them.</p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="s2-fundamental-quiz-answers.html">Answers to the Quiz</a></span>
+  <span class="next"><a href="s4-additional-quiz.html">Quiz: OpenStack Services and Cloud-Native Applications</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Fundamental Services of Red Hat OpenStack :: Introduction to Red Hat OpenStack Services on OpenShift</title>
+    <link rel="prev" href="index.html">
+    <link rel="next" href="s2-fundamental-quiz.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">Introduction to Red Hat OpenStack Services on OpenShift</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/rhoso-intro/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rhoso-intro" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Introduction to Red Hat OpenStack Services on OpenShift</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch1-intro/index.html">Introduction to Red Hat OpenStack</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch1-intro/s1-rhoso-lecture.html">What is Red Hat OpenStack Services on OpenShift</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch1-intro/s2-components-quiz.html">Quiz: Components of Red Hat OpenStack on OpenShift</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch1-intro/s2-components-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch1-intro/s3-operations-lecture.html">OpenStack Operations and Administration Roles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch1-intro/s4-tasks-quiz.html">Quiz: Red Hat OpenStack Operations Tasks</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch1-intro/s4-tasks-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch1-intro/s5-ui-lecture.html">OpenStack User Interfaces</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch1-intro/s6-ui-demo.html">Demo: OpenStack Client and Web Console</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch1-intro/s7-review-quiz.html">Review Quiz: Red Hat OpenStack Operations</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch1-intro/s7-review-quiz-answers.html">Answers to the Review Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch1-intro/s8-summary.html">Summary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Red Hat OpenStack Services</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="s1-fundamental-lecture.html">Fundamental Services of Red Hat OpenStack</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="s2-fundamental-quiz.html">Quiz: OpenStack Services and Application Workloads</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="s2-fundamental-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="s3-additional-lecture.html">Additional Services of Red Hat OpenStack</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="s4-additional-quiz.html">Quiz: OpenStack Services and Cloud-Native Applications</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="s4-additional-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="s5-administration-lecture.html">Administration Services of Red Hat OpenStack</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="s6-administration-quiz.html">Quiz: OpenStack Services and IT Infrastructure</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="s6-administration-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="s7-heat-demo.html">Demo: OpenStack Heat Orchestrator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="s8-review-quiz.html">Review Quiz: Red Hat OpenStack Services</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="s8-review-quiz-answers.html">Answers to the Review Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="s9-summary.html">Summary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch3-multitenancy/index.html">Multi-Tenancy in Red Hat OpenStack</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch3-multitenancy/s1-domains-projects-lecture.html">Resources, Projects, and Domains</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch3-multitenancy/s2-multitenancy-quiz.html">Quiz: Red Hat OpenStack Multi-Tenancy</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch3-multitenancy/s2-multitenancy-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch3-multitenancy/s3-regions-azs-cells-lecture.html">Regions, AZs, and Cells.</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch3-multitenancy/s4-topology-quiz.html">Quiz: Large OpenStack Clusters</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch3-multitenancy/s4-topology-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch3-multitenancy/s5-cluster-demo.html">Demo: Exploring an OpenStack Cluster</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../ch3-multitenancy/s6-review-quiz.html">Review Quiz: Multi-Tenancy and Topology in Red Hat OpenStack</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ch3-multitenancy/s6-review-quiz-answers.html">Answers to the Quiz</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ch3-multitenancy/s7-summary.html">Summary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Introduction to Red Hat OpenStack Services on OpenShift</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Introduction to Red Hat OpenStack Services on OpenShift</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Introduction to Red Hat OpenStack Services on OpenShift</a></li>
+    <li><a href="index.html">Red Hat OpenStack Services</a></li>
+    <li><a href="s1-fundamental-lecture.html">Fundamental Services of Red Hat OpenStack</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Fundamental Services of Red Hat OpenStack</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>Estimated reading time: <strong>9 minutes</strong>.</em></p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Objective</dt>
+<dd>
+<p>Describe the OpenStack services required by typical applications and their virtual machines.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_openstack_services_architecture"><a class="anchor" href="#_the_openstack_services_architecture"></a>The OpenStack Services Architecture</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OpenStack is composed of multiple independent services which can work (and usually do) together. Having services that are independent of each other enables faster delivery of new features and more reliable fixes for bugs and security issues, and is widely recognized as a best practice for software development.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/s1-fundamental-lecture-fig-1.svg" alt="s1 fundamental lecture fig 1">
+</div>
+</div>
+<div class="paragraph">
+<p>But OpenStack services rarely run standalone, except by developers working on the services themselves. Most OpenStack clusters run a standard set of services and, even when some of those servers could be disabled, with no loss of functionality for a certain application workload, the standard set is usually left enabled. This means most clusters running Red Hat OpenStack Services on OpenShift run all services included with the product.</p>
+</div>
+<div class="paragraph">
+<p>An OpenStack Operator focuses on user-facing OpenStack services, meaning services that provide an API for users outside of the cluster. Some OpenStack services exist to provide internal infrastructure for an OpenStack cluster and their APIs are available only from inside a cluster, for use by other OpenStack services and compute nodes. The OpenStack Administration learning journey provides more details about these internal services, and this course focuses on the user-facing services.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_openstack_services_to_manage_applications"><a class="anchor" href="#_openstack_services_to_manage_applications"></a>OpenStack Services to Manage Applications</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The first set of OpenStack services are the minimal services required by practically any functional OpenStack cluster. It would be hard to support even the simplest applications without including all services in this category, so we call them fundamental services.</p>
+</div>
+<div class="paragraph">
+<p>It is common for the OpenStack community to refer to individual services by either their code names or their purposes. Follows a list of the fundamental OpenStack services covered in this section:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Keystone: Identity service</p>
+</li>
+<li>
+<p>Nova: Compute service</p>
+</li>
+<li>
+<p>Cinder: Block Storage service</p>
+</li>
+<li>
+<p>Neutron: Networking service</p>
+</li>
+<li>
+<p>Glance: Image service</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/s1-fundamental-lecture-fig-2.svg" alt="s1 fundamental lecture fig 2">
+</div>
+</div>
+<div class="sect2">
+<h3 id="_openstack_authentication_and_service_discovery_keystone"><a class="anchor" href="#_openstack_authentication_and_service_discovery_keystone"></a>OpenStack Authentication and Service Discovery: Keystone</h3>
+<div class="paragraph">
+<p>The first service all OpenStack Operators interact with is Keystone, the Identity service. It is both the authentication entry point for an OpenStack cluster, which validates user login credentials and also a discovery entry point for other OpenStack services. All other OpenStack services rely on Keystone to find each other and to validate access tokens.</p>
+</div>
+<div class="paragraph">
+<p>So OpenStack Operator users (and also Administrator users) first connect to Keystone, and then connect to whatever other service they need. Tools such as the OpenStack client and Horizon make this process transparent, creating the illusion of a unified set of commands or pages for an entire cluster.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_openstack_virtual_machines_nova"><a class="anchor" href="#_openstack_virtual_machines_nova"></a>OpenStack Virtual Machines: Nova</h3>
+<div class="paragraph">
+<p>As application workloads run on OpenStack as Virtual Machines (VMs), the first service Operators care about is Nova, the Compute service. It interacts with the local hypervisor in compute nodes to manage VMs and provides advanced features such as live migration and snapshots. OpenStack nova uses the <strong>server</strong> resource type to manage VMs. It is usual to refer to Nova VMs as "server instances".</p>
+</div>
+<div class="paragraph">
+<p>If an Operator just creates a VM using Nova APIs, that VM has no connectivity to anything else, including other VMs inside the same OpenStack cluster. All data inside that VM can be lost in events such as hardware failure of a compute node. So most VMs require that you use Nova together with other fundamental services. But, if everything you need is access to the virtual console of a VM, to run software installed locally on that VM, then Nova alone would be sufficient.</p>
+</div>
+<div class="paragraph">
+<p>Fortunately, both the OpenStack client and Horizon offer quick commands and workflows to create VMs already attached to virtual storage and connected to virtual networks, performing multiple OpenStack API calls for one user action.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_openstack_virtual_disks_cinder"><a class="anchor" href="#_openstack_virtual_disks_cinder"></a>OpenStack Virtual Disks: Cinder</h3>
+<div class="paragraph">
+<p>Application workloads need to store multiple kinds of data, from their boot disk and its operating system, potentially customized with many changes in configuration files, added packages, and so on. They may also require multiple data disks to store application data, logs, and other information as operating system files.</p>
+</div>
+<div class="paragraph">
+<p>The Block Storage service, Cinder, provides virtual disks, called <strong>volumes</strong>, which can be attached to VMs as you need. Once the volume is attached to a VM, you need to use operating system commands inside that VM to format the volume with a file system and configure directories, file ownership, and file permissions before applications are able to store data on the volume. Just like you would do with a physical disk on a physical server.</p>
+</div>
+<div class="paragraph">
+<p>You can attach multiple volumes to the same VM, and you move volumes from one VM to another. You can even attach a single volume to multiple VMs at the same time, though this is a dangerous operation: applications not designed for shared disks may easily corrupt data.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Cinder does <strong>not</strong> provide shared filesystems, which some workloads require. Stay tuned for the next section, which describes the right OpenStack service for such applications. The "block" nature of Cinder relates to the network storage protocol, such as iSCSI, Fibre Channel, or Ceph RBD.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Cinder also provides advanced features such as clones and snapshots of volumes, which you use for backup and disaster recovery procedures, or for quick cloning of VMs. The root or boot disk of a VM is usually a Cinder volume because this enables VMs to survive the loss of the compute node running the VM.</p>
+</div>
+<div class="paragraph">
+<p>There might be reasons to NOT use Cincer volumes for VM disks, for example to support very fast local NVMe flash storage, but then the application itself needs to provide resiliency and fault tolerance for that data. Most times, applications rely on the infrastructure to do it for them, which means Cinder does the job.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_openstack_virtual_networks_neutron"><a class="anchor" href="#_openstack_virtual_networks_neutron"></a>OpenStack Virtual Networks: Neutron</h3>
+<div class="paragraph">
+<p>Most application workloads require network connectivity to other servers, which can be other VMs inside a cluster or physical servers outside the cluster. As long as there is network connectivity, each side does not know if the other side is a physical or virtual machine or another kind of device.</p>
+</div>
+<div class="paragraph">
+<p>Neutron is the Networking service of OpenStack. It provides virtual internal networks, which it calls <strong>tenant networks</strong>, and connectivity to external networks, which it calls <strong>provider networks</strong>. OpenStack Operators are usually allowed to create multiple tenant networks and configure many related resources, such as security rules (similar to network firewalls), routing rules, and network address translation between tenant or provider networks.</p>
+</div>
+<div class="paragraph">
+<p>It is possible to manage Neutron virtual networks down to the virtual port level, and you can even create virtual VLANs (virtual Virtual Local Area Networks?) ports and trunks on tenant networks, for applications which you migrate from physical servers and need to keep their original operating system settings. Provider networks, on the other side, can abstract data center networking details, such as VLAN IDs, from connected VMs, if you wish.</p>
+</div>
+<div class="paragraph">
+<p>Notice that, whatever you configure on your Neutron virtual networks, you need consistent configurations in the operating system inside your VMs. OpenStack helps with this task by providing features, such as <a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/configuring_and_managing_cloud-init_for_rhel_9/index">cloud-init</a>, to offer an initial configuration to new VMs, and also provides virtual DHCP services. But, if you want to configure static IP addresses and routes inside your VMs, you can. It is also a best practice to configure the internal firewall of your operating system, such as <a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/configuring_firewalls_and_packet_filters/using-and-configuring-firewalld_firewall-packet-filters">firewalld</a> from RHEL, in addition to the network security resources from OpenStack.</p>
+</div>
+<div class="paragraph">
+<p>There are also some interesting networking capabilities provided by other OpenStack services, such as load balancing, which we will see in the next section.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_operating_system_boot_images_glance"><a class="anchor" href="#_operating_system_boot_images_glance"></a>Operating System Boot Images: Glance</h3>
+<div class="paragraph">
+<p>If you create a new VM, you need a bootable operating system disk. It could be an installation disk, designed to be used for only the first boot, and that installs an operating system on the root disk of the VM; but usually it is a root disk already preinstalled and preconfigured. Nowadays, all operating system vendors provide these two kinds of operating system images, and whatever you wish to use, you need to provide that image to OpenStack.</p>
+</div>
+<div class="paragraph">
+<p>Glance, the OpenStack Image service, not only provides a choice of such <strong>images</strong> that Nova can use for the first boot of a VM, or to copy to the root disk of a VM, prior to its first boot, but also provides management of an image catalog, so Operators and Administrators can create and maintain a large set of customized VM images.</p>
+</div>
+<div class="paragraph">
+<p>There are many reasons to customize VM images, from preconfiguring operating system settings required by your organization policies, such as enterprise identity servers, certificate authorities, and agents for anti-virus and backup software, to including entire application stacks, like an online web store that you use to run multiple VMs with copies of the same application, possibly in multiple OpenStack clusters.</p>
+</div>
+<div class="paragraph">
+<p>It is the work of the OpenStack Administrator to provide at least one image to Glance before Operators can create VMs.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_operation_and_administration_of_fundamental_services"><a class="anchor" href="#_operation_and_administration_of_fundamental_services"></a>Operation and Administration of Fundamental Services</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As we saw during the presentation of Nova and Glance, there are resources in each service that an Operator would not create or change, and would only access. An Administrator is required to manage those resources for them. Sometimes it would be possible and perfectly fine to let Operators manage a subset of those resources, but an Administrator would provide a starter set before allowing Operators to access the cluster.</p>
+</div>
+<div class="paragraph">
+<p>We already saw, as examples Administrator-only resources, Neutron provider networks: you do not want to let Operators connect their applications to everything and anything outside your cluster: there are security policies and boundaries to enforce. Besides, Operators are not supposed to need knowledge of the physical topology and resources of your data center. They are supposed to be concerned with only virtual resources inside an OpenStack cluster.</p>
+</div>
+<div class="paragraph">
+<p>As a counter-example, we already saw Glance images: if all Operators need at least one boot image, why not create a shared pool of standard images, instead of letting each Operator manage their own copies of the same images, which boot the same operating system version? However it is fine to allow Operators to create their own customized images for the application teams they support.</p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="index.html">Red Hat OpenStack Services</a></span>
+  <span class="next"><a href="s2-fundamental-quiz.html">Quiz: OpenStack Services and Application Workloads</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
