@@ -4,20 +4,18 @@
 
 _Estimated reading time: *{time_estimate} minutes*._
 
-WARNING: Pending Review
-
 == OpenStack Services and Application Workloads
 
 1. Which of the following OpenStack services are required by a standalone application, which you will install inside a VM only because it is incompatible with your personal workstation, and you need it for only a short period of time?
 
 * [ ] Identity (Keystone) +
-_Incorrect: The applicaiton and its VM do not need to authenticate to nor discover OpenStack services. Only you (the Operator) user has this need._
+_Incorrect: The application and its VM do not need to authenticate to nor discover OpenStack services. Only you (the Operator) user has this need._
 
 * [x] *Compute (Nova)* +
 _Correct: Nova manages VMs on OpenStack clusters._
 
 * [ ] Block Storage (Cinder) +
-_Incorrect: The requirements tell nothing about the need to store data longer than the life of the VM or about the need to preserve data in case of failures._
+_Incorrect: The requirements tell nothing about the need to store data longer than the life of the VM or for the need to preserve data in case of failures._
 
 * [ ] Networking (Neutron) +
 _Incorrect: The requirements do not state a need for connectivity to other VMs or servers._
@@ -42,7 +40,7 @@ _Incorrect: The requirements did not state this is a client/server database._
 * [ ] Image (Glance) +
 _Incorrect: The database application does not need Glance to run._
 
-4. Which of the following OpenStack services are required by a web application, which you require to easily deploy into multiple OpenStack clusters, in different countries your company has data centers?
+3. Which of the following OpenStack services are required by a web application, which you require to easily deploy into multiple OpenStack clusters, in different countries your company has data centers?
 
 * [ ] Identity (Keystone) +
 _Incorrect: The web application does not invoke OpenStack APIs._
@@ -51,15 +49,15 @@ _Incorrect: The web application does not invoke OpenStack APIs._
 _Correct: To run an application, you need Nova._
 
 * [ ] Block Storage (Cinder) +
-_Incorrect: The requirements do not state where and how the web application stores its data. If all data from the application is stored in a database, running in another VM, then the application VM could be easily recreated from its Glance image. But ask about possible requirements about long-term storage of logs and how the application handles it. You might need Cinder for that._
+_Incorrect: The requirements do not state where and how the web application stores its data. If all data from the application is stored in a database, running in another VM, then the application VM could be easily recreated from its Glance image. But ask about possible requirements for long-term storage of logs and how the application handles it. You might need Cinder for that._
 
 * [x] *Networking (Neutron)* +
-_Correct: It is a web application, it requires network conectivity from web browsers on end-user computers or smartphones._
+_Correct: It is a web application, that requires network connectivity from web browsers on end-user computers or smartphones._
 
 * [x] *Image (Glance)* +
 _Correct: The easiest way of replicating the application VM in multiple data centers is creating a custom Glance image and copying that image to all clusters._
 
-4. Which of the following OpenStack services are required by a monitoring application which collects performance metrics from OpenStack clusters, services, and compute nodes? The history of metrics and alerts, stored on the applicaiton VM, must be persistent because it will be input to capacity planning.
+4. Which of the following OpenStack services are required by a monitoring application that collects performance metrics from OpenStack clusters, services, and compute nodes? The history of metrics and alerts, stored on the application VM, must be persistent because it will be input to capacity planning.
 
 * [x] *Identity (Keystone)* +
 _Correct: The monitoring application invokes OpenStack APIs._

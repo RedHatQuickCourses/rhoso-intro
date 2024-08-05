@@ -8,8 +8,6 @@ Objective::
 
 Assess the learner’s understanding of the purpose and utility of each Red Hat OpenStack service.
 
-WARNING: Pending review.
-
 // This review quiz takes the opportunity to relate and contrast services presented in different lecture sections. This may surprise students looking for an "easy" quiz.
 
 == Questions
@@ -34,17 +32,17 @@ WARNING: Pending review.
 * [ ] True
 * [ ] False
 
-5. True or False: Though it is common exposing Swift objects to outside an OpenStack cluster, to clients on the Internet, it is *not* common to expose Manila file shares for the same clients.
+5. True or False: Though it is common to expose Swift objects outside an OpenStack cluster, to clients on the Internet, it is *not* common to expose Manila file shares for the same clients.
 
 * [ ] True
 * [ ] False
 
-6. True or False: For most applications, object storage using the S3 API is a drop-in replacement for operating system file access systemcalls.
+6. True or False: For most applications, object storage using the S3 API is a drop-in replacement for the operating system file access systemcalls.
 
 * [ ] True
 * [ ] False
 
-7. True or False: Barbican provides a solution for the common issue of leaking access credentials hardcoded in source code stored in GitHub repositories.
+7. True or False: Barbican provides a solution for the common issue of leaking access credentials hard coded in source code stored in GitHub repositories.
 
 * [ ] True
 * [ ] False
@@ -59,7 +57,7 @@ WARNING: Pending review.
 * [ ] True
 * [ ] False
 
-10. True or False: Plamement and Ceilomer may seem to be related, because both track the usage of compute capacity by applications on OpenStack clusters, however, they are actually unrelated and provide different data: Placement is about static usage of resources, like how many virtual CPUs are available for creating more server instances, while Ceilometer is about dynamic usage of resources, like how much CPU is in use right now with multiple simultaneous end-users accessing applications.
+10. True or False: Placement and Ceilomer may seem to be related, because both track the usage of compute capacity by applications on OpenStack clusters, however, they are actually unrelated and provide different data: Placement is about static usage of resources, like how many virtual CPUs are available for creating more server instances, while Ceilometer is about dynamic usage of resources, like how much CPU is in use right now with multiple simultaneous end-users accessing applications.
 
 * [ ] True
 * [ ] False

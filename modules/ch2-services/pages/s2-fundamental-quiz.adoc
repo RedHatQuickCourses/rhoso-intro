@@ -8,8 +8,6 @@ Objective::
 
 Assess the learner’s understanding of the purpose and utility of the fundamental OpenStack services.
 
-WARNING: Pending Review
-
 == Questions
 
 1. Which of the following OpenStack services are required by a standalone application, which you will install inside a VM only because it is incompatible with your personal workstation, and you need it for only a short period of time?
@@ -36,7 +34,7 @@ WARNING: Pending Review
 * [ ] Networking (Neutron)
 * [ ] Image (Glance)
 
-4. Which of the following OpenStack services are required by a monitoring application which collects performance metrics from OpenStack clusters, services, and compute nodes?
+4. Which of the following OpenStack services are required by a monitoring application that collects performance metrics from OpenStack clusters, services, and compute nodes?
 
 * [ ] Identity (Keystone)
 * [ ] Compute (Nova)
