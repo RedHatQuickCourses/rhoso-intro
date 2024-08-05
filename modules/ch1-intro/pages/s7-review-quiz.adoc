@@ -2,13 +2,11 @@
 
 = Review Quiz: Red Hat OpenStack Operations
 
-_Estimated reading time: *{time_estimate} minutes*._
+_Estimated reading time: *{time_estimate} minute*._
 
 Objective::
 
 Assess the learner's understanding of the scope of OpenStack operations with Red Hat OpenStack on OpenShift.
-
-WARNING: Pending review.
 
 // This review quiz is easier/lightier than previous quizzes on purpose, as a refresher for learners.
 
@@ -24,7 +22,7 @@ WARNING: Pending review.
 * [ ] True
 * [ ] False
 
-3. True of False: An OpenStack Operator needs access to RHEL compute nodes to manage application VMs running on those nodes.
+3. True or False: An OpenStack Operator needs access to RHEL compute nodes to manage application VMs running on those nodes.
 
 * [ ] True
 * [ ] False
@@ -39,7 +37,7 @@ WARNING: Pending review.
 * [ ] True
 * [ ] False
 
-6. An OpenStack Operator focuses on OpenStack API resources that affect individual application workloads, as opposed to OpenStack API resources which affect an entire cluster.
+6. An OpenStack Operator focuses on OpenStack API resources that affect individual application workloads, as opposed to OpenStack API resources that affect an entire cluster.
 
 * [ ] True
 * [ ] False

@@ -8,11 +8,9 @@ Objective::
 
 Describe the role and typical tasks performed by Red Hat OpenStack Operations personnel, and how they interact with other IT Operations roles.
 
-WARNING: Pending review.
-
 == Kinds of OpenStack Users
 
-The users of an OpenStack cluser are not end-users, they are IT professionals, usually with an operations-focused job role. It is true that application developers sometimes have access to OpenStack clusters and manage their own VMs, but there they are acting as OpenStack Operators.
+The users of an OpenStack cluster are not end-users, they are IT professionals, usually with an operations-focused job role. It is true that application developers sometimes have access to OpenStack clusters and manage their own VMs, but there they are acting as OpenStack Operators.
 
 For the purpose of the Red Hat OpenStack training courses, we distinguish between two kinds of OpenStack users:
 
@@ -30,33 +28,33 @@ image::s3-operations-lecture-fig-1.svg[]
 // Exported from https://docs.google.com/presentation/d/1lPtAxaKH9P2SjgexIwBi5RxHOjIUQV44R5c4nnrug74/edit#slide=id.p
 // Can we give a name to this image?
 
-If you are new to OpenStack it's recommended that you gain experience as an OpenStack Operator before taking responsibility for OpenStack Administrator tasks. An OpenStack Administrator can also perform, according to needs, the tasks of OpenStack Operators. In fact, OpenStack Admninistrators are typically expected to have all skills and experience of OpenStack Operators.
+If you are new to OpenStack it's recommended that you gain experience as an OpenStack Operator before taking responsibility for OpenStack Administrator tasks. An OpenStack Administrator can also perform, according to needs, the tasks of OpenStack Operators. In fact, OpenStack Administrators are typically expected to have all the skills and experience of OpenStack Operators.
 
-== OpenStack Users and other IT Job Roles
+== OpenStack Users and Other IT Job Roles
 
 Depending on the size of an organization, OpenStack users can either perform other IT roles by themselves or work closely with IT professionals from other roles. For example, an OpenStack Operator may also be the System Administrator who manages the RHEL operating system inside a server instance.
 
 As a counter-example, an OpenStack Operator may delegate the configuration of the operating system inside a server instance to a Database Administrator, who is responsible for the database server running inside that server instance. OpenStack Operators usually work closely with DevOps Engineers, Email Administrators, ERP Administrators, and other IT roles focused on application development or application management.
 
-Similarly, an OpenStack Administrator may also be an OpenShift Administrator. And as a counter-example, an OpenStack Administrator may work closely with a RHEL Systems Administration team responsible for physical servers in the organizaiton, including compute nodes of an OpenStack cluster. OpenStack Administrators usually work closely with Storage Administrators, Network Administrators, and other IT Operations roles focused on data center infrastructure and platforms.
+Similarly, an OpenStack Administrator may also be an OpenShift Administrator. As a counter-example, an OpenStack Administrator may work closely with a RHEL Systems Administration team responsible for physical servers in the organization, including compute nodes of an OpenStack cluster. OpenStack Administrators usually work closely with Storage Administrators, Network Administrators, and other IT Operations roles focused on data center infrastructure and platforms.
 
 == OpenStack Users in Large Organizations
 
-In smaller organizations, the same team performs both OpenStack Operator and Administrator roles. In larger organizations, multiple teams of OpenStack Operators might be responsible for different groups workloads running on the same cluster. Conversely, a larger OpenStack Administration team migh split into subteams who manage different availability zones or compute cells of a single cluster. 
+In smaller organizations, the same team performs both OpenStack Operator and Administrator roles. In larger organizations, multiple teams of OpenStack Operators might be responsible for different group's workloads running on the same cluster. Conversely, a larger OpenStack Administration team might split into subteams that manage different availability zones or compute cells of a single cluster. 
 // Is the last statement correct? For example - Az
 
-The scope of work of an OpenStack Operator or Administrator usually includes multiple clusters. It's unlikely that an organization will run all their workloads and put all their physical servers in a single OpenStack cluster. More frequently, there will be multiple clusters which run instances (or copies) of the same workloads, to be closer to their end users or for high availability purposes.
+The scope of work of an OpenStack Operator or Administrator usually includes multiple clusters. It's unlikely that an organization will run all its workloads and put all its physical servers in a single OpenStack cluster. More frequently, there will be multiple clusters that run instances (or copies) of the same workloads, to be closer to their end users or for high availability purposes.
 
 == Tools and Skills of OpenStack Operators
 
-OpenStack Operators focus on OpenStack API resources and typically use the *OpenStack client*, which is a command-line (CLI) tool, and the web interface from *OpenStack Horizon*. The next section of this course provides an introduction to these tools. For now stay focused on the OpenStack user job roles.
+OpenStack Operators focus on OpenStack API resources and typically use the *OpenStack client*, which is a command-line (CLI) tool, and the web interface from *OpenStack Horizon*. The next section of this course provides an introduction to these tools. For now, stay focused on the OpenStack user job roles.
 
-The OpenStack client, Horizon, and any other tools available from the open source community or IT vendor to manage OpenStack clusters and workloads rely on the same OpenStack APIs. There are no "backdoors", no "native" nor "low-level" ways of managing OpenStack clusters.
+The OpenStack client, Horizon, and any other tools available from the open source community or IT vendor to manage OpenStack clusters and workloads rely on the same OpenStack APIs. There are no "backdoors", no "native" or "low-level" ways of managing OpenStack clusters.
 
 image::s3-operations-lecture-fig-2.svg[]
 // Exported from https://docs.google.com/presentation/d/1lPtAxaKH9P2SjgexIwBi5RxHOjIUQV44R5c4nnrug74/edit#slide=id.p
 
-NOTE: The OpenStack cluster diagrams, from now on, will ommit the OpenShift cluster nodes, and replace them with an icon which represents the OpenShift services and, implicitly, their OpenShift cluster.
+NOTE: The OpenStack cluster diagrams, from now on, will omit the OpenShift cluster nodes, and replace them with an icon that represents the OpenShift services and, implicitly, their OpenShift cluster.
 
 Notice that OpenStack Operators are shielded from the fact that an OpenStack cluster runs its control plane on OpenShift. They do not require direct access to OpenShift. They are able to work around application performance and availability issues using OpenStack APIs, for example by migrating a server instance to a different compute node, or by connecting a server instance to a different virtual network. All the information they need to perform their daily job is available from OpenStack APIs, along with all the actions they must perform. They are concerned only with the user-facing services of OpenStack.
 
@@ -64,32 +62,32 @@ OpenStack Operators gradually grow into OpenStack Administrators because they ca
 
 == Tools and Skills of OpenStack Administrators
 
-OpenStack Administrators have a split focus among OpenStack APIs, Kubernetes APIs, Linux, and Ansible. They perform some tasks using the OpenStack client and Horizon, but for other tasks they must use the OpenShift tools. And, because an OpenStack control plane uses Ansible playbooks to manage OpenStack compute nodes running RHEL, OpenStack Administrators also need skills of RHEL system administration using Ansible.
+OpenStack Administrators have a split focus among OpenStack APIs, Kubernetes APIs, Linux, and Ansible. They perform some tasks using the OpenStack client and Horizon, but for other tasks, they must use the OpenShift tools. And, because an OpenStack control plane uses Ansible playbooks to manage OpenStack compute nodes running RHEL, OpenStack Administrators also need skills in RHEL system administration using Ansible.
 
 image::s3-operations-lecture-fig-3.svg[]
 // Exported from https://docs.google.com/presentation/d/1lPtAxaKH9P2SjgexIwBi5RxHOjIUQV44R5c4nnrug74/edit#slide=id.p
 
-For simplicity, the previous figure ommits the tools OpenStack Administrators use to interact with Kubernetes APIs and OpenShift clusters, such as:
+For simplicity, the previous figure omits the tools OpenStack Administrators use to interact with Kubernetes APIs and OpenShift clusters, such as:
 
 * The OpenShift CLI and the OpenShift web console for managing containers (including the containers from OpenStack).
 
-* The Operator Lifecycle Manager (OLM), for installing applications and optional features of Red Hat OpenShift, packaged as add-on operators.
+* The Operator Lifecycle Manager (OLM), for installing applications and optional features of Red Hat OpenShift, is packaged as add-on operators.
 
 In fact, OpenStack itself is packaged as an add-on operator for ease of installation on OpenShift.
 
 IMPORTANT: In OpenShift, the term "operator" sometimes refers to a software component, instead of a human IT professional.
 
-OpenStack Administrators absolutely require skills about OpenShift, containers, and Kubernetes. They need those skills to install, configure, and troubleshoot OpenStack Services on OpenShift and also to manage OpenStack infrastructure services that are not user-facing and not acessible through OpenStack APIs.
+OpenStack Administrators absolutely require skills in OpenShift, containers, and Kubernetes. They need those skills to install, configure, and troubleshoot OpenStack Services on OpenShift and also to manage OpenStack infrastructure services that are not user-facing and not accessible through OpenStack APIs.
 
-OpenStack administrators are discouraged from manually managing compute nodes using SSH sessions. Instead they should use Ansible as managed by OpenStack. Occasionally, OpenStack Administrators open SSH sessions directly to compute nodes for troubleshooting purposes.
+OpenStack administrators are discouraged from manually managing compute nodes using SSH sessions. Instead, they should use Ansible as managed by OpenStack. Occasionally, OpenStack Administrators open SSH sessions directly to compute nodes for troubleshooting purposes.
 
 == Automation for OpenStack Operations Tasks
 
-Nowadays all IT roles require automation, either using traditional scripting, modern infrastructure-as-code, or even newer AI-enabled tools. Whatever the tool, if their purpose is automating the management of applications running on OpenStack, it is automating the same tasks a human OpenStack Operator would perform, and those tools must use the same OpenStack APIs.
+Nowadays all IT roles require automation, either using traditional scripting, modern infrastructure-as-code, or even newer AI-enabled tools. Whatever the tool, if its purpose is automating the management of applications running on OpenStack, it is automating the same tasks a human OpenStack Operator would perform, and those tools must use the same OpenStack APIs.
 
 image::s3-operations-lecture-fig-4.svg[]
 // Exported from https://docs.google.com/presentation/d/1lPtAxaKH9P2SjgexIwBi5RxHOjIUQV44R5c4nnrug74/edit#slide=id.p
 
-Nothing prevents automation tools from running inside an OpenStack cluster. The OpenStack service named Heat, which is included with Red Hat OpenStack Services on OpenShift, is one of such tools. Most tools, for example CI/CD managers, and infrastructure automation such as Ansible, can run either outside or inside an OpenStack cluster. And, if they run inside a cluster, nothing prevents them from managing other clusters.
+Nothing prevents automation tools from running inside an OpenStack cluster. The OpenStack service named Heat, which is included with Red Hat OpenStack Services on OpenShift, is one of such tools. Most tools, for example, CI/CD managers, and infrastructure automation such as Ansible, can run either outside or inside an OpenStack cluster. And, if they run inside a cluster, nothing prevents them from managing other clusters.
 
 Automation tools can also run in Kubernetes, as containers. In fact, the ability to use tools already included with Red Hat OpenShift, such as OpenShift Pipelines, is another advantage of running OpenStack control planes on OpenShift, opening the possibility of managing all applications used to support IT infrastructure using the same set of Kubernetes primitives and workflows.

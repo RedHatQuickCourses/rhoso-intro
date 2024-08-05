@@ -4,8 +4,6 @@
 
 _Estimated reading time: *{time_estimate} minutes*._
 
-WARNING: Pending review.
-
 == Red Hat OpenStack Operations
 
 1. True or false: Red Hat OpenStack Services on OpenShift enables management of applications running on OpenShift Virtualization VMs using OpenStack APIs.
@@ -38,7 +36,7 @@ _Correct: OpenStack Operators manage application VMs using OpenStack APIs._
 _Correct: OpenStack Administrators are required to manage OpenStack services using Kubernetes APIs and custom resources, and that requires access to OpenShift clusters._
 
 * [ ] False +
-_Incorrect: OpenStack Administrators cannot manage OpenStack services without access and visibility of their contrainers running on OpenShift._
+_Incorrect: OpenStack Administrators cannot manage OpenStack services without access and visibility of their containers running on OpenShift._
 
 5. True or False: An OpenStack Operator uses the Horizon dashboard for all daily tasks.
 
@@ -46,7 +44,7 @@ _Incorrect: OpenStack Administrators cannot manage OpenStack services without ac
 _Incorrect: OpenStack Operators can perform most, but not all, of their tasks using the Horizon web UI._
 
 * [x] *False* +
-_Correct: Sometimes an OpenStack operator needs to use the OpenStack client or some other tool which provides access to OpenStack APIs not availabe through Horizon._
+_Correct: Sometimes an OpenStack operator needs to use the OpenStack client or some other tool which provides access to OpenStack APIs not available through Horizon._
 
 6. An OpenStack Operator focuses on OpenStack API resources that affect individual application workloads, as opposed to OpenStack API resources which affect an entire cluster.
 

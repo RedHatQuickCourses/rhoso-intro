@@ -8,13 +8,11 @@ Objective::
 
 Identify components of the Red Hat OpenStack on OpenShift product and how a Red Hat OpenStack cluster runs application VMs.
 
-WARNING: Pending review.
-
 == Questions
 
 // This quiz uses things a learner might know from his previous experience with RHEL or OpenStack as *distractors*, but does NOT rely on any previous knowledge. Learners new to OpenStack and OpenShift should be able to answer all questions from only the contents on the previouis lecture.
 
-1. Which of the following components are either included or required by Red Hat OpenStack Services on OpenShift?
+1. Which of the following components is either included or required by Red Hat OpenStack Services on OpenShift?
 
 * [ ] Kernel-based Virtual Machine (KVM)
 * [ ] Red Hat Enterprise Linux (RHEL)
@@ -30,7 +28,7 @@ WARNING: Pending review.
 * [ ] Extended Berkeley Packet Filter (eBPF)
 * [ ] A third-party vendor SDN is required by Red Hat OpenStack.
 
-3. Where does an OpenStack on OpenShift cluster runs application workloads?
+3. Where does an OpenStack on OpenShift cluster run application workloads?
 
 * [ ] On any node of the OpenStack cluster.
 * [ ] On any node of either the OpenStack cluster or its OpenShift cluster.
@@ -38,9 +36,9 @@ WARNING: Pending review.
 * [ ] On external RHEL servers managed by the OpenStack cluster.
 * [ ] On containers managed by its OpenShift cluster.
 
-4. How does Red Hat OpenStack Services on OpenShift ensures that OpenStack control planes are reliable and scalable?
+4. How does Red Hat OpenStack Services on OpenShift ensure that OpenStack control planes are reliable and scalable?
 
-* [ ] By runnig control plane servers as VMs using a standalone hyperviusor such as RHV.
+* [ ] By runnig control plane servers as VMs using a standalone hypervisor such as RHV.
 * [ ] By running control plane servers as systemd services managed by RHEL pacemaker.
 * [ ] By running control plane servers as podman containers managed by RHEL pacemaker.
 * [ ] By running control plane servers as VMs using a minimal OpenStack cluster known as undercloud.
