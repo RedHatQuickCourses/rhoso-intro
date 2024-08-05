@@ -4,31 +4,29 @@
 
 _Estimated reading time: *{time_estimate} minutes*._
 
-WARNING: Pending Review.
-
 == Multi-Tenancy and Topology in Red Hat OpenStack
 
-1. An OpenStack Administrator needs to support, on the same cluster, two business units which used to be independent companies, before a merger, and must continue using each their legacy enterprise authentication system and each have their own team of OpenStack Operators. How can OpenStack support this requirement?
+1. An OpenStack Administrator needs to support, on the same cluster, two business units that used to be independent companies, before a merger, and must continue using each their legacy enterprise authentication system and each have their own team of OpenStack Operators. How can OpenStack support this requirement?
 
-* [x] *Each business unit requires their own domain.* +
+* [x] *Each business unit requires its own domain.* +
 _Correct: Each domain can refer to different enterprise authentication systems and manage role assignment independent of other domains._
 
-* [ ] Each business unit requires their own projects. +
+* [ ] Each business unit requires its own projects. +
 _Incorrect: Projects cannot refer to external authentication backends, but users from multiple domains can be granted access to a project, so this is not entirely incorrect, just not sufficient._
 
-* [ ] Each business unit requires their own cluster. +
-_Incorrect: OpenStack provides features that enable muiltiple tenant sharing on a single cluster._
+* [ ] Each business unit requires its own cluster. +
+_Incorrect: OpenStack provides features that enable multiple tenant sharing on a single cluster._
 
-* [ ] Each business unit requires their own region. +
-_Incorrect: OpenStack provides features that enable muiltiple tenant sharing on a single cluster, and regions are their own clusters._
+* [ ] Each business unit requires its own region. +
+_Incorrect: OpenStack provides features that enable multiple tenant sharing on a single cluster, and regions are their own clusters._
 
-* [ ] Each business unit requires their own AZ. +
+* [ ] Each business unit requires its own AZ. +
 _Incorrect: Workloads from any project, and users from any domain, can use compute resources from any AZ._
 
-* [ ] Each business unit requires their own host aggregate. +
-_Incorrect: Workloads from any project, and users from any domain, can use compute resources from any host aggregate. Restricting visibility of server flavors to indirectly restrict visibility of compute nodes would be an ineeficient way of meeting the requirement and more labor intensive._
+* [ ] Each business unit requires its own host aggregate. +
+_Incorrect: Workloads from any project, and users from any domain, can use compute resources from any host aggregate. Restricting visibility of server flavors to indirectly restrict visibility of compute nodes would be an inefficient way of meeting the requirement and more labor intensive._
 
-* [ ] Each business unit requires their own cell.
+* [ ] Each business unit requires its own cell.
 _Incorrect: Workloads from any project, and users from any domain, can use compute resources from any compute cell._
 
 2. An OpenStack Operator needs to configure a multi-instance workload to be resilient against physical failures of network switches and uninterrupted power supplies (UPS) which are dedicated to a server rack. The data center was designed with multiple server racks, and each rack has its dedicated network switch and UPS devices. Assuming that an Administrator already configured the proper tenancy and topology mechanism, how would the operator configure its workloads?
@@ -49,12 +47,12 @@ _Incorrect: It would be overkill configuring multiple OpenStack clusters, as dif
 _Correct: Availability Zones (AZs) are the common topology mechanism for representing failure domains such as server racks in the scenario._
 
 * [ ] By spreading server instances over multiple host aggregates. +
-_Incorrect: Operators cannot directly match workloads to host aggregates, like they can do with regions and AZs._
+_Incorrect: Operators cannot directly match workloads to host aggregates like they can do with regions and AZs._
 
 * [ ] By spreading server instances over multiple cells.
 _Incorrect: Operators cannot directly match workloads to compute cells, like they can do with regions and AZs._
 
-3. An OpenStack Operator has the member role in a project and found that the team of developers working on that project is very knowleadgeable about OpenStack and wishes to allow the team more authonomy managing API resources for their application. Can that operator grant those developers permission to manage API resources on their project?
+3. An OpenStack Operator has the member role in a project and found that the team of developers working on that project is very knowledgeable about OpenStack and wishes to allow the team more autonomy managing API resources for their application. Can that operator grant those developers permission to manage API resources on their project?
 
 * [ ] Yes +
 _Incorrect: The member role does not enable a user to assign roles and grant permissions to other users._
@@ -70,7 +68,7 @@ _Incorrect: Setting quotas in a project is the correct approach but API resource
 * [x] *No* +
 _Correct: An API resource quota on the number of server instances is not sufficient because each server could use multiple vCPUs and, without a compute resource quota on that, a small number of server instances could use all CPU cores in all compute nodes of the cluster._
 
-5. An OpenStack Administrator created two host aggregates: one for physical machines with GPUs and another for physical machines with very large memory. Some machines have both GPUs and very large memory, should the administrator create a third host aggregate for those machines?
+5. An OpenStack Administrator created two host aggregates: one for physical machines with GPUs and another for physical machines with large memory. Some machines have both GPUs and large memory, should the administrator create a third host aggregate for those machines?
 
 * [ ] Yes +
 _Incorrect: Nothing prevents administrators from creating such host aggregate but it is not necessary._

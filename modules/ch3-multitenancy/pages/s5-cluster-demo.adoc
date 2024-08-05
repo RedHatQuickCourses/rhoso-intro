@@ -4,15 +4,14 @@ Objective::
 
 Demonstrate how a larger cluster looks from the perspectives of Operators and Administrators.
 
-WARNING: Work In Progress
-
 == Recording
 
 This demonstration will be recorded and the video will be linked here, so learners can watch the video and optionally try to replicate it by themselves.
+// Did we link the video that is mentioned above?
 
 == Environment
 
-There is no demo environment for now. Presenters must be able to provide their own environment, which would ideally be a larger OpenStack cluster than previous demos. Besides domains, projects, server flavors, floating ips, tenant networks, and predeployed worloads, it requires multiple AZs and host aggregates, thus a larger number of compute nodes. No need to provide multiple regions and additional cells beyond cell0 and cell1, but if such an environment is available for recording the video, it would be even beter.
+There is no demo environment for now. Presenters must be able to provide their own environment, which would ideally be a larger OpenStack cluster than previous demos. Besides domains, projects, server flavors, floating IPs, tenant networks, and pre-deploy workloads, it requires multiple AZs and host aggregates, thus a larger number of compute nodes. No need to provide multiple regions and additional cells beyond cell0 and cell1, but if such an environment is available for recording the video, it would be even better.
 
 The demo environment must also provide a user workstation preconfigured with the OpenStack client and a web browser to access the Horizon dashboard.
 

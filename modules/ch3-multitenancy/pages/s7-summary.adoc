@@ -12,9 +12,9 @@ In this chapter, you learned:
 
 * OpenStack clusters can be grouped, each as a region, in a larger private cloud.
 
-* OpenStack clusters can be partitioned into availability zones (AZs) to manage reliability and resilience of workloads from infrastructure issues.
+* OpenStack clusters can be partitioned into availability zones (AZs) to manage the reliability and resilience of workloads from infrastructure issues.
 
 * OpenStack compute nodes can be members of multiple host aggregates to schedule workloads to physical servers having better performance or cost for each workload.
 
-* OpenStack compute nodes can also be partitioned in cells, independent of AZs and host aggregates, to manage scalability and resilience of OpenStack services themselves.
+* OpenStack compute nodes can also be partitioned in cells, independent of AZs and host aggregates, to manage the scalability and resilience of OpenStack services themselves.
 
