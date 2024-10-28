@@ -48,8 +48,8 @@ Most OpenStack services manage multiple types of resources and the name of a res
 The following are some of the resource types recognized by the OpenStack client. Later in the learning journey, you will learn what these resource types represent and which actions you can perform on them: 
 
 * `availability zone`
-* `console URL`
-* `floating IP`
+* `console url`
+* `floating ip`
 * `network`
 * `volume`
 * `server`
@@ -70,7 +70,7 @@ The OpenStack client defines the meaning of some standard actions to enforce con
 The previous list might seem that all or most actions are single words, but any resource can define a non-standard action composed of multiple words. Besides, single-word actions are usually extended with a resource type to produce a multiple-word action, for example:
 
 * `add volume`
-* `remove floating IP`
+* `remove floating ip`
 
 The _arguments_ to an _action_ can be resource names, resource identifiers, or command-line options using the https://www.man7.org/linux/man-pages/man1/getopt.1.html[GNU GetOps] conventions. When there are multiple arguments, order does not matter, but the value of a command-line option must follow its option, separated by either a space or an equals sign (=).
 
