@@ -252,18 +252,6 @@
 <div class="paragraph">
 <p><em>Estimated reading time: <strong>5 minutes</strong>.</em></p>
 </div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-Pending Review.
-</td>
-</tr>
-</table>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -272,35 +260,35 @@ Pending Review.
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>An OpenStack Administrator needs to support, on the same cluster, two business units which used to be independent companies, before a merger, and must continue using each their legacy enterprise authentication system and each have their own team of OpenStack Operators. How can OpenStack support this requirement?</p>
+<p>An OpenStack Administrator needs to support, on the same cluster, two business units that used to be independent companies, before a merger, and must continue using each their legacy enterprise authentication system and each have their own team of OpenStack Operators. How can OpenStack support this requirement?</p>
 <div class="ulist checklist">
 <ul class="checklist">
 <li>
-<p><i class="fa fa-check-square-o"></i> <strong>Each business unit requires their own domain.</strong><br>
+<p><i class="fa fa-check-square-o"></i> <strong>Each business unit requires its own domain.</strong><br>
 <em>Correct: Each domain can refer to different enterprise authentication systems and manage role assignment independent of other domains.</em></p>
 </li>
 <li>
-<p><i class="fa fa-square-o"></i> Each business unit requires their own projects.<br>
+<p><i class="fa fa-square-o"></i> Each business unit requires its own projects.<br>
 <em>Incorrect: Projects cannot refer to external authentication backends, but users from multiple domains can be granted access to a project, so this is not entirely incorrect, just not sufficient.</em></p>
 </li>
 <li>
-<p><i class="fa fa-square-o"></i> Each business unit requires their own cluster.<br>
-<em>Incorrect: OpenStack provides features that enable muiltiple tenant sharing on a single cluster.</em></p>
+<p><i class="fa fa-square-o"></i> Each business unit requires its own cluster.<br>
+<em>Incorrect: OpenStack provides features that enable multiple tenant sharing on a single cluster.</em></p>
 </li>
 <li>
-<p><i class="fa fa-square-o"></i> Each business unit requires their own region.<br>
-<em>Incorrect: OpenStack provides features that enable muiltiple tenant sharing on a single cluster, and regions are their own clusters.</em></p>
+<p><i class="fa fa-square-o"></i> Each business unit requires its own region.<br>
+<em>Incorrect: OpenStack provides features that enable multiple tenant sharing on a single cluster, and regions are their own clusters.</em></p>
 </li>
 <li>
-<p><i class="fa fa-square-o"></i> Each business unit requires their own AZ.<br>
+<p><i class="fa fa-square-o"></i> Each business unit requires its own AZ.<br>
 <em>Incorrect: Workloads from any project, and users from any domain, can use compute resources from any AZ.</em></p>
 </li>
 <li>
-<p><i class="fa fa-square-o"></i> Each business unit requires their own host aggregate.<br>
-<em>Incorrect: Workloads from any project, and users from any domain, can use compute resources from any host aggregate. Restricting visibility of server flavors to indirectly restrict visibility of compute nodes would be an ineeficient way of meeting the requirement and more labor intensive.</em></p>
+<p><i class="fa fa-square-o"></i> Each business unit requires its own host aggregate.<br>
+<em>Incorrect: Workloads from any project, and users from any domain, can use compute resources from any host aggregate. Restricting visibility of server flavors to indirectly restrict visibility of compute nodes would be an inefficient way of meeting the requirement and more labor intensive.</em></p>
 </li>
 <li>
-<p><i class="fa fa-square-o"></i> Each business unit requires their own cell.
+<p><i class="fa fa-square-o"></i> Each business unit requires its own cell.
 <em>Incorrect: Workloads from any project, and users from any domain, can use compute resources from any compute cell.</em></p>
 </li>
 </ul>
@@ -332,7 +320,7 @@ Pending Review.
 </li>
 <li>
 <p><i class="fa fa-square-o"></i> By spreading server instances over multiple host aggregates.<br>
-<em>Incorrect: Operators cannot directly match workloads to host aggregates, like they can do with regions and AZs.</em></p>
+<em>Incorrect: Operators cannot directly match workloads to host aggregates like they can do with regions and AZs.</em></p>
 </li>
 <li>
 <p><i class="fa fa-square-o"></i> By spreading server instances over multiple cells.
@@ -342,7 +330,7 @@ Pending Review.
 </div>
 </li>
 <li>
-<p>An OpenStack Operator has the member role in a project and found that the team of developers working on that project is very knowleadgeable about OpenStack and wishes to allow the team more authonomy managing API resources for their application. Can that operator grant those developers permission to manage API resources on their project?</p>
+<p>An OpenStack Operator has the member role in a project and found that the team of developers working on that project is very knowledgeable about OpenStack and wishes to allow the team more autonomy managing API resources for their application. Can that operator grant those developers permission to manage API resources on their project?</p>
 <div class="ulist checklist">
 <ul class="checklist">
 <li>
@@ -372,7 +360,7 @@ Pending Review.
 </div>
 </li>
 <li>
-<p>An OpenStack Administrator created two host aggregates: one for physical machines with GPUs and another for physical machines with very large memory. Some machines have both GPUs and very large memory, should the administrator create a third host aggregate for those machines?</p>
+<p>An OpenStack Administrator created two host aggregates: one for physical machines with GPUs and another for physical machines with large memory. Some machines have both GPUs and large memory, should the administrator create a third host aggregate for those machines?</p>
 <div class="ulist checklist">
 <ul class="checklist">
 <li>

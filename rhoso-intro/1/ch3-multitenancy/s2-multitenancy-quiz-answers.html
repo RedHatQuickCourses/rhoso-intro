@@ -252,18 +252,6 @@
 <div class="paragraph">
 <p><em>Estimated reading time: <strong>6 minutes</strong>.</em></p>
 </div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-Pending Review.
-</td>
-</tr>
-</table>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -272,7 +260,7 @@ Pending Review.
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>An OpenStack Administator needs to give a junior OpenStack Operator access to manage API resources from a single application. That operator will work closely with the application&#8217;s development team and should not use too much compute capacity to avoid impact on other application teams sharing the cluster. Which of the following is the minimum access level the administrator should grant to that operator?</p>
+<p>An OpenStack Administrator needs to give a junior OpenStack Operator access to manage API resources from a single application. That operator will work closely with the application&#8217;s development team and should not use too much compute capacity to avoid impact on other application teams sharing the cluster. Which of the following is the minimum access level the administrator should grant to that operator?</p>
 <div class="ulist checklist">
 <ul class="checklist">
 <li>
@@ -293,7 +281,7 @@ Pending Review.
 </li>
 <li>
 <p><i class="fa fa-square-o"></i> Member role in the project&#8217;s domain<br>
-<em>Incorrect: Member in a domain can potentially affect multiple projects, from different application teams.</em></p>
+<em>Incorrect: Members in a domain can potentially affect multiple projects, from different application teams.</em></p>
 </li>
 <li>
 <p><i class="fa fa-square-o"></i> View role in the project&#8217;s domain
@@ -303,7 +291,7 @@ Pending Review.
 </div>
 </li>
 <li>
-<p>An OpenStack Administator wants to delegate administration of a group of applications, that belong to the same business unit, to a senior OpenStack Operator. That senior operator will be responsible for a team of junior OpenStack operators dedicated to supporting that business unit and should have autonomy to manage his operators team. Which of the following is the minimum access level the administrator should grant to that operator?</p>
+<p>An OpenStack Administrator wants to delegate administration of a group of applications, that belong to the same business unit, to a senior OpenStack Operator. That senior operator will be responsible for a team of junior OpenStack operators dedicated to supporting that business unit and should have autonomy to manage his operators team. Which of the following is the minimum access level the administrator should grant to that operator?</p>
 <div class="ulist checklist">
 <ul class="checklist">
 <li>
@@ -312,11 +300,11 @@ Pending Review.
 </li>
 <li>
 <p><i class="fa fa-square-o"></i> Member role all projects from that business unit<br>
-<em>Incorrect: Member does not allow granting permissions to junior operators form the team.</em></p>
+<em>Incorrect: Member does not allow granting permissions to junior operators from the team.</em></p>
 </li>
 <li>
 <p><i class="fa fa-square-o"></i> View role in all projects from that business unit<br>
-<em>Incorrect: View does not allow granting permissions to junior operators form the team.</em></p>
+<em>Incorrect: View does not allow granting permissions to junior operators from the team.</em></p>
 </li>
 <li>
 <p><i class="fa fa-check-square-o"></i> <strong>Admin role in the domain which represents that business unit</strong><br>
@@ -324,11 +312,11 @@ Pending Review.
 </li>
 <li>
 <p><i class="fa fa-square-o"></i> Member role in the domain which represents that business unit<br>
-<em>Incorrect: Member does not allow granting permissions to junior operators form the team.</em></p>
+<em>Incorrect: Member does not allow granting permissions to junior operators from the team.</em></p>
 </li>
 <li>
 <p><i class="fa fa-square-o"></i> View role in the domain which represents that business unit<br>
-<em>Incorrect: View does not allow granting permissions to junior operators form the team.</em></p>
+<em>Incorrect: View does not allow granting permissions to junior operators from the team.</em></p>
 </li>
 </ul>
 </div>
@@ -347,7 +335,7 @@ Pending Review.
 </li>
 <li>
 <p><i class="fa fa-square-o"></i> Each business unit belongs to a different project, and each project grants access to users based on their validating, or originating, enterprise authentication systems.<br>
-<em>Incorrect: Keystone does not forwards to other OpenStack services a name or id of the originating authentication system. They must be represented by different user domains.</em></p>
+<em>Incorrect: Keystone does not forward to other OpenStack services a name or ID of the originating authentication system. They must be represented by different user domains.</em></p>
 </li>
 <li>
 <p><i class="fa fa-square-o"></i> Each business unit requires their own OpenStack cluster because it is not possible to configure multiple authentication backends for the same cluster.<br>
@@ -361,7 +349,7 @@ Pending Review.
 <div class="ulist checklist">
 <ul class="checklist">
 <li>
-<p><i class="fa fa-square-o"></i> Create an API resoure quota that limits the number of projects a team can create in the cluster.<br>
+<p><i class="fa fa-square-o"></i> Create an API resource quota that limits the number of projects a team can create in the cluster.<br>
 <em>Incorrect: API resource quotas cannot be set at the domain level, they are always per-project.</em></p>
 </li>
 <li>
@@ -374,7 +362,7 @@ Pending Review.
 </li>
 <li>
 <p><i class="fa fa-square-o"></i> Create a compute resource quota that limits the number of vCPUs from all server instances in each project.<br>
-<em>Incorrect: A compute resource quota affects the ability to consume resources from already running server instances, but does not prevent creation of new server instances. A quota on the total quantity of vCPUs might work if the quota times the number of projects does not exceed the total number of CPU cores in the cluster times the overcommit ratio of the cluster, but because it is a compute resource quota, it might lead to low utilization of the cluster because of too many iddle applications. Such a quota would assume applications always use CPU available to them and are not bursty.</em></p>
+<em>Incorrect: A compute resource quota affects the ability to consume resources from already running server instances, but does not prevent creation of new server instances. A quota on the total quantity of vCPUs might work if the quota times the number of projects does not exceed the total number of CPU cores in the cluster times the overcommit ratio of the cluster, but because it is a compute resource quota, it might lead to low utilization of the cluster because of too many idle applications. Such a quota would assume applications always use CPU available to them and are not bursty.</em></p>
 </li>
 </ul>
 </div>

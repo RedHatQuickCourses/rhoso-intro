@@ -252,18 +252,6 @@
 <div class="paragraph">
 <p><em>Estimated reading time: <strong>4 minutes</strong>.</em></p>
 </div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-Pending Review.
-</td>
-</tr>
-</table>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -304,11 +292,11 @@ Pending Review.
 <ul class="checklist">
 <li>
 <p><i class="fa fa-square-o"></i> Compute nodes with the accelerator card belong to a region.<br>
-<em>Incorrect: Seggregating those compute nodes to their own OpenStack clusters complicates communication between different kinds of server instances of the applications.</em></p>
+<em>Incorrect: Segregating those compute nodes to their own OpenStack clusters complicates communication between different kinds of server instances of the applications.</em></p>
 </li>
 <li>
 <p><i class="fa fa-square-o"></i> Compute nodes with the accelerator card belong to an AZ.<br>
-<em>Incorrect: hardware capabilities of compute node to not configure a failure domain.</em></p>
+<em>Incorrect: hardware capabilities of compute nodes to not configure a failure domain.</em></p>
 </li>
 <li>
 <p><i class="fa fa-check-square-o"></i> <strong>Compute nodes with the accelerator card belong to a host aggregate.</strong><br>
@@ -316,13 +304,13 @@ Pending Review.
 </li>
 <li>
 <p><i class="fa fa-square-o"></i> Compute nodes with the accelerator card belong to a cell.
-<em>Incorrect: hardware capabilities of compute node to not configure a compute cell.</em></p>
+<em>Incorrect: hardware capabilities of compute nodes to not configure a compute cell.</em></p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>An OpenStack Administrator configured an cluster with four kinds of physical machines: machines with GPUs, machines with high CPU core count, machines with both GPUs and high core count, and finally machines with neither a CPU nor a high core count. What an OpenStack Operator should do to ensure that a workload which requires both GPUs and many CPU cores runs in a physical machine of the matching kind?</p>
+<p>An OpenStack Administrator configured a cluster with four kinds of physical machines: machines with GPUs, machines with high CPU core count, machines with both GPUs and high core count, and finally machines with neither a CPU nor a high core count. What should an OpenStack Operator do to ensure that a workload which requires both GPUs and many CPU cores runs in a physical machine of the matching kind?</p>
 <div class="ulist checklist">
 <ul class="checklist">
 <li>
@@ -339,7 +327,7 @@ Pending Review.
 </li>
 <li>
 <p><i class="fa fa-square-o"></i> Use a server flavor which maps to a host aggregate of compute nodes with both GPUs and high core count.<br>
-<em>Incorrect: There is no need to create a host aggregate for the intersection of different hardware capabilies because a compute node can belong to multiple host aggregates.</em></p>
+<em>Incorrect: There is no need to create a host aggregate for the intersection of different hardware capabilities because a compute node can belong to multiple host aggregates.</em></p>
 </li>
 <li>
 <p><i class="fa fa-square-o"></i> Use a server flavor which maps to a cell of compute nodes with GPUs and also to another cell of compute nodes with high core count.<br>
