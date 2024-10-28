@@ -4,11 +4,10 @@
 
 _Estimated reading time: *{time_estimate} minutes*._
 
-WARNING: Pending Review.
 
 == Red Hat OpenStack Multi-Tenancy
 
-1. An OpenStack Administator needs to give a junior OpenStack Operator access to manage API resources from a single application. That operator will work closely with the application's development team and should not use too much compute capacity to avoid impact on other application teams sharing the cluster. Which of the following is the minimum access level the administrator should grant to that operator?
+1. An OpenStack Administrator needs to give a junior OpenStack Operator access to manage API resources from a single application. That operator will work closely with the application's development team and should not use too much compute capacity to avoid impact on other application teams sharing the cluster. Which of the following is the minimum access level the administrator should grant to that operator?
 
 * [ ] Admin role in the project +
 _Incorrect: Admin can set quotas and permissions at the project level, which could indirectly impact other application teams._
@@ -23,30 +22,30 @@ _Incorrect: View cannot create or change API resources inside a project_.
 _Incorrect: Admin in a domain can potentially affect multiple projects, from different application teams._
 
 * [ ] Member role in the project's domain +
-_Incorrect: Member in a domain can potentially affect multiple projects, from different application teams._
+_Incorrect: Members in a domain can potentially affect multiple projects, from different application teams._
 
 * [ ] View role in the project's domain
 _Incorrect: View cannot create or change API resources inside any project from a domain_.
 
-2. An OpenStack Administator wants to delegate administration of a group of applications, that belong to the same business unit, to a senior OpenStack Operator. That senior operator will be responsible for a team of junior OpenStack operators dedicated to supporting that business unit and should have autonomy to manage his operators team. Which of the following is the minimum access level the administrator should grant to that operator?
+2. An OpenStack Administrator wants to delegate administration of a group of applications, that belong to the same business unit, to a senior OpenStack Operator. That senior operator will be responsible for a team of junior OpenStack operators dedicated to supporting that business unit and should have autonomy to manage his operators team. Which of the following is the minimum access level the administrator should grant to that operator?
 
 * [x] *Admin role in all projects from that business unit* +
 _Correct: The senior operator needs Admin to grant permissions to the junior operators from the team. This is probably more work than organizing all projects in a domain for the business unit but it works fine._
 
 * [ ] Member role all projects from that business unit +
-_Incorrect: Member does not allow granting permissions to junior operators form the team._
+_Incorrect: Member does not allow granting permissions to junior operators from the team._
 
 * [ ] View role in all projects from that business unit +
-_Incorrect: View does not allow granting permissions to junior operators form the team._
+_Incorrect: View does not allow granting permissions to junior operators from the team._
 
 * [x] *Admin role in the domain which represents that business unit* +
 _Correct: The senior operator needs Admin to grant permissions to the junior operators from the team. This is probably less work than granting admin on individual projects, especially if there are too many projects, but all projects must be created as part of the correct domain._
 
 * [ ] Member role in the domain which represents that business unit +
-_Incorrect: Member does not allow granting permissions to junior operators form the team._
+_Incorrect: Member does not allow granting permissions to junior operators from the team._
 
 * [ ] View role in the domain which represents that business unit +
-_Incorrect: View does not allow granting permissions to junior operators form the team._
+_Incorrect: View does not allow granting permissions to junior operators from the team._
 
 3. An OpenStack Administrator needs to support, on the same cluster, two business units which used to have autonomy on technology decisions and ended up implementing each their own enterprise authentication system. OpenStack Operators from each of those business units need to manage their own applications and use authentication credentials managed by their respective enterprise authentication systems. How can OpenStack support this requirement?
 
@@ -57,14 +56,14 @@ _Correct: authentication domains enable configuring a cluster for different ente
 _Incorrect: authentication backends are configured at the domain level, not at the project level._
 
 * [ ] Each business unit belongs to a different project, and each project grants access to users based on their validating, or originating, enterprise authentication systems. +
-_Incorrect: Keystone does not forwards to other OpenStack services a name or id of the originating authentication system. They must be represented by different user domains._
+_Incorrect: Keystone does not forward to other OpenStack services a name or ID of the originating authentication system. They must be represented by different user domains._
 
 * [ ] Each business unit requires their own OpenStack cluster because it is not possible to configure multiple authentication backends for the same cluster. +
 _Incorrect: Each OpenStack domain can have its own authentication backend._
 
 4. An OpenStack Administrator team is concerned about a development team whose members have direct access to an OpenStack cluster and occasionally use all of the cluster compute capacity, preventing other application teams from creating new server instances and other API resources on their projects. All teams need the ability of creating a few server instances for testing purposes, and some do that from automated CI/CD pipelines. Which of the following actions should prevent that team from impacting other developer teams sharing the cluster?
 
-* [ ] Create an API resoure quota that limits the number of projects a team can create in the cluster. +
+* [ ] Create an API resource quota that limits the number of projects a team can create in the cluster. +
 _Incorrect: API resource quotas cannot be set at the domain level, they are always per-project._
 
 * [x] *Create an API resource quota that limits the number of server instances a team can create in each project.* +
@@ -74,4 +73,4 @@ _Correct: As long as the number of projects times the quota from each project do
 _Incorrect: compute resource quotas cannot be set at the domain level, they are always per-project._
 
 * [ ] Create a compute resource quota that limits the number of vCPUs from all server instances in each project. +
-_Incorrect: A compute resource quota affects the ability to consume resources from already running server instances, but does not prevent creation of new server instances. A quota on the total quantity of vCPUs might work if the quota times the number of projects does not exceed the total number of CPU cores in the cluster times the overcommit ratio of the cluster, but because it is a compute resource quota, it might lead to low utilization of the cluster because of too many iddle applications. Such a quota would assume applications always use CPU available to them and are not bursty._
+_Incorrect: A compute resource quota affects the ability to consume resources from already running server instances, but does not prevent creation of new server instances. A quota on the total quantity of vCPUs might work if the quota times the number of projects does not exceed the total number of CPU cores in the cluster times the overcommit ratio of the cluster, but because it is a compute resource quota, it might lead to low utilization of the cluster because of too many idle applications. Such a quota would assume applications always use CPU available to them and are not bursty._

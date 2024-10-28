@@ -4,10 +4,8 @@ Goal::
 
 Describe how OpenStack supports multi-tenancy and enables multiple applications and teams to share a cluster.
 
-WARNING: Work in Progress
-
 == Introduction
 
-This is the final chapter of the Introduction to OpenStack course and introduces the features that enable large OpenStack clusters, with teams of Administrators and Operators, hosting multiple workloads, and potentially requiring heterogeneous compute nodes or just large control planes.
+This is the final chapter of the Introduction to OpenStack course and introduces the features that enable large OpenStack clusters, with teams of Administrators and Operators, to host multiple workloads, and potentially require heterogeneous compute nodes or just large control planes.
 
 This chapter also introduces the features that enable OpenStack Administrators to protect clusters from applications and OpenStack Operators, and also enable OpenStack Operators and applications to be insulated from each other.
