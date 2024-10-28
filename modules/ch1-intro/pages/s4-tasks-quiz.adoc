@@ -8,8 +8,6 @@ Objective::
 
 Relate tasks to OpenStack administrators, operators, and other IT roles.
 
-WARNING: Pending review.
-
 
 == Questions
 
@@ -33,7 +31,7 @@ WARNING: Pending review.
 * [ ] Installing RPM packages inside a RHEL VM.
 * [ ] Attaching a VM to a different virtual network.
 * [ ] Upgrading RHEL to a newer minor release inside a VM.
-* [ ] Configuring IP routing rules for a virtual networks.
+* [ ] Configuring IP routing rules for a virtual network.
 * [ ] Configuring firewalld rules inside a RHEL VM.
 
 2. Which of the following tasks are more likely to be performed by an OpenStack Operator, as opposed to an OpenStack Administrator?
@@ -49,12 +47,12 @@ WARNING: Pending review.
 * [ ] Adding new RHEL servers as compute nodes to an OpenStack cluster.
 * [ ] Configuring VLANs at the switch fabric.
 * [ ] Configuring VLANs at the switch fabric to enable compute nodes to connect to those VLANs.
-* [ ] Installing RPM packages and configure physical RHEL servers to be managed by OpenStack control planes.
+* [ ] Installing RPM packages and configuring physical RHEL servers to be managed by OpenStack control planes.
 * [ ] Installing OpenStack services on OpenShift clusters.
 
 4. Which of the following tasks are likely to NOT be required from a Red Hat OpenStack on OpenShift Administrator, as opposed to the administrator of an OpenStack cluster built from upstream binaries or source code?
 
 * [ ] Configuring operating system images to boot new server instance VMs.
-* [ ] Configuring multiple instances of OpenStack services, one active and another passive, using pacemaker or another clustering middleware.
+* [ ] Configuring multiple instances of OpenStack services, one active and another passive, using a pacemaker or another clustering middleware.
 * [ ] Installing an operating system on compute nodes, such as RHEL.
 * [ ] Selecting an installation method for OpenStack services on control plane servers, such as from precompiled binaries, operating system packages, or container images.
