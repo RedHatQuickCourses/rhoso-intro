@@ -4,46 +4,44 @@
 
 _Estimated reading time: *{time_estimate} minutes*._
 
-WARNING: Pending Review
-
 == OpenStack Services and Cloud-Native Applications
 
-1. Which of the following OpenStack services would be useful for a Customer Relationship Management system (CRM) which stores data in a relational database that runs as another server instance in the same OpenStack cluster?
+1. Which of the following OpenStack services would be useful for a Customer Relationship Management system (CRM) that stores data in a relational database that runs as another server instance in the same OpenStack cluster?
 
 * [ ] Shared Filesystems (Manila) +
-_Incorrect: There is no requirement of acessing shared filesystems._
+_Incorrect: There is no requirement of accessing shared filesystems._
 
 * [ ] Object Store (Swift) +
-_Incorrect: There is no requirement of acessing remote objects._
+_Incorrect: There is no requirement of accessing remote objects._
 
 * [ ] Load Balancer (Octavia) +
 _Incorrect: There is no requirement of running multiple instances of the CRM application and other high-availability requirements of the application._
 
 * [ ] DNS Service (Designate) +
-_Incorrect: There is no requiremente for dynamic DNS for the application._
+_Incorrect: There is no requirement for dynamic DNS for the application._
 
 * [x] *Orchestration (Heat)* +
-_Correct: The CRM application, its database, volumes, and networking resources could be defined by a Heat tempalte for ease of deployment and upgrading._
+_Correct: The CRM application, its database, volumes, and networking resources could be defined by a Heat template for ease of deployment and upgrading._
 
 * [ ] Placement service (Placement) +
-_Incorrect: There is no requirement for special scheduling of application VMs nor of special resource classes. You could argue that all applications use Plamenent indirectly, though Nova, but them it is invisible for the application team and its OpenStack Operators._
+_Incorrect: There is no requirement for special scheduling of application VMs nor of special resource classes. You could argue that all applications use Plamenent indirectly, through Nova, but then it is invisible to the application team and its OpenStack Operators._
 
 * [x] *Key Management (Barbican)* +
-_Correct: It is recommended that applications do not store access credentails such as tokens and certificates on their VM images nor data volumes, but fech those credentials from Barbican either on demand or with a custom initialization script._
+_Correct: It is recommended that applications do not store access credentials such as tokens and certificates on their VM images or data volumes, but fetch those credentials from Barbican either on demand or with a custom initialization script._
 
-2. Which of the following OpenStack services would be useful for a mobile Customer Support Management system which includes a scalable REST API layer designed to run more or less server instances according to load from end-users? The Customer Support Management system enables customers to upload photos as objects, directly from their cell phones, to help with troubleshooting issues.
+2. Which of the following OpenStack services would be useful for a mobile Customer Support Management system that includes a scalable REST API layer designed to run more or less server instances according to load from end-users? The Customer Support Management system enables customers to upload photos as objects, directly from their cell phones, to help with troubleshooting issues.
 
 * [ ] Shared Filesystems (Manila) +
-_Incorrect: There is no requirement of acessing shared filesystems._
+_Incorrect: There is no requirement of accessing shared filesystems._
 
 * [x] *Object Store (Swift)* +
 _Correct: The requirements ask for storage of objects for pictures uploaded by end-users._
 
 * [x] *Load Balancer (Octavia)* +
-_Correct: You need a load balancer to implement autoscaling of server instances and enable a single API entry point for the mobile applicaiton._
+_Correct: You need a load balancer to implement autoscaling of server instances and enable a single API entry point for the mobile application._
 
 * [ ] DNS Service (Designate) +
-_Incorrect: There is no requiremente for dynamic DNS for the application._
+_Incorrect: There is no requirement for dynamic DNS for the application._
 
 * [x] *Orchestration (Heat)* +
 _Correct: The higher complexity of this application, compared to the static nature of the previous one, makes it even more advisable to use Heat templates to manage server instances, load balancers, and other application resources._
@@ -52,27 +50,27 @@ _Correct: The higher complexity of this application, compared to the static natu
 _Incorrect: There is no requirement for special scheduling of application VMs nor of special resource classes._
 
 * [x] *Key Management (Barbican)* +
-_Correct: The mobile application would get short-lived access credentials to Swift for uploading images to object storage, either by invoking barbican directly, or indirectly by the REST API layer._
+_Correct: The mobile application would get short-lived access credentials to Swift for uploading images to object storage, either by invoking Barbican directly, or indirectly by the REST API layer._
 
-3. Which of the following OpenStack services would be useful for a Machine Learning platform which enables Data Scients to train models and later expose those models, with a dynamically generated URL, on compute nodes with powerful GPUs, to ensure quick response times? During training, the Data Scientists need to share data as regular files with Mathematicians who are not using the platform but rely on desktop applications.
+3. Which of the following OpenStack services would be useful for a Machine Learning platform which enables Data Scientists to train models and later expose those models, with a dynamically generated URL, on compute nodes with powerful GPUs, to ensure quick response times? During training, the Data Scientists need to share data as regular files with Mathematicians who are not using the platform but rely on desktop applications.
 
 * [x] *Shared Filesystems (Manila)* +
-_Correct: The requirements ask for sharing files with desktop applications, no matterh they run inside or outside the OpenStack cluster._
+_Correct: The requirements ask for sharing files with desktop applications, no matter whether they run inside or outside the OpenStack cluster._
 
 * [ ] Object Store (Swift) +
 _Incorrect: There are no requirements for object storage, though it is common in more recent machine learning platforms such as OpenShift AI._
 
 * [ ] Load Balancer (Octavia) +
-_Incorrect: There are no requirements of horizontal scalability and high availability of the machine learning models._
+_Incorrect: There are no requirements for horizontal scalability and high availability of the machine learning models._
 
 * [x] *DNS Service (Designate)* +
-_Correct: The requirements ask for dynamic generation of URLs for dynamic server instances to publish already-trained machine learning models._
+_Correct: The requirements ask for dynamic generation of URLs for the dynamic server instances to publish already-trained machine-learning models._
 
 * [x] *Orchestration (Heat)* +
-_Correct: By now you noticed that we recomend Heat for managing most application workloads because very few real-world applications are so simple that Heat provides little benefit._
+_Correct: By now you noticed that we recommend Heat for managing most application workloads because very few real-world applications are so simple that Heat provides little benefit._
 
 * [x] *Placement service (Placement)* +
-_Correct: There is an explicit requirement of scheduling dynamic server instances to compute nodes with powerful GPUs._
+_Correct: There is an explicit requirement for scheduling dynamic server instances to compute nodes with powerful GPUs._
 
 * [ ] Key Management (Barbican) +
-_Incorrect: There are no requirements about credentials for accessing other services from the Machine Learning application._
+_Incorrect: There are no requirements for credentials for accessing other services from the Machine Learning application._

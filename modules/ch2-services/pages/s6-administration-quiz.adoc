@@ -2,13 +2,11 @@
 
 = Quiz: OpenStack Services and IT Infrastructure
 
-_Estimated reading time: *{time_estimate} minutes*._
+_Estimated reading time: *{time_estimate} minute*._
 
 Objective::
 
 Assess the learner’s understanding of the purpose and utility of the OpenStack administration services.
-
-WARNING: Pending Review
 
 == Questions
 
@@ -26,7 +24,7 @@ WARNING: Pending Review
 * [ ] Bare Metal Provisioning (Ironic)
 * [ ] Metering (Ceilometer)
 
-3. Which of the following OpenStack services addresses the need an OpenStack Administrator has for providing physical machines for an application which requires direct access to hardware devices and for which it is not possible to provide pass-through devices for a virtual machine?
+3. Which of the following OpenStack services addresses the need an OpenStack Administrator has for providing physical machines for an application that requires direct access to hardware devices and for which it is not possible to provide pass-through devices for a virtual machine?
 
 * [ ] Identity (Keystone)
 * [ ] Dashboard (Horizon)
