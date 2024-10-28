@@ -252,18 +252,6 @@
 <div class="paragraph">
 <p><em>Estimated reading time: <strong>6 minutes</strong>.</em></p>
 </div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-Pending Review
-</td>
-</tr>
-</table>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -277,7 +265,7 @@ Pending Review
 <ul class="checklist">
 <li>
 <p><i class="fa fa-check-square-o"></i> <strong>True</strong><br>
-<em>Correct: applications could run on VMs which have only ephemeral storage from Nova and no network connectivity to elsewhere, but it is uncommon.</em></p>
+<em>Correct: applications could run on VMs that have only ephemeral storage from Nova and no network connectivity to elsewhere, but it is uncommon.</em></p>
 </li>
 <li>
 <p><i class="fa fa-square-o"></i> False<br>
@@ -287,12 +275,12 @@ Pending Review
 </div>
 </li>
 <li>
-<p>True or False: Glance is an alternative image service for OpenStack clusters which do not run Swift or any other form of object storage.</p>
+<p>True or False: Glance is an alternative image service for OpenStack clusters that do not run Swift or any other form of object storage.</p>
 <div class="ulist checklist">
 <ul class="checklist">
 <li>
 <p><i class="fa fa-square-o"></i> True<br>
-<em>Incorrect: Glance images are not media files, which would typicaly be stored in object storage. They are disk images for server boot disks.</em></p>
+<em>Incorrect: Glance images are not media files, which would typically be stored in object storage. They are disk images for server boot disks.</em></p>
 </li>
 <li>
 <p><i class="fa fa-check-square-o"></i> <strong>False</strong><br>
@@ -311,7 +299,7 @@ Pending Review
 </li>
 <li>
 <p><i class="fa fa-check-square-o"></i> <strong>False</strong><br>
-<em>Correct: Neutron does not need Octavia load balancers, Designete DNS zones, or any other OpenStack service to provide connectivity between server instances and services or servers outside an OpenStack cluster.</em></p>
+<em>Correct: Neutron does not need Octavia load balancers, Designate DNS zones, or any other OpenStack service to provide connectivity between server instances and services or servers outside an OpenStack cluster.</em></p>
 </li>
 </ul>
 </div>
@@ -326,22 +314,22 @@ Pending Review
 </li>
 <li>
 <p><i class="fa fa-check-square-o"></i> <strong>False</strong><br>
-<em>Correct: Octavia provides HTTP and TLS load balancers by itself, without need for additional software or services.</em></p>
+<em>Correct: Octavia provides HTTP and TLS load balancers by itself, without the need for additional software or services.</em></p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>True or False: Though it is common exposing Swift objects to outside an OpenStack cluster, to clients on the Internet, it is <strong>not</strong> common to expose Manila file shares for the same clients.</p>
+<p>True or False: Though it is common to expose Swift objects outside an OpenStack cluster, to clients on the Internet, it is <strong>not</strong> common to expose Manila file shares for the same clients.</p>
 <div class="ulist checklist">
 <ul class="checklist">
 <li>
 <p><i class="fa fa-check-square-o"></i> <strong>True</strong><br>
-<em>Correct: File sharing protocols, such as NFS, were not designed for usage over the internet, while the Swift and S3 APIs for object storge were indeed designed for such use cases.</em></p>
+<em>Correct: File sharing protocols, such as NFS, were not designed for usage over the internet, while the Swift and S3 APIs for object storage were indeed designed for such use cases.</em></p>
 </li>
 <li>
 <p><i class="fa fa-square-o"></i> False<br>
-<em>Incorrect: Exposing Manila file shares over the internet would incurr significant technical and security challenges, because commmon file sharing protocols were designed for usage over local area networks (LANs).</em></p>
+<em>Incorrect: Exposing Manila file shares over the internet would incur significant technical and security challenges, because common file sharing protocols were designed for usage over local area networks (LANs).</em></p>
 </li>
 </ul>
 </div>
@@ -356,13 +344,13 @@ Pending Review
 </li>
 <li>
 <p><i class="fa fa-check-square-o"></i> <strong>False</strong><br>
-<em>Correct: Even thought there are "S3 filesystems" for Linux and other operating systems, capabilities of file and object storage differ significantly and only very simple applications would work reliabily with a translation layer.</em></p>
+<em>Correct: Even though there are "S3 filesystems" for Linux and other operating systems, capabilities of file and object storage differ significantly and only very simple applications would work reliably with a translation layer.</em></p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>True or False: Barbican provides a solution for the common issue of leaking access credentials hardcoded in source code stored in GitHub repositories.</p>
+<p>True or False: Barbican provides a solution for the common issue of leaking access credentials hard coded in source code stored in GitHub repositories.</p>
 <div class="ulist checklist">
 <ul class="checklist">
 <li>
@@ -371,7 +359,7 @@ Pending Review
 </li>
 <li>
 <p><i class="fa fa-square-o"></i> False<br>
-<em>Incorrect: If you store access credentials on Barbican, there is no reason to store them also in application source code.</em></p>
+<em>Incorrect: If you store access credentials on Barbican, there is no reason to store them also in the application source code.</em></p>
 </li>
 </ul>
 </div>
@@ -386,7 +374,7 @@ Pending Review
 </li>
 <li>
 <p><i class="fa fa-check-square-o"></i> <strong>False</strong><br>
-<em>Correct: Heat cannot orchestrate OpenStack API resources in multiple OpenStack clusters. It is intended to simplify management of the many API resources that make a single application instance, in a single project. It is not designed by itself to solve requirements of geolocation and disaster recovery.</em></p>
+<em>Correct: Heat cannot orchestrate OpenStack API resources in multiple OpenStack clusters. It is intended to simplify the management of the many API resources that make a single application instance, in a single project. It is not designed by itself to solve the requirements of geolocation and disaster recovery.</em></p>
 </li>
 </ul>
 </div>
@@ -397,7 +385,7 @@ Pending Review
 <ul class="checklist">
 <li>
 <p><i class="fa fa-check-square-o"></i> <strong>True</strong><br>
-<em>Correct: Designate enables programatic or automatic assignment of DNS names to servers, load balancers, and floating IP addresses.</em></p>
+<em>Correct: Designate enables programmatic or automatic assignment of DNS names to servers, load balancers, and floating IP addresses.</em></p>
 </li>
 <li>
 <p><i class="fa fa-square-o"></i> False<br>
@@ -407,16 +395,16 @@ Pending Review
 </div>
 </li>
 <li>
-<p>True or False: Plamement and Ceilomer may seem to be related, because both track the usage of compute capacity by applications on OpenStack clusters, however, they are actually unrelated and provide different data: Placement is about static usage of resources, like how many virtual CPUs are available for creating more server instances, while Ceilometer is about dynamic usage of resources, like how much CPU is in use right now with multiple simultaneous end-users accessing applications.</p>
+<p>True or False: Placement and Ceilomer may seem to be related, because both track the usage of compute capacity by applications on OpenStack clusters, however, they are actually unrelated and provide different data: Placement is about static usage of resources, like how many virtual CPUs are available for creating more server instances, while Ceilometer is about dynamic usage of resources, like how much CPU is in use right now with multiple simultaneous end-users accessing applications.</p>
 <div class="ulist checklist">
 <ul class="checklist">
 <li>
 <p><i class="fa fa-check-square-o"></i> <strong>True</strong><br>
-<em>Correct: While data from Placement affects scheduling of new server instances by Nova, data from Ceilometer is about the existing instances and their load on compute nodes.</em></p>
+<em>Correct: While data from Placement affects the scheduling of new server instances by Nova, data from Ceilometer is about the existing instances and their load on compute nodes.</em></p>
 </li>
 <li>
 <p><i class="fa fa-square-o"></i> False<br>
-<em>Incorrect: Data from Placement and Ceilometer is <strong>not</strong> correlated because, for example, an application VM might allocate many virtual CPUs and still be iddle, with no noticeable load from its end-sers, so those virtual could be CPUs iddle.</em></p>
+<em>Incorrect: Data from Placement and Ceilometer is <strong>not</strong> correlated because, for example, an application VM might allocate many virtual CPUs and still be idle, with no noticeable load from its end-users, so those virtual could be CPUs idle.</em></p>
 </li>
 </ul>
 </div>
@@ -431,7 +419,7 @@ Pending Review
 </li>
 <li>
 <p><i class="fa fa-check-square-o"></i> <strong>False</strong><br>
-<em>Correct: Horizon can only provide views of instantaneous data of current cluster activity becasue that is all the data that is available from Ceilometer alone.</em></p>
+<em>Correct: Horizon can only provide views of instantaneous data of current cluster activity because that is all the data that is available from Ceilometer alone.</em></p>
 </li>
 </ul>
 </div>
@@ -442,7 +430,7 @@ Pending Review
 <ul class="checklist">
 <li>
 <p><i class="fa fa-square-o"></i> True<br>
-<em>Incorrect: Ironic was used for compute node management in previous releases of Red Hat OpenStack platform, as part of the undercloud, but it is <strong>not</strong> used for that with Red Hat OpenShift on OpenStack anymore.</em></p>
+<em>Incorrect: Ironic was used for compute node management in previous releases of the Red Hat OpenStack platform, as part of the undercloud, but it is <strong>not</strong> used for that with Red Hat OpenShift on OpenStack anymore.</em></p>
 </li>
 <li>
 <p><i class="fa fa-check-square-o"></i> <strong>False</strong><br>

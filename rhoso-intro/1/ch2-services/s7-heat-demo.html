@@ -256,18 +256,6 @@
 </dd>
 </dl>
 </div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-Work In Progress
-</td>
-</tr>
-</table>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -282,10 +270,10 @@ Work In Progress
 <h2 id="_environment"><a class="anchor" href="#_environment"></a>Environment</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>There is no demo environment for now. Presenters must be able to provide their own environment, which should be a minimally configured OpenStack cluster with domains, projects, server flavors, floating ips, tenant networks, etc. It should be configured in a way that it is ready for an OpenStack operator, that is, an OpenStack user with member role in a few projects, to create a server instance and connect to that instance.</p>
+<p>There is no demo environment for now. Presenters must be able to provide their own environment, which should be a minimally configured OpenStack cluster with domains, projects, server flavors, floating IPs, tenant networks, etc. It should be configured in a way that it is ready for an OpenStack operator, that is, an OpenStack user with a member role in a few projects, to create a server instance and connect to that instance.</p>
 </div>
 <div class="paragraph">
-<p>The heat template for this demostration would be available in a public git repository and refer to flavors, images, and other resources that already exist in the demo environment. It should be more than a simplistic single VM or two-VMs example. Ideally, it includes a load balancer and autoscaller.</p>
+<p>The heat template for this demonstration would be available in a public git repository and refer to flavors, images, and other resources that already exist in the demo environment. It should be more than a simplistic single-VM or two-VM example. Ideally, it includes a load balancer and autoscaller.</p>
 </div>
 <div class="paragraph">
 <p>The demo environment must also provide a user workstation preconfigured with the OpenStack client, a web browser to access the Horizon dashboard, and a load generator tool such as <code>ab</code> to trigger autoscaling of the application.</p>
@@ -301,25 +289,25 @@ Work In Progress
 <p>Open a web browser and access Horizon. Log in as the operator user and enter an empty project.</p>
 </li>
 <li>
-<p>Show the sample Heat template, highlight its networks and server instances. Show the template includes some low-level resources which an Operator would not usually see from regular workflows using Horizon or the OpenStack client, such for network ports connecting server instances to tenant networks.</p>
+<p>Show the sample Heat template, and highlight its networks and server instances. Show the template includes some low-level resources that an Operator would not usually see from regular workflows using Horizon or the OpenStack client, such as network ports connecting server instances to tenant networks.</p>
 </li>
 <li>
-<p>Show, inside the template, the resources that provide for autoscaling and loadbalancing, without getting lost on the detailed YAML syntax of the template. The demo is about what it does instead of how to write it.</p>
+<p>Show, inside the template, the resources that provide for autoscaling and load balancing, without getting lost in the detailed YAML syntax of the template. The demo is about what it does instead of how to write it.</p>
 </li>
 <li>
 <p>Create the application from the template, monitor progress, and show when it&#8217;s all done. Then show the main resources (server instances, LBs, server groups) in Horizon and emphasize you could manage them as regular resources, irrespective of Heat.</p>
 </li>
 <li>
-<p>Access the application, just to show it works. Maybe the app displays the hostname or IP address of its server instance, to make it easier to observer load balancing and autoscaling.</p>
+<p>Access the application, just to show it works. Maybe the app displays the hostname or IP address of its server instance, to make it easier to observe load balancing and autoscaling.</p>
 </li>
 <li>
-<p>Run an artifical load generator and show, in the project overview page, that more server instances got created.</p>
+<p>Run an artificial load generator and show, on the project overview page, that more server instances were created.</p>
 </li>
 <li>
 <p>Access the application again, a few times, to show requests were answered by different server instances.</p>
 </li>
 <li>
-<p>Show that, after a while, without load, you get less server instances (some instances are destroyed).</p>
+<p>Show that, after a while, without load, you get fewer server instances (some instances are destroyed).</p>
 </li>
 <li>
 <p>Delete all application resources using Heat, to show it works beyond initial deployment of an application.</p>
